@@ -7,9 +7,9 @@
 module.exports = {
 	all: {
 		options: {
-			port: '?',
+			port: 6969,
 			hostname: 'localhost',
-			open: true
+			open: false
 		}
 	}
 };
