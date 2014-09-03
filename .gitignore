@@ -1,0 +1,16 @@
+#OSX
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+#ENV
+*.html
+/node_modules
+.sass-cache
+/css/base.css*
+/css/dist.css
+/js/dist.min.js

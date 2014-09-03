@@ -1,0 +1,104 @@
+//
+// Core Stylesheet
+//
+// ==========================================================================
+
+// Variables
+
+$page-font             :   Helvetica;
+$text-color            :   #222;
+$active-color          :   #DDD;
+
+$mq-phone              :   320px;
+$mq-phone-wide         :   500px;
+$mq-tablet             :   600px;
+$mq-desktop            :   992px;
+
+$mq-color-timer        :   .6s;
+
+$mq-color-phone        :   #6FD;
+$mq-color-phone-wide   :   #3CF;
+$mq-color-tablet       :   #A0F;
+$mq-color-desktop      :   #F0E;
+
+
+// Grids
+
+/* $susy: (
+  columns: 12,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: outside,
+  debug: (
+    image: show,
+    color: rgba(#EEE,0.2),
+    output: background,
+    toggle: bottom right
+  )
+); */
+
+
+// Styles
+
+body {
+  @include container;
+  font-family: $page-font;
+  color: $text-color;
+}
+
+h1 {
+  text-indent: .75em;
+  padding: 70px 100px 0 0;
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+
+    span {
+      @include transition(all $mq-color-timer ease-in-out);
+      @include at-least($mq-phone) {
+        color: $mq-color-phone;
+      }
+      @include at-least($mq-phone-wide) {
+        color: $mq-color-phone-wide;
+      }
+      @include at-least($mq-tablet) {
+        color: $mq-color-tablet;
+      }
+      @include at-least($mq-desktop) {
+        color: $mq-color-desktop;
+      }
+    }
+  }
+
+  span.version {
+    font-size: 12px;
+    font-weight: normal;
+    color: $active-color;
+  }
+}
+
+svg {
+  position: absolute;
+  top: 15px;
+  left: 240px;
+  opacity: 0.15;
+
+  .basejumper-head,
+  .basejumper-body {
+    @include transition(all $mq-color-timer ease-in-out);
+    @include at-least($mq-phone) {
+      fill: $mq-color-phone;
+    }
+    @include at-least($mq-phone-wide) {
+      fill: $mq-color-phone-wide;
+    }
+    @include at-least($mq-tablet) {
+      fill: $mq-color-tablet;
+    }
+    @include at-least($mq-desktop) {
+      fill: $mq-color-desktop;
+    }
+  }
+}

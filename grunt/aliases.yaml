@@ -1,0 +1,25 @@
+default:
+  - 'sass:dev'
+  - 'targethtml:dev'
+  - 'notify:dev'
+
+dev:
+  - 'sass:dev'
+  - 'targethtml:dev'
+  - 'notify:dev'
+  - 'connect'
+  - 'watch'
+
+dist:
+  - 'sass:dist'
+  - 'uglify'
+  - 'targethtml:dist'
+  - 'notify:dist'
+
+css:
+  - 'sass:dev'
+  - 'notify:sass'
+
+js:
+  - 'jshint'
+  - 'notify:js'
