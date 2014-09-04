@@ -9,6 +9,93 @@
 
 // Grid
 
+$susy: (
+  columns: 12,  // The number of columns in your grid
+  gutters: .25, // The size of a gutter in relation to a single column
+  debug: (
+    image: show,
+    output: background
+  )
+);
+
+.site {
+  @include container;
+
+  header, footer {
+    @include span(12 of 12);
+  }
+
+  div {
+    @include span(12);
+
+    .inner {
+      width: span(10);
+      margin-left: span(1) + gutter();
+    }
+  }
+
+  .split {
+    > div {
+      width: span(5);
+      margin-left: gutter();
+    }
+    > div:first-of-type {
+      margin-left: span(1) + gutter();
+    }
+  }
+}
 
 
 // Styles
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  text-indent: 20px;
+  color: #222;
+}
+
+
+.site {
+  header, footer {
+    height: 200px;
+    padding: 0;
+    background: #000;
+
+    p {
+      color: #FFF;
+    }
+  }
+
+  footer {
+    height: 100px;
+  }
+
+  div > .inner, .split > div {
+    height: 200px;
+    padding: 20px 0;
+  }
+
+  .about {
+    .inner {
+      background: rgba(#F0E, 0.15);
+    }
+  }
+
+  .work {
+    .inner {
+      background: rgba(#96F, 0.15);
+    }
+  }
+
+  .social {
+    background: rgba(#6F0, 0.15);
+  }
+
+  .contact {
+    background: rgba(#0FE, 0.15);
+  }
+}
