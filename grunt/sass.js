@@ -8,7 +8,7 @@ module.exports = {
   dev: {
     options: {
       style: 'expanded',
-      require: 'susy',
+      require: ['susy', 'breakpoint'],
       compass: true
     },
     files: {
