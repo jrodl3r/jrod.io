@@ -9,8 +9,7 @@ module.exports = {
     options: {
       style: 'expanded',
       require: 'susy',
-      compass: true,
-      sourcemap: true
+      compass: true
     },
     files: {
       'css/base.css': 'css/base.scss'
