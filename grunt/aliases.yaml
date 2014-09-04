@@ -7,7 +7,6 @@ dev:
   - 'sass:dev'
   - 'targethtml:dev'
   - 'notify:dev'
-  - 'connect'
   - 'watch'
 
 dist:
