@@ -7,58 +7,6 @@
 
 
 
-// Grid
-
-$susy: (
-  columns: 12,  // The number of columns in your grid
-  gutters: .25, // The size of a gutter in relation to a single column
-  debug: (
-    image: show,
-    output: background
-  )
-);
-
-.site {
-  @include container;
-  @include clearfix;
-
-  > div {
-    @include span(12);
-  }
-}
-
-header, footer {
-  @include span(12 of 12);
-}
-
-@include breakpoint(700px) {
-
-  .site {
-    header, footer {
-      .inner {
-        width: span(10);
-        margin-left: span(1);
-      }
-    }
-
-    > div > .inner {
-      width: span(10);
-      margin-left: span(1) + gutter();
-    }
-
-    > .split {
-      > .social, > .contact {
-        @include span(5);
-        margin-left: span(1) + gutter();
-      }
-      > .contact {
-        @include span(5 of 12);
-        margin: 0;
-      }
-    }
-  }
-}
-
 // Styles
 
 * {
