@@ -20,31 +20,44 @@ $susy: (
 
 .site {
   @include container;
+  @include clearfix;
 
-  header, footer {
-    @include span(12 of 12);
-  }
-
-  div {
+  > div {
     @include span(12);
-
-    .inner {
-      width: span(10);
-      margin-left: span(1) + gutter();
-    }
-  }
-
-  .split {
-    > div {
-      width: span(5);
-      margin-left: gutter();
-    }
-    > div:first-of-type {
-      margin-left: span(1) + gutter();
-    }
   }
 }
 
+header, footer {
+  @include span(12 of 12);
+}
+
+@include breakpoint(700px) {
+
+  .site {
+    header, footer {
+      .inner {
+        width: span(10);
+        margin-left: span(1);
+      }
+    }
+
+    > div > .inner {
+      width: span(10);
+      margin-left: span(1) + gutter();
+    }
+
+    > .split {
+      > .social, > .contact {
+        @include span(5);
+        margin-left: span(1) + gutter();
+      }
+      > .contact {
+        @include span(5 of 12);
+        margin: 0;
+      }
+    }
+  }
+}
 
 // Styles
 
@@ -60,10 +73,15 @@ p {
 
 
 .site {
+  > div {
+    float: left;
+    width: 100%;
+  }
+
   header, footer {
-    height: 200px;
-    padding: 0;
-    background: #000;
+    height: 300px;
+    padding: 20px 0;
+    background: rgba(#000, 0.25);
 
     p {
       color: #FFF;
@@ -71,11 +89,11 @@ p {
   }
 
   footer {
-    height: 100px;
+    height: 200px;
   }
 
-  div > .inner, .split > div {
-    height: 200px;
+  div > .inner {
+    height: 400px;
     padding: 20px 0;
   }
 
@@ -84,18 +102,19 @@ p {
       background: rgba(#F0E, 0.15);
     }
   }
-
   .work {
     .inner {
       background: rgba(#96F, 0.15);
     }
   }
-
   .social {
-    background: rgba(#6F0, 0.15);
+    .inner {
+      background: rgba(#6F0, 0.15);
+    }
   }
-
   .contact {
-    background: rgba(#0FE, 0.15);
+    .inner {
+      background: rgba(#0FE, 0.15);
+    }
   }
 }
