@@ -5,7 +5,17 @@
 
 // Variables
 
+$breakpoint-mobile-wide         :     568px;
+$breakpoint-tablet              :     768px;
+$breakpoint-tablet-wide         :     1024px;
+$breakpoint-desktop             :     1080px;
+$breakpoint-desktop-wide        :     1200px;
 
+$header-height-mobile           :     568px;
+$header-height-mobile-wide      :     320px;
+$header-height-tablet           :     1024px;
+$header-height-tablet-wide      :     768px;
+$header-height-desktop          :     648px;
 
 // Styles
 
@@ -15,10 +25,11 @@
 }
 
 p {
+  position: relative;
+  top: 20px;
   text-indent: 20px;
-  color: #222;
+  color: #FFF;
 }
-
 
 .site {
   > div {
@@ -26,23 +37,34 @@ p {
     width: 100%;
   }
 
-  header, footer {
-    height: 300px;
-    padding: 20px 0;
-    background: rgba(#000, 0.25);
-
-    p {
-      color: #FFF;
+  header {
+    height: $header-height-mobile;
+    /* @include breakpoint($breakpoint-mobile-wide) {
+      height: $header-height-mobile-wide;
     }
+    @include breakpoint($breakpoint-tablet) {
+      height: $header-height-tablet;
+    }
+    @include breakpoint($breakpoint-tablet-wide) {
+      height: $header-height-tablet-wide;
+    }
+    @include breakpoint($breakpoint-desktop) {
+      height: $header-height-desktop;
+    } */
+    background: rgba(#000, 0.25);
   }
 
   footer {
     height: 200px;
+    background: rgba(#000, 0.25);
   }
 
   div > .inner {
     height: 400px;
-    padding: 20px 0;
+  }
+
+  .split > div > .inner {
+    height: 300px;
   }
 
   .about {

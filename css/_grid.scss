@@ -4,8 +4,8 @@
 // ==========================================================================
 
 $susy: (
-  columns: 12,  // The number of columns in your grid
-  gutters: .25, // The size of a gutter in relation to a single column
+  columns: 12,
+  gutters: .25,
   debug: (
     image: show,
     output: background
@@ -19,57 +19,51 @@ $susy: (
   > div {
     @include span(12);
   }
-}
 
-header, footer {
-  @include span(12 of 12);
-}
+  header, footer {
+    @include span(12 of 12);
+  }
 
-@include breakpoint(568px) {
-  /* .site header {
-    background: rgba(#f69, .5);
-  } */
-}
+  // Mobile (Landscape)
+  @include breakpoint($breakpoint-mobile-wide) {
 
-@include breakpoint(768px) {
-  /* .site header {
-      background: rgba(#6f9, .5);
-  } */
-}
+  }
 
-@include breakpoint(1024px) {
-  /* .site header {
-      background: rgba(#69f, .5);
-  } */
-}
-
-@include breakpoint(1080px) {
-  /* .site header {
-      background: rgba(#f96, .5);
-  } */
-
-  .site {
-    header, footer {
-      .inner {
-        width: span(10);
-        margin-left: span(1);
-      }
-    }
-
-    > div > .inner {
+  // Tablet (Portrait)
+  @include breakpoint($breakpoint-tablet) {
+    header .inner, footer .inner {
       width: span(10);
       margin-left: span(1) + gutter();
     }
 
     > .split {
       > .social, > .contact {
-        @include span(5);
-        margin-left: span(1) + gutter();
+        @include span(5 of 10);
       }
       > .contact {
-        @include span(5 of 12);
-        margin: 0;
+        @include span(5 of 10 last);
       }
+    }
+  }
+
+  // Tablet (Landscape)
+  @include breakpoint($breakpoint-tablet-wide) {
+    > div > .inner, > .split {
+      width: span(10);
+      margin-left: span(1) + gutter();
+    }
+  }
+
+  // Desktop
+  @include breakpoint($breakpoint-desktop) {
+
+  }
+
+  // Desktop (Widescreen)
+  @include breakpoint($breakpoint-desktop-wide) {
+    header .inner, footer .inner, > div > .inner, > .split {
+      width: span(8);
+      margin-left: span(2) + gutter();
     }
   }
 }
