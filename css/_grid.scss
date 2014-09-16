@@ -16,12 +16,19 @@ $susy: (
   @include container;
   @include clearfix;
 
-  > div {
-    @include span(12);
+
+  h2, h3, p {
+    @include span(10);
+    margin-left: span(1) + gutter();
+    margin-right: span(1) + gutter();
+
+    @include breakpoint($breakpoint-tablet-wide){
+      @include span(12);
+    }
   }
 
-  header, footer {
-    @include span(12 of 12);
+  header, footer, > div, div > .split {
+    @include full;
   }
 
   // Mobile (Landscape)
@@ -31,26 +38,34 @@ $susy: (
 
   // Tablet (Portrait)
   @include breakpoint($breakpoint-tablet) {
-    header .inner, footer .inner {
-      width: span(10);
-      margin-left: span(1) + gutter();
-    }
-
-    > .split {
-      > .social, > .contact {
+    .split {
+      > div {
         @include span(5 of 10);
+
+        .inner h2, .inner h3 {
+          @include span(last 5 of 6);
+          margin: 0 0 20px;
+        }
       }
-      > .contact {
-        @include span(5 of 10 last);
+      > div:last-of-type {
+        @include span(last 5 of 10);
+
+        .inner h2, .inner h3 {
+          @include span(5 of 6);
+        }
       }
     }
   }
 
   // Tablet (Landscape)
   @include breakpoint($breakpoint-tablet-wide) {
-    > div > .inner, > .split {
+    header .inner, footer .inner, > div > .inner, > .split {
       width: span(10);
       margin-left: span(1) + gutter();
+    }
+    .split > div .inner h2, .split > div:last-of-type .inner h2,
+    .split > div .inner h3, .split > div:last-of-type .inner h3 {
+      @include full;
     }
   }
 
@@ -61,7 +76,7 @@ $susy: (
 
   // Desktop (Widescreen)
   @include breakpoint($breakpoint-desktop-wide) {
-    header .inner, footer .inner, > div > .inner, > .split {
+    header .inner, footer .inner, > div > .inner, .split {
       width: span(8);
       margin-left: span(2) + gutter();
     }
