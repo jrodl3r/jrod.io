@@ -4,12 +4,12 @@
 // ==========================================================================
 
 // Variables
-
+// --------------------------------------------------------------------------
 $breakpoint-mobile-wide         :     568px;
 $breakpoint-tablet              :     768px;
 $breakpoint-tablet-wide         :     1024px;
 $breakpoint-desktop             :     1080px;
-$breakpoint-desktop-wide        :     1200px;
+$breakpoint-desktop-wide        :     1380px;
 
 $header-height-mobile           :     568px;
 $header-height-mobile-wide      :     320px;
@@ -17,73 +17,79 @@ $header-height-tablet           :     1024px;
 $header-height-tablet-wide      :     768px;
 $header-height-desktop          :     648px;
 
-// Styles
 
+// Styles
+// --------------------------------------------------------------------------
 * {
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
-p {
-  position: relative;
-  top: 20px;
-  text-indent: 20px;
-  color: #FFF;
+h2, h3 {
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  font: lighter 28px Helvetica;
+  border-bottom: 1px solid #fff;
 }
 
 .site {
-  > div {
-    float: left;
-    width: 100%;
-  }
-
   header {
-    height: $header-height-mobile;
-    /* @include breakpoint($breakpoint-mobile-wide) {
-      height: $header-height-mobile-wide;
-    }
-    @include breakpoint($breakpoint-tablet) {
-      height: $header-height-tablet;
-    }
-    @include breakpoint($breakpoint-tablet-wide) {
-      height: $header-height-tablet-wide;
-    }
-    @include breakpoint($breakpoint-desktop) {
-      height: $header-height-desktop;
-    } */
+    height: 200px;
     background: rgba(#000, 0.25);
+
+    .inner {
+      height: 200px;
+      background: rgba(#000, 0.15);
+    }
   }
 
   footer {
     height: 200px;
     background: rgba(#000, 0.25);
+
+    .inner {
+      height: 200px;
+      background: rgba(#000, 0.15);
+    }
   }
 
   div > .inner {
-    height: 400px;
-  }
-
-  .split > div > .inner {
-    height: 300px;
+    @include clearfix();
+    padding-top: 40px;
   }
 
   .about {
-    .inner {
+    > .inner {
       background: rgba(#F0E, 0.15);
+
+      .skills, .exposure {
+        background: rgba(#F0E, 0.15);
+      }
+      .exposure {
+        background: rgba(#70E, 0.15);
+      }
     }
   }
+
   .work {
-    .inner {
-      background: rgba(#96F, 0.15);
+    > .inner {
+      background: rgba(#F80, 0.25);
+
+      .gallery {
+        display: none;
+      }
     }
   }
+
   .social {
-    .inner {
+    > .inner {
       background: rgba(#6F0, 0.15);
     }
   }
+
   .contact {
-    .inner {
+    > .inner {
       background: rgba(#0FE, 0.15);
     }
   }
