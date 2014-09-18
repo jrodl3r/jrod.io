@@ -5,53 +5,41 @@
 
 // Variables
 // --------------------------------------------------------------------------
-$breakpoint-mobile-wide         :     568px;
-$breakpoint-tablet              :     768px;
-$breakpoint-tablet-wide         :     1024px;
-$breakpoint-desktop             :     1080px;
-$breakpoint-desktop-wide        :     1380px;
+$hidpi                          :     min-resolution 1.5dppx;
+$breakpoint-to-ems              :     true;
 
-$header-height-mobile           :     568px;
-$header-height-mobile-wide      :     320px;
-$header-height-tablet           :     1024px;
-$header-height-tablet-wide      :     768px;
-$header-height-desktop          :     648px;
+$bp-medium                      :     800px;
+$bp-large                       :     1080px;
+$bp-huge                        :     1280px;
+$bp-cinema                      :     1600px;
 
 
 // Styles
 // --------------------------------------------------------------------------
-* {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
-
 h2, h3 {
-  margin: 0 0 20px;
   padding-bottom: 10px;
   font: lighter 28px Helvetica;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #FFF;
+}
+
+h2, h3, p {
+  margin: 0 0 20px;
+  color: #FFF;
 }
 
 .site {
-  header {
-    height: 200px;
-    background: rgba(#000, 0.25);
+  /* @include breakpoint($hidpi) {
+    background: rgba(#F00, 0.25);
+  } */
 
-    .inner {
-      height: 200px;
-      background: rgba(#000, 0.15);
-    }
+  header, header .inner {
+    height: 320px;
+    background: rgba(#000, 0.25);
   }
 
-  footer {
-    height: 200px;
+  footer, footer .inner {
+    height: 240px;
     background: rgba(#000, 0.25);
-
-    .inner {
-      height: 200px;
-      background: rgba(#000, 0.15);
-    }
   }
 
   div > .inner {
@@ -82,15 +70,21 @@ h2, h3 {
     }
   }
 
+  .blog {
+    > .inner {
+      background: rgba(#BF0, 0.35);
+    }
+  }
+
   .social {
     > .inner {
-      background: rgba(#6F0, 0.15);
+      background: rgba(#6F9, 0.35);
     }
   }
 
   .contact {
     > .inner {
-      background: rgba(#0FE, 0.15);
+      background: rgba(#69F, .35);
     }
   }
 }

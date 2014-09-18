@@ -5,24 +5,32 @@
 
 $susy: (
   columns: 12,
-  gutters: .25,
-  debug: (
-    image: show,
-    output: background
-  )
+  gutters: .25
 );
 
+/* $susy-medium: (
+  columns: 18
+);
+
+$susy-large: (
+  columns: 24
+); */
+
+@include border-box-sizing;
+
 .site {
-  @include container;
+  @include container(show);
   @include clearfix;
 
+  /* @include susy-breakpoint($bp-large, $susy-large show) {
+    @include container();
+  } */
 
   h2, h3, p {
     @include span(10);
     margin-left: span(1) + gutter();
-    margin-right: span(1) + gutter();
 
-    @include breakpoint($breakpoint-tablet-wide){
+    @include breakpoint($bp-large) {
       @include span(12);
     }
   }
@@ -31,54 +39,40 @@ $susy: (
     @include full;
   }
 
-  // Mobile (Landscape)
-  @include breakpoint($breakpoint-mobile-wide) {
+  @include breakpoint($bp-medium) {
+    .split > div {
+      @include span(5 of 10);
 
-  }
-
-  // Tablet (Portrait)
-  @include breakpoint($breakpoint-tablet) {
-    .split {
-      > div {
-        @include span(5 of 10);
-
-        .inner h2, .inner h3 {
-          @include span(last 5 of 6);
-          margin: 0 0 20px;
-        }
+      .inner * {
+        @include span(last 5 of 6);
       }
-      > div:last-of-type {
-        @include span(last 5 of 10);
+    }
+    .split > div:last-of-type {
+      @include span(last 5 of 10);
 
-        .inner h2, .inner h3 {
-          @include span(5 of 6);
-        }
+      .inner * {
+        @include span(5 of 6);
+        margin-left: 0;
       }
     }
   }
 
-  // Tablet (Landscape)
-  @include breakpoint($breakpoint-tablet-wide) {
-    header .inner, footer .inner, > div > .inner, > .split {
-      width: span(10);
+  @include breakpoint($bp-large) {
+    header .inner, footer .inner, > div > .inner > *:not(.split) {
+      @include span(10 of 12);
       margin-left: span(1) + gutter();
     }
-    .split > div .inner h2, .split > div:last-of-type .inner h2,
-    .split > div .inner h3, .split > div:last-of-type .inner h3 {
-      @include full;
-    }
   }
 
-  // Desktop
-  @include breakpoint($breakpoint-desktop) {
+  /* @include breakpoint($bp-huge) {
 
-  }
+  } */
 
-  // Desktop (Widescreen)
-  @include breakpoint($breakpoint-desktop-wide) {
-    header .inner, footer .inner, > div > .inner, .split {
-      width: span(8);
-      margin-left: span(2) + gutter();
+  @include breakpoint($bp-cinema) {
+    > div {
+      float: none;
+      max-width: 1500px;
+      margin: 0 auto;
     }
   }
 }
