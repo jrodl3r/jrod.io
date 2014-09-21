@@ -58,7 +58,7 @@ $susy-large: (
   }
 
   @include breakpoint($bp-large) {
-    header .inner, footer .inner, > div > .inner > *:not(.split) {
+    > header .inner, > footer .inner, > div > .inner > *:not(.split) {
       @include span(10 of 12);
       margin-left: span(1) + gutter();
     }
@@ -69,10 +69,16 @@ $susy-large: (
   } */
 
   @include breakpoint($bp-cinema) {
-    > div {
+    > header .inner, > footer .inner, > div > .inner, > .split {
       float: none;
-      max-width: 1500px;
+      max-width: 1100px;
       margin: 0 auto;
+    }
+    > div > .inner > *:not(.split),
+    > div > .inner > .split > div > .inner > *,
+    > .split > div > .inner > *,
+    > .split > div:last-of-type > .inner > * {
+      @include full;
     }
   }
 }
