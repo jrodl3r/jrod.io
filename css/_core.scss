@@ -19,6 +19,7 @@ $bp-cinema                      :     1320px;
 h2, h3 {
   padding-bottom: 18px;
   font: lighter 28px Helvetica;
+  border-bottom: 1px solid rgba(#000, 0.1);
 }
 
 h2, h3, p {
@@ -62,6 +63,13 @@ h2, h3, p {
 
       .skills, .exposure {
         // background: rgba(#F0E, 0.15);
+
+        .placeholder {
+          display: block;
+          height: 400px;
+          width: 100%;
+          background: rgba(#69F, 0.5);
+        }
       }
       .exposure {
         // background: rgba(#70E, 0.15);
