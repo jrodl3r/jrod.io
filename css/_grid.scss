@@ -26,7 +26,7 @@ $susy-large: (
     @include container();
   } */
 
-  h2, h3, p {
+  .content {
     @include span(10);
     margin-left: span(1) + gutter();
 
@@ -40,8 +40,7 @@ $susy-large: (
   }
 
   .work .gallery {
-    @include span(10);
-    margin-left: span(1) + gutter();
+    @include full;
 
     > div {
       @include gallery(6 of 12);
@@ -54,14 +53,14 @@ $susy-large: (
     .split > div {
       @include span(5 of 10);
 
-      .inner * {
+      .content {
         @include span(last 5 of 6);
       }
     }
     .split > div:last-of-type {
       @include span(last 5 of 10);
 
-      .inner * {
+      .content {
         @include span(5 of 6);
         margin-left: 0;
       }
@@ -76,7 +75,7 @@ $susy-large: (
   }
 
   @include breakpoint($bp-large) {
-    > header .inner, > footer .inner, > div > .inner > *:not(.split) {
+    > header .inner, > footer .inner, .content {
       @include span(10 of 12);
       margin-left: span(1) + gutter();
     }
