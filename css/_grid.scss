@@ -19,7 +19,7 @@ $susy-large: (
 @include border-box-sizing;
 
 .site {
-  @include container(show);
+  @include container();
   @include clearfix;
 
   /* @include susy-breakpoint($bp-large, $susy-large show) {

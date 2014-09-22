@@ -19,12 +19,12 @@ $bp-cinema                      :     1320px;
 h2, h3 {
   padding-bottom: 10px;
   font: lighter 28px Helvetica;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #EEE;
 }
 
 h2, h3, p {
   margin: 0 0 20px;
-  color: #FFF;
+  color: #222;
 }
 
 .site {
@@ -32,14 +32,24 @@ h2, h3, p {
     background: rgba(#F00, 0.25);
   } */
 
-  header, header .inner {
-    height: 320px;
-    background: rgba(#000, 0.25);
+  header {
+    height: 460px;
+    margin-bottom: 40px;
+    background: #000;
+
+    header .inner {
+      height: inherit;
+    }
   }
 
-  footer, footer .inner {
+  footer, {
     height: 240px;
-    background: rgba(#000, 0.25);
+    margin-top: 60px;
+    background: #222;
+
+    .inner {
+      height: inherit;
+    }
   }
 
   div > .inner {
@@ -49,20 +59,20 @@ h2, h3, p {
 
   .about {
     > .inner {
-      background: rgba(#F0E, 0.15);
+      // background: rgba(#F0E, 0.15);
 
       .skills, .exposure {
-        background: rgba(#F0E, 0.15);
+        // background: rgba(#F0E, 0.15);
       }
       .exposure {
-        background: rgba(#70E, 0.15);
+        // background: rgba(#70E, 0.15);
       }
     }
   }
 
   .work {
     > .inner {
-      background: rgba(#F80, 0.25);
+      // background: rgba(#F80, 0.25);
 
       .gallery {
         display: none;
@@ -72,19 +82,19 @@ h2, h3, p {
 
   .blog {
     > .inner {
-      background: rgba(#BF0, 0.35);
+      // background: rgba(#BF0, 0.35);
     }
   }
 
   .social {
     > .inner {
-      background: rgba(#6F9, 0.35);
+      // background: rgba(#6F9, 0.35);
     }
   }
 
   .contact {
     > .inner {
-      background: rgba(#69F, .35);
+      // background: rgba(#69F, .35);
     }
   }
 }
