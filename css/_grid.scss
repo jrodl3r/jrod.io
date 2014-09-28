@@ -19,7 +19,7 @@ $susy-large: (
 @include border-box-sizing;
 
 .site {
-  @include container();
+  @include container(show);
   @include clearfix;
 
   /* @include susy-breakpoint($bp-large, $susy-large show) {
@@ -37,6 +37,10 @@ $susy-large: (
 
   header, footer, > div, div > .split {
     @include full;
+  }
+
+  header p {
+    padding: 0 gutter();
   }
 
   .work .gallery {

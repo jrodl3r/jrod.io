@@ -35,7 +35,7 @@ h2, h3, p {
   header {
     height: auto;
     margin-bottom: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 8px;
     background: rgba(#000, 1);
 
     .inner {
@@ -43,6 +43,7 @@ h2, h3, p {
 
       nav {
         @include clearfix;
+        display: none;
 
         ul {
           display: flex;
@@ -71,6 +72,18 @@ h2, h3, p {
         }
       }
 
+      a.menu-button {
+        position: absolute;
+        display: block;
+        right: 10px;
+        top: 10px;
+        height: 17px;
+        width: 22px;
+        text-indent: -9999em;
+        opacity: 0.3;
+        background: url(../img/header-menu-button.svg) top left no-repeat;
+      }
+
       .content {
         text-align: center;
 
@@ -81,16 +94,37 @@ h2, h3, p {
           text-align: justify;
         }
 
-        .title-splash, .title-name {
-          margin-top: 20px;
-          color: #AAA;
-          font: bolder 26px Helvetica;
+        svg.header-splash {
+          margin: 36px 0 30px;
+
+          .title-path {
+            opacity: 0.35;
+            fill: #FFF;
+          }
+
+          .name-path {
+            margin-top: 20px;
+            opacity: 0.65;
+            fill: #FFF;
+          }
         }
 
-        .title-name {
-          margin-bottom: 30px;
-          font-size: 40px;
-          text-transform: uppercase;
+        svg.logo-splash {
+          margin-bottom: 40px;
+
+          .logo-outline-path {
+            opacity: 0.9;
+            fill: #FFF;
+          }
+
+          .logo-j-path, .logo-r-path {
+            opacity: 0.15;
+            fill: #EEE;
+          }
+
+          .logo-r-path {
+            fill: #EEE;
+          }
         }
 
         .logo {
