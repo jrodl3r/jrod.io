@@ -1,5 +1,7 @@
 # TODO's
-- Build Header Elements/Organisms
+- **Setup Header**
+  - Scale & Reposition Content (Large Displays)
+  - Setup Menu Show/Minimize MQ's
 - **Setup About:**
  	- Scaleable SVG Graph & Display Elements
 	- Copy & Typography
