@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--(if target dev || dist)><title>{{name}}</title><!(endif)-->
+    <!--(if target dev || dist)><meta name="description" content="{{name}} v{{version}}"><!(endif)-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--(if target dev)><!--><link rel="stylesheet" href="css/base.css"><!--<!(endif)--><!--(if target dist)><!--><link rel="stylesheet" href="css/dist.css"><!--<!(endif)-->
+    <script src="js/vendor/modernizr-2.8.0.min.js"></script>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="site">
+      <header>
+        <div class="inner">
+          <nav>
+            <ul>
+              <li><a href="#">Foo</a></li>
+              <li><a href="#">Work</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">More</a></li>
+            </ul>
+          </nav>
+          <a href="#0" class="menu-button">Menu</a>
+          <div class="content">
+            <?php include 'img/header-splash.svg' ?>
+            <?php include 'img/header-logo.svg' ?>
+            <p>Hello, and welcome to my portfolio. I’m a creative web developer who loves building beautiful websites and customizing user interfaces.</p>
+            <p>Check out my blog and latest work, or get in touch with me below. Thanks again for stopping by...</p>
+          </div>
+        </div>
+      </header>
+      <div class="about">
+        <div class="inner">
+          <div class="content">
+            <h2>About</h2>
+            <p>Lorum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+            <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+          </div>
+          <div class="split">
+            <div class="skills">
+              <div class="inner">
+                <div class="content">
+                  <h3>Skills</h3>
+                  <div class="placeholder"></div>
+                </div>
+              </div>
+            </div>
+            <div class="exposure">
+              <div class="inner">
+                <div class="content">
+                  <h3>Exposure</h3>
+                  <div class="placeholder"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="work">
+        <div class="inner">
+          <div class="content">
+            <h2>Work</h2>
+            <div class="gallery">
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+              <div class="item">item</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="blog">
+        <div class="inner">
+          <div class="content">
+            <h2>Blog</h2>
+            <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+            <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+            <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+          </div>
+        </div>
+      </div>
+      <div class="split">
+        <div class="social">
+          <div class="inner">
+            <div class="content">
+              <h2>Social</h2>
+              <ul>
+                <li><a href="#">Google+</a></li>
+                <li><a href="#">Github</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Pinterest</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="inner">
+            <div class="content">
+              <h2>Contact</h2>
+              <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="inner"></div>
+      </footer>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <!--(if target dist)><!--><script src="js/dist.min.js"></script><!--<!(endif)--><!--(if target dev)><!--><script src="js/plugins.js"></script>
+    <script src="js/core.js"></script><!--<!(endif)-->
+  </body>
+</html>

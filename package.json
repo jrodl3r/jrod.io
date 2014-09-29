@@ -13,8 +13,10 @@
     "grunt-contrib-sass": "^0.8.1",
     "grunt-contrib-uglify": "^0.5.1",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-include-replace": "^2.0.0",
     "grunt-notify": "^0.3.1",
     "grunt-targethtml": "^0.2.6",
-    "load-grunt-config": "^0.13.1"
+    "load-grunt-config": "^0.13.1",
+    "time-grunt": "^1.0.0"
   }
 }
