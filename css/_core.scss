@@ -8,7 +8,8 @@
 $hidpi                          :     min-resolution 1.5dppx;
 $breakpoint-to-ems              :     true;
 
-$bp-portrait                    :     568px;
+$bp-landscape                   :     560px;
+$bp-tablet                      :     600px;
 $bp-medium                      :     800px;
 $bp-large                       :     1080px;
 $bp-huge                        :     1280px;
@@ -18,7 +19,7 @@ $bp-cinema                      :     1320px;
 // Styles
 // --------------------------------------------------------------------------
 h2, h3 {
-  padding-bottom: 18px;
+  // padding-bottom: 18px;
   font: lighter 28px Helvetica;
   // border-bottom: 1px solid rgba(#000, 0.1);
 }
@@ -35,10 +36,99 @@ h2, h3, p {
 
   header {
     position: relative;
-    background: rgba(#000, 1);
+    padding-bottom: 15px;
+    background: rgba(#000, .85);
 
-    .inner {
+    /* .inner {
       // height: inherit;
+    } */
+
+    .content {
+      text-align: center;
+
+      svg.header-splash {
+        margin: 13% 0 10%;
+
+        @include breakpoint($bp-landscape) {
+          float: left;
+          max-width: 54%;
+          margin: 2.5% 0 3.75% -1%;
+        }
+
+        @include breakpoint($bp-tablet) {
+          float: none;
+          max-width: none;
+          margin: 0;
+        }
+
+        .title-path {
+          opacity: 0.35;
+          fill: #FFF;
+        }
+
+        .name-path {
+          margin-top: 20px;
+          opacity: 0.65;
+          fill: #FFF;
+        }
+      }
+
+      svg.logo-splash {
+        width: 90%;
+        margin-bottom: 12%;
+
+        @include breakpoint($bp-landscape) {
+          position: absolute;
+          top: 26%;
+          right: 4%;
+          max-width: 48%;
+        }
+
+        @include breakpoint($bp-tablet) {
+          position: static;
+          max-width: none;
+        }
+
+        .logo-outline-path {
+          opacity: 0.9;
+          fill: #FFF;
+        }
+
+        .logo-j-path, .logo-r-path {
+          fill: rgba(#FFF, 0.1);
+        }
+
+        // .logo-r-path {}
+      }
+
+      p {
+        width: 90%;
+        margin: 0 auto 20px;
+        color: rgba(#FFF, 0.5);
+        font: lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
+        line-height: 23px;
+        text-align: justify;
+        letter-spacing: 0.035em;
+
+        @include breakpoint($bp-landscape) {
+          float: left;
+          clear: both;
+          margin: 0 0 4% 1%;
+          padding: 0;
+          max-width: 40%;
+          font-size: 12px;
+          line-height: 21px;
+          letter-spacing: 0.02em;
+        }
+
+        @include breakpoint($bp-tablet) {
+          float: none;
+          clear: none;
+          margin: 0;
+          max-width: none;
+          letter-spacing: normal;
+        }
+      }
     }
 
     nav {
@@ -80,87 +170,12 @@ h2, h3, p {
       height: 17px;
       width: 22px;
       text-indent: -9999em;
-      opacity: 0.3;
+      opacity: 0.2;
       background: url(../img/header-menu-button.svg) top left no-repeat;
-    }
 
-    .content {
-      text-align: center;
-
-      p {
-        padding: 0 gutter();
-        color: rgba(#FFF, 0.5);
-        font: lighter 15px Helvetica;
-        line-height: 23px;
-        text-align: justify;
-
-        &:last-of-type {
-          padding-bottom: 7px;
-        }
-
-        @include breakpoint($bp-portrait) {
-          float: left;
-          clear: both;
-          margin: 0 0 3% 5.75%;
-          padding: 0;
-          max-width: 36%;
-          font-size: 12px;
-          line-height: 22px;
-          letter-spacing: 0.035em;
-        }
-      }
-
-      svg.header-splash {
-        margin: 36px 0 30px;
-
-        @include breakpoint($bp-portrait) {
-          float: left;
-          max-width: 48%;
-          margin: 2.5% 0 4% 4%;
-        }
-
-        .title-path {
-          opacity: 0.35;
-          fill: #FFF;
-        }
-
-        .name-path {
-          margin-top: 20px;
-          opacity: 0.65;
-          fill: #FFF;
-        }
-      }
-
-      svg.logo-splash {
-        margin-bottom: 40px;
-
-        @include breakpoint($bp-portrait) {
-          position: absolute;
-          top: 26%;
-          right: 4%;
-          max-width: 48%;
-        }
-
-        .logo-outline-path {
-          opacity: 0.9;
-          fill: #FFF;
-        }
-
-        .logo-j-path, .logo-r-path {
-          opacity: 0.15;
-          fill: #EEE;
-        }
-
-        .logo-r-path {
-          fill: #EEE;
-        }
-      }
-
-      .logo {
-        width: 70%;
-        max-width: 260px;
-        margin-bottom: 30px;
-        background: rgba(#FFF, 0.25);
+      @include breakpoint($bp-landscape) {
+        right: 15px;
+        top: 15px;
       }
     }
   }
