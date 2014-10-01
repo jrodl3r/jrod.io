@@ -39,17 +39,9 @@ $susy-large: (
     @include full;
   }
 
-  header p {
-    padding: 0 gutter();
-  }
-
-  .work .gallery {
-    @include full;
-
-    > div {
-      @include gallery(6 of 12);
-      height: 140px;
-      margin-bottom: 1em;
+  @include breakpoint($bp-portrait) {
+    header .content {
+      @include full;
     }
   }
 
@@ -67,13 +59,6 @@ $susy-large: (
       .content {
         @include span(5 of 6);
         margin-left: 0;
-      }
-    }
-    .work .gallery {
-
-      > div {
-        @include gallery(4 of 12);
-        height: 180px;
       }
     }
   }

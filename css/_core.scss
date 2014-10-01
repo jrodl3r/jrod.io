@@ -8,6 +8,7 @@
 $hidpi                          :     min-resolution 1.5dppx;
 $breakpoint-to-ems              :     true;
 
+$bp-portrait                    :     568px;
 $bp-medium                      :     800px;
 $bp-large                       :     1080px;
 $bp-huge                        :     1280px;
@@ -19,7 +20,7 @@ $bp-cinema                      :     1320px;
 h2, h3 {
   padding-bottom: 18px;
   font: lighter 28px Helvetica;
-  border-bottom: 1px solid rgba(#000, 0.1);
+  // border-bottom: 1px solid rgba(#000, 0.1);
 }
 
 h2, h3, p {
@@ -33,123 +34,144 @@ h2, h3, p {
   } */
 
   header {
-    height: auto;
-    margin-bottom: 40px;
-    padding-bottom: 8px;
+    position: relative;
     background: rgba(#000, 1);
 
     .inner {
-      height: inherit;
+      // height: inherit;
+    }
 
-      nav {
-        @include clearfix;
-        display: none;
+    nav {
+      @include clearfix;
+      display: none;
 
-        ul {
-          display: flex;
-          float: right;
-          width: 100%;
-          max-width: 480px;
-          margin: 0;
-          padding: 0;
-          list-style-type: none;
+      ul {
+        display: flex;
+        float: right;
+        width: 100%;
+        max-width: 480px;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
 
-          li {
+        li {
+          flex: auto;
+          padding: 10px;
+
+          a {
             flex: auto;
             padding: 10px;
+            color: rgba(#FFF, 0.4);
+            text-decoration: none;
 
-            a {
-              flex: auto;
-              padding: 10px;
-              color: rgba(#FFF, 0.4);
-              text-decoration: none;
-
-              &:hover {
-                color: #FFF;
-              }
+            &:hover {
+              color: #FFF;
             }
           }
         }
       }
-
-      a.menu-button {
-        position: absolute;
-        display: block;
-        right: 10px;
-        top: 10px;
-        height: 17px;
-        width: 22px;
-        text-indent: -9999em;
-        opacity: 0.3;
-        background: url(../img/header-menu-button.svg) top left no-repeat;
-      }
-
-      .content {
-        text-align: center;
-
-        p {
-          color: rgba(#FFF, 0.5);
-          font: lighter 15px Helvetica;
-          line-height: 23px;
-          text-align: justify;
-        }
-
-        svg.header-splash {
-          margin: 36px 0 30px;
-
-          .title-path {
-            opacity: 0.35;
-            fill: #FFF;
-          }
-
-          .name-path {
-            margin-top: 20px;
-            opacity: 0.65;
-            fill: #FFF;
-          }
-        }
-
-        svg.logo-splash {
-          margin-bottom: 40px;
-
-          .logo-outline-path {
-            opacity: 0.9;
-            fill: #FFF;
-          }
-
-          .logo-j-path, .logo-r-path {
-            opacity: 0.15;
-            fill: #EEE;
-          }
-
-          .logo-r-path {
-            fill: #EEE;
-          }
-        }
-
-        .logo {
-          width: 70%;
-          max-width: 260px;
-          margin-bottom: 30px;
-          background: rgba(#FFF, 0.25);
-        }
-      }
     }
-  }
 
-  footer {
-    height: 240px;
-    margin-top: 60px;
-    background: #222;
+    a.menu-button {
+      position: absolute;
+      display: block;
+      right: 10px;
+      top: 10px;
+      height: 17px;
+      width: 22px;
+      text-indent: -9999em;
+      opacity: 0.3;
+      background: url(../img/header-menu-button.svg) top left no-repeat;
+    }
 
-    .inner {
-      height: inherit;
+    .content {
+      text-align: center;
+
+      p {
+        padding: 0 gutter();
+        color: rgba(#FFF, 0.5);
+        font: lighter 15px Helvetica;
+        line-height: 23px;
+        text-align: justify;
+
+        &:last-of-type {
+          padding-bottom: 7px;
+        }
+
+        @include breakpoint($bp-portrait) {
+          float: left;
+          clear: both;
+          margin: 0 0 3% 5.75%;
+          padding: 0;
+          max-width: 36%;
+          font-size: 12px;
+          line-height: 22px;
+          letter-spacing: 0.035em;
+        }
+      }
+
+      svg.header-splash {
+        margin: 36px 0 30px;
+
+        @include breakpoint($bp-portrait) {
+          float: left;
+          max-width: 48%;
+          margin: 2.5% 0 4% 4%;
+        }
+
+        .title-path {
+          opacity: 0.35;
+          fill: #FFF;
+        }
+
+        .name-path {
+          margin-top: 20px;
+          opacity: 0.65;
+          fill: #FFF;
+        }
+      }
+
+      svg.logo-splash {
+        margin-bottom: 40px;
+
+        @include breakpoint($bp-portrait) {
+          position: absolute;
+          top: 26%;
+          right: 4%;
+          max-width: 48%;
+        }
+
+        .logo-outline-path {
+          opacity: 0.9;
+          fill: #FFF;
+        }
+
+        .logo-j-path, .logo-r-path {
+          opacity: 0.15;
+          fill: #EEE;
+        }
+
+        .logo-r-path {
+          fill: #EEE;
+        }
+      }
+
+      .logo {
+        width: 70%;
+        max-width: 260px;
+        margin-bottom: 30px;
+        background: rgba(#FFF, 0.25);
+      }
     }
   }
 
   div > .inner {
     @include clearfix();
-    padding-top: 40px;
+    padding-top: 60px;
+
+    .content p:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   .about {
@@ -177,8 +199,24 @@ h2, h3, p {
     > .inner {
       // background: rgba(#F80, 0.25);
 
-      .gallery > div {
-        background: rgba(#999, 0.5);
+      .gallery {
+        @include full;
+
+        > div.item {
+          @include gallery(6 of 12);
+          height: 140px;
+          margin-bottom: 1em;
+          background: rgba(#999, 0.5);
+
+          @include breakpoint($bp-medium) {
+            @include gallery(4 of 12);
+            // height: 180px;
+          }
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
       }
     }
   }
@@ -192,12 +230,26 @@ h2, h3, p {
   .social {
     > .inner {
       // background: rgba(#6F9, 0.35);
+
+      ul {
+        margin-bottom: 0;
+      }
     }
   }
 
   .contact {
     > .inner {
       // background: rgba(#69F, .35);
+    }
+  }
+
+  footer {
+    height: 240px;
+    margin-top: 60px;
+    background: rgba(#000, 0.25);
+
+    .inner {
+      height: inherit;
     }
   }
 }
