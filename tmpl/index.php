@@ -19,7 +19,7 @@
         <div class="inner">
           <nav>
             <ul>
-              <li><a href="#">Foo</a></li>
+              <li><a href="#">Vision</a></li>
               <li><a href="#">Work</a></li>
               <li><a href="#">Blog</a></li>
               <li><a href="#">More</a></li>
@@ -37,7 +37,7 @@
       <div class="about">
         <div class="inner">
           <div class="content">
-            <h2>About</h2>
+            <h2>Vision</h2>
             <p>Lorum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
             <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
           </div>

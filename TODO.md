@@ -1,11 +1,13 @@
 # TODO's
 - **Setup Header**
-  - Scale & Reposition Content (Large Displays)
+  - Setup Responsive Layout & Scale Content
   - Setup Menu Show/Minimize MQ's
 - **Setup About:**
- 	- Scaleable SVG Graph & Display Elements
-	- Copy & Typography
-	- Skills & Exposure Panels
+  - Convert Skills SVG » HTML/CSS
+  - Setup Exposure Chart
+ 	✓ Scaleable SVG Graph & Display Elements
+	- Add Copy & Tweak Typography
+	- Setup Skills & Exposure Responsiveness
 - **Setup Work:**
 	- Setup Responsive Susy Gallery Layout
 	- Setup Responsive Modal Display System
@@ -16,5 +18,9 @@
 ✓ Setup Mobile-First Layouts
 	✗ Desktop, Tablet, Mobile
 	✓ Header, About, Work, Social, Contact, Footer
-- Design Components
+✓ Design Components
 - Typography Elements
+
+
+# BUGS
+- Grunt: TargetHTML is not processing updated PHP files during Grunt-Watch - Consider replacing with ProcessHTML)

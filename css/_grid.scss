@@ -26,6 +26,10 @@ $susy-large: (
     @include container();
   } */
 
+  header, footer, > div, div > .split {
+    @include full;
+  }
+
   .content {
     @include span(16);
     margin-left: span(1) + gutter();
@@ -37,25 +41,16 @@ $susy-large: (
     @include breakpoint($bp-landscape) {
       width: span(16 of 18);
       margin-left: span(1 of 18) + gutter(1 of 18);
-
-      // background: rgba(purple, 0.25);
     }
 
     @include breakpoint($bp-tablet) {
+      // background: rgba(purple, 0.25);
+    }
 
-      background: rgba(orange, 0.25);
+    @include breakpoint($bp-medium) {
+      // background: rgba(blue, 0.25);
     }
   }
-
-  header, footer, > div, div > .split {
-    @include full;
-  }
-
-  /* @include breakpoint(\$bp-landscape) {
-    header .content {
-      @include full;
-    }
-  } */
 
   @include breakpoint($bp-medium) {
     .split > div {
