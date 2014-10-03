@@ -40,7 +40,7 @@ h2, h3, p {
     background: rgba(#000, 0.9);
 
     @include breakpoint($bp-optimal) {
-      padding-bottom: 4.6%;
+      padding-bottom: 5%;
     }
 
     @include breakpoint($bp-large) {
