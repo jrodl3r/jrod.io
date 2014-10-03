@@ -8,11 +8,7 @@ $susy: (
   gutters: .25
 );
 
-/* $susy-landscape: (
-  columns: 18
-);
-
-$susy-large: (
+/* $susy-large: (
   columns: 24
 ); */
 
@@ -34,64 +30,56 @@ $susy-large: (
     @include span(16);
     margin-left: span(1) + gutter();
 
-    @include breakpoint($bp-large) {
-      @include span(12);
-    }
-
     @include breakpoint($bp-landscape) {
       width: span(16 of 18);
       margin-left: span(1 of 18) + gutter(1 of 18);
-    }
-
-    @include breakpoint($bp-tablet) {
-      // background: rgba(purple, 0.25);
-    }
-
-    @include breakpoint($bp-medium) {
-      // background: rgba(blue, 0.25);
     }
   }
 
   @include breakpoint($bp-medium) {
     .split > div {
-      @include span(5 of 10);
+      @include span(9 of 18);
 
       .content {
-        @include span(last 5 of 6);
+        @include span(last 8 of 9);
       }
     }
+
     .split > div:last-of-type {
-      @include span(last 5 of 10);
+      @include span(last 9 of 18);
 
       .content {
-        @include span(5 of 6);
+        @include span(8 of 9);
         margin-left: 0;
       }
     }
   }
 
   @include breakpoint($bp-large) {
-    > header .inner, > footer .inner, .content {
-      @include span(10 of 12);
-      margin-left: span(1) + gutter();
-    }
-  }
-
-  /* @include breakpoint($bp-huge) {
-
-  } */
-
-  @include breakpoint($bp-cinema) {
     > header .inner, > footer .inner, > div > .inner, > .split {
       float: none;
       max-width: 1100px;
       margin: 0 auto;
     }
+  }
+
+  @include breakpoint($bp-huge) {
+    > header .inner, > footer .inner, > div > .inner, > .split {
+      float: none;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    > header > .inner > *:not(nav):not(.menu-button),
     > div > .inner > *:not(.split),
     > div > .inner > .split > div > .inner > *,
     > .split > div > .inner > *,
     > .split > div:last-of-type > .inner > * {
       @include full;
+    }
+
+    > header > .inner > .content {
+      max-width: 1100px;
     }
   }
 }

@@ -5,16 +5,19 @@
 
 // Variables
 // --------------------------------------------------------------------------
-$hidpi                          :     min-resolution 1.5dppx;
 $breakpoint-to-ems              :     true;
-
-$bp-nexus5                      :     (device-width 360px) (orientation portrait);
+$bp-hidpi                       :     min-resolution 1.5dppx;
+$bp-nexus5-portrait             :     (device-width 360px) (orientation portrait);
+$bp-ipad-portrait               :     (device-width 768px) (orientation portrait);
 $bp-landscape                   :     560px;
 $bp-tablet                      :     600px;
-$bp-medium                      :     800px;
-$bp-large                       :     1080px;
+$bp-medium                      :     780px;
+$bp-optimal                     :     900px;
+$bp-default                     :     960px;
+$bp-large                       :     1020px;
 $bp-huge                        :     1280px;
 $bp-cinema                      :     1320px;
+$bp-anim-timer                  :     .6s;
 
 
 // Styles
@@ -31,14 +34,27 @@ h2, h3, p {
 }
 
 .site {
-  /* @include breakpoint($hidpi) {
-    background: rgba(#F00, 0.25);
-  } */
-
   header {
-    position: relative;
+    @include transition(all $bp-anim-timer ease-in-out);
     padding-bottom: 15px;
-    background: rgba(#000, 1);
+    background: rgba(#000, 0.9);
+
+    @include breakpoint($bp-optimal) {
+      padding-bottom: 4.6%;
+    }
+
+    @include breakpoint($bp-large) {
+      padding-bottom: 4%;
+    }
+
+    @include breakpoint($bp-huge) {
+      max-height: 600px;
+    }
+
+    .inner {
+      position: relative;
+      overflow: hidden;
+    }
 
     nav {
       @include clearfix;
@@ -52,6 +68,10 @@ h2, h3, p {
         max-width: 400px;
       }
 
+      @include breakpoint($bp-medium) {
+        display: none;
+      }
+
       ul {
         display: flex;
         display: -webkit-flex;
@@ -63,8 +83,6 @@ h2, h3, p {
         li {
           flex: auto;
           -webkit-flex: 1;
-          //flex-direction: row;
-          //-webkit-flex-direction: row;
           padding: 10px;
           text-align: center;
 
@@ -82,7 +100,7 @@ h2, h3, p {
       }
     }
 
-    a.menu-button {
+    .menu-button {
       position: absolute;
       display: block;
       right: 10px;
@@ -94,11 +112,21 @@ h2, h3, p {
       background: url(../img/header-menu-button.svg) top left no-repeat;
 
       @include breakpoint($bp-landscape) {
-        right: 15px;
         top: 15px;
+        right: 15px;
       }
 
       @include breakpoint($bp-tablet) {
+        display: none;
+      }
+
+      @include breakpoint($bp-medium) {
+        display: block;
+        top: 18px;
+        right: 18px;
+      }
+
+      @include breakpoint($bp-huge) {
         display: none;
       }
     }
@@ -121,9 +149,24 @@ h2, h3, p {
           margin: 0 0 8%;
         }
 
-        /* @include breakpoint(\$bp-medium) {
+        @include breakpoint($bp-medium) {
+          float: left;
+          max-width: 52%;
+          margin: 2.5% 0 4% -2%;
+        }
 
-        } */
+        @include breakpoint($bp-optimal) {
+          margin: 3% 0 5% -2%;
+        }
+
+        @include breakpoint($bp-large) {
+          margin-top: 4%;
+        }
+
+        @include breakpoint($bp-huge) {
+          max-width: 48%;
+          margin-left: 0;
+        }
 
         .title-path {
           opacity: 0.35;
@@ -143,7 +186,7 @@ h2, h3, p {
 
         @include breakpoint($bp-landscape) {
           position: absolute;
-          top: 26%;
+          top: 24%;
           right: 4%;
           max-width: 48%;
         }
@@ -154,9 +197,22 @@ h2, h3, p {
           margin-bottom: 8%;
         }
 
-        /* @include breakpoint(\$bp-medium) {
+        @include breakpoint($bp-medium) {
+          position: absolute;
+          top: 25%;
+          right: 5%;
+          width: 48%;
+        }
 
-        } */
+        @include breakpoint($bp-optimal) {
+          top: 28%;
+        }
+
+        @include breakpoint($bp-huge) {
+          top: 28%;
+          width: 50%;
+          max-width: 52%;
+        }
 
         .logo-outline-path {
           opacity: 0.85;
@@ -177,7 +233,7 @@ h2, h3, p {
         text-align: justify;
         letter-spacing: 0.035em;
 
-        @include breakpoint($bp-nexus5) {
+        @include breakpoint($bp-nexus5-portrait) {
           width: 85%;
           letter-spacing: 0.05em;
         }
@@ -201,10 +257,42 @@ h2, h3, p {
           font-size: 1.15em;
           line-height: 1.5em;
           letter-spacing: 0.04em;
+
+          @include breakpoint($bp-ipad-portrait) {
+            max-width: 53%;
+            margin-bottom: 3.5%;
+            font-size: 1.2em;
+            letter-spacing: 0.045em;
+          }
         }
 
         @include breakpoint($bp-medium) {
-          // nexus7 + ipad (landscape)
+          float: left;
+          clear: both;
+          margin: 0 0 3%;
+          max-width: 39%;
+          font-size: 0.98em;
+          line-height: 1.6em;
+        }
+
+        @include breakpoint($bp-optimal) {
+          font-size: 1.1em;
+        }
+
+        @include breakpoint($bp-default) {
+          font-size: 1.2em;
+        }
+
+        @include breakpoint($bp-large) {
+          max-width: 38%;
+          letter-spacing: 0.06em;
+        }
+
+        @include breakpoint($bp-huge) {
+          max-width: 34%;
+          margin-left: 20px;
+          font-size: 21px;
+          letter-spacing: 0.04em;
         }
       }
     }
