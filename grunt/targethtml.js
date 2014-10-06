@@ -13,12 +13,12 @@ module.exports = {
   },
   dist: {
     files: {
-      'index.php': 'tmpl/index.php'
+      'index.php': 'tmpl/index.html'
     }
   },
   dev: {
     files: {
-      'index.php': 'tmpl/index.php'
+      'index.php': 'tmpl/index.html'
     }
   }
 };

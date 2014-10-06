@@ -20,7 +20,3 @@
 	- ✓ Header, About, Work, Social, Contact, Footer
 - ✓ Design Components
 - Typography Elements
-
-
-# BUGS
-- Grunt: TargetHTML is not processing updated PHP files during Grunt-Watch - Consider replacing with ProcessHTML)
