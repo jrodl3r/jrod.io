@@ -1,0 +1,264 @@
+//
+// Header Styles
+//
+// ==========================================================================
+
+header {
+  @include transition(all $bp-anim-timer ease-in-out);
+  padding-bottom: 15px;
+  background: rgba(#000, 1);
+
+  @include breakpoint($bp-optimal) {
+    padding-bottom: 5%;
+  }
+
+  @include breakpoint($bp-large) {
+    padding-bottom: 4%;
+  }
+
+  @include breakpoint($bp-huge) {
+    max-height: 600px;
+  }
+
+  .inner {
+    position: relative;
+    overflow: hidden;
+  }
+
+  nav {
+    @include clearfix;
+    display: none;
+
+    @include breakpoint($bp-tablet) {
+      display: flex;
+      display: -webkit-flex;
+      margin: 2% auto 4%;
+      width: 50%;
+      max-width: 400px;
+    }
+
+    @include breakpoint($bp-medium) {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      display: -webkit-flex;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        flex: auto;
+        -webkit-flex: 1;
+        padding: 10px;
+        text-align: center;
+
+        a {
+          flex: auto;
+          padding: 10px;
+          color: rgba(#FFF, 0.2);
+          text-decoration: none;
+
+          &:hover {
+            color: rgba(#FFF, 0.5);
+          }
+        }
+      }
+    }
+  }
+
+  .menu-button {
+    position: absolute;
+    display: block;
+    right: 10px;
+    top: 10px;
+    height: 17px;
+    width: 22px;
+    text-indent: -9999em;
+    opacity: 0.2;
+    background: url(../img/header-menu-button.svg) top left no-repeat;
+
+    @include breakpoint($bp-landscape) {
+      top: 15px;
+      right: 15px;
+    }
+
+    @include breakpoint($bp-tablet) {
+      display: none;
+    }
+
+    @include breakpoint($bp-medium) {
+      display: block;
+      top: 18px;
+      right: 18px;
+    }
+
+    @include breakpoint($bp-huge) {
+      display: none;
+    }
+  }
+
+  .content {
+    text-align: center;
+
+    svg.header-splash {
+      margin: 13% 0 10%;
+
+      @include breakpoint($bp-landscape) {
+        float: left;
+        max-width: 54%;
+        margin: 2.5% 0 3.75% -1%;
+      }
+
+      @include breakpoint($bp-tablet) {
+        float: none;
+        max-width: 80%;
+        margin: 0 0 8%;
+      }
+
+      @include breakpoint($bp-medium) {
+        float: left;
+        max-width: 52%;
+        margin: 2.5% 0 4% -2%;
+      }
+
+      @include breakpoint($bp-optimal) {
+        margin: 3% 0 5% -2%;
+      }
+
+      @include breakpoint($bp-large) {
+        margin-top: 4%;
+      }
+
+      @include breakpoint($bp-huge) {
+        max-width: 48%;
+        margin-left: 0;
+      }
+
+      .title-path {
+        opacity: 0.35;
+        fill: #FFF;
+      }
+
+      .name-path {
+        margin-top: 20px;
+        opacity: 0.75;
+        fill: #FFF;
+      }
+    }
+
+    svg.logo-splash {
+      width: 90%;
+      margin-bottom: 12%;
+
+      @include breakpoint($bp-landscape) {
+        position: absolute;
+        top: 24%;
+        right: 4%;
+        max-width: 48%;
+      }
+
+      @include breakpoint($bp-tablet) {
+        position: static;
+        max-width: 70%;
+        margin-bottom: 8%;
+      }
+
+      @include breakpoint($bp-medium) {
+        position: absolute;
+        top: 25%;
+        right: 5%;
+        width: 48%;
+      }
+
+      @include breakpoint($bp-optimal) {
+        top: 28%;
+      }
+
+      @include breakpoint($bp-huge) {
+        top: 28%;
+        width: 50%;
+        max-width: 52%;
+      }
+
+      .logo-outline-path {
+        opacity: 0.85;
+        fill: #FFF;
+      }
+
+      .logo-j-path, .logo-r-path {
+        fill: rgba(#000, 0.25);
+      }
+    }
+
+    p {
+      width: 90%;
+      margin: 0 auto 20px;
+      color: rgba(#FFF, 0.4);
+
+      @include breakpoint($bp-nexus5-portrait) {
+        width: 85%;
+        letter-spacing: 0.05em;
+      }
+
+      @include breakpoint($bp-landscape) {
+        float: left;
+        clear: both;
+        margin: 0 0 4% 1%;
+        padding: 0;
+        max-width: 40%;
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0.02em;
+      }
+
+      @include breakpoint($bp-tablet) {
+        float: none;
+        clear: none;
+        margin: 0 auto 5%;
+        max-width: 60%;
+        font-size: 1.15em;
+        line-height: 1.5em;
+        letter-spacing: 0.04em;
+
+        @include breakpoint($bp-ipad-portrait) {
+          max-width: 53%;
+          margin-bottom: 3.5%;
+          font-size: 1.2em;
+          letter-spacing: 0.045em;
+        }
+      }
+
+      @include breakpoint($bp-medium) {
+        float: left;
+        clear: both;
+        margin: 0 0 3%;
+        max-width: 39%;
+        font-size: 0.98em;
+        line-height: 1.6em;
+      }
+
+      @include breakpoint($bp-optimal) {
+        font-size: 1.1em;
+      }
+
+      @include breakpoint($bp-default) {
+        font-size: 1.2em;
+      }
+
+      @include breakpoint($bp-large) {
+        max-width: 38%;
+        letter-spacing: 0.06em;
+      }
+
+      @include breakpoint($bp-huge) {
+        max-width: 34%;
+        margin-left: 20px;
+        font-size: 21px;
+        letter-spacing: 0.04em;
+      }
+    }
+  }
+}
