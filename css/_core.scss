@@ -19,25 +19,41 @@ $bp-huge                        :     1280px;
 $bp-cinema                      :     1320px;
 $bp-anim-timer                  :     .6s;
 
+$default-font                   :     lighter 32px sans-serif-light, Helvetica, Arial, sans-serif;
+$default-radius                 :     6px;
+
 
 // Styles
 // --------------------------------------------------------------------------
-h2, h3 {
-  // padding-bottom: 18px;
-  font: lighter 28px Helvetica;
-  // border-bottom: 1px solid rgba(#000, 0.1);
+h2, h3, p {
+  margin: 0;
+  font: $default-font;
 }
 
-h2, h3, p {
-  margin: 0 0 20px;
-  color: #222;
+h2, h3 {
+  padding: 72px 0 32px;
+  text-align: center;
+  color: #999;
+
+  @include breakpoint($bp-landscape) {
+    text-align: left;
+  }
+}
+
+p {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 23px;
+  letter-spacing: 0.035em;
+  color: #808080;
 }
 
 .site {
   header {
     @include transition(all $bp-anim-timer ease-in-out);
     padding-bottom: 15px;
-    background: rgba(#000, 0.9);
+    background: rgba(#000, 1);
 
     @include breakpoint($bp-optimal) {
       padding-bottom: 5%;
@@ -228,10 +244,6 @@ h2, h3, p {
         width: 90%;
         margin: 0 auto 20px;
         color: rgba(#FFF, 0.4);
-        font: lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
-        line-height: 23px;
-        text-align: justify;
-        letter-spacing: 0.035em;
 
         @include breakpoint($bp-nexus5-portrait) {
           width: 85%;
@@ -300,7 +312,6 @@ h2, h3, p {
 
   div > .inner {
     @include clearfix();
-    padding-top: 60px;
 
     .content p:last-of-type {
       margin-bottom: 0;
@@ -339,6 +350,8 @@ h2, h3, p {
           @include gallery(6 of 12);
           height: 140px;
           margin-bottom: 1em;
+          text-indent: -9999em;
+          border-radius: $default-radius;
           background: rgba(#999, 0.5);
 
           @include breakpoint($bp-medium) {
@@ -355,6 +368,8 @@ h2, h3, p {
   }
 
   .blog {
+    display: none;
+
     > .inner {
       // background: rgba(#BF0, 0.35);
     }
