@@ -269,12 +269,22 @@ p {
   // Footer
   // --------------------------------------------------------------------------
   footer {
-    height: 240px;
-    margin-top: 60px;
-    background: rgba(#000, 0.25);
+    height: 300px;
+    padding-top: 100px;
 
     .inner {
-      height: inherit;
+      width: 320px;
+      height: 200px;
+      margin: 0 auto;
+      text-align: center;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(255,255,255,0) 50%);
+
+      svg.footer-logo {
+
+        .logo-j-path, .logo-r-path {
+          fill: rgba(#FFF, 1);
+        }
+      }
     }
   }
 }
