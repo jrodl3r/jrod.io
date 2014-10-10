@@ -136,11 +136,12 @@
             <div class="content">
               <h2>Social</h2>
               <ul>
-                <li><a href="#">Google+</a></li>
-                <li><a href="#">Github</a></li>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Pinterest</a></li>
+                <li><a class="twitter" href="#0"><?php include 'img/social-icon-twitter.svg' ?> Twitter</a></li>
+                <li><a class="github" href="#0"><?php include 'img/social-icon-github.svg' ?> Github</a></li>
+                <li><a class="pinterest" href="#0"><?php include 'img/social-icon-pinterest.svg' ?> Pinterest</a></li>
+                <li><a class="linkedin" href="#0"><?php include 'img/social-icon-linkedin.svg' ?> LinkedIn</a></li>
+                <li><a class="gchat" href="#0"><?php include 'img/social-icon-gchat.svg' ?> Gchat</a></li>
+                <li><a class="email" href="#0"><?php include 'img/social-icon-email.svg' ?> Email</a></li>
               </ul>
             </div>
           </div>
@@ -149,7 +150,12 @@
           <div class="inner">
             <div class="content">
               <h2>Contact</h2>
-              <p>Temporus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+              <form>
+                <input type="text" class="name" name="name" value="Name">
+                <input type="email" class="email" name="email" value="Email">
+                <textarea class="message" name="message">Message</textarea>
+                <button>Send</button>
+              </form>
             </div>
           </div>
         </div>

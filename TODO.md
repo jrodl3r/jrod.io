@@ -13,17 +13,20 @@
 	- Setup Responsive Modal Display System
 	- Setup Pagination
 - **Setup Social**
-  - Add Social Icon List & Default Styling
+  - ✓ Add Social Icon List & Default Styling
+  - Tweak Responsiveness
 - **Setup Contact**
-  - Add Contact Form & Default Styling
+  - ✓ Add Contact Form & Default Styling
+  - Tweak Responsiveness
   - Setup PHP Form Submission Functionality
 - **Setup Blog**
   - TBD
-- Add Copy & Contextual Elements
-- ✓ Setup Skeleton
-- ✓ Add Susy Responsive Layout
-- ✓ Setup Mobile-First Layouts
-	- ✓ Desktop, Tablet, Mobile
-	- ✓ Header, About, Work, Social, Contact, Footer
-- ✓ Design Components
-- Typographic Layout & Design
+- **Global Elements**
+  - Compose Copy & Contextual Elements
+  - ✓ Setup Skeleton
+  - ✓ Add Susy Responsive Layout
+  - ✓ Setup Mobile-First Layouts
+  	- ✓ Desktop, Tablet, Mobile
+  	- ✓ Header, About, Work, Social, Contact, Footer
+  - ✓ Design Components
+  - Typographic Layout & Design

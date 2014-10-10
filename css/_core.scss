@@ -122,6 +122,7 @@ p {
           margin-top: 16px;
           background: #E6E6E6;
           border-radius: $default-radius;
+          overflow: hidden;
 
           .progress {
             position: absolute;
@@ -200,14 +201,69 @@ p {
   // --------------------------------------------------------------------------
   .social {
     ul {
-      margin-bottom: 0;
+      margin: 0 auto;
+      padding: 0;
+
+      li {
+        height: 28px;
+        width: 100%;
+        margin-bottom: 18px;
+        list-style: none;
+
+        a {
+          display: block;
+          height: 28px;
+          line-height: 28px;
+          font-size: 16px;
+          color: #B3B3B3;
+          text-decoration: none;
+          text-indent: 34%;
+
+          svg {
+            max-width: 28px;
+            margin-right: 10px;
+          }
+        }
+      }
     }
   }
 
   // Contact
   // --------------------------------------------------------------------------
   .contact {
+    input, textarea, button {
+      height: 36px;
+      width: 100%;
+      margin-bottom: 16px;
+      line-height: 36px;
+      text-indent: 10px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #FFF;
+      background: #E6E6E6;
+      border: 0;
+      border-radius: $default-radius;
 
+      @include breakpoint($bp-portrait) {
+        width: span(16 of 18);
+        margin-left: span(1 of 18) + gutter(1 of 18);
+      }
+    }
+
+    textarea {
+      height: 110px;
+      outline: none;
+      resize: none;
+    }
+
+    button {
+      display: block;
+      width: 128px;
+      margin: 0 auto;
+      text-indent: 0;
+      font-style: 14px;
+      color: #B3B3B3;
+    }
   }
 
   // Footer
