@@ -2,21 +2,28 @@
 - **Setup Header**
   - ✓ Setup Responsive Layout & Scale Content
   - ✓ Setup Menu Show/Minimize MQ's
-- **Setup Vision:**
+- **Setup Vision**
   - Add Copy & Tweak Typography
   - Convert Skills SVG » HTML/CSS
   - Setup Exposure Chart
   - Setup Skills & Exposure Responsiveness
   - ✓ Design SVG Graph & Display Elements
-- **Setup Work:**
+- **Setup Work**
 	- Setup Responsive Susy Gallery Layout
 	- Setup Responsive Modal Display System
 	- Setup Pagination
-- Add Blog, Social & Contact Content Placeholders
+- **Setup Social**
+  - Add Social Icon List & Default Styling
+- **Setup Contact**
+  - Add Contact Form & Default Styling
+  - Setup PHP Form Submission Functionality
+- **Setup Blog**
+  - TBD
+- Add Copy & Contextual Elements
 - ✓ Setup Skeleton
 - ✓ Add Susy Responsive Layout
 - ✓ Setup Mobile-First Layouts
-	- ✗ Desktop, Tablet, Mobile
+	- ✓ Desktop, Tablet, Mobile
 	- ✓ Header, About, Work, Social, Contact, Footer
 - ✓ Design Components
-- Typography Elements
+- Typographic Layout & Design
