@@ -40,6 +40,14 @@ h2, h3 {
   @include breakpoint($bp-landscape) {
     text-align: left;
   }
+
+  @include breakpoint($bp-tablet) {
+    text-align: center;
+  }
+
+  @include breakpoint($bp-medium) {
+    text-align: left;
+  }
 }
 
 p {
@@ -68,12 +76,22 @@ p {
   // Vision
   // --------------------------------------------------------------------------
   .vision {
-    /*.content p {
+    p {
       @include breakpoint($bp-portrait) {
         width: span(16 of 18);
         margin-left: span(1 of 18) + gutter(1 of 18);
       }
-    }*/
+
+      @include breakpoint($bp-landscape) {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      @include breakpoint($bp-tablet) {
+        font-size: 17px;
+        line-height: 27px;
+      }
+    }
 
     .skills {
       .indicator {

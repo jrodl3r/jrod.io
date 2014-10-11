@@ -8,6 +8,10 @@ header {
   padding-bottom: 15px;
   background: rgba(#000, 1);
 
+  @include breakpoint($bp-ipad-portrait) {
+    padding-bottom: 9%;
+  }
+
   @include breakpoint($bp-optimal) {
     padding-bottom: 5%;
   }
