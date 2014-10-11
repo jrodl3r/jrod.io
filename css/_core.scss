@@ -168,24 +168,65 @@ p {
   // Work
   // --------------------------------------------------------------------------
   .work {
-    .gallery {
-      @include full;
+    .content > div {
+      width: span(16 of 18);
+      margin-left: span(1 of 18) + gutter(1 of 18);
+    }
 
-      > div.item {
-        @include gallery(6 of 12);
-        height: 140px;
-        margin-bottom: 1em;
-        text-indent: -9999em;
+    .gallery {
+      position: relative;
+      height: 336px; // = item-time (x2) + item's margin-bottom
+      margin-bottom: 16px;
+      overflow: hidden;
+
+      .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 2000px;
+        width: 100%;
+      }
+
+      .item {
+        display: block;
+        height: 160px;
+        margin-bottom: 16px;
         border-radius: $default-radius;
-        background: rgba(#999, 0.5);
+        background: #E6E6E6;
 
         @include breakpoint($bp-medium) {
-          @include gallery(4 of 12);
-          // height: 180px;
+
         }
+      }
+    }
+
+    .pagination {
+      width: 100%;
+      text-align: center;
+
+      a {
+        position: relative;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin-right: 14px;
+        border-radius: 50%;
+        background: #CCC;
 
         &:last-of-type {
-          margin-bottom: 0;
+          margin-right: 0;
+        }
+
+        &.active span {
+          position: absolute;
+          top: 2px;
+          left: 2px;
+          display: inline-block;
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          background: #F2F2F2;
         }
       }
     }
@@ -255,7 +296,7 @@ p {
     }
 
     textarea {
-      height: 110px;
+      height: 100px;
       outline: none;
       resize: none;
     }

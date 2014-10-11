@@ -11,7 +11,7 @@
 - **Setup Work**
 	- Setup Responsive Susy Gallery Layout
 	- Setup Responsive Modal Display System
-	- Setup Pagination
+	- ✓ Setup Pagination
 - **Setup Social**
   - ✓ Add Social Icon List & Default Styling
   - Tweak Responsiveness
