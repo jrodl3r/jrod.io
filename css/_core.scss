@@ -105,6 +105,11 @@ p {
           width: span(15 of 18);
         }
 
+        @include breakpoint($bp-medium) {
+          width: 82%;
+          margin-left: 4%;
+        }
+
         span {
           position: absolute;
           left: 0;
@@ -112,6 +117,10 @@ p {
           font-size: 15px;
           color: #CCC;
           background: #FFF;
+
+          @include breakpoint($bp-optimal) {
+            font-size: 16px;
+          }
 
           &:last-of-type {
             left: initial;
@@ -142,16 +151,52 @@ p {
           border-radius: $default-radius;
           overflow: hidden;
 
+          @include breakpoint($bp-landscape) {
+            height: 26px;
+          }
+
+          @include breakpoint($bp-medium) {
+            height: 24px;
+          }
+
+          @include breakpoint($bp-default) {
+            height: 28px;
+            margin-top: 18px;
+          }
+
           .progress {
             position: absolute;
             top: 0;
             left: 0;
             height: 0;
-            width: 90%;
+            width: 88%;
             border-top-left-radius: $default-radius;
             border-bottom-left-radius: $default-radius;
             border-top: 24px solid #B3B3B3;
             border-right: 24px solid #E6E6E6;
+
+            @include breakpoint($bp-landscape) {
+              border-top-width: 26px;
+              border-right-width: 26px;
+            }
+
+            @include breakpoint($bp-medium) {
+              border-top-width: 24px;
+              border-right-width: 24px;
+            }
+
+            @include breakpoint($bp-default) {
+              border-top-width: 28px;
+              border-right-width: 28px;
+            }
+
+            &.js, &.git, &.seo, &.fbo {
+              width: 80%;
+            }
+
+            &.psd, &.ecom {
+              width: 75%;
+            }
           }
 
           .label {
@@ -163,6 +208,24 @@ p {
             text-align: center;
             font-size: 13px;
             color: rgba(#FFF, 0.8);
+
+            @include breakpoint($bp-landscape) {
+              height: 26px;
+              line-height: 26px;
+              font-size: 14px;
+            }
+
+            @include breakpoint($bp-medium) {
+              height: 24px;
+              line-height: 24px;
+              font-size: 13px;
+            }
+
+            @include breakpoint($bp-default) {
+              height: 28px;
+              line-height: 28px;
+              font-size: 14px;
+            }
           }
         }
       }
@@ -172,12 +235,26 @@ p {
       text-align: center;
 
       svg.exposure-graph {
+        @include breakpoint($bp-portrait) {
+          width: 90%;
+        }
+
         @include breakpoint($bp-landscape) {
-          width: span(16 of 18);
+          width: 86%;
+        }
+
+        @include breakpoint($bp-tablet) {
+          width: 82%;
         }
 
         @include breakpoint($bp-medium) {
-          margin-top: 10px;
+          float: left;
+          width: 100%;
+          margin-top: 15px;
+        }
+
+        @include breakpoint($bp-optimal) {
+          width: 90%;
         }
       }
     }
@@ -193,7 +270,7 @@ p {
 
     .gallery {
       position: relative;
-      height: 336px; // = item-time (x2) + item's margin-bottom
+      height: 336px; // = item-height (x2) + item's margin-bottom
       margin-bottom: 16px;
       overflow: hidden;
 
