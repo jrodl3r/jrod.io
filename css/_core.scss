@@ -5,7 +5,7 @@
 
 // Variables
 // --------------------------------------------------------------------------
-$breakpoint-to-ems              :     true;
+//$breakpoint-to-ems              :     true;
 $bp-hidpi                       :     min-resolution 1.5dppx;
 $bp-nexus5-portrait             :     (device-width 360px) (orientation portrait);
 $bp-ipad-portrait               :     (device-width 768px) (orientation portrait);
@@ -88,8 +88,25 @@ p {
       }
 
       @include breakpoint($bp-tablet) {
+        width: span(16 of 18);
+        margin-left: span(1 of 18) + gutter(1 of 18);
         font-size: 17px;
         line-height: 27px;
+      }
+
+      @include breakpoint($bp-medium) {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      @include breakpoint($bp-optimal) {
+        font-size: 1.1em;
+        line-height: 1.6em;
+      }
+
+      @include breakpoint($bp-default) {
+        font-size: 1.2em;
+        line-height: 32px;
       }
     }
 

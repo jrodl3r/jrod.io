@@ -66,8 +66,12 @@ $susy: (
   @include breakpoint($bp-huge) {
     > header .inner, > footer .inner, > div > .inner, > .split {
       float: none;
-      max-width: 1060px;
+      max-width: 1020px;
       margin: 0 auto;
+    }
+
+    > header .inner {
+      max-width: 1060px;
     }
 
     > header > .inner > .content,
