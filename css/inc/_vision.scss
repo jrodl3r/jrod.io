@@ -1,0 +1,206 @@
+//
+// Vision Styles
+//
+// ==========================================================================
+
+.vision {
+  p {
+    @include breakpoint($bp-portrait) {
+      width: span(16 of 18);
+      margin-left: span(1 of 18) + gutter(1 of 18);
+    }
+
+    @include breakpoint($bp-landscape) {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    @include breakpoint($bp-tablet) {
+      width: span(16 of 18);
+      margin-left: span(1 of 18) + gutter(1 of 18);
+      font-size: 17px;
+      line-height: 27px;
+    }
+
+    @include breakpoint($bp-medium) {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    @include breakpoint($bp-optimal) {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+
+    @include breakpoint($bp-default) {
+      font-size: 1.2em;
+      line-height: 32px;
+    }
+  }
+
+  .skills {
+    .indicator {
+      position: relative;
+      height: 11px;
+      width: span(17 of 18);
+      margin: 0 auto;
+      border-bottom: 1px solid #EEE;
+
+      @include breakpoint($bp-landscape) {
+        width: span(15 of 18);
+      }
+
+      @include breakpoint($bp-medium) {
+        width: 82%;
+        margin-left: 4%;
+      }
+
+      span {
+        position: absolute;
+        left: 0;
+        padding-right: 10px;
+        font-size: 15px;
+        color: #CCC;
+        background: #FFF;
+
+        @include breakpoint($bp-optimal) {
+          font-size: 16px;
+        }
+
+        &:last-of-type {
+          left: initial;
+          right: 0;
+          padding-left: 10px;;
+        }
+      }
+    }
+
+    .items {
+      padding-top: 16px;
+
+      @include breakpoint($bp-landscape) {
+        width: span(16 of 18);
+        margin-left: span(1 of 18) + gutter(1 of 18);
+      }
+
+      @include breakpoint($bp-medium) {
+        margin-left: 0;
+      }
+
+      .item {
+        position: relative;
+        height: 24px;
+        width: 100%;
+        margin-top: 16px;
+        background: #E6E6E6;
+        border-radius: $default-radius;
+        overflow: hidden;
+
+        @include breakpoint($bp-landscape) {
+          height: 26px;
+        }
+
+        @include breakpoint($bp-medium) {
+          height: 24px;
+        }
+
+        @include breakpoint($bp-default) {
+          height: 28px;
+          margin-top: 18px;
+        }
+
+        .progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 0;
+          width: 88%;
+          border-top-left-radius: $default-radius;
+          border-bottom-left-radius: $default-radius;
+          border-top: 24px solid #B3B3B3;
+          border-right: 24px solid #E6E6E6;
+
+          @include breakpoint($bp-landscape) {
+            border-top-width: 26px;
+            border-right-width: 26px;
+          }
+
+          @include breakpoint($bp-medium) {
+            border-top-width: 24px;
+            border-right-width: 24px;
+          }
+
+          @include breakpoint($bp-default) {
+            border-top-width: 28px;
+            border-right-width: 28px;
+          }
+
+          &.js, &.git, &.seo, &.fbo {
+            width: 80%;
+          }
+
+          &.psd, &.ecom {
+            width: 75%;
+          }
+        }
+
+        .label {
+          z-index: 1;
+          position: absolute;
+          height: 24px;
+          width: 100%;
+          line-height: 24px;
+          text-align: center;
+          font-size: 13px;
+          color: rgba(#FFF, 0.8);
+
+          @include breakpoint($bp-landscape) {
+            height: 26px;
+            line-height: 26px;
+            font-size: 14px;
+          }
+
+          @include breakpoint($bp-medium) {
+            height: 24px;
+            line-height: 24px;
+            font-size: 13px;
+          }
+
+          @include breakpoint($bp-default) {
+            height: 28px;
+            line-height: 28px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .exposure {
+    text-align: center;
+
+    svg.exposure-graph {
+      @include breakpoint($bp-portrait) {
+        width: 90%;
+      }
+
+      @include breakpoint($bp-landscape) {
+        width: 86%;
+      }
+
+      @include breakpoint($bp-tablet) {
+        width: 82%;
+      }
+
+      @include breakpoint($bp-medium) {
+        float: left;
+        width: 100%;
+        margin-top: 15px;
+      }
+
+      @include breakpoint($bp-optimal) {
+        width: 90%;
+      }
+    }
+  }
+}

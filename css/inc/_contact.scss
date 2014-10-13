@@ -1,0 +1,40 @@
+//
+// Contact Styles
+//
+// ==========================================================================
+
+.contact {
+  input, textarea, button {
+    height: 36px;
+    width: 100%;
+    margin-bottom: 16px;
+    line-height: 36px;
+    text-indent: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFF;
+    background: #E6E6E6;
+    border: 0;
+    border-radius: $default-radius;
+
+    @include breakpoint($bp-portrait) {
+      width: span(16 of 18);
+      margin-left: span(1 of 18) + gutter(1 of 18);
+    }
+  }
+
+  textarea {
+    height: 100px;
+    outline: none;
+    resize: none;
+  }
+
+  button {
+    display: block;
+    width: 128px;
+    margin: 0 auto;
+    text-indent: 0;
+    font-style: 14px;
+    color: #B3B3B3;
+  }
+}

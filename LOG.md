@@ -1,16 +1,17 @@
 
-
 'cleanup skills & exposure graphs alignment + responsiveness'
 
 'setup work items slider offscreen frame'
 
-'setup work item responsive grid adjustment (landscape, tablets and larger viewports)'
 
-'convert social icon list to css flex-box to address center-alignment accuracy'
-
+'cleanup work gallery responsiveness (landscape, tablets and larger viewports)'
 
 
 
+
+
+'cleanup vision responsiveness & body width, remove LOG.md from .gitignore'
+'tweak skills & exposure graphs alignment + responsiveness'
 'tweak vision copy responsiveness & ipad (portrait) header padding'
 'remove susy gallery prototype code, setup mobile-first work items slider & add pagination bar'
 'remove social icons svg inline fill, add to styles'
