@@ -1,15 +1,17 @@
 
+
 'cleanup skills & exposure graphs alignment + responsiveness'
 
 'setup work items slider offscreen frame'
 
 
-'cleanup work gallery responsiveness (landscape, tablets and larger viewports)'
+'cleanup grid styles & setup work items slider responsiveness (landscape, tablets and larger viewports)'
 
 
 
 
 
+'breakout body components into `_core.scss` includes (vision, work, blog, social, contact)'
 'cleanup vision responsiveness & body width, remove LOG.md from .gitignore'
 'tweak skills & exposure graphs alignment + responsiveness'
 'tweak vision copy responsiveness & ipad (portrait) header padding'

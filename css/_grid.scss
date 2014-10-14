@@ -8,19 +8,11 @@ $susy: (
   gutters: .25
 );
 
-/* $susy-large: (
-  columns: 24
-); */
-
 @include border-box-sizing;
 
 .site {
   @include container();
   @include clearfix;
-
-  /* @include susy-breakpoint(\$bp-landscape, \$susy-landscape show) {
-    @include container();
-  } */
 
   div > .inner {
     @include clearfix();
@@ -33,11 +25,6 @@ $susy: (
   .content {
     @include span(16);
     margin-left: span(1) + gutter();
-
-    @include breakpoint($bp-landscape) {
-      width: span(16 of 18);
-      margin-left: span(1 of 18) + gutter(1 of 18);
-    }
   }
 
   @include breakpoint($bp-medium) {
@@ -60,7 +47,10 @@ $susy: (
   }
 
   @include breakpoint($bp-large) {
-    > header .inner, > footer .inner, > div > .inner, > .split {
+    > header .inner,
+    > footer .inner,
+    > div > .inner,
+    > .split {
       float: none;
       max-width: 1100px;
       margin: 0 auto;
@@ -68,7 +58,10 @@ $susy: (
   }
 
   @include breakpoint($bp-huge) {
-    > header .inner, > footer .inner, > div > .inner, > .split {
+    > header .inner,
+    > footer .inner,
+    > div > .inner,
+    > .split {
       float: none;
       max-width: 1020px;
       margin: 0 auto;

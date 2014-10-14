@@ -4,16 +4,37 @@
 // ==========================================================================
 
 .work {
-  .content > div {
-    width: span(16 of 18);
-    margin-left: span(1 of 18) + gutter(1 of 18);
-  }
-
   .gallery {
     position: relative;
-    height: 336px; // = item-height (x2) + item's margin-bottom
+    height: (160px * 2) + 16px; // = item-height (x2) + item's margin-bottom
+    width: span(16 of 18);
+    margin-left: span(1 of 18) + gutter(1 of 18);
     margin-bottom: 16px;
     overflow: hidden;
+    // background: rgba(#F0E, 0.05);
+
+    @include breakpoint($bp-landscape) {
+      @include full;
+      height: 160px + 16px; // = item-height + item's margin-bottom
+      margin-bottom: 18px;
+    }
+
+    @include breakpoint($bp-tablet) {
+      height: (176px * 3) + (16px * 2); // = item-height (x3) + item's margin-bottom (x2)
+      margin-bottom: 26px;
+    }
+
+    @include breakpoint($bp-medium) {
+      height: (160px * 2) + 16px; // = item-height (x2) + item's margin-bottom
+    }
+
+    @include breakpoint($bp-default) {
+      height: (160px * 2) + 20px; // = item-height (x2) + item's margin-bottom
+    }
+
+    @include breakpoint($bp-large) {
+      height: (160px *3) + (20px * 2) // = item-height (x3) + item's margin-bottom (x2)
+    }
 
     .slider {
       position: absolute;
@@ -22,23 +43,68 @@
       display: block;
       height: 2000px;
       width: 100%;
+
     }
 
     .item {
-      display: block;
+      float: left;
       height: 160px;
+      width: 100%;
       margin-bottom: 16px;
       border-radius: $default-radius;
       background: #E6E6E6;
 
-      @include breakpoint($bp-medium) {
+      @include breakpoint($bp-landscape) {
+        @include span(6.9 of 14);
+        height: 176px;
 
+        &:nth-of-type(even) {
+          @include span(last 6.9 of 14);
+        }
+      }
+
+      //@include breakpoint($bp-tablet) {
+        //background: rgba(#6F9, 0.25);
+      //}
+
+      @include breakpoint($bp-medium) {
+        @include span(5.9 of 18);
+        height: 160px;
+        margin-right: span(1 of 41);
+
+        &:nth-of-type(even) {
+          @include span(5.9 of 18);
+          margin-right: span(1 of 41);
+        }
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        // background: rgba(#69F, 0.25);
+      }
+
+      @include breakpoint($bp-default) {
+        @include span(5.8 of 18);
+        height: 160px;
+        margin-right: span(1 of 29);
+        margin-bottom: 20px;
+
+        &:nth-of-type(even) {
+          @include span(5.8 of 18);
+          margin-right: span(1 of 29);
+        }
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
       }
     }
   }
 
   .pagination {
-    width: 100%;
+    width: span(16 of 18);
+    margin-left: span(1 of 18) + gutter(1 of 18);
     text-align: center;
 
     a {
