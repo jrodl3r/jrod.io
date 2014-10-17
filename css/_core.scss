@@ -35,7 +35,7 @@ h2, h3 {
   padding: 72px 0 32px;
   font-size: 32px;
   text-align: center;
-  color: #999;
+  color: #888;
 
   @include breakpoint($bp-landscape) {
     text-align: left;
@@ -50,12 +50,33 @@ h2, h3 {
   }
 }
 
+h2 {
+  @include breakpoint($bp-default) {
+    padding: 132px 0 44px;
+    font-size: 41px;
+    /* font-family: 'Helvetica Neue Ultra Light', sans-serif;
+    letter-spacing: 0.07em; */
+  }
+}
+
+h3 {
+  @include breakpoint($bp-default) {
+    padding-top: 80px;
+    font-size: 31px;
+  }
+}
+
 p {
   margin-bottom: 20px;
   text-align: justify;
   line-height: 23px;
   letter-spacing: 0.035em;
-  color: #808080;
+  color: #999;
+
+  /* @include breakpoint($bp-default) {
+    font-size: 21px;
+    line-height: 23px;
+  } */
 
   &:last-of-type {
     margin-bottom: 0;

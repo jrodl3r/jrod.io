@@ -17,7 +17,7 @@ header {
   }
 
   @include breakpoint($bp-large) {
-    padding-bottom: 4%;
+    //padding-bottom: 4%;
   }
 
   @include breakpoint($bp-huge) {
