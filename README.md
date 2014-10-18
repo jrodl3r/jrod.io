@@ -1,17 +1,24 @@
 # Jrod.io
-My portfolio website. If you see anything you like, please steal it.
+My (responsive) portfolio website.
 **Cheers** :beers:
 
 ### Setup
     $ npm install --save-dev
+    $ grunt dev
     $ phpserver
-    $ grunt
 
-### Target Devices
-- MacBook Retina
-- MacMini w/ Cinema Display
-- iPhone 4
-- iPhone 5s Retina
+### Testing
+- Retina + Standard Displays
+- iPhone 4/5
 - iPad 2
-- Nexus 5
-- Nexus 7
+- Nexus 5/7 (mobile/tablet)
+
+### Browsers
+- Safari/Chrome/Firefox (All platforms)
+- IE (Maybe later.. Still too wonky!)
+
+### Branches
+- **Skelton:** Visualized responsive layout structure.
+- **Init-Content:** Add placeholder content.
+- **Init-Header:** Setup responsive header.
+- **Init-Body:** Setup responsive content.
