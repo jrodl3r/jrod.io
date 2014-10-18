@@ -1,21 +1,22 @@
 
 
-'setup work items slider offscreen frame'
-'tweak work item gallery padding on larger views (780+)'
+'setup gallery slider offscreen frame'
 
 'hide exposure graph in all small screen landscape views'
 'tighten-up exposure graph, thicken inner circle-rim'
 
 'hide skills & exposure graphs on mobile, hybrid-merged contact & social panels into connect panel + other layout tweaks'
 
-
 'cleanup skills & exposure graphs alignment + responsiveness'
 
 
-'cleanup + update social/connect panels responsiveness'
+'tweak gallery padding on larger views (780+)'
 
 
-'setup blog item styles (remains hidden on portrait views)'
+'cleanup + update social/connect panels'
+
+
+'setup blog item styles (hide on mobile)'
 
 
 
