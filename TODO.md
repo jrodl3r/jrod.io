@@ -4,12 +4,12 @@
   - ✓ Setup Menu Show/Minimize MQ's
 - **Setup Vision**
   - Add Copy & Tweak Typography
-  - Convert Skills SVG » HTML/CSS
-  - Setup Exposure Chart
+  - ✓ Convert Skills SVG » HTML/CSS
+  - ✓ Setup Exposure Chart
   - Setup Skills & Exposure Responsiveness
   - ✓ Design SVG Graph & Display Elements
 - **Setup Work**
-	- Setup Responsive Susy Gallery Layout
+	- ✓ Setup Responsive Susy Gallery Layout
 	- Setup Responsive Modal Display System
 	- ✓ Setup Pagination
 - **Setup Social**
@@ -20,7 +20,7 @@
   - Tweak Responsiveness
   - Setup PHP Form Submission Functionality
 - **Setup Blog**
-  - TBD
+  - Setup Listing Layout
 - **Global Elements**
   - Compose Copy & Contextual Elements
   - ✓ Setup Skeleton

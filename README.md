@@ -7,15 +7,15 @@ My (responsive) portfolio website.
     $ grunt dev
     $ phpserver
 
-### Testing
+### Devices
 - Retina + Standard Displays
 - iPhone 4/5
 - iPad 2
 - Nexus 5/7 (mobile/tablet)
 
 ### Browsers
-- Safari/Chrome/Firefox (All platforms)
-- IE (Maybe later.. Still too wonky!)
+- Safari + Chrome + Firefox (All platforms)
+- IE (Not yet.)
 
 ### Branches
 - **Skelton:** Visualized responsive layout structure.

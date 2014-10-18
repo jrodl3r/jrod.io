@@ -1,5 +1,5 @@
 
-
+'add branch summary to docs'
 'setup gallery slider offscreen frame'
 
 'hide exposure graph in all small screen landscape views'
