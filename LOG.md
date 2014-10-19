@@ -16,12 +16,10 @@
 'cleanup + update social/connect panels'
 
 
+
+
+
 'setup blog item styles (hide on mobile)'
-
-
-
-
-
 'cleanup layout + whitespace, add fonts include'
 'cleanup grid styles & setup work items slider responsiveness (landscape, tablets and larger viewports)'
 'breakout body components into `_core.scss` includes (vision, work, blog, social, contact)'
