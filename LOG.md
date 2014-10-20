@@ -7,18 +7,20 @@
 
 'hide skills & exposure graphs on mobile, hybrid-merged contact & social panels into connect panel + other layout tweaks'
 
-'cleanup skills & exposure graphs alignment + responsiveness'
-
-
-'tweak gallery padding on larger views (780+)'
-
-
-'cleanup + update social/connect panels'
 
 
 
+'tweak social & connect panel alignment + responsiveness'
 
 
+'tighten-up skills & exposure graphs alignment + responsiveness'
+
+
+
+
+
+'tweak gallery grid spacing and tile responsiveness, hide skills + exposure graphs'
+'cleanup vision responsiveness + font size consistency, and alignment with header'
 'setup blog item styles (hide on mobile)'
 'add branch summary to docs'
 'cleanup layout + whitespace, add fonts include'

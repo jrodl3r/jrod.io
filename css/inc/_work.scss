@@ -15,25 +15,25 @@
 
     @include breakpoint($bp-landscape) {
       @include full;
-      height: 160px + 16px; // = item-height + item's margin-bottom
+      height: 160px + 18px; // = item-height + item's margin-bottom
       margin-bottom: 18px;
     }
 
     @include breakpoint($bp-tablet) {
-      height: (176px * 3) + (16px * 2); // = item-height (x3) + item's margin-bottom (x2)
+      height: (176px * 3) + (18px * 2); // = item-height (x3) + item's margin-bottom (x2)
       margin-bottom: 26px;
     }
 
     @include breakpoint($bp-medium) {
-      height: (160px * 2) + 16px; // = item-height (x2) + item's margin-bottom
+      height: (152px * 2) + 15px; // = item-height (x2) + item's margin-bottom
     }
 
     @include breakpoint($bp-default) {
-      height: (160px * 2) + 20px; // = item-height (x2) + item's margin-bottom
+      height: (160px * 2) + 18px; // = item-height (x2) + item's margin-bottom
     }
 
     @include breakpoint($bp-large) {
-      height: (160px *3) + (20px * 2) // = item-height (x3) + item's margin-bottom (x2)
+      height: (172px *3) + (18px * 2) // = item-height (x3) + item's margin-bottom (x2)
     }
 
     .slider {
@@ -57,20 +57,22 @@
       @include breakpoint($bp-landscape) {
         @include span(6.9 of 14);
         height: 176px;
+        margin-bottom: 18px;
 
         &:nth-of-type(even) {
           @include span(last 6.9 of 14);
         }
       }
 
-      //@include breakpoint($bp-tablet) {
-        //background: rgba(#6F9, 0.25);
-      //}
+      /* @include breakpoint($bp-tablet) {
+        margin-bottom: 16px;
+      } */
 
       @include breakpoint($bp-medium) {
         @include span(5.9 of 18);
-        height: 160px;
+        height: 152px;
         margin-right: span(1 of 41);
+        margin-bottom: 15px;
 
         &:nth-of-type(even) {
           @include span(5.9 of 18);
@@ -80,24 +82,26 @@
         &:nth-child(3n) {
           margin-right: 0;
         }
-
-        // background: rgba(#69F, 0.25);
       }
 
       @include breakpoint($bp-default) {
-        @include span(5.8 of 18);
+        width: 32%;
         height: 160px;
-        margin-right: span(1 of 29);
-        margin-bottom: 20px;
+        margin-right: 2%;
+        margin-bottom: 18px;
 
         &:nth-of-type(even) {
-          @include span(5.8 of 18);
-          margin-right: span(1 of 29);
+          width: 32%;
+          margin-right: 2%;
         }
 
         &:nth-child(3n) {
           margin-right: 0;
         }
+      }
+
+      @include breakpoint($bp-large) {
+        height: 172px;
       }
     }
   }
