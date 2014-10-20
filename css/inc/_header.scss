@@ -223,8 +223,8 @@ header {
         clear: none;
         margin: 0 auto 5%;
         max-width: 60%;
-        font-size: 1.15em;
-        line-height: 1.5em;
+        font-size: 18px;
+        line-height: 27px;
         letter-spacing: 0.04em;
 
         @include breakpoint($bp-ipad-portrait) {
@@ -245,7 +245,7 @@ header {
       }
 
       @include breakpoint($bp-optimal) {
-        font-size: 1.1em;
+        font-size: 18px;
       }
 
       @include breakpoint($bp-default) {

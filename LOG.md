@@ -1,5 +1,5 @@
 
-'add branch summary to docs'
+
 'setup gallery slider offscreen frame'
 
 'hide exposure graph in all small screen landscape views'
@@ -20,6 +20,7 @@
 
 
 'setup blog item styles (hide on mobile)'
+'add branch summary to docs'
 'cleanup layout + whitespace, add fonts include'
 'cleanup grid styles & setup work items slider responsiveness (landscape, tablets and larger viewports)'
 'breakout body components into `_core.scss` includes (vision, work, blog, social, contact)'

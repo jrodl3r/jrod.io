@@ -18,7 +18,7 @@ My (responsive) portfolio website.
 - IE (Not yet.)
 
 ### Branches
-- **Skelton:** Visualized responsive layout structure.
+- **Skeleton:** Visualized responsive layout.
 - **Init-Content:** Add placeholder content.
 - **Init-Header:** Setup responsive header.
 - **Init-Body:** Setup responsive content.
