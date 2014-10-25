@@ -46,7 +46,7 @@ $susy: (
     }
   }
 
-  @include breakpoint($bp-tablet) {
+  @include breakpoint($bp-medium) {
     > .split > div {
       @include span(9 of 18);
 

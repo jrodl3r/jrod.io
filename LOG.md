@@ -10,7 +10,7 @@
 
 
 
-
+'tweak social & connect responsiveness'
 'tighten-up skills & exposure graphs alignment + responsiveness'
 'cleanup social & connect panel alignment & responsiveness, merge contact + social includes'
 'tweak gallery grid spacing and tile responsiveness, hide skills + exposure graphs'

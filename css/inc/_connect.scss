@@ -34,12 +34,16 @@
       margin-left: 0;
     }
 
-    @include breakpoint($bp-tablet) {
+    @include breakpoint($bp-medium) {
       width: 100%;
     }
 
     @include breakpoint($bp-default) {
       font-size: 14px;
+    }
+
+    @include breakpoint($bp-large) {
+      width: 90%;
     }
   }
 
@@ -69,7 +73,7 @@
       visibility: hidden;
     }
 
-    @include breakpoint($bp-tablet) {
+    @include breakpoint($bp-medium) {
       visibility: visible;
       text-align: left;
     }
@@ -85,7 +89,7 @@
       border-left: 1px solid #EEE;
     }
 
-    @include breakpoint($bp-tablet) {
+    @include breakpoint($bp-medium) {
       margin-top: 0;
       padding: 0;
       border-left: 0;
