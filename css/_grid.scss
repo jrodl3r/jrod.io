@@ -65,8 +65,8 @@ $susy: (
     }
   }
 
-  /* @include breakpoint($bp-medium) {
-    .split > div {
+  @include breakpoint($bp-medium) {
+    > div .split > div {
       @include span(9 of 18);
 
       .content {
@@ -74,7 +74,7 @@ $susy: (
       }
     }
 
-    .split > div:last-of-type {
+    > div .split > div:last-of-type {
       @include span(last 9 of 18);
 
       .content {
@@ -82,7 +82,7 @@ $susy: (
         margin-left: 0;
       }
     }
-  } */
+  }
 
   @include breakpoint($bp-large) {
     > header .inner,

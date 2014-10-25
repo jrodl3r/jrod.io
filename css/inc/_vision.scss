@@ -4,9 +4,9 @@
 // ==========================================================================
 
 .vision {
-  .split {
+  /* .split {
     display: none;
-  }
+  } */
 
   p {
     @include breakpoint($bp-portrait) {
@@ -220,6 +220,14 @@
       }
 
       @include breakpoint($bp-optimal) {
+        width: 94%;
+      }
+
+      @include breakpoint($bp-default) {
+        width: 96%;
+      }
+
+      @include breakpoint($bp-large) {
         width: 90%;
       }
     }
