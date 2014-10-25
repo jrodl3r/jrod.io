@@ -1,0 +1,151 @@
+//
+// Contact + Social Styles
+//
+// ==========================================================================
+
+.contact {
+  h2 {
+    @include breakpoint($bp-tablet) {
+      text-align: left;
+    }
+  }
+
+  input, textarea, button {
+    height: 36px;
+    width: 100%;
+    margin-bottom: 16px;
+    line-height: 36px;
+    text-indent: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFF;
+    background: #E6E6E6;
+    border: 0;
+    border-radius: $default-radius;
+
+    @include breakpoint($bp-portrait) {
+      width: span(16 of 18);
+      margin-left: span(1 of 18) + gutter(1 of 18);
+    }
+
+    @include breakpoint($bp-landscape) {
+      float: left;
+      width: 90%;
+      margin-left: 0;
+    }
+
+    @include breakpoint($bp-tablet) {
+      width: 100%;
+    }
+
+    @include breakpoint($bp-default) {
+      font-size: 14px;
+    }
+  }
+
+  textarea {
+    height: 100px;
+    outline: none;
+    resize: none;
+  }
+
+  button {
+    display: block;
+    width: 128px;
+    margin: 0 auto;
+    text-indent: 0;
+    font-size: 14px;
+    color: #B3B3B3;
+
+    @include breakpoint($bp-landscape) {
+      float: left;
+    }
+  }
+}
+
+.social {
+  h2 {
+    @include breakpoint($bp-landscape) {
+      visibility: hidden;
+    }
+
+    @include breakpoint($bp-tablet) {
+      visibility: visible;
+      text-align: left;
+    }
+  }
+
+  ul {
+    margin: 0 auto;
+    padding: 0;
+
+    @include breakpoint($bp-landscape) {
+      margin-top: -14px;
+      padding: 5px 0;
+      border-left: 1px solid #EEE;
+    }
+
+    @include breakpoint($bp-tablet) {
+      margin-top: 0;
+      padding: 0;
+      border-left: 0;
+    }
+
+    li {
+      height: 24px;
+      width: 100%;
+      margin-bottom: 18px;
+      list-style: none;
+
+      @include breakpoint($bp-landscape) {
+        margin-bottom: 15px;
+      }
+
+      @include breakpoint($bp-medium) {
+        height: 28px;
+        margin-bottom: 18px;
+      }
+
+      &:last-of-type {
+        margin-bottom: 6px;
+      }
+
+      a {
+        display: block;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+        color: #B3B3B3;
+        text-decoration: none;
+        text-indent: 34%;
+
+        @include breakpoint($bp-landscape) {
+          text-indent: 30px;
+        }
+
+        @include breakpoint($bp-medium) {
+          height: 28px;
+          font-size: 18px;
+          line-height: 28px;
+        }
+
+        svg {
+          max-width: 28px;
+          margin-right: 10px;
+
+          @include breakpoint($bp-landscape) {
+            max-width: 24px;
+          }
+
+          @include breakpoint($bp-medium) {
+            max-width: 28px;
+          }
+
+          path {
+            fill: #B3B3B3;
+          }
+        }
+      }
+    }
+  }
+}

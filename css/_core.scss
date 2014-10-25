@@ -18,7 +18,6 @@ $bp-default                     :     960px;
 $bp-large                       :     1020px;
 $bp-huge                        :     1280px;
 $bp-cinema                      :     1320px;
-//$bp-anim-timer                  :     .6s;
 
 $default-font                   :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
 $default-radius                 :     6px;
@@ -54,14 +53,11 @@ h2 {
   @include breakpoint($bp-default) {
     padding: 132px 0 44px;
     font-size: 41px;
-    /* font-family: 'Helvetica Neue Ultra Light', sans-serif;
-    letter-spacing: 0.07em; */
   }
 }
 
 h3 {
   @include breakpoint($bp-default) {
-    //padding-top: 88px;
     padding-bottom: 44px;
     font-size: 32px;
   }
@@ -73,11 +69,6 @@ p {
   line-height: 23px;
   letter-spacing: 0.035em;
   color: #999;
-
-  /* @include breakpoint($bp-default) {
-    font-size: 21px;
-    line-height: 23px;
-  } */
 
   &:last-of-type {
     margin-bottom: 0;
@@ -92,7 +83,6 @@ p {
   @import 'inc/_vision.scss';
   @import 'inc/_work.scss';
   @import 'inc/_blog.scss';
-  @import 'inc/_social.scss';
-  @import 'inc/_contact.scss';
+  @import 'inc/_connect.scss';
   @import 'inc/_footer.scss';
 }

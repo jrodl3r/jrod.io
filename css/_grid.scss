@@ -27,7 +27,45 @@ $susy: (
     margin-left: span(1) + gutter();
   }
 
-  @include breakpoint($bp-medium) {
+  @include breakpoint($bp-landscape) {
+    > .split > div {
+      @include span(last 7 of 18);
+
+      .content {
+        @include span(6 of 7);
+        margin-left: 0;
+      }
+    }
+
+    > .split > div:last-of-type {
+      @include span(11 of 18);
+
+      .content {
+        @include span(last 10 of 11);
+      }
+    }
+  }
+
+  @include breakpoint($bp-tablet) {
+    > .split > div {
+      @include span(9 of 18);
+
+      .content {
+        @include span(last 8 of 9);
+      }
+    }
+
+    > .split > div:last-of-type {
+      @include span(last 9 of 18);
+
+      .content {
+        @include span(8 of 9);
+        margin-left: 0;
+      }
+    }
+  }
+
+  /* @include breakpoint($bp-medium) {
     .split > div {
       @include span(9 of 18);
 
@@ -44,7 +82,7 @@ $susy: (
         margin-left: 0;
       }
     }
-  }
+  } */
 
   @include breakpoint($bp-large) {
     > header .inner,

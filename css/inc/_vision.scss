@@ -4,6 +4,10 @@
 // ==========================================================================
 
 .vision {
+  .split {
+    display: none;
+  }
+
   p {
     @include breakpoint($bp-portrait) {
       width: span(16 of 18);
@@ -16,16 +20,16 @@
     }
 
     @include breakpoint($bp-tablet) {
-      width: span(16 of 18);
-      margin-left: span(1 of 18) + gutter(1 of 18);
+      //width: span(16 of 18);
+      //margin-left: span(1 of 18) + gutter(1 of 18);
       font-size: 17px;
       line-height: 27px;
     }
 
-    @include breakpoint($bp-medium) {
-      width: 100%;
-      margin-left: 0;
-    }
+    //@include breakpoint($bp-medium) {
+      //width: 100%;
+      //margin-left: 0;
+    //}
 
     @include breakpoint($bp-optimal) {
       font-size: 18px;
@@ -40,10 +44,6 @@
     @include breakpoint($bp-huge) {
       padding-right: 40px;
     }
-  }
-
-  .split {
-    display: none;
   }
 
   .skills {
