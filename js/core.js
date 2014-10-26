@@ -6,21 +6,21 @@
 var Modal = {
   container: $('.modal'),
   heading: $('.modal h4'),
-  closeButton: $('.modal a.close')
+  close: $('.modal .close')
 };
 
 var Gallery = {
-  items: $('.work a.item'),
+  tiles: $('.work .tile'),
 
   Init: function() {
     // console.log('Initialize Gallery');
 
-    Gallery.items.click( function() {
+    Gallery.tiles.bind('click', function() {
       Modal.heading.html('Modal #' + ($(this).index() + 1));
       Modal.container.fadeIn(1000);
     });
 
-    Modal.closeButton.click( function() {
+    Modal.close.bind('click', function() {
       Modal.container.fadeOut(1000);
     });
   }

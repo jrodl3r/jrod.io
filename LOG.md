@@ -7,7 +7,7 @@
 'setup responsive pagination gallery navigation/pagination'
 
 
-
+'optimize gallery + modal logic and markup'
 'start gallery modal system + update docs'
 'tweak social & connect responsiveness'
 'tighten-up skills & exposure graphs alignment + responsiveness'
