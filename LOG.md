@@ -1,15 +1,14 @@
 
 
-'setup gallery slider offscreen frame'
-
 'hide exposure graph in all small screen landscape views'
+
 'tighten-up exposure graph, thicken inner circle-rim'
 
-'hide skills & exposure graphs on mobile, hybrid-merged contact & social panels into connect panel + other layout tweaks'
+'setup responsive pagination gallery navigation/pagination'
 
 
 
-
+'start gallery modal system + update docs'
 'tweak social & connect responsiveness'
 'tighten-up skills & exposure graphs alignment + responsiveness'
 'cleanup social & connect panel alignment & responsiveness, merge contact + social includes'
