@@ -51,8 +51,26 @@
       height: 160px;
       width: 100%;
       margin-bottom: 16px;
-      border-radius: $default-radius;
       background: #E6E6E6;
+      border-radius: $default-radius;
+
+      &:hover {
+        background: #FFF;
+        box-shadow: inset 0px 0 30px rgba(#000, 0.1);
+        border: inset 1px rgba(#000, 0.05);
+        cursor: pointer;
+      }
+
+      &.target {
+        background-image: url('../img/projects/target/logo-gray.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 90px;
+
+        &:hover {
+          background-image: url('../img/projects/target/logo.svg');
+        }
+      }
 
       @include breakpoint($bp-landscape) {
         @include span(6.9 of 14);

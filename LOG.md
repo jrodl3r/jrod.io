@@ -6,7 +6,13 @@
 
 'setup responsive pagination gallery navigation/pagination'
 
+"add js logic that detects the # of modal div's, then generates an array of corresponding project class names'
 
+'add utils.js + log functionality'
+
+
+
+'add modal project (Target) + setup basic modal layout'
 'optimize gallery + modal logic and markup'
 'start gallery modal system + update docs'
 'tweak social & connect responsiveness'

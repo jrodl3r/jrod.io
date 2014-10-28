@@ -16,7 +16,7 @@ var Gallery = {
     // console.log('Initialize Gallery');
 
     Gallery.tiles.bind('click', function() {
-      Modal.heading.html('Modal #' + ($(this).index() + 1));
+      // Modal.heading.html('Modal #' + ($(this).index() + 1));
       Modal.container.fadeIn(1000);
     });
 
