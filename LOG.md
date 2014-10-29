@@ -8,10 +8,10 @@
 
 "add js logic that detects the # of modal div's, then generates an array of corresponding project class names'
 
-'add utils.js + log functionality'
 
 
 
+'add utils.js + log functionality + update grunt build'
 'add modal project (Target) + setup basic modal layout'
 'optimize gallery + modal logic and markup'
 'start gallery modal system + update docs'

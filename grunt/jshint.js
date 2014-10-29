@@ -14,14 +14,16 @@ module.exports = {
     noarg: true,
     sub: true,
     undef: true,
-    unused: true,
+    unused: false,
     boss: true,
-    eqnull: true,
+    eqnull: false,
     browser: true,
     globals: {
       "$": false,
       "jQuery": false,
-      "console": false
+      "console": false,
+      "debug": true,
+      "log": true
     }
   },
   gruntfile: {
@@ -31,6 +33,6 @@ module.exports = {
     options: {
       ignores: ['js/dist.min.js']
     },
-    src: ['js/core.js', 'js/plugins.js']
+    src: ['js/core.js', 'js/plugins.js', 'js/utils.js']
   }
 };

@@ -13,5 +13,5 @@ Thumbs.db
 /node_modules
 .sass-cache
 /css/base.css*
-/css/dist.css
+/css/dist.css*
 /js/dist.min.js

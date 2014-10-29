@@ -13,10 +13,9 @@ var Gallery = {
   tiles: $('.work .tile'),
 
   Init: function() {
-    // console.log('Initialize Gallery');
-
+    log('Initialize Gallery');
     Gallery.tiles.bind('click', function() {
-      // Modal.heading.html('Modal #' + ($(this).index() + 1));
+      log('Modal #' + ($(this).index() + 1));
       Modal.container.fadeIn(1000);
     });
 
@@ -28,8 +27,7 @@ var Gallery = {
 
 var Core = {
   Init: function() {
-    // console.log('Initialize Core');
-
+    log('Initialize Core');
     Gallery.Init();
   }
 };

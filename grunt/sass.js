@@ -18,7 +18,7 @@ module.exports = {
   dist: {
     options: {
       style: 'compressed',
-      require: 'susy',
+      require: ['susy', 'breakpoint'],
       compass: true,
       sourcemap: false
     },
