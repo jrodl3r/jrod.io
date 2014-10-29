@@ -123,6 +123,14 @@
         text-decoration: none;
         text-indent: 34%;
 
+        &:hover {
+          color: #888;
+
+          svg path {
+            fill: #888;
+          }
+        }
+
         @include breakpoint($bp-landscape) {
           text-indent: 30px;
         }
