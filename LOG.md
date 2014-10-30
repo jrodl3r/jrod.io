@@ -10,7 +10,7 @@
 
 
 
-
+'add project logos to work tiles and update hover effects'
 'add utils.js + log functionality + update grunt build'
 'add modal project (Target) + setup basic modal layout'
 'optimize gallery + modal logic and markup'
