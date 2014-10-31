@@ -175,7 +175,11 @@
     margin-left: span(1 of 18) + gutter(1 of 18);
     text-align: center;
 
-    a {
+    @include breakpoint($bp-large) {
+      display: none;
+    }
+
+    div {
       position: relative;
       display: inline-block;
       height: 16px;
@@ -184,11 +188,17 @@
       border-radius: 50%;
       background: #CCC;
 
-      &:last-of-type {
-        margin-right: 0;
+      @include breakpoint($bp-tablet) {
+        &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+          display: none;
+        }
+
+        &:nth-child(2) {
+          margin-right: 0;
+        }
       }
 
-      &.active span {
+      span {
         position: absolute;
         top: 2px;
         left: 2px;
@@ -196,7 +206,24 @@
         height: 12px;
         width: 12px;
         border-radius: 50%;
-        background: #F2F2F2;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: #999;
+        cursor: pointer;
+      }
+
+      &.active {
+        background: #CCC;
+        cursor: default;
+
+        span {
+          background: #F2F2F2;
+        }
       }
     }
   }

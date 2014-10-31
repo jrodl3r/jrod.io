@@ -84,3 +84,55 @@ p {
 .hide {
   display: none;
 }
+
+
+// Debug
+// --------------------------------------------------------------------------
+#debug-breakpoint {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 5px 10px;
+  color: #FFF;
+  font-size: 10px;
+  font-weight: bold;
+  background: rgba(#F00, 0.2);
+
+  span {
+    display: none;
+
+    @include breakpoint($bp-landscape) {
+      &.landscape { display: inline; }
+    }
+    @include breakpoint($bp-tablet) {
+      &.landscape { display: none; }
+      &.tablet { display: inline; }
+    }
+    @include breakpoint($bp-medium) {
+      &.landscape, &.tablet { display: none; }
+      &.medium { display: inline; }
+    }
+    @include breakpoint($bp-optimal) {
+      &.landscape, &.tablet, &.medium { display: none; }
+      &.optimal { display: inline; }
+    }
+    @include breakpoint($bp-default) {
+      &.landscape, &.tablet, &.medium, &.optimal { display: none; }
+      &.default { display: inline; }
+    }
+    @include breakpoint($bp-large) {
+      &.landscape, &.tablet, &.medium, &.optimal, &.default { display: none; }
+      &.large { display: inline; }
+    }
+    @include breakpoint($bp-huge) {
+      &.landscape, &.tablet, &.medium, &.optimal, &.default, &.large { display: none; }
+      &.huge { display: inline; }
+    }
+    @include breakpoint($bp-cinema) {
+      &.landscape, &.tablet, &.medium, &.optimal, &.default, &.large, &.huge { display: none; }
+      &.cinema { display: inline; }
+    }
+  }
+}
