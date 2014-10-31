@@ -1,4 +1,5 @@
 
+'setup IE warning display + logic'
 
 'hide exposure graph in all small screen landscape views'
 
@@ -6,10 +7,11 @@
 
 'setup responsive pagination gallery navigation/pagination'
 
-"add js logic that detects the # of modal div's, then generates an array of corresponding project class names'
+'cleanup modal responsiveness'
 
 
 
+'update modal layout + setup display logic'
 'add project logos to work tiles and update hover effects'
 'add utils.js + log functionality + update grunt build'
 'add modal project (Target) + setup basic modal layout'

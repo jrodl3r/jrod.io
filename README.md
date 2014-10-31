@@ -15,7 +15,7 @@ My (responsive) portfolio website.
 
 ### Browsers
 - Safari + Chrome + Firefox (All platforms)
-- IE (Almost there but not yet.)
+- IE (Almost there, but not yet.)
 
 ### Branches
 - **Skeleton:** Visualized responsive layout

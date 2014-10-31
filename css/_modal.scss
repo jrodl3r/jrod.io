@@ -15,29 +15,112 @@
   height: 100%;
   overflow-y: scroll;
   text-align: center;
-  background: rgba(#000, 0.9);
+  background: rgba(#FFF, 0.95);
 
   .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
     text-indent: -9999em;
-    background: #000;
+    background: url(../img/modal-close-button.svg) center center no-repeat;
+    opacity: .25;
     cursor: pointer;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  p {
+    width: 80%;
+    margin: 0 auto 70px;
+  }
+
+  img {
+    display: inline-block;
+    width: 190px;
+    height: 270px;
+    margin-right: 10px;
+    margin-bottom: 50px;
+    background: rgba(#CCC, 0.25);
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  svg.logo {
+    max-width: 170px;
+    max-height: 170px;
+    margin-top: 20px;
+    margin-bottom: 50px;
   }
 
   &.target {
     svg.logo {
       max-width: 200px;
       max-height: 200px;
-      margin-top: 20px;
     }
   }
 
-  p {
-    width: 80%;
-    margin: 50px auto;
+  &.ge {
+    svg.logo {
+      margin-top: 30px;
+    }
+  }
+
+  &.tsi {
+    svg.logo {
+      margin-top: 30px;
+    }
+  }
+
+  &.crown {
+    svg.logo {
+      margin-top: 50px;
+      margin-bottom: 60px;
+    }
+  }
+
+  &.kraft {
+    svg.logo {
+      max-width: 220px;
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &.oscarmayer {
+    svg.logo {
+      max-width: 200px;
+      max-height: 200px;
+      margin-top: 40px;
+    }
+  }
+
+  &.yourcare {
+    svg.logo {
+      max-width: 310px;
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+  }
+
+  &.redcats {
+    svg.logo {
+      margin-top: 70px;
+      margin-bottom: 80px;
+      max-width: 260px;
+    }
+  }
+
+  &.nylearns {
+    svg.logo {
+      max-width: 290px;
+      margin-top: 60px;
+      margin-bottom: 70px;
+    }
   }
 }
