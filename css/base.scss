@@ -26,20 +26,20 @@
 /* H5BP-Helpers */
 @include h5bp-helpers;
 
-/* Author's Mixins */
+/* Mixins */
 @import 'mixins';
 
-/* Author's Fonts */
+/* Styles */
 @import 'fonts';
-
-/* Author's Styles */
 @import 'core';
-
-/* Grid Styles */
-@import 'grid';
-
-/* Modal Styles */
+@import 'header';
+@import 'vision';
+@import 'work';
+@import 'blog';
+@import 'connect';
+@import 'footer';
 @import 'modal';
+@import 'grid';
 
 /* H5BP-Media */
 @include h5bp-media;

@@ -84,16 +84,3 @@ p {
 .hide {
   display: none;
 }
-
-
-// Components
-// --------------------------------------------------------------------------
-@import 'inc/_header.scss';
-
-.site {
-  @import 'inc/_vision.scss';
-  @import 'inc/_work.scss';
-  @import 'inc/_blog.scss';
-  @import 'inc/_connect.scss';
-  @import 'inc/_footer.scss';
-}
