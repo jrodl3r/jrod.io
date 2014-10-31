@@ -31,7 +31,7 @@ var Gallery = {
 
     // Bind Click-Event to Modal Close-Buttons
     Modal.close.bind('click', function() {
-      $(this).parent().fadeOut(1000);
+      $(this).parent().fadeOut(700);
     });
   }
 };

@@ -52,96 +52,70 @@
       width: 100%;
       margin-bottom: 16px;
       background-color: #E6E6E6;
-      background-position: center center;
+      background-position: center center, -99em;
       background-repeat: no-repeat;
       border-radius: $default-radius;
 
       &:hover {
         background-color: #FFF;
+        background-position: -99em, center center;
         box-shadow: inset 0px 0 30px rgba(#000, 0.1);
         border: inset 1px rgba(#000, 0.05);
         cursor: pointer;
       }
 
       &.target {
-        background-image: url('../img/projects/target/logo-gray.svg');
         background-size: 96px;
-
-        &:hover {
-          background-image: url('../img/projects/target/logo.svg');
-        }
+        background-image: url('../img/projects/target/logo-gray.svg'),
+                          url('../img/projects/target/logo.svg');
       }
 
       &.ge {
-        background-image: url('../img/projects/ge/logo-gray.svg');
         background-size: 96px;
-
-        &:hover {
-          background-image: url('../img/projects/ge/logo.svg');
-        }
+        background-image: url('../img/projects/ge/logo-gray.svg'),
+                          url('../img/projects/ge/logo.svg');
       }
 
       &.tsi {
-        background-image: url('../img/projects/360i/logo-gray.svg');
         background-size: 106px;
-
-        &:hover {
-          background-image: url('../img/projects/360i/logo.svg');
-        }
+        background-image: url('../img/projects/360i/logo-gray.svg'),
+                          url('../img/projects/360i/logo.svg');
       }
 
       &.crown {
-        background-image: url('../img/projects/crown/logo-gray.svg');
         background-size: 116px;
-
-        &:hover {
-          background-image: url('../img/projects/crown/logo.svg');
-        }
+        background-image: url('../img/projects/crown/logo-gray.svg'),
+                          url('../img/projects/crown/logo.svg');
       }
 
       &.kraft {
-        background-image: url('../img/projects/kraft/logo-gray.svg');
         background-size: 160px;
-
-        &:hover {
-          background-image: url('../img/projects/kraft/logo.svg');
-        }
+        background-image: url('../img/projects/kraft/logo-gray.svg'),
+                          url('../img/projects/kraft/logo.svg');
       }
 
       &.oscarmayer {
-        background-image: url('../img/projects/oscarmayer/logo-gray.svg');
         background-size: 120px;
-
-        &:hover {
-          background-image: url('../img/projects/oscarmayer/logo.svg');
-        }
+        background-image: url('../img/projects/oscarmayer/logo-gray.svg'),
+                          url('../img/projects/oscarmayer/logo.svg');
       }
 
       &.yourcare {
-        background-image: url('../img/projects/yourcare/logo-gray.svg');
         background-size: 198px;
-
-        &:hover {
-          background-image: url('../img/projects/yourcare/logo.svg');
-        }
+        background-image: url('../img/projects/yourcare/logo-gray.svg'),
+                          url('../img/projects/yourcare/logo.svg');
       }
 
       &.redcats {
-        background-image: url('../img/projects/redcats/logo-gray.svg');
         background-size: 196px;
-
-        &:hover {
-          background-image: url('../img/projects/redcats/logo.svg');
-        }
+        background-image: url('../img/projects/redcats/logo-gray.svg'),
+                          url('../img/projects/redcats/logo.svg');
       }
 
       &.nylearns {
-        background-image: url('../img/projects/nylearns/logo-gray.svg');
         background-size: 206px;
-
-        &:hover {
-          background-image: url('../img/projects/nylearns/logo.svg');
-        }
+        background-image: url('../img/projects/nylearns/logo-gray.svg'),
+                          url('../img/projects/nylearns/logo.svg');
       }
 
       @include breakpoint($bp-landscape) {
