@@ -50,12 +50,23 @@ var Gallery = {
 
   // Set/Update Slider Poisition
   setPosition: function(index) {
-    if(index !== 0) {
-      this.slider.css('top', -1 * ((index * this.getFrameHeight()) + (index * this.getTileSpacing())));
-    } else {
-      this.slider.css('top', 0);
-    }
+    // Fade-Out Gallery + Update Paging Position
+    this.container.fadeOut(500, function() {
+      if(index) {
+        Gallery.slider.css('top', -1 * ((index * Gallery.getFrameHeight()) + (index * Gallery.getTileSpacing())));
+      } else {
+        Gallery.slider.css('top', 0);
+      }
+    });
+    // Fade-Back-In Gallery + Update Active Paging Button
+    this.container.fadeIn(500);
     this.Paging.setActiveButton(index);
+  },
+
+  // Reset Slider to Default Position
+  reset: function() {
+    this.slider.css('top', 0);
+    this.Paging.setActiveButton(0);
   },
 
   Paging: {
@@ -69,7 +80,6 @@ var Gallery = {
         $(this).bind('click', function() {
           // Update Gallery Position
           Gallery.setPosition($(this).index());
-          //log($(this).index() + ' * ' + Gallery.getFrameHeight() + ' + (' + $(this).index() + ' * ' + Gallery.getTileSpacing() + ') = ' + (Gallery.getFrameHeight() + ($(this).index() * Gallery.getTileSpacing())));
         });
       });
     },
@@ -87,31 +97,31 @@ var Breakpoint = {
     Breakpoints.on({
       name: "bp-portrait",
       matched: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       },
       exit: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       }
     });
     // Landscape Breakpoint
     Breakpoints.on({
       name: "bp-landscape",
       matched: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       },
       exit: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       }
     });
     // Tablet Breakpoint
     Breakpoints.on({
       name: "bp-tablet",
       matched: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
         Gallery.Paging.num_pages = 1;
       },
       exit: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
         Gallery.Paging.num_pages = 4;
       }
     });
@@ -119,27 +129,27 @@ var Breakpoint = {
     Breakpoints.on({
       name: "bp-medium",
       matched: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       },
       exit: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       }
     });
     // Default Breakpoint
     Breakpoints.on({
       name: "bp-default",
       matched: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       },
       exit: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       }
     });
     // Large Breakpoint
     Breakpoints.on({
       name: "bp-large",
       matched: function(){
-        Gallery.setPosition(0);
+        Gallery.reset();
       },
       exit: function(){}
     });
