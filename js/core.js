@@ -11,14 +11,19 @@ var Modal = {
 };
 
 var Gallery = {
+  container: $('.work .gallery'),
+  slider: $('.work .slider'),
   tiles: $('.work .tile'),
+  frame_height: 0,
 
   Init: function() {
     // log('Initialize Gallery');
+    // Init Gallery Paging
+    Gallery.Paging.Init();
 
     // Bind Click-Event to Tiles
     Gallery.tiles.each(function() {
-      //  Avoid 'placeholder' Tiles
+      //  Except 'placeholder' Tiles
       if(!$(this).hasClass('placeholder')) {
         $(this).bind('click', function() {
           // Fade-In Tile's Modal Content
@@ -31,41 +36,113 @@ var Gallery = {
     Modal.close.bind('click', function() {
       $(this).parent().fadeOut(700);
     });
+  },
+
+  // Get Current Gallery Frame Height
+  getFrameHeight: function() {
+    return this.frame_height = parseInt(this.container.css('height'), 10);
+  },
+
+  // Get Current Tile Spacing-Margin
+  getTileSpacing: function() {
+    return this.frame_height = parseInt(this.tiles.css('margin-bottom'), 10);
+  },
+
+  // Set/Update Slider Poisition
+  setPosition: function(index) {
+    if(index !== 0) {
+      this.slider.css('top', -1 * ((index * this.getFrameHeight()) + (index * this.getTileSpacing())));
+    } else {
+      this.slider.css('top', 0);
+    }
+    this.Paging.setActiveButton(index);
+  },
+
+  Paging: {
+    buttons: $('.pagination div'),
+    num_pages: 4,
+    active_page: 0,
+
+    Init: function() {
+      // Bind Click-Event to Buttons
+      this.buttons.each(function() {
+        $(this).bind('click', function() {
+          // Update Gallery Position
+          Gallery.setPosition($(this).index());
+          //log($(this).index() + ' * ' + Gallery.getFrameHeight() + ' + (' + $(this).index() + ' * ' + Gallery.getTileSpacing() + ') = ' + (Gallery.getFrameHeight() + ($(this).index() * Gallery.getTileSpacing())));
+        });
+      });
+    },
+
+    setActiveButton: function(index) {
+      this.buttons.removeClass('active');
+      this.buttons.eq(index).addClass('active');
+    }
   }
 };
 
 var Breakpoint = {
   Init: function() {
-    // Landscape Breakpoint Logic
+    // Portrait Breakpoint
+    Breakpoints.on({
+      name: "bp-portrait",
+      matched: function(){
+        Gallery.setPosition(0);
+      },
+      exit: function(){
+        Gallery.setPosition(0);
+      }
+    });
+    // Landscape Breakpoint
     Breakpoints.on({
       name: "bp-landscape",
-      matched: function(){ log('bp-landscape ON'); },
-      exit: function(){ log('bp-landscape OFF'); },
+      matched: function(){
+        Gallery.setPosition(0);
+      },
+      exit: function(){
+        Gallery.setPosition(0);
+      }
     });
-    // Tablet Breakpoint Logic
-    // Breakpoints.on({
-    //   name: "bp-tablet",
-    //   matched: function(){ log('bp-tablet ON'); },
-    //   exit: function(){ log('bp-tablet OFF'); },
-    // });
-    // Medium Breakpoint Logic
-    // Breakpoints.on({
-    //   name: "bp-medium",
-    //   matched: function(){ log('bp-medium ON'); },
-    //   exit: function(){ log('bp-medium OFF'); },
-    // });
-    // Default Breakpoint Logic
-    // Breakpoints.on({
-    //   name: "bp-default",
-    //   matched: function(){ log('bp-default ON'); },
-    //   exit: function(){ log('bp-default OFF'); },
-    // });
-    // Large Breakpoint Logic
-    // Breakpoints.on({
-    //   name: "bp-large",
-    //   matched: function(){ log('bp-large ON'); },
-    //   exit: function(){ log('bp-large OFF'); },
-    // });
+    // Tablet Breakpoint
+    Breakpoints.on({
+      name: "bp-tablet",
+      matched: function(){
+        Gallery.setPosition(0);
+        Gallery.Paging.num_pages = 1;
+      },
+      exit: function(){
+        Gallery.setPosition(0);
+        Gallery.Paging.num_pages = 4;
+      }
+    });
+    // Medium Breakpoint
+    Breakpoints.on({
+      name: "bp-medium",
+      matched: function(){
+        Gallery.setPosition(0);
+      },
+      exit: function(){
+        Gallery.setPosition(0);
+      }
+    });
+    // Default Breakpoint
+    Breakpoints.on({
+      name: "bp-default",
+      matched: function(){
+        Gallery.setPosition(0);
+      },
+      exit: function(){
+        Gallery.setPosition(0);
+      }
+    });
+    // Large Breakpoint
+    Breakpoints.on({
+      name: "bp-large",
+      matched: function(){
+        Gallery.setPosition(0);
+      },
+      exit: function(){}
+    });
   }
 };
 

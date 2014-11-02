@@ -18,7 +18,8 @@
   @if $width != 0 { width: $width; }
 }
 
-//
+// Setup JS-Breakpoints
+// --------------------------------------------------------------------------
 @mixin defineBreakpoint($name) {
   // store active breakpoint name in ::pseudo content
   &:after {

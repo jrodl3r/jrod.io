@@ -88,6 +88,12 @@ p {
 
 // JS-Breakpoints
 // --------------------------------------------------------------------------
+@include breakpoint($bp-portrait) {
+  body {
+    @include defineBreakpoint("bp-portrait");
+  }
+}
+
 @include breakpoint($bp-landscape) {
   body {
     @include defineBreakpoint("bp-landscape");
@@ -124,7 +130,7 @@ p {
 #debug-breakpoint {
   position: fixed;
   z-index: 900;
-  top: 0;
+  bottom: 0;
   right: 0;
   display: block;
   padding: 5px 10px;

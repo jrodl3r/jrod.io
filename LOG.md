@@ -5,12 +5,13 @@
 
 'tighten-up exposure graph, thicken inner circle-rim'
 
-'setup responsive pagination gallery navigation/pagination'
+'cleanup tile logo responsiveness'
 
 'cleanup modal responsiveness'
 
 
 
+'setup pagination logic'
 'update modal layout + setup display logic'
 'add project logos to work tiles and update hover effects'
 'add utils.js + log functionality + update grunt build'
