@@ -23,7 +23,8 @@ module.exports = {
       "jQuery": false,
       "console": false,
       "debug": true,
-      "log": true
+      "log": true,
+      "Breakpoints": true
     }
   },
   gruntfile: {

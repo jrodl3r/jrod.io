@@ -17,3 +17,19 @@
   @if $height != 0 { height: $height; }
   @if $width != 0 { width: $width; }
 }
+
+//
+@mixin defineBreakpoint($name) {
+  // store active breakpoint name in ::pseudo content
+  &:after {
+    content: $name;
+    visibility: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+  }
+
+  // add fallback style using breakpoint name
+  .js-breakpoints-#{$name} {
+    position: absolute;
+  }
+}

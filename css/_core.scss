@@ -86,6 +86,39 @@ p {
 }
 
 
+// JS-Breakpoints
+// --------------------------------------------------------------------------
+@include breakpoint($bp-landscape) {
+  body {
+    @include defineBreakpoint("bp-landscape");
+  }
+}
+
+@include breakpoint($bp-tablet) {
+  body {
+    @include defineBreakpoint("bp-tablet");
+  }
+}
+
+@include breakpoint($bp-medium) {
+  body {
+    @include defineBreakpoint("bp-medium");
+  }
+}
+
+@include breakpoint($bp-default) {
+  body {
+    @include defineBreakpoint("bp-default");
+  }
+}
+
+@include breakpoint($bp-large) {
+  body {
+    @include defineBreakpoint("bp-large");
+  }
+}
+
+
 // Debug
 // --------------------------------------------------------------------------
 #debug-breakpoint {
