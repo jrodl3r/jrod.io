@@ -9,8 +9,11 @@
 
 'cleanup modal responsiveness'
 
+'setup work sample popup styles + logic'
 
 
+
+'add sample images to modal layout + cleanup core logic'
 'setup pagination logic'
 'update modal layout + setup display logic'
 'add project logos to work tiles and update hover effects'

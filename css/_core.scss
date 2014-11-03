@@ -89,39 +89,22 @@ p {
 // JS-Breakpoints
 // --------------------------------------------------------------------------
 @include breakpoint($bp-portrait) {
-  body {
-    @include defineBreakpoint("bp-portrait");
-  }
+  body { @include defineBreakpoint("bp-portrait"); }
 }
-
 @include breakpoint($bp-landscape) {
-  body {
-    @include defineBreakpoint("bp-landscape");
-  }
+  body { @include defineBreakpoint("bp-landscape"); }
 }
-
 @include breakpoint($bp-tablet) {
-  body {
-    @include defineBreakpoint("bp-tablet");
-  }
+  body { @include defineBreakpoint("bp-tablet"); }
 }
-
 @include breakpoint($bp-medium) {
-  body {
-    @include defineBreakpoint("bp-medium");
-  }
+  body { @include defineBreakpoint("bp-medium"); }
 }
-
 @include breakpoint($bp-default) {
-  body {
-    @include defineBreakpoint("bp-default");
-  }
+  body { @include defineBreakpoint("bp-default"); }
 }
-
 @include breakpoint($bp-large) {
-  body {
-    @include defineBreakpoint("bp-large");
-  }
+  body { @include defineBreakpoint("bp-large"); }
 }
 
 
@@ -133,7 +116,6 @@ p {
   bottom: 0;
   right: 0;
   display: block;
-  padding: 5px 10px;
   color: #FFF;
   font-size: 10px;
   font-weight: bold;
@@ -141,6 +123,7 @@ p {
 
   span {
     display: none;
+    padding: 5px 10px;
 
     @include breakpoint($bp-landscape) {
       &.landscape { display: inline; }

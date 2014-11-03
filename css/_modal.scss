@@ -3,6 +3,10 @@
 //
 // ==========================================================================
 
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
 .modal {
   position: fixed;
   z-index: 100;
@@ -15,7 +19,7 @@
   height: 100%;
   overflow-y: scroll;
   text-align: center;
-  background: rgba(#FFF, 0.95);
+  background: rgba(#FFF, 0.98);
 
   .close {
     position: absolute;
@@ -35,33 +39,71 @@
 
   p {
     width: 80%;
-    margin: 0 auto 70px;
-  }
+    margin: 0 auto 35px;
+    font-size: 13px;
 
-  img {
-    display: inline-block;
-    width: 190px;
-    height: 270px;
-    margin-right: 10px;
-    margin-bottom: 50px;
-    background: rgba(#CCC, 0.25);
-
-    &:last-of-type {
-      margin-right: 0;
+    @include breakpoint($bp-tablet) {
+      margin-bottom: 70px;
+      font-size: 15px;
     }
   }
 
+  //.samples {
+    //position: relative;
+
+    .sample {
+      display: inline-block;
+      width: 27%;
+      height: 126px;
+      margin-right: 2%;
+      border: 1px solid rgba(#BBB, 0.25);
+      overflow: hidden;
+
+      @include breakpoint($bp-tablet) {
+        width: 190px;
+        height: 270px;
+        margin-right: 10px;
+        margin-bottom: 50px;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        opacity: 0.75;
+        cursor: pointer;
+      }
+
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+    }
+  //}
+
   svg.logo {
-    max-width: 170px;
-    max-height: 170px;
+    max-width: 150px;
+    max-height: 150px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include breakpoint($bp-tablet) {
+      max-width: 170px;
+      max-height: 170px;
+      margin-bottom: 50px;
+    }
   }
 
   &.target {
     svg.logo {
-      max-width: 200px;
-      max-height: 200px;
+      max-width: 140px;
+      max-height: 140px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 200px;
+        max-height: 200px;
+      }
     }
   }
 

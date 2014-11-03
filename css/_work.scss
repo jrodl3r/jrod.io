@@ -181,6 +181,7 @@
     width: span(16 of 18);
     margin-left: span(1 of 18) + gutter(1 of 18);
     text-align: center;
+    -webkit-user-select: none;
 
     @include breakpoint($bp-large) {
       display: none;
