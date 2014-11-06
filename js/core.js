@@ -1,5 +1,5 @@
 //
-// Core Application/JS Logic
+// Jrod.io ~ Core Functionality
 //
 // ==========================================================================
 debug = true;
@@ -10,19 +10,54 @@ var Modal = {
   container: $('.modal'),
   heading: $('.modal h4'),
   close: $('.modal .close'),
+  samples: $('.modal .sample img'),
+  preview: $('.stage img'),
+  stage: $('.stage'),
 
-  // Setup Modals
   init: function() {
 
-    // Add Click/Tap: Close Buttons
+    // Click|Tap: Close Buttons
     this.close.bind('click', function() {
-      $(this).parent().fadeOut(700);
+      Modal.hide($(this).parent());
+    });
+
+    // Click|Tap: Samples
+    this.samples.bind('click', function() {
+      Modal.showStage($(this).attr('src'));
+    });
+
+    // Click|Tap: Stage
+    this.stage.bind('click', function() {
+      Modal.hideStage();
+    });
+
+    // Click|Tap: Stage Preview
+    this.preview.bind('click', function() {
+      Modal.hideStage();
     });
   },
 
   // Fade-In Modal Window
   show: function(index) {
-    this.container.eq(index).fadeIn(1000);
+    $('body').addClass('noscroll');
+    this.container.eq(index).fadeIn(700);
+  },
+
+  // Fade-Out Modal Window
+  hide: function(modal) {
+    $('body').removeClass('noscroll');
+    modal.fadeOut(700);
+  },
+
+  // Fade-In Stage Preview & Update Image
+  showStage: function(source) {
+    this.stage.fadeIn(700);
+    this.preview.attr('src', source);
+  },
+
+  // Fade-Out Stage Preview & Remove Image
+  hideStage: function() {
+    this.stage.fadeOut(700);
   }
 };
 
@@ -34,13 +69,12 @@ var Gallery = {
   tiles: $('.work .tile'),
   frame_height: 0,
 
-  // Setup Gallery
   init: function() {
 
     // Setup Pagination
     this.Paging.init();
 
-    // Add Click/Tap: Tiles
+    // Click|Tap: Tiles
     this.tiles.each(function() {
 
       //  Except 'placeholder' Tiles
@@ -94,14 +128,11 @@ var Gallery = {
     num_pages: 4,
     active_page: 0,
 
-    // Setup Pagination
     init: function() {
 
-      // Add Click/Tap: Paging Buttons
+      // Click|Tap: Paging Buttons
       this.buttons.each(function() {
         $(this).bind('click', function() {
-
-          // Update Slider Position
           Gallery.moveSlider($(this).index());
         });
       });
@@ -118,72 +149,75 @@ var Gallery = {
 // JS-Breakpoints
 // --------------------------------------------------------------------------
 var Breakpoint = {
+
   init: function() {
 
     // Portrait (360px)
-    Breakpoints.on({
+    Breakpoints.on( {
       name: "bp-portrait",
-      matched: function(){
+      matched: function() {
         Gallery.reset();
       },
-      exit: function(){
+      exit: function() {
         Gallery.reset();
       }
     });
 
     // Landscape (560px)
-    Breakpoints.on({
+    Breakpoints.on( {
       name: "bp-landscape",
-      matched: function(){
+      matched: function() {
         Gallery.reset();
       },
-      exit: function(){
+      exit: function() {
         Gallery.reset();
       }
     });
 
     // Tablet (600px)
-    Breakpoints.on({
+    Breakpoints.on( {
       name: "bp-tablet",
-      matched: function(){
+      matched: function() {
         Gallery.reset();
         Gallery.Paging.num_pages = 1;
       },
-      exit: function(){
+      exit: function() {
         Gallery.reset();
         Gallery.Paging.num_pages = 4;
       }
     });
 
     // Medium (780px)
-    Breakpoints.on({
+    Breakpoints.on( {
       name: "bp-medium",
-      matched: function(){
+      matched: function() {
         Gallery.reset();
       },
-      exit: function(){
+      exit: function() {
         Gallery.reset();
       }
     });
 
     // Default (960px)
-    Breakpoints.on({
+    Breakpoints.on( {
       name: "bp-default",
-      matched: function(){
+      matched: function() {
         Gallery.reset();
       },
-      exit: function(){
+      exit: function() {
         Gallery.reset();
       }
     });
 
     // Large (1080px)
-    Breakpoints.on({
+    Breakpoints.on( {
       name: "bp-large",
-      matched: function(){
+      matched: function() {
         Gallery.reset();
       },
-      exit: function(){}
+      exit: function() {
+
+      }
     });
   }
 };
@@ -191,7 +225,9 @@ var Breakpoint = {
 // Core Initialization Object
 // --------------------------------------------------------------------------
 var Core = {
+
   init: function() {
+
     Gallery.init();
     Modal.init();
     Breakpoint.init();
@@ -201,5 +237,7 @@ var Core = {
 // Load Core
 // --------------------------------------------------------------------------
 $(document).ready( function() {
+
   Core.init();
+
 });
