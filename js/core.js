@@ -51,13 +51,14 @@ var Modal = {
 
   // Fade-In Stage Preview & Update Image
   showStage: function(source) {
+    this.preview.attr('src', source.replace('-small', ''));
     this.stage.fadeIn(700);
-    this.preview.attr('src', source);
   },
 
   // Fade-Out Stage Preview & Remove Image
   hideStage: function() {
     this.stage.fadeOut(700);
+    this.preview.attr('src', '');
   }
 };
 

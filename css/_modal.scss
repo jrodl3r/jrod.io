@@ -28,6 +28,7 @@
     background: url(../img/modal-close-button.svg) center center no-repeat;
     opacity: .25;
     cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     &:hover {
       opacity: .6;
@@ -37,8 +38,12 @@
   p {
     width: 80%;
     max-width: 800px;
-    margin: 0 auto 35px;
+    margin: 0 auto 12%;
     font-size: 13px;
+
+    @include breakpoint($bp-landscape) {
+      margin-bottom: 40px;
+    }
 
     @include breakpoint($bp-tablet) {
       margin-bottom: 70px;
@@ -50,32 +55,45 @@
     position: relative;
     display: inline-block;
     width: 27%;
-    height: 126px;
+    height: auto;
+    max-height: 148px;
     margin-right: 2%;
     overflow: hidden;
+    vertical-align: top;
     background: #FEFEFE;
-    box-shadow: 2px 3px 6px rgba(#000, 0.1);
+    box-shadow: 0 0 5px rgba(#000, 0.1);
+    //box-shadow: 1px 3px 6px rgba(#000, 0.1);
+
+    @include breakpoint($bp-landscape) {
+      max-height: 216px;
+      margin-bottom: 10%;
+    }
 
     @include breakpoint($bp-tablet) {
-      width: 190px;
+      //width: 190px;
+      max-width: 190px;
       height: auto;
-      max-height: 300px;
-      margin-right: 10px;
+      max-height: 340px;
+      margin-right: 1.5%;
       margin-bottom: 50px;
-      vertical-align: top;
     }
 
     &:last-of-type {
       margin-right: 0;
     }
 
+    &:hover {
+      box-shadow: 0 0 7px rgba(#000, 0.15);
+    }
+
     img {
       width: 100%;
       vertical-align: top;
       cursor: pointer;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
 
       &:hover {
-        opacity: 0.7;
+        opacity: 0.8;
         cursor: pointer;
       }
     }
@@ -96,12 +114,12 @@
 
   &.target {
     svg.logo {
-      max-width: 140px;
-      max-height: 140px;
+      max-height: 148px;
+      margin-bottom: 22px;
 
       @include breakpoint($bp-tablet) {
-        max-width: 200px;
         max-height: 200px;
+        margin-bottom: 40px;
       }
     }
   }
@@ -119,54 +137,89 @@
 
   &.tsi {
     svg.logo {
-      margin-top: 30px;
+      margin-top: 34px;
+      max-height: 126px;
+
+      @include breakpoint($bp-tablet) {
+        max-height: 150px;
+      }
     }
   }
 
   &.crown {
     svg.logo {
-      margin-top: 50px;
-      margin-bottom: 60px;
+      max-width: 140px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 164px;
+        margin-top: 50px;
+        margin-bottom: 60px;
+      }
     }
   }
 
   &.kraft {
     svg.logo {
-      max-width: 220px;
-      margin-top: 60px;
-      margin-bottom: 70px;
+      max-width: 206px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 220px;
+        margin-top: 60px;
+        margin-bottom: 70px;
+      }
     }
   }
 
   &.oscarmayer {
     svg.logo {
-      max-width: 200px;
-      max-height: 200px;
-      margin-top: 40px;
+      max-width: 142px;
+      margin-top: 30px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 180px;
+        margin-top: 40px;
+      }
     }
   }
 
   &.yourcare {
     svg.logo {
-      max-width: 310px;
+      max-width: 240px;
       margin-top: 70px;
       margin-bottom: 70px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 310px;
+      }
     }
   }
 
-  &.redcats {
+  &.adultswim {
     svg.logo {
+      max-width: 250px;
       margin-top: 70px;
-      margin-bottom: 80px;
-      max-width: 260px;
+      margin-bottom: 60px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 300px;
+      }
     }
   }
 
   &.nylearns {
     svg.logo {
-      max-width: 290px;
+      max-width: 240px;
       margin-top: 60px;
-      margin-bottom: 70px;
+      margin-bottom: 60px;
+
+      @include breakpoint($bp-tablet) {
+        max-width: 290px;
+        margin-bottom: 70px;
+      }
     }
   }
 }
@@ -180,18 +233,21 @@
   width: 100%;
   height: 100%;
   max-height: none;
-  padding-bottom: 5%;
   overflow-y: auto;
   text-align: center;
-  background: #FEFEFE url(../img/loading.gif) center center no-repeat;
+  background: #FEFEFE url(../img/loading.gif) center 36% no-repeat;
 
   img {
     position: relative;
-    top: 3%;
-    width: 65%;
-    max-width: 800px;
+    top: 5%;
+    width: 85%;
+    margin-bottom: 15%;
     opacity: 1;
     cursor: pointer;
     box-shadow: 1px 1px 10px rgba(#000, 0.1);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+
+    max-width: 800px;
   }
 }
