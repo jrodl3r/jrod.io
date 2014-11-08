@@ -105,7 +105,7 @@
         margin-bottom: 15px;
       }
 
-      @include breakpoint($bp-medium) {
+      @include breakpoint($bp-default) {
         height: 28px;
         margin-bottom: 18px;
       }
@@ -123,7 +123,7 @@
         color: #B3B3B3;
         text-decoration: none;
         text-indent: 34%;
-        @include transition(all ease .5s);
+        //@include transition(all ease .5s);
 
         &.twitter:hover {
           color: #00ACED;
@@ -160,8 +160,11 @@
         }
 
         @include breakpoint($bp-medium) {
-          height: 28px;
           width: 70%;
+        }
+
+        @include breakpoint($bp-default) {
+          height: 28px;
           font-size: 18px;
           line-height: 28px;
         }
@@ -174,7 +177,7 @@
             max-width: 24px;
           }
 
-          @include breakpoint($bp-medium) {
+          @include breakpoint($bp-default) {
             max-width: 28px;
           }
 

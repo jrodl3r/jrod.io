@@ -47,6 +47,8 @@
   }
 
   .skills {
+    display: none;
+
     .indicator {
       position: relative;
       height: 11px;
@@ -198,16 +200,24 @@
   }
 
   .exposure {
+    display: none;
+
     text-align: center;
 
-    svg.exposure-graph {
-      @include breakpoint($bp-portrait) {
-        width: 90%;
-      }
+    //@include breakpoint($bp-landscape) {
+    //  display: none;
+    //}
 
-      @include breakpoint($bp-landscape) {
-        width: 86%;
-      }
+    //@include breakpoint($bp-tablet) {
+    //  display: block;
+    //}
+
+    svg.exposure-graph {
+      width: 100%;
+
+      //@include breakpoint($bp-portrait) {
+      //  width: 90%;
+      //}
 
       @include breakpoint($bp-tablet) {
         width: 82%;

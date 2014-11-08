@@ -7,9 +7,9 @@
   display: none;
 
 
-  @include breakpoint($bp-medium) {
-    display: block;
-  }
+  //@include breakpoint($bp-medium) {
+  //  display: block;
+  //}
 
   a {
     float: left;
