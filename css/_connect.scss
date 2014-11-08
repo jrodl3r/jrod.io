@@ -115,20 +115,44 @@
       }
 
       a {
-        display: block;
+        display: inline-block;
+        width: 100%;
         height: 24px;
         line-height: 24px;
         font-size: 16px;
         color: #B3B3B3;
         text-decoration: none;
         text-indent: 34%;
+        @include transition(all ease .5s);
 
-        &:hover {
-          color: #888;
+        &.twitter:hover {
+          color: #00ACED;
+          svg path { fill: #00ACED; }
+        }
 
-          svg path {
-            fill: #888;
-          }
+        &.github:hover {
+          color: #000;
+          svg path { fill: #000; }
+        }
+
+        &.pinterest:hover {
+          color: #CB2027;
+          svg path { fill: #CB2027; }
+        }
+
+        &.linkedin:hover {
+          color: #007BB6;
+          svg path { fill: #007BB6; }
+        }
+
+        &.gchat:hover {
+          color: #78A6FB;
+          svg path { fill: #78A6FB; }
+        }
+
+        &.email:hover {
+          color: #999;
+          svg path { fill: #999; }
         }
 
         @include breakpoint($bp-landscape) {
@@ -137,6 +161,7 @@
 
         @include breakpoint($bp-medium) {
           height: 28px;
+          width: 70%;
           font-size: 18px;
           line-height: 28px;
         }

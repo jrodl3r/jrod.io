@@ -1,17 +1,30 @@
 
+
+'shrink contact form (landscape)'
+
+'cleanup modal layout (widescreen)'
+
+'setup WebGL header effects'
+
+'setup parallax graph effects (slide-in, illuminate, etc)'
+
 'setup IE warning display + logic'
 
-'hide exposure graph in all small screen landscape views'
+'cleanup overall content responsiveness'
 
-'tighten-up exposure graph, thicken inner circle-rim'
+'hide exposure graph on mobile (landscape)'
 
 'cleanup tile logo responsiveness'
 
 'setup responsive preview images on mobile + tablet'
 
+'finish social link list'
+
+'setup contact form'
 
 
 
+'tighten-up exposure graph, thicken inner circle-rim'
 'cleanup modal responsiveness'
 'setup work sample popup styles + logic'
 'add sample images to modal layout + cleanup core logic'
