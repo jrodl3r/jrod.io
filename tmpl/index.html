@@ -189,11 +189,11 @@
           <div class="inner">
             <div class="content">
               <h2>Contact</h2>
-              <form>
-                <input type="text" class="name" name="name" value="Name">
-                <input type="email" class="email" name="email" value="Email">
-                <textarea class="message" name="message">Message</textarea>
-                <button>Send</button>
+              <form id="contact" method="post" action="php/mailer.php" novalidate>
+                <input type="text" class="name" name="name" value="Name" maxlength="36">
+                <input type="email" class="email" name="email" value="Email" maxlength="120">
+                <textarea class="message" name="message" maxlength="160">Message</textarea>
+                <button type="submit">Send</button>
               </form>
             </div>
           </div>
@@ -204,11 +204,6 @@
           <?php include 'img/footer-logo.svg' ?>
         </div>
       </footer>
-    </div>
-
-    <!-- Preview Stage -->
-    <div class="stage">
-      <img src="" alt="">
     </div>
 
     <!-- Target Modal -->
@@ -349,6 +344,14 @@
         <img src="img/projects/nylearns/samples/sample-03-small.png" alt="">
       </div>
     </div>
+
+    <!-- Preview Stage -->
+    <div class="stage">
+      <img src="" alt="">
+    </div>
+
+    <!-- User Notifications -->
+    <div class="notify good">{Message}</div>
 
     <!-- Debug: Breakpoint HUD -->
     <div id="debug-breakpoint">

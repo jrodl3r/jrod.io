@@ -10,18 +10,26 @@
     }
   }
 
-  input, textarea, button {
-    height: 36px;
+  input[type='text'], input[type='email'], textarea, button {
     width: 100%;
     margin-bottom: 16px;
-    line-height: 36px;
-    text-indent: 10px;
-    font-size: 13px;
-    font-weight: bold;
+    padding: 8px 0;
     color: #FFF;
+    font-size: 16px;
     background: #E6E6E6;
     border: 0;
     border-radius: $default-radius;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover, &:active {
+      background: #DDD;
+    }
+
+    &:focus {
+      background: #D3D3D3;
+      box-shadow: inset 0px 0 30px rgba(#000, 0.1);
+    }
 
     @include breakpoint($bp-portrait) {
       width: span(16 of 18);
@@ -39,7 +47,7 @@
     }
 
     @include breakpoint($bp-default) {
-      font-size: 14px;
+      font-size: 17px;
     }
 
     @include breakpoint($bp-large) {
@@ -47,8 +55,15 @@
     }
   }
 
+  input[type='text'], input[type='email'], textarea {
+    padding-left: 10px;
+  }
+
   textarea {
     height: 100px;
+    padding-top: 8px;
+    line-height: 22px;
+    text-indent: 0;
     outline: none;
     resize: none;
   }
@@ -57,13 +72,66 @@
     display: block;
     width: 128px;
     margin: 0 auto;
-    text-indent: 0;
-    font-size: 14px;
     color: #B3B3B3;
+
+    &:hover {
+      color: #FFF;
+      background: #CCC;
+    }
 
     @include breakpoint($bp-landscape) {
       float: left;
     }
+  }
+}
+
+.notify {
+  position: fixed;
+  z-index: 400;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  min-height: 10%;
+  padding: 10% 5%;
+  color: #FFF;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.7em;
+  background: rgba(0,0,0, 0.75);
+
+  &.good {
+    background: rgba(112,205,112, 0.75);
+  }
+  &.bad {
+    background: rgba(205,112,112, 0.75);
+  }
+
+  @include breakpoint($bp-landscape) {
+    padding: 5%;
+    font-size: 17px;
+  }
+
+  @include breakpoint($bp-tablet) {
+    font-size: 19px;
+  }
+
+  @include breakpoint($bp-medium) {
+    padding: 4%;
+  }
+
+  @include breakpoint($bp-optimal) {
+    max-height: 130px;
+    padding-top: 3%;
+  }
+
+  @include breakpoint($bp-large) {
+    padding-top: 2.5%;
+  }
+
+  @include breakpoint($bp-huge) {
+    padding-top: 2%;
   }
 }
 
@@ -160,7 +228,7 @@
         }
 
         @include breakpoint($bp-medium) {
-          width: 70%;
+          width: 50%;
         }
 
         @include breakpoint($bp-default) {
