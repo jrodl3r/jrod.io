@@ -41,9 +41,9 @@ h2, h3 {
     text-align: left;
   }
 
-  //include breakpoint($bp-tablet) {
-    //text-align: center;
-  //}
+  @include breakpoint($bp-tablet) {
+    text-align: center;
+  }
 
   @include breakpoint($bp-medium) {
     text-align: left;
@@ -118,7 +118,7 @@ p {
   z-index: 900;
   bottom: 0;
   right: 0;
-  display: none;
+  display: block;
   color: #FFF;
   font-size: 10px;
   font-weight: bold;

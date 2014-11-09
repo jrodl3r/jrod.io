@@ -14,15 +14,16 @@ header {
 
   @include breakpoint($bp-medium) {
     padding-top: 0;
+    padding-bottom: 5%;
   }
 
-  @include breakpoint($bp-optimal) {
+  /* @include breakpoint($bp-optimal) {
     padding-bottom: 5%;
   }
 
   @include breakpoint($bp-large) {
-    //padding-bottom: 4%;
-  }
+    padding-bottom: 4%;
+  } */
 
   @include breakpoint($bp-huge) {
     max-height: 600px;
