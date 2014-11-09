@@ -70,7 +70,6 @@
     }
 
     @include breakpoint($bp-tablet) {
-      //width: 190px;
       max-width: 190px;
       height: auto;
       max-height: 340px;
@@ -241,13 +240,11 @@
     position: relative;
     top: 5%;
     width: 85%;
+    max-width: 800px;
     margin-bottom: 15%;
     opacity: 1;
     cursor: pointer;
     box-shadow: 1px 1px 10px rgba(#000, 0.1);
     -webkit-tap-highlight-color: rgba(0,0,0,0);
-
-
-    max-width: 800px;
   }
 }

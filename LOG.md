@@ -16,14 +16,11 @@
 
 'cleanup tile logo responsiveness'
 
-'setup responsive preview images on mobile + tablet'
 
-'finish social link list'
 
+'cleanup styles + overall responsiveness, disable header menu'
 'setup contact form'
-
-
-
+'finish social link list'
 'tighten-up exposure graph, thicken inner circle-rim'
 'cleanup modal responsiveness'
 'setup work sample popup styles + logic'

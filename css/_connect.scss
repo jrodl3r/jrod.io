@@ -163,6 +163,10 @@
       border-left: 0;
     }
 
+    @include breakpoint($bp-default) {
+      margin-top: -10px;
+    }
+
     li {
       height: 24px;
       width: 100%;

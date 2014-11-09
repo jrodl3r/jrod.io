@@ -4,15 +4,10 @@
 // ==========================================================================
 
 .vision {
-  /* .split {
-    display: none;
-  } */
-
   p {
-    @include breakpoint($bp-portrait) {
-      width: span(16 of 18);
-      margin-left: span(1 of 18) + gutter(1 of 18);
-    }
+    width: span(17 of 18);
+    margin-left: span(.5 of 18) + gutter(1 of 18);
+    line-height: 26px;
 
     @include breakpoint($bp-landscape) {
       width: 100%;
@@ -20,16 +15,9 @@
     }
 
     @include breakpoint($bp-tablet) {
-      //width: span(16 of 18);
-      //margin-left: span(1 of 18) + gutter(1 of 18);
       font-size: 17px;
       line-height: 27px;
     }
-
-    //@include breakpoint($bp-medium) {
-      //width: 100%;
-      //margin-left: 0;
-    //}
 
     @include breakpoint($bp-optimal) {
       font-size: 18px;

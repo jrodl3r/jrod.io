@@ -4,12 +4,16 @@
 // ==========================================================================
 
 header {
-  // @include transition(all $bp-anim-timer ease-in-out);
   padding-bottom: 15px;
   background: rgba(#000, 1);
 
-  @include breakpoint($bp-ipad-portrait) {
-    padding-bottom: 9%;
+  @include breakpoint($bp-tablet) {
+    padding-top: 7%;
+    padding-bottom: 10%;
+  }
+
+  @include breakpoint($bp-medium) {
+    padding-top: 0;
   }
 
   @include breakpoint($bp-optimal) {
@@ -33,7 +37,7 @@ header {
     @include clearfix;
     display: none;
 
-    @include breakpoint($bp-tablet) {
+    /* @include breakpoint($bp-tablet) {
       display: flex;
       display: -webkit-flex;
       margin: 2% auto 4%;
@@ -43,7 +47,7 @@ header {
 
     @include breakpoint($bp-medium) {
       display: none;
-    }
+    } */
 
     ul {
       display: flex;
@@ -74,8 +78,10 @@ header {
   }
 
   .menu-button {
+    display: none;
+
     position: absolute;
-    display: block;
+    //display: block;
     right: 10px;
     top: 10px;
     height: 17px;
@@ -84,7 +90,7 @@ header {
     opacity: 0.2;
     background: url(../img/header-menu-button.svg) top left no-repeat;
 
-    @include breakpoint($bp-landscape) {
+    /* @include breakpoint($bp-landscape) {
       top: 15px;
       right: 15px;
     }
@@ -101,7 +107,7 @@ header {
 
     @include breakpoint($bp-huge) {
       display: none;
-    }
+    } */
   }
 
   .content {
@@ -200,7 +206,7 @@ header {
     p {
       width: 90%;
       margin: 0 auto 20px;
-      color: rgba(#FFF, 0.4);
+      color: rgba(#FFF, 0.5);
 
       @include breakpoint($bp-nexus5-portrait) {
         width: 85%;
