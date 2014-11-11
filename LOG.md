@@ -1,24 +1,24 @@
 
 
-'cleanup modal layout (widescreen)'
-
 'setup WebGL header effects'
 
 'setup parallax effects (slide-in, illuminate, etc)'
-
-'setup IE warning display + logic'
-
-'hide gallery during size/orientation-change reset'
 
 'add swipe gestures to gallery'
 
 'cleanup tile logo responsiveness'
 
+'setup IE warning display + logic'
+
+'hide gallery during size/orientation-change reset'
+
+
+
+'add parallax scroll effect on content'
+
+
 
 'disable mobile zooming on modals'
-
-
-
 'update all jquery bind() interaction events - use newer on() instead'
 'cleanup core js, update markup + grid styles to enable parallax-scroll on content'
 'cleanup styles + overall responsiveness, disable header menu'

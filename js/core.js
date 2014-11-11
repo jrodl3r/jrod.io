@@ -68,8 +68,9 @@ var Gallery = {
       //  Except 'placeholder' Tiles
       if(!$(this).hasClass('placeholder')) {
         $(this).on('click', function() {
-          // Fade-In Modal Content
+          // Fade-In Modal Content & Disable Mobile Zooming
           Modal.show($(this).index());
+          Modal.disableZoom();
         });
       }
     });
@@ -158,12 +159,27 @@ var Modal = {
     this.preview.attr('src', '');
   },
 
+  // Content Zooming On
+  enableZoom: function() {
+
+    $('head meta[name=viewport]').remove();
+    $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1" />');
+  },
+
+  // Content Zooming Off
+  disableZoom: function() {
+
+    $('head meta[name=viewport]').remove();
+    $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />');
+  },
+
   // Setup Interactions
   interact: function() {
 
     // Click|Tap: Close Buttons
     this.close.on('click', function() {
       Modal.hide($(this).parent());
+      Modal.enableZoom();
     });
 
     // Click|Tap: Samples
