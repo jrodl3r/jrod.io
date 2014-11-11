@@ -13,7 +13,7 @@ var Gallery = {
   tiles: $('.work .tile'),
   frame_height: 0,
 
-  // Init Work Gallery
+
   init: function() {
 
     // Setup Pagination
@@ -84,7 +84,7 @@ var Gallery = {
     num_pages: 4,
     active_page: 0, // TODO: Add paging-memory
 
-    // Init Pagination
+
     init: function() {
 
       // Setup Interactions
@@ -121,9 +121,9 @@ var Modal = {
   close: $('.modal .close'),
   samples: $('.modal .sample img'),
   preview: $('.stage img'),
-  stage: $('.stage'), // TODO: Create descendent object
+  stage: $('.stage'), // TODO: Setup sub-object
 
-  // Init Modal + Preview Stage
+
   init: function() {
 
     // Setup Interactions
@@ -186,7 +186,7 @@ var Modal = {
 
 // Contact Form
 // --------------------------------------------------------------------------
-var Connect = {
+var Contact = {
 
   ajax_form: $('#contact'),
   name_input: $('input.name'),
@@ -195,7 +195,7 @@ var Connect = {
   notify_message: $('.notify'),
   form_data: {},
 
-  // Init Contact Form
+
   init: function() {
 
     // Setup Interactions
@@ -243,32 +243,32 @@ var Connect = {
       event.preventDefault();
 
       // Validate Input
-      if(Connect.validate()) {
+      if(Contact.validate()) {
 
         // Serialize Input
-        Connect.form_data = $(Connect.ajax_form).serialize();
+        Contact.form_data = $(Contact.ajax_form).serialize();
 
         // Create Request
         $.ajax({
           type: 'POST',
-          url: $(Connect.ajax_form).attr('action'),
-          data: Connect.form_data
+          url: $(Contact.ajax_form).attr('action'),
+          data: Contact.form_data
 
-        // Success
+        // Message Sent
         }).done(function(response) {
 
-          Connect.notify(response, 'good');
-          Connect.name_input.val('Name');
-          Connect.email_input.val('Email');
-          Connect.message_input.val('Message');
+          Contact.notify(response, 'good');
+          Contact.name_input.val('Name');
+          Contact.email_input.val('Email');
+          Contact.message_input.val('Message');
 
         // Failed
         }).fail(function(data) {
 
           if (data.responseText !== '') {
-            Connect.notify(data.responseText, 'bad');
+            Contact.notify(data.responseText, 'bad');
           } else {
-            Connect.notify('Oops! An error occured and your message could not be sent.', 'bad');
+            Contact.notify('Oops! An error occured and your message could not be sent.', 'bad');
           }
         });
       }
@@ -280,19 +280,19 @@ var Connect = {
 
     // Set Notification Color
     if (status === 'good') {
-      Connect.notify_message.addClass('good');
+      this.notify_message.addClass('good');
     } else if (status === 'bad') {
-      Connect.notify_message.addClass('bad');
+      this.notify_message.addClass('bad');
     }
 
     // Inject Message & Fade-In
-    Connect.notify_message.html(message);
-    Connect.notify_message.fadeIn(700);
+    this.notify_message.html(message);
+    this.notify_message.fadeIn(700);
 
     // Fade-Out After 3sec
     setTimeout(function() {
-      Connect.notify_message.fadeOut(700, function(){
-        Connect.notify_message.removeClass('good bad');
+      Contact.notify_message.fadeOut(700, function(){
+        Contact.notify_message.removeClass('good bad');
       });
     }, 3000);
   },
@@ -335,6 +335,25 @@ var Connect = {
         $(this).val('Message');
       }
     });
+  }
+};
+
+
+// Parallax Scroll Effects
+// --------------------------------------------------------------------------
+var Parallax = {
+
+  header_height: $('header').outerHeight(),
+
+
+
+  init: function() {
+    //this.x = 'foo';
+  },
+
+  // Update Dimensions
+  update: function() {
+    this.header_height = $('header').outerHeight();
   }
 };
 
@@ -416,7 +435,7 @@ var Breakpoint = {
 };
 
 
-// Core Initialization Object
+// Core Initialization
 // --------------------------------------------------------------------------
 var Core = {
 
@@ -424,16 +443,12 @@ var Core = {
 
     Gallery.init();
     Modal.init();
+    Contact.init();
+    Parallax.init();
     Breakpoint.init();
-    Connect.init();
   }
 };
 
-
-// Load Core
-// --------------------------------------------------------------------------
 $(document).ready( function() {
-
   Core.init();
-
 });

@@ -1,23 +1,21 @@
 
 
-'shrink contact form (landscape)'
-
 'cleanup modal layout (widescreen)'
 
 'setup WebGL header effects'
 
-'setup parallax graph effects (slide-in, illuminate, etc)'
+'setup parallax effects (slide-in, illuminate, etc)'
 
 'setup IE warning display + logic'
 
-'cleanup overall content responsiveness'
-
-'hide exposure graph on mobile (landscape)'
+'add swipe gestures to gallery'
 
 'cleanup tile logo responsiveness'
 
+'disable mobile zooming on modals'
 
 
+'cleanup core js, update markup + grid styles to enable parallax-scroll on content'
 'cleanup styles + overall responsiveness, disable header menu'
 'setup contact form'
 'finish social link list'

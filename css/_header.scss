@@ -35,7 +35,7 @@ header {
   }
 
   nav {
-    @include clearfix;
+    @include clearfix();
     display: none;
 
     /* @include breakpoint($bp-tablet) {
