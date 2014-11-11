@@ -20,7 +20,7 @@ var Gallery = {
     this.Paging.init();
 
     // Setup Interactions
-    this.setBindings();
+    this.interact();
   },
 
   // Get Gallery Container Height
@@ -60,14 +60,14 @@ var Gallery = {
   },
 
   // Setup Interactions
-  setBindings: function() {
+  interact: function() {
 
     // Click|Tap: Tiles
     this.tiles.each(function() {
 
       //  Except 'placeholder' Tiles
       if(!$(this).hasClass('placeholder')) {
-        $(this).bind('click', function() {
+        $(this).on('click', function() {
           // Fade-In Modal Content
           Modal.show($(this).index());
         });
@@ -88,7 +88,7 @@ var Gallery = {
     init: function() {
 
       // Setup Interactions
-      this.setBindings();
+      this.interact();
     },
 
     // Set Active Paging Button
@@ -99,11 +99,11 @@ var Gallery = {
     },
 
     // Setup Interactions
-    setBindings: function() {
+    interact: function() {
 
       // Click|Tap: Paging Buttons
       this.buttons.each(function() {
-        $(this).bind('click', function() {
+        $(this).on('click', function() {
           Gallery.moveSlider($(this).index());
         });
       });
@@ -127,7 +127,7 @@ var Modal = {
   init: function() {
 
     // Setup Interactions
-    this.setBindings();
+    this.interact();
   },
 
   // Fade-In Modal Window
@@ -159,25 +159,25 @@ var Modal = {
   },
 
   // Setup Interactions
-  setBindings: function() {
+  interact: function() {
 
     // Click|Tap: Close Buttons
-    this.close.bind('click', function() {
+    this.close.on('click', function() {
       Modal.hide($(this).parent());
     });
 
     // Click|Tap: Samples
-    this.samples.bind('click', function() {
+    this.samples.on('click', function() {
       Modal.showStage($(this).attr('src'));
     });
 
     // Click|Tap: Stage
-    this.stage.bind('click', function() {
+    this.stage.on('click', function() {
       Modal.hideStage();
     });
 
     // Click|Tap: Stage Preview
-    this.preview.bind('click', function() {
+    this.preview.on('click', function() {
       Modal.hideStage();
     });
   }
@@ -199,7 +199,7 @@ var Contact = {
   init: function() {
 
     // Setup Interactions
-    this.setBindings();
+    this.interact();
 
     // Validate & Submit
     this.process();
@@ -298,39 +298,39 @@ var Contact = {
   },
 
   // Setup Interactions
-  setBindings: function() {
+  interact: function() {
 
     // Focus|Blur: Name Field
-    this.name_input.bind('focus', function() {
+    this.name_input.on('focus', function() {
       if($(this).val() === 'Name') {
         $(this).val('');
       }
     });
-    this.name_input.bind('blur', function() {
+    this.name_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Name');
       }
     });
 
     // Focus|Blur: Email Field
-    this.email_input.bind('focus', function() {
+    this.email_input.on('focus', function() {
       if($(this).val() === 'Email') {
         $(this).val('');
       }
     });
-    this.email_input.bind('blur', function() {
+    this.email_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Email');
       }
     });
 
     // Focus|Blur: Message Field
-    this.message_input.bind('focus', function() {
+    this.message_input.on('focus', function() {
       if($(this).val() === 'Message') {
         $(this).val('');
       }
     });
-    this.message_input.bind('blur', function() {
+    this.message_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Message');
       }
