@@ -29,6 +29,8 @@
     opacity: .25;
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
 
     &:hover {
       opacity: .6;
