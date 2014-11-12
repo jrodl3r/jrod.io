@@ -21,6 +21,7 @@ module.exports = {
     globals: {
       "$": false,
       "jQuery": false,
+      "Modernizr": false,
       "console": false,
       "debug": true,
       "log": true,
