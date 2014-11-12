@@ -89,6 +89,26 @@ p {
   overflow: hidden;
 }
 
+.site {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 200px;
+
+  .main {
+    position: relative;
+    z-index: 50;
+    display: block;
+    clear: both;
+    padding-bottom: 140px;
+    background: #FFF;
+    box-shadow: 0 0 20px rgba(#000, 0.2);
+    transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+
+
 // JS-Breakpoints
 // --------------------------------------------------------------------------
 @include breakpoint($bp-portrait) {

@@ -4,18 +4,11 @@
 // ==========================================================================
 
 header {
-  padding-bottom: 15px;
-  background: rgba(#000, 1);
+  background: #0185D5;
 
-  @include breakpoint($bp-tablet) {
-    padding-top: 7%;
-    padding-bottom: 10%;
-  }
-
-  @include breakpoint($bp-medium) {
-    padding-top: 0;
-    padding-bottom: 5%;
-  }
+  transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
 
   /* @include breakpoint($bp-optimal) {
     padding-bottom: 5%;
@@ -32,6 +25,29 @@ header {
   .inner {
     position: relative;
     overflow: hidden;
+    padding-bottom: 15px;
+
+
+    /* background: linear-gradient(rgba(cyan,0.7), transparent),
+      linear-gradient(-45deg, rgba(magenta,0.7), transparent),
+      linear-gradient(45deg, rgba(yellow,0.7), transparent);
+    background-blend-mode: multiply; */
+
+    /* background: linear-gradient(rgba(limegreen,1), transparent),
+    linear-gradient(90deg, rgba(skyblue,1), transparent),
+    linear-gradient(-90deg, rgba(coral,1), transparent);
+    background-blend-mode: screen; */
+
+
+    @include breakpoint($bp-tablet) {
+      padding-top: 7%;
+      padding-bottom: 10%;
+    }
+
+    @include breakpoint($bp-medium) {
+      padding-top: 0;
+      padding-bottom: 5%;
+    }
   }
 
   nav {
@@ -195,12 +211,12 @@ header {
       }
 
       .logo-outline-path {
-        opacity: 0.85;
+        opacity: 0.65;
         fill: #FFF;
       }
 
       .logo-j-path, .logo-r-path {
-        fill: rgba(#000, 0.25);
+        fill: rgba(#000, 0.15);
       }
     }
 
@@ -208,6 +224,7 @@ header {
       width: 90%;
       margin: 0 auto 20px;
       color: rgba(#FFF, 0.5);
+      text-shadow: 1px 1px 12px rgba(0,0,0,0.15);
 
       @include breakpoint($bp-nexus5-portrait) {
         width: 85%;

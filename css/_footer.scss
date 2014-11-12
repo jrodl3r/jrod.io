@@ -4,12 +4,16 @@
 // ==========================================================================
 
 footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   height: 300px;
   padding-top: 100px;
+  background: #0185D5;
 
   .inner {
     width: 320px;
-    height: 200px;
+    height: 100%;
     margin: 0 auto;
     text-align: center;
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(255,255,255,0) 50%);
@@ -17,7 +21,7 @@ footer {
     svg.footer-logo {
 
       .logo-j-path, .logo-r-path {
-        fill: rgba(#FFF, 1);
+        fill: rgba(#FFF, 0.9);
       }
     }
   }

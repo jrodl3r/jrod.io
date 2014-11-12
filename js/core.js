@@ -2,7 +2,7 @@
 // Jrod.io ~ Application Logic
 //
 // ==========================================================================
-//debug = true;
+debug = true;
 
 // Gallery Slider
 // --------------------------------------------------------------------------
@@ -359,17 +359,67 @@ var Contact = {
 // --------------------------------------------------------------------------
 var Parallax = {
 
-  header_height: $('header').outerHeight(),
-
+  enabled: true,
+  header: $('header'),
+  header_height: 0,
 
 
   init: function() {
-    //this.x = 'foo';
+
+    // Update Dimensions
+    this.update();
+
+    // Setup Interactions
+    this.interact();
   },
+
+  // Enable Parallax
+  // enable: function() {
+  //   this.enabled = true;
+  //   //log('plax on');
+  // },
+
+  // Disable Parallax
+  // disable: function() {
+  //   this.enabled = false;
+  //   //log('plax off');
+  // },
 
   // Update Dimensions
   update: function() {
+
     this.header_height = $('header').outerHeight();
+  },
+
+  // Animate Content
+  animate: function() {
+
+    Parallax.header.css('height', Parallax.header_height - window.scrollY + 'px');
+  },
+
+  // Reset & Update Dimensions
+  resize: function() {
+
+    Parallax.header.css('height', 'auto');
+    Parallax.update();
+  },
+
+  // Setup Interactions
+  interact: function() {
+
+    // Mobile: Disable Parallax
+    if(!Modernizr.touch) {
+
+      // Scroll: Animate Content
+      $(window).scroll(function() {
+        window.requestAnimationFrame(Parallax.animate);
+      });
+
+      // Resize: Update Dimensions
+      $(window).resize(function() {
+        window.requestAnimationFrame(Parallax.resize);
+      });
+    }
   }
 };
 
@@ -437,7 +487,7 @@ var Breakpoint = {
       }
     });
 
-    // Large (1080px)
+    // Large (1020px)
     Breakpoints.on({
       name: "bp-large",
       matched: function() {
@@ -465,6 +515,11 @@ var Core = {
   }
 };
 
-$(document).ready( function() {
+$(document).ready(function() {
   Core.init();
 });
+
+
+// $(window).load(function() {
+//   Parallax.init();
+// });

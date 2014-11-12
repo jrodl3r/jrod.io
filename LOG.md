@@ -1,23 +1,19 @@
 
-
-'setup WebGL header effects'
-
-'setup parallax effects (slide-in, illuminate, etc)'
+'optimize preview images for smaller screens'
 
 'add swipe gestures to gallery'
+
+'hide gallery during reset (on size/orientation-change)'
 
 'cleanup tile logo responsiveness'
 
 'setup IE warning display + logic'
 
-'hide gallery during size/orientation-change reset'
+'setup WebGL header effects'
 
 
-
-'add parallax scroll effect on content'
-
-
-
+'add parallax scroll effects'
+'fix weird close modal button issues'
 'disable mobile zooming on modals'
 'update all jquery bind() interaction events - use newer on() instead'
 'cleanup core js, update markup + grid styles to enable parallax-scroll on content'

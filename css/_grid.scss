@@ -12,26 +12,8 @@ $susy: (
 
 .site {
   @include container();
-  @include clearfix();
 
-  .main {
-    position: relative;
-    z-index: 50;
-    display: block;
-    clear: both;
-    background: #FFF;
-
-    &:before, &:after {
-      content: " ";
-      display: table;
-    }
-
-    &:after {
-      clear: both;
-    }
-  }
-
-  div > .inner {
+  .main, div > .inner {
     @include clearfix();
   }
 
