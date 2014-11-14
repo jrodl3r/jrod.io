@@ -1,5 +1,4 @@
 
-'cleanup color usage + convert to sass variables'
 
 'optimize preview images for smaller screens'
 
@@ -12,6 +11,16 @@
 'setup IE warning display + logic'
 
 
+'cleanup color usage + convert to sass variables'
+
+
+'add footer visual effects'
+
+
+'cleanup header visuals + responsiveness'
+
+
+'cleanup sass base + lower number of includes'
 'add header visual effects'
 'add parallax scroll effects'
 'fix weird close modal button issues'
