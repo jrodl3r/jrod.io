@@ -9,15 +9,12 @@
 
 'cleanup tile logo responsiveness'
 
+
 'setup IE warning display + logic'
 
 
-'cleanup core variables, color usage + convert to sass variables'
-
-
 'add footer visual effects'
-
-
+'cleanup core variables, color usage + convert to sass variables'
 'cleanup header visuals + responsiveness'
 'cleanup sass base + lower number of includes'
 'add header visual effects'
