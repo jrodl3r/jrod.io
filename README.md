@@ -22,5 +22,5 @@ My (responsive) portfolio website.
 - **Init-Content:** Inject placeholder content
 - **Init-Header:** Setup responsive header
 - **Init-Body:** Setup responsive content layout
-- **Dev:** Core functionality + continued development
+- **Dev:** Core functionality + ongoing development
 - **Master:** Current production release

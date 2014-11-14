@@ -10,18 +10,18 @@
   - ✓ Design SVG Graph & Display Elements
 - **Setup Work**
 	- ✓ Setup Responsive Gallery Layout
-	- Setup Responsive Modal System
-	- Setup Responsive Pagination
-  - Add Gallery & Tile Content
+	- ✓ Setup Responsive Modal System
+	- ✓ Setup Responsive Pagination
+  - ✓ Add Gallery & Tile Content
 - **Setup Social**
   - ✓ Add Social Icon List & Default Styling
   - ✓ Tweak Responsiveness
 - **Setup Contact**
   - ✓ Add Contact Form & Default Styling
   - ✓ Tweak Responsiveness
-  - Setup Form Submission Functionality
+  - ✓ Setup Form Submission Functionality
 - **Setup Blog**
-  - ✓ Setup Listing Layout
+  - Setup Listing Layout
   - Compose Launch Articles
 - **Global Elements**
   - Compose Copy & Contextual Elements

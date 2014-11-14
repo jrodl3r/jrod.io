@@ -1,5 +1,5 @@
 
-'add warning: this site performs best in webkit browsers'
+'add warning: this site performs better in webkit browsers'
 
 'optimize preview images for smaller screens'
 
@@ -9,13 +9,13 @@
 
 'cleanup tile logo responsiveness'
 
+'work on typography and font styles'
+
 
 'make modal close button persist on sample previews'
 
 
-'setup IE warning display + logic'
-
-
+'update docs + setup IE/Windows warning display'
 'add footer visual effects'
 'cleanup core variables, color usage + convert to sass variables'
 'cleanup header visuals + responsiveness'

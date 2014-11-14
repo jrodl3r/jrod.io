@@ -348,7 +348,7 @@ var Contact = {
         $(this).val('');
       }
     });
-    
+
     this.message_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Message');
@@ -410,6 +410,21 @@ var Parallax = {
       $(window).resize(function() {
         window.requestAnimationFrame(Parallax.resize);
       });
+    }
+  }
+};
+
+
+// Browser Detection + Adjustments
+// --------------------------------------------------------------------------
+var Browsers = {
+
+  init: function() {
+
+    // Kill Micro$oft
+    if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.match(/iemobile/i)) {
+      $('.site').html('<p style="padding-top: 40px; text-align: center;">IE is currently unsupported! Please use <i>[insert name of any other browser]</i> for the best experience while viewing my site. Thx!</p>');
+      $('footer').css('display', 'none');
     }
   }
 };
@@ -503,6 +518,7 @@ var Core = {
     Contact.init();
     Parallax.init();
     Breakpoint.init();
+    Browsers.init();
   }
 };
 
