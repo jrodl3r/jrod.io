@@ -1,8 +1,8 @@
 //
-// Jrod.io ~ Application Logic
+// Application Logic
 //
 // ==========================================================================
-debug = true;
+// debug = true;
 
 // Gallery Slider
 // --------------------------------------------------------------------------
@@ -68,6 +68,7 @@ var Gallery = {
       //  Except 'placeholder' Tiles
       if(!$(this).hasClass('placeholder')) {
         $(this).on('click', function() {
+
           // Fade-In Modal Content & Disable Mobile Zooming
           Modal.show($(this).index());
           Modal.disableZoom();
@@ -83,7 +84,6 @@ var Gallery = {
 
     buttons: $('.pagination div'),
     num_pages: 4,
-    active_page: 0, // TODO: Add paging-memory
 
 
     init: function() {
@@ -113,19 +113,19 @@ var Gallery = {
 };
 
 
-// Work Modal
+// Project Modals
 // --------------------------------------------------------------------------
 var Modal = {
 
   container: $('.modal'),
-  heading: $('.modal h4'),
   close: $('.modal .close'),
   samples: $('.modal .sample img'),
-  preview: $('.stage img'),
-  stage: $('.stage'), // TODO: Setup child object
 
 
   init: function() {
+
+    // Setup Preview Stage
+    this.Stage.init();
 
     // Setup Interactions
     this.interact();
@@ -143,20 +143,6 @@ var Modal = {
 
     $('body').removeClass('noscroll');
     modal.fadeOut(700);
-  },
-
-  // Fade-In Stage Preview & Update Image
-  showStage: function(source) {
-
-    this.preview.attr('src', source.replace('-small', ''));
-    this.stage.fadeIn(700);
-  },
-
-  // Fade-Out Stage Preview & Remove Image
-  hideStage: function() {
-
-    this.stage.fadeOut(700);
-    this.preview.attr('src', '');
   },
 
   // Content Zooming On
@@ -184,18 +170,58 @@ var Modal = {
 
     // Click|Tap: Samples
     this.samples.on('click', function() {
-      Modal.showStage($(this).attr('src'));
+      Modal.Stage.show($(this).attr('src'));
     });
+  },
 
-    // Click|Tap: Stage
-    this.stage.on('click', function() {
-      Modal.hideStage();
-    });
 
-    // Click|Tap: Stage Preview
-    this.preview.on('click', function() {
-      Modal.hideStage();
-    });
+  // Sample Preview Stage
+  // ------------------------------------------------------------------------
+  Stage: {
+
+    container: $('.stage'),
+    preview: $('.stage img'),
+    close: $('.stage .close'),
+
+
+    init: function() {
+
+      // Setup Interactions
+      this.interact();
+    },
+
+    // Fade-In Stage & Update Image
+    show: function(source) {
+
+      this.preview.attr('src', source.replace('-small', ''));
+      this.container.fadeIn(700);
+    },
+
+    // Fade-Out Stage & Remove Image
+    hide: function() {
+
+      this.container.fadeOut(700);
+      this.preview.attr('src', '');
+    },
+
+    // Setup Interactions
+    interact: function() {
+
+      // Click|Tap: Stage
+      this.container.on('click', function() {
+        Modal.Stage.hide();
+      });
+
+      // Click|Tap: Stage Preview
+      this.preview.on('click', function() {
+        Modal.Stage.hide();
+      });
+
+      // Click|Tap: Close Buttons
+      this.close.on('click', function() {
+        Modal.Stage.hide();
+      });
+    }
   }
 };
 
@@ -415,7 +441,7 @@ var Parallax = {
 };
 
 
-// Browser Detection + Adjustments
+// Browser Sniffing
 // --------------------------------------------------------------------------
 var Browsers = {
 

@@ -1,20 +1,22 @@
 
 'add warning: this site performs better in webkit browsers'
 
-'optimize preview images for smaller screens'
+'hide gallery during reset (on size/orientation-change)'
+
+'add gallery paging memory (window resize/orientation change)'
 
 'add swipe gestures to gallery'
 
-'hide gallery during reset (on size/orientation-change)'
+'disable submit button during user notification + message submission process'
 
 'cleanup tile logo responsiveness'
+
+'optimize preview images for smaller screens'
 
 'work on typography and font styles'
 
 
-'make modal close button persist on sample previews'
-
-
+'create new Stage object, add close button to stage preview'
 'update docs + setup IE/Windows warning display'
 'add footer visual effects'
 'cleanup core variables, color usage + convert to sass variables'
