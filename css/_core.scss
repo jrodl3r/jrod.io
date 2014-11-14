@@ -6,7 +6,21 @@
 
 // Defaults
 // --------------------------------------------------------------------------
-//$breakpoint-to-ems              :     true;
+
+$default-font                   :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
+$default-radius                 :     6px;
+
+
+// Colors
+// --------------------------------------------------------------------------
+
+$header-primary                 :     #000;
+$header-alt                     :     #FFF;
+
+
+// Breakpoints
+// --------------------------------------------------------------------------
+
 $bp-hidpi                       :     min-resolution 1.5dppx;
 $bp-nexus5-portrait             :     (device-width 360px) (orientation portrait);
 $bp-ipad-portrait               :     (device-width 768px) (orientation portrait);
@@ -19,13 +33,12 @@ $bp-default                     :     960px;
 $bp-large                       :     1020px;
 $bp-huge                        :     1280px;
 $bp-cinema                      :     1320px;
-
-$default-font                   :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
-$default-radius                 :     6px;
+//$breakpoint-to-ems              :     true;
 
 
 // Styles
 // --------------------------------------------------------------------------
+
 h2, h3, p {
   margin: 0;
   font: $default-font;
@@ -101,7 +114,7 @@ p {
     clear: both;
     padding-bottom: 140px;
     background: #FFF;
-    box-shadow: 0 0 20px rgba(#000, 0.2);
+    box-shadow: 0 0 20px rgba(#000, 1);
     transform: translate3d(0,0,0);
     -moz-transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
@@ -111,6 +124,7 @@ p {
 
 // JS-Breakpoints
 // --------------------------------------------------------------------------
+
 @include breakpoint($bp-portrait) {
   body { @include defineBreakpoint("bp-portrait"); }
 }
@@ -133,12 +147,13 @@ p {
 
 // Debug
 // --------------------------------------------------------------------------
+
 #debug-breakpoint {
   position: fixed;
   z-index: 900;
   bottom: 0;
   right: 0;
-  display: block;
+  display: none;
   color: #FFF;
   font-size: 10px;
   font-weight: bold;

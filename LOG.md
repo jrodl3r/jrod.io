@@ -1,4 +1,6 @@
 
+'cleanup color usage + convert to sass variables'
+
 'optimize preview images for smaller screens'
 
 'add swipe gestures to gallery'
@@ -9,9 +11,8 @@
 
 'setup IE warning display + logic'
 
-'setup WebGL header effects'
 
-
+'add header visual effects'
 'add parallax scroll effects'
 'fix weird close modal button issues'
 'disable mobile zooming on modals'

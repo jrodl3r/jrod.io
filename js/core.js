@@ -122,7 +122,7 @@ var Modal = {
   close: $('.modal .close'),
   samples: $('.modal .sample img'),
   preview: $('.stage img'),
-  stage: $('.stage'), // TODO: Setup sub-object
+  stage: $('.stage'), // TODO: Setup child object
 
 
   init: function() {
@@ -518,8 +518,3 @@ var Core = {
 $(document).ready(function() {
   Core.init();
 });
-
-
-// $(window).load(function() {
-//   Parallax.init();
-// });
