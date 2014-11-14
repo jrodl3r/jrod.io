@@ -12,7 +12,7 @@
 'setup IE warning display + logic'
 
 
-'cleanup color usage + convert to sass variables'
+'cleanup core variables, color usage + convert to sass variables'
 
 
 'add footer visual effects'

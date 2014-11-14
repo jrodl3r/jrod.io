@@ -4,18 +4,16 @@
 // ==========================================================================
 
 
-// Defaults
+// Defaults & Colors
 // --------------------------------------------------------------------------
 
-$default-font                   :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
-$default-radius                 :     6px;
-
-
-// Colors
-// --------------------------------------------------------------------------
-
-$header-primary                 :     #000;
-$header-alt                     :     #FFF;
+$font                           :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
+$font-color                     :     #999999;
+$link-color                     :     #B3B3B3;
+$title-color                    :     #888888;
+$header-primary                 :     #0072FF;
+$header-alt                     :     #4E18A6;
+$radius                         :     6px;
 
 
 // Breakpoints
@@ -33,7 +31,6 @@ $bp-default                     :     960px;
 $bp-large                       :     1020px;
 $bp-huge                        :     1280px;
 $bp-cinema                      :     1320px;
-//$breakpoint-to-ems              :     true;
 
 
 // Styles
@@ -41,14 +38,14 @@ $bp-cinema                      :     1320px;
 
 h2, h3, p {
   margin: 0;
-  font: $default-font;
+  font: $font;
 }
 
 h2, h3 {
   padding: 72px 0 32px;
   font-size: 32px;
   text-align: center;
-  color: #888;
+  color: $title-color;
 
   @include breakpoint($bp-landscape) {
     text-align: left;
@@ -82,7 +79,7 @@ p {
   text-align: justify;
   line-height: 23px;
   letter-spacing: 0.035em;
-  color: #999;
+  color: $font-color;
   cursor: default;
 
   &:last-of-type {
@@ -153,7 +150,7 @@ p {
   z-index: 900;
   bottom: 0;
   right: 0;
-  display: none;
+  display: block;
   color: #FFF;
   font-size: 10px;
   font-weight: bold;

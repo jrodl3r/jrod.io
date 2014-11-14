@@ -16,7 +16,7 @@
     height: 46px;
     width: 100%;
     margin-bottom: 20px;
-    color: #b3b3b3;
+    color: $link-color;
     font-size: 18px;
     line-height: 46px;
     text-decoration: none;
@@ -45,7 +45,7 @@
       font-weight: bold;
       text-align: center;
       background: #CCC;
-      border-radius: $default-radius;
+      border-radius: $radius;
 
 
       @include breakpoint($bp-default) {

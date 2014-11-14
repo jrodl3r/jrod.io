@@ -49,18 +49,18 @@ header {
     }
 
     &.gradient {
-      background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 60%);
+      background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 60%);
 
       @include breakpoint($bp-landscape) {
-        background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 90%);
+        background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 90%);
       }
 
       @include breakpoint($bp-tablet) {
-        background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 70%);
+        background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 70%);
       }
 
       @include breakpoint($bp-large) {
-        background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 75%);
+        background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 75%);
       }
     }
 

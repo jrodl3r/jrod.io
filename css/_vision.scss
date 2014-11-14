@@ -99,7 +99,7 @@
         width: 100%;
         margin-top: 16px;
         background: #E6E6E6;
-        border-radius: $default-radius;
+        border-radius: $radius;
         overflow: hidden;
 
         @include breakpoint($bp-landscape) {
@@ -121,8 +121,8 @@
           left: 0;
           height: 0;
           width: 88%;
-          border-top-left-radius: $default-radius;
-          border-bottom-left-radius: $default-radius;
+          border-top-left-radius: $radius;
+          border-bottom-left-radius: $radius;
           border-top: 24px solid #B3B3B3;
           border-right: 24px solid #E6E6E6;
 
