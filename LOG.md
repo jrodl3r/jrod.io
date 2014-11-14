@@ -10,6 +10,9 @@
 'cleanup tile logo responsiveness'
 
 
+'make modal close button persist on sample previews'
+
+
 'setup IE warning display + logic'
 
 

@@ -322,6 +322,7 @@ var Contact = {
         $(this).val('');
       }
     });
+
     this.name_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Name');
@@ -334,6 +335,7 @@ var Contact = {
         $(this).val('');
       }
     });
+
     this.email_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Email');
@@ -346,6 +348,7 @@ var Contact = {
         $(this).val('');
       }
     });
+    
     this.message_input.on('blur', function() {
       if(!$(this).val().trim()) {
         $(this).val('Message');
@@ -372,18 +375,6 @@ var Parallax = {
     // Setup Interactions
     this.interact();
   },
-
-  // Enable Parallax
-  // enable: function() {
-  //   this.enabled = true;
-  //   //log('plax on');
-  // },
-
-  // Disable Parallax
-  // disable: function() {
-  //   this.enabled = false;
-  //   //log('plax off');
-  // },
 
   // Update Dimensions
   update: function() {
