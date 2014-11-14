@@ -20,16 +20,60 @@ header {
 
     &.pattern {
       background: url(../img/bg-pattern.png) top left repeat;
-      background-size: 4%;
+      background-size: 11%;
       opacity: 0.5;
+
+      @include breakpoint($bp-landscape) {
+        background-size: 8%;
+      }
+
+      @include breakpoint($bp-tablet) {
+        background-size: 7%;
+      }
+
+      @include breakpoint($bp-medium) {
+        background-size: 6%;
+      }
+
+      @include breakpoint($bp-optimal) {
+        background-size: 5%;
+      }
+
+      @include breakpoint($bp-large) {
+        background-size: 4.5%;
+      }
+
+      @include breakpoint($bp-huge) {
+        background-size: 4%;
+      }
     }
 
     &.gradient {
-      background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%,rgba(#4E18A6, 1) 75%);
+      background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 60%);
+
+      @include breakpoint($bp-landscape) {
+        background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 90%);
+      }
+
+      @include breakpoint($bp-tablet) {
+        background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 70%);
+      }
+
+      @include breakpoint($bp-large) {
+        background: linear-gradient(to bottom, rgba(#0072FF, 1) 0%, rgba(#4E18A6, 1) 75%);
+      }
     }
 
     &.vignette {
-      background: radial-gradient(ellipse at center, rgba(#000, 0) 0%, rgba(#000, 1) 110%);
+      background: radial-gradient(ellipse at center, rgba(#000, 0) 0%, rgba(#000, 1) 90%);
+
+      @include breakpoint($bp-tablet) {
+        background: radial-gradient(ellipse at center, rgba(#000, 0) 0%, rgba(#000, 1) 85%);
+      }
+
+      @include breakpoint($bp-large) {
+        background: radial-gradient(ellipse at center, rgba(#000, 0) 0%, rgba(#000, 1) 90%);
+      }
     }
   }
 
@@ -135,19 +179,18 @@ header {
 
       .logo-outline-path {
         opacity: 0.75;
-        //fill: #FFF;
       }
 
       .logo-j-path, .logo-r-path {
-        fill: rgba(#000, 0.35);
+        fill: rgba(#000, 0.45);
       }
     }
 
     p {
       width: 90%;
       margin: 0 auto 20px;
-      color: rgba(#FFF, 0.7);
-      text-shadow: 1px 1px 5px rgba(#000, 1);
+      color: rgba(#FFF, 0.65);
+      text-shadow: 1px 1px 8px rgba(#000, 1);
 
       @include breakpoint($bp-nexus5-portrait) {
         width: 85%;

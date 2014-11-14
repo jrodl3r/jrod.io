@@ -1,9 +1,9 @@
 <svg version="1.1" class="logo-splash" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 537 330" enable-background="new 0 0 537 330" xml:space="preserve">
 	<filter id="outline-shadow">
-    <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10" />
     <feOffset dx="2" dy="2" />
 		<feComponentTransfer>
-	    <feFuncA type="linear" slope="0.5"/>
+	    <feFuncA type="linear" slope="0.8"/>
 	  </feComponentTransfer>
     <feMerge>
       <feMergeNode />

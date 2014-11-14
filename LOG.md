@@ -1,4 +1,5 @@
 
+'add warning: this site performs best in webkit browsers'
 
 'optimize preview images for smaller screens'
 
@@ -18,8 +19,6 @@
 
 
 'cleanup header visuals + responsiveness'
-
-
 'cleanup sass base + lower number of includes'
 'add header visual effects'
 'add parallax scroll effects'
