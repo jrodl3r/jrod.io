@@ -21,7 +21,10 @@
 
 'remove focus from all form elements after submission'
 
+"change contact h2 to 'Connect' on breakpoints where contact/social panels are merged"
 
+
+'cleanup stage preview close button responsiveness'
 'cleanup header bg pattern on large/cinema displays'
 'create new Stage object, add close button to stage preview'
 'update docs + setup IE/Windows warning display'

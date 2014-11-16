@@ -21,7 +21,7 @@
   .close {
     position: fixed;
     top: 16px;
-    right: 16px;
+    right: 18px;
     width: 28px;
     height: 28px;
     text-indent: -9999em;
@@ -31,6 +31,11 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
+
+    @include breakpoint($bp-default) {
+      top: 24px;
+      right: 26px;
+    }
 
     &:hover {
       opacity: .6;
@@ -240,9 +245,11 @@
 
   .close {
     position: fixed;
+    z-index: 300;
     top: 16px;
-    right: 16px;
+    right: 18px;
     width: 28px;
+    display: none;
     height: 28px;
     text-indent: -9999em;
     background: url(../img/modal-close-button.svg) center center no-repeat;
@@ -251,6 +258,15 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
+
+    @include breakpoint($bp-tablet) {
+      display: block;
+    }
+
+    @include breakpoint($bp-default) {
+      top: 24px;
+      right: 26px;
+    }
 
     &:hover {
       opacity: .6;
@@ -267,5 +283,13 @@
     cursor: pointer;
     box-shadow: 1px 1px 10px rgba(#000, 0.1);
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    @include breakpoint($bp-tablet) {
+      top: 8%;
+    }
+
+    @include breakpoint($bp-default) {
+      top: 10%;
+    }
   }
 }
