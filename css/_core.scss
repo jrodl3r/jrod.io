@@ -103,6 +103,8 @@ p {
   position: relative;
   z-index: 10;
   margin-bottom: 200px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   .main {
     position: relative;
