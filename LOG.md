@@ -1,7 +1,12 @@
+'lazy-load work sample preview images'
+
+'optimize preview images for smaller screens'
+
+'add RWDPerf to build process + documentation'
 
 'add warning: this site performs better in webkit browsers'
 
-'work on typography and font styles'
+'enhance typography and font styles'
 
 'hide gallery during reset (on size/orientation-change)'
 
@@ -9,19 +14,14 @@
 
 'add swipe gestures to gallery'
 
+'add next/prev buttons to preview stage (starting on tablet breakpoint)'
+
+'add next/prev swipes to preview stage (portrait + landscape breakpoints)'
+
 'cleanup tile logo responsiveness'
-
-'optimize preview images for smaller screens'
-
-'add RWDPerf to build process + documentation'
-
-
-'remove focus from all form elements after submission'
 
 
 "change submit button to 'Sending...' during submission"
-
-
 'disable submit button during form notification or submission'
 "adjust footer background styles so user doesn't see artifacts on over-scroll effect"
 'cleanup stage preview close button responsiveness'
