@@ -244,10 +244,9 @@ var Contact = {
     // Setup Interactions
     this.interact();
 
-    // Validate & Submit
+    // Setup Submission
     this.process();
   },
-
 
   // Validate Input
   validate: function() {
@@ -291,6 +290,9 @@ var Contact = {
         // Disable While Submitting
         Contact.disable();
 
+        // Update Submit Button Label
+        Contact.updateButton(true);
+
         // Serialize Input
         Contact.form_data = $(Contact.ajax_form).serialize();
 
@@ -304,6 +306,7 @@ var Contact = {
         }).done(function(response) {
 
           Contact.notify(response, 'good');
+          Contact.updateButton();
           Contact.reset();
 
         // Failed
@@ -314,29 +317,10 @@ var Contact = {
           } else {
             Contact.notify('Oops! An error occured and your message could not be sent.', 'bad');
           }
+          Contact.updateButton();
         });
       }
     });
-  },
-
-  // Enable Submit Button
-  enable: function() {
-
-    this.submit_button.removeAttr('disabled');
-  },
-
-  // Disable Submit Button
-  disable: function() {
-
-    this.submit_button.attr('disabled', 'disabled');
-  },
-
-  // Clear User Input & Reset Default Labels
-  reset: function() {
-
-    Contact.name_input.val('Name');
-    Contact.email_input.val('Email');
-    Contact.message_input.val('Message');
   },
 
   // Notify User
@@ -363,6 +347,36 @@ var Contact = {
         Contact.enable();
       });
     }, 3000);
+  },
+
+  // Enable Submit Button
+  enable: function() {
+
+    this.submit_button.removeAttr('disabled');
+  },
+
+  // Disable Submit Button
+  disable: function() {
+
+    this.submit_button.attr('disabled', 'disabled');
+  },
+
+  // Clear User Input & Reset Default Labels
+  reset: function() {
+
+    Contact.name_input.val('Name');
+    Contact.email_input.val('Email');
+    Contact.message_input.val('Message');
+  },
+
+  // Update Submit Button Label
+  updateButton: function(status) {
+
+    if(status === true) {
+      this.submit_button.html('Sending...');
+    } else {
+      this.submit_button.html('Send');
+    }
   },
 
   // Setup Interactions
