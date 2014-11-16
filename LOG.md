@@ -24,6 +24,8 @@
 "change contact h2 to 'Connect' on breakpoints where contact/social panels are merged"
 
 
+
+"adjust footer background styles so user doesn't see artifacts on over-scroll effect"
 'cleanup stage preview close button responsiveness'
 'cleanup header bg pattern on large/cinema displays'
 'create new Stage object, add close button to stage preview'
