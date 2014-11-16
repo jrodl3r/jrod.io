@@ -1,21 +1,28 @@
 
 'add warning: this site performs better in webkit browsers'
 
+'work on typography and font styles'
+
 'hide gallery during reset (on size/orientation-change)'
 
 'add gallery paging memory (window resize/orientation change)'
 
 'add swipe gestures to gallery'
 
-'disable submit button during user notification + message submission process'
-
 'cleanup tile logo responsiveness'
 
 'optimize preview images for smaller screens'
 
-'work on typography and font styles'
+'add RWDPerf to build process + documentation'
+
+'disable submit button during user notification + message submission process'
+
+"change submit button to 'Sending...' during submission"
+
+'remove focus from all form elements after submission'
 
 
+'cleanup header bg pattern on large/cinema displays'
 'create new Stage object, add close button to stage preview'
 'update docs + setup IE/Windows warning display'
 'add footer visual effects'

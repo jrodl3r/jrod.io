@@ -60,7 +60,7 @@ header {
       }
 
       @include breakpoint($bp-huge) {
-        background-size: 4%;
+        background-size: 52px;
       }
     }
 
@@ -300,7 +300,7 @@ footer {
       }
 
       @include breakpoint($bp-huge) {
-        background-size: 4%;
+        background-size: 52px;
       }
     }
 
