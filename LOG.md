@@ -1,4 +1,8 @@
 
+'optimize preview images for smaller screens'
+
+'add RWDPerf to build process + documentation'
+
 'add warning: this site performs better in webkit browsers'
 
 'work on typography and font styles'
@@ -10,11 +14,6 @@
 'add swipe gestures to gallery'
 
 'cleanup tile logo responsiveness'
-
-'optimize preview images for smaller screens'
-
-'add RWDPerf to build process + documentation'
-
 
 
 "change submit button to 'Sending...' during submission"
