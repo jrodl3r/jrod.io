@@ -79,6 +79,12 @@
       background: #CCC;
     }
 
+    &:disabled {
+      color: $link-color;
+      background: #E6E6E6;
+      cursor: default;
+    }
+
     @include breakpoint($bp-landscape) {
       float: left;
     }

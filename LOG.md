@@ -15,16 +15,14 @@
 
 'add RWDPerf to build process + documentation'
 
-'disable submit button during user notification + message submission process'
-
-"change submit button to 'Sending...' during submission"
 
 'remove focus from all form elements after submission'
 
-"change contact h2 to 'Connect' on breakpoints where contact/social panels are merged"
+
+"change submit button to 'Sending...' during submission"
 
 
-
+'disable submit button during form notification or submission'
 "adjust footer background styles so user doesn't see artifacts on over-scroll effect"
 'cleanup stage preview close button responsiveness'
 'cleanup header bg pattern on large/cinema displays'

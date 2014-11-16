@@ -234,6 +234,7 @@ var Contact = {
   name_input: $('input.name'),
   email_input: $('input.email'),
   message_input: $('textarea.message'),
+  submit_button: $('button[type=submit]'),
   notify_message: $('.notify'),
   form_data: {},
 
@@ -287,6 +288,9 @@ var Contact = {
       // Validate Input
       if(Contact.validate()) {
 
+        // Disable While Submitting
+        Contact.disable();
+
         // Serialize Input
         Contact.form_data = $(Contact.ajax_form).serialize();
 
@@ -300,9 +304,7 @@ var Contact = {
         }).done(function(response) {
 
           Contact.notify(response, 'good');
-          Contact.name_input.val('Name');
-          Contact.email_input.val('Email');
-          Contact.message_input.val('Message');
+          Contact.reset();
 
         // Failed
         }).fail(function(data) {
@@ -317,8 +319,31 @@ var Contact = {
     });
   },
 
+  // Enable Submit Button
+  enable: function() {
+
+    this.submit_button.removeAttr('disabled');
+  },
+
+  // Disable Submit Button
+  disable: function() {
+
+    this.submit_button.attr('disabled', 'disabled');
+  },
+
+  // Clear User Input & Reset Default Labels
+  reset: function() {
+
+    Contact.name_input.val('Name');
+    Contact.email_input.val('Email');
+    Contact.message_input.val('Message');
+  },
+
   // Notify User
   notify: function(message, status) {
+
+    // Temporarily Disable
+    this.disable();
 
     // Set Notification Color
     if (status === 'good') {
@@ -331,10 +356,11 @@ var Contact = {
     this.notify_message.html(message);
     this.notify_message.fadeIn(700);
 
-    // Fade-Out After 3sec
+    // Fade-Out & Re-enable After 3sec
     setTimeout(function() {
       Contact.notify_message.fadeOut(700, function(){
         Contact.notify_message.removeClass('good bad');
+        Contact.enable();
       });
     }, 3000);
   },
