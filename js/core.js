@@ -2,7 +2,7 @@
 // Application Logic
 //
 // ==========================================================================
-// debug = true;
+debug = true;
 
 // Gallery Slider
 // --------------------------------------------------------------------------
@@ -493,11 +493,15 @@ var Parallax = {
 
       // Scroll: Animate Content
       $(window).scroll(function() {
-        window.requestAnimationFrame(Parallax.animate);
+
+        if(Parallax.header_height - window.scrollY > $('body').scrollTop()) {
+          window.requestAnimationFrame(Parallax.animate);
+        }
       });
 
       // Resize: Update Dimensions
       $(window).resize(function() {
+
         window.requestAnimationFrame(Parallax.resize);
       });
     }
@@ -505,7 +509,7 @@ var Parallax = {
 };
 
 
-// Browser Sniffing
+// Browser-Specific Adjustments
 // --------------------------------------------------------------------------
 var Browsers = {
 
@@ -513,7 +517,7 @@ var Browsers = {
 
     // Kill Micro$oft
     if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.match(/iemobile/i)) {
-      $('.site').html('<p style="padding-top: 40px; text-align: center;">IE is currently unsupported! Please use <i>[insert name of any other browser]</i> for the best experience while viewing my site. Thx!</p>');
+      $('.site').html('<p style="padding-top: 40px; text-align: center;">The IE version of my site is currently under development.<br>Please use any Webkit browser for the best experience while viewing my site. Thx!</p>');
       $('footer').css('display', 'none');
     }
   }
@@ -598,7 +602,7 @@ var Breakpoint = {
 };
 
 
-// Core Initialization
+// Core Application Object
 // --------------------------------------------------------------------------
 var Core = {
 
