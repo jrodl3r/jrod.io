@@ -1,6 +1,3 @@
-'lazy-load work sample preview images'
-
-'optimize preview images for smaller screens'
 
 'add RWDPerf to build process + documentation'
 
@@ -8,11 +5,9 @@
 
 'enhance typography and font styles'
 
-'hide gallery during reset (on size/orientation-change)'
-
 'add gallery paging memory (window resize/orientation change)'
 
-'add swipe gestures to gallery'
+'hide gallery during reset (on size/orientation-change)'
 
 'cleanup tile logo responsiveness'
 
@@ -20,8 +15,12 @@
 
 'add next/prev swipes to preview stage (portrait + landscape breakpoints)'
 
+'add swipe gestures to gallery'
+
+'optimize preview images for smaller screens'
 
 
+'lazy-load work sample preview images'
 "change submit button to 'Sending...' during submission"
 'disable submit button during form notification or submission'
 "adjust footer background styles so user doesn't see artifacts on over-scroll effect"
