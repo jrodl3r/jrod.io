@@ -613,11 +613,14 @@ var Core = {
     Browsers.init();
   },
 
-  // Reveal Content
-  showContent: function() {
+  // Load Content
+  load: function() {
 
-    $('.site').css('visibility', 'visible');
-    $('footer').css('visibility', 'visible');
+    setTimeout(function() {
+      $('.site').css('visibility', 'visible');
+      $('footer').css('visibility', 'visible');
+      window.scrollTo(0, 0);
+    }, 0);
   }
 };
 
@@ -626,5 +629,5 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-  Core.showContent();
+  Core.load();
 });
