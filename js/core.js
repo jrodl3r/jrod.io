@@ -120,7 +120,7 @@ var Modal = {
   container: $('.modal'),
   close: $('.modal .close'),
   samples: $('.modal .sample img'),
-
+  previews_loaded: false,
 
   init: function() {
 
@@ -134,15 +134,27 @@ var Modal = {
   // Fade-In Modal Window
   show: function(index) {
 
-    $('body').addClass('noscroll');
+    if(!this.previews_loaded) {
+      this.loadPreviews();
+    }
+    this.disableScrolling();
     this.container.eq(index).fadeIn(700);
   },
 
   // Fade-Out Modal Window
   hide: function(modal) {
 
-    $('body').removeClass('noscroll');
+    this.enableScrolling();
     modal.fadeOut(700);
+  },
+
+  // Lazy-Load Modal Samples
+  loadPreviews: function() {
+
+    this.samples.each(function() {
+      $(this).attr('src', $(this).attr('data-src'));
+    });
+    this.previews_loaded = true;
   },
 
   // Content Zooming On
@@ -157,6 +169,18 @@ var Modal = {
 
     $('head meta[name=viewport]').remove();
     $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />');
+  },
+
+  // Content Scrolling On
+  enableScrolling: function() {
+
+    $('body').removeClass('noscroll');
+  },
+
+  // Content Scrolling Off
+  disableScrolling: function() {
+
+    $('body').addClass('noscroll');
   },
 
   // Setup Interactions
