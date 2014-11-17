@@ -1,3 +1,4 @@
+'lazy-load work sample preview images'
 
 'optimize preview images for smaller screens'
 
