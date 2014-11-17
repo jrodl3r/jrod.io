@@ -102,6 +102,7 @@ p {
 .site {
   position: relative;
   z-index: 10;
+  visibility: hidden;
   margin-bottom: 200px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

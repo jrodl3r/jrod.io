@@ -524,6 +524,7 @@ var Browsers = {
 // --------------------------------------------------------------------------
 var Breakpoint = {
 
+
   init: function() {
 
     // Portrait (360px)
@@ -601,6 +602,7 @@ var Breakpoint = {
 // --------------------------------------------------------------------------
 var Core = {
 
+
   init: function() {
 
     Gallery.init();
@@ -609,9 +611,20 @@ var Core = {
     Parallax.init();
     Breakpoint.init();
     Browsers.init();
+  },
+
+  // Reveal Content
+  showContent: function() {
+
+    $('.site').css('visibility', 'visible');
+    $('footer').css('visibility', 'visible');
   }
 };
 
 $(document).ready(function() {
   Core.init();
+});
+
+$(window).load(function() {
+  Core.showContent();
 });

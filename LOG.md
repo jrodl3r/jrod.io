@@ -1,4 +1,6 @@
 
+'add header intro animation sequence (VelocityJS)'
+
 'add RWDPerf to build process + documentation'
 
 'add warning: this site performs better in webkit browsers'
