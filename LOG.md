@@ -14,11 +14,12 @@
 
 'add swipe gestures to gallery'
 
+'cleanup tile logo responsiveness'
+
 'add next/prev buttons to preview stage (starting on tablet breakpoint)'
 
 'add next/prev swipes to preview stage (portrait + landscape breakpoints)'
 
-'cleanup tile logo responsiveness'
 
 
 "change submit button to 'Sending...' during submission"
