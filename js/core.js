@@ -259,7 +259,8 @@ var Contact = {
   email_input: $('input.email'),
   message_input: $('textarea.message'),
   submit_button: $('button[type=submit]'),
-  notify_message: $('.notify'),
+  notify_box: $('.notify'),
+  notify_message: $('.notify .inner'),
   form_data: {},
 
 
@@ -268,35 +269,43 @@ var Contact = {
     // Setup Interactions
     this.interact();
 
-    // Setup Submission
+    // Validation & Submission
     this.process();
   },
 
   // Validate Input
   validate: function() {
 
+    var status = true;
+
     // Verify Name
     if(this.name_input.val() === 'Name' || this.name_input.val() === '') {
       this.notify('Forget to add your name?', 'bad');
       this.name_input.focus();
-      return false;
+      status = false;
     }
 
     // Verify Email
-    if(this.email_input.val() === 'Email' || this.email_input.val() === '') {
+    else if(this.email_input.val() === 'Email' || this.email_input.val() === '') {
       this.notify('Forget to add your email?', 'bad');
       this.email_input.focus();
-      return false;
+      status = false;
+    }
+
+    else if(/^.+@.+\..+$/.test(this.email_input.val()) === false) {
+      this.notify('Did you mistype your email?', 'bad');
+      this.email_input.focus();
+      status = false;
     }
 
     // Verify Message
-    if(this.message_input.val() === 'Message' || this.message_input.val() === '') {
+    else if(this.message_input.val() === 'Message' || this.message_input.val() === '') {
       this.notify('Forget to add your message?', 'bad');
       this.message_input.focus();
-      return false;
+      status = false;
     }
 
-    return true;
+    return status;
   },
 
   // Submit User Message
@@ -355,19 +364,19 @@ var Contact = {
 
     // Set Notification Color
     if (status === 'good') {
-      this.notify_message.addClass('good');
+      this.notify_box.addClass('good');
     } else if (status === 'bad') {
-      this.notify_message.addClass('bad');
+      this.notify_box.addClass('bad');
     }
 
     // Inject Message & Fade-In
     this.notify_message.html(message);
-    this.notify_message.fadeIn(700);
+    this.notify_box.fadeIn(700);
 
     // Fade-Out & Re-enable After 3sec
     setTimeout(function() {
-      Contact.notify_message.fadeOut(700, function(){
-        Contact.notify_message.removeClass('good bad');
+      Contact.notify_box.fadeOut(700, function(){
+        Contact.notify_box.removeClass('good bad');
         Contact.enable();
       });
     }, 3000);
