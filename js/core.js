@@ -2,7 +2,7 @@
 // Application Logic
 //
 // ==========================================================================
-debug = true;
+//debug = true;
 
 // Gallery Slider
 // --------------------------------------------------------------------------
@@ -457,11 +457,13 @@ var Contact = {
 };
 
 
-// Parallax Scroll Effects
+// Application Visuals
 // --------------------------------------------------------------------------
-var Parallax = {
+var Fx = {
 
   enabled: true,
+  site: $('.site'),
+  footer: $('footer'),
   header: $('header'),
   header_height: 0,
 
@@ -475,6 +477,16 @@ var Parallax = {
     this.interact();
   },
 
+  // Load Content
+  load: function() {
+
+    setTimeout(function() {
+      Fx.site.css('visibility', 'visible');
+      Fx.footer.css('visibility', 'visible');
+      window.scrollTo(0, 0);
+    }, 0);
+  },
+
   // Update Dimensions
   update: function() {
 
@@ -484,14 +496,17 @@ var Parallax = {
   // Animate Content
   animate: function() {
 
-    Parallax.header.css('height', Parallax.header_height - window.scrollY + 'px');
+    if(Fx.header_height - window.scrollY > $('body').scrollTop()) {
+      Fx.header.css('height', Fx.header_height - window.scrollY + 'px');
+    }
   },
 
   // Reset & Update Dimensions
   resize: function() {
 
-    Parallax.header.css('height', 'auto');
-    Parallax.update();
+    window.scrollTo(0, 0);
+    Fx.header.css('height', 'auto');
+    Fx.update();
   },
 
   // Setup Interactions
@@ -503,15 +518,13 @@ var Parallax = {
       // Scroll: Animate Content
       $(window).scroll(function() {
 
-        if(Parallax.header_height - window.scrollY > $('body').scrollTop()) {
-          window.requestAnimationFrame(Parallax.animate);
-        }
+        window.requestAnimationFrame(Fx.animate);
       });
 
       // Resize: Update Dimensions
       $(window).resize(function() {
 
-        window.requestAnimationFrame(Parallax.resize);
+        window.requestAnimationFrame(Fx.resize);
       });
     }
   }
@@ -524,7 +537,7 @@ var Browsers = {
 
   init: function() {
 
-    // Kill Micro$oft
+    // Show IE Warning
     if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.match(/iemobile/i)) {
       $('.site').html('<p style="padding-top: 40px; text-align: center;">The IE version of my site is currently under development.<br>Please use any Webkit browser for the best experience while viewing my site. Thx!</p>');
       $('footer').css('display', 'none');
@@ -611,36 +624,20 @@ var Breakpoint = {
 };
 
 
-// Core Application Object
+// Load Application
 // --------------------------------------------------------------------------
-var Core = {
-
-
-  init: function() {
-
-    Gallery.init();
-    Modal.init();
-    Contact.init();
-    Parallax.init();
-    Breakpoint.init();
-    Browsers.init();
-  },
-
-  // Load Content
-  load: function() {
-
-    setTimeout(function() {
-      $('.site').css('visibility', 'visible');
-      $('footer').css('visibility', 'visible');
-      window.scrollTo(0, 0);
-    }, 0);
-  }
-};
 
 $(document).ready(function() {
-  Core.init();
+
+  Fx.init();
 });
 
 $(window).load(function() {
-  Core.load();
+
+  Fx.load();
+  Gallery.init();
+  Modal.init();
+  Contact.init();
+  Breakpoint.init();
+  Browsers.init();
 });
