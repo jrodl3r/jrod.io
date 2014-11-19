@@ -35,6 +35,6 @@ module.exports = {
     options: {
       ignores: ['js/dist.min.js']
     },
-    src: ['js/core.js', 'js/plugins.js', 'js/utils.js']
+    src: ['js/core.js', 'js/utils.js']
   }
 };
