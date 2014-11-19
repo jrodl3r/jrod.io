@@ -4,6 +4,81 @@
 // ==========================================================================
 //debug = true;
 
+
+// Visual Effects
+// --------------------------------------------------------------------------
+var Fx = {
+
+  enabled: true,
+  site: $('.site'),
+  footer: $('footer'),
+  header: $('header'),
+  header_height: 0,
+
+
+  init: function() {
+
+    // Update Dimensions
+    this.update();
+
+    // Setup Interactions
+    this.interact();
+  },
+
+  // Load Content
+  load: function() {
+
+    setTimeout(function() {
+      Fx.site.css('visibility', 'visible');
+      Fx.footer.css('visibility', 'visible');
+      window.scrollTo(0, 0);
+    }, 0);
+  },
+
+  // Update Dimensions
+  update: function() {
+
+    this.header_height = $('header').outerHeight();
+  },
+
+  // Animate Content
+  animate: function() {
+
+    if(Fx.header_height - window.scrollY > $('body').scrollTop()) {
+      Fx.header.css('height', Fx.header_height - window.scrollY + 'px');
+    }
+  },
+
+  // Reset & Update Dimensions
+  resize: function() {
+
+    window.scrollTo(0, 0);
+    Fx.header.css('height', 'auto');
+    Fx.update();
+  },
+
+  // Setup Interactions
+  interact: function() {
+
+    // Mobile: Disable Parallax
+    if(!Modernizr.touch) {
+
+      // Scroll: Animate Content
+      $(window).scroll(function() {
+
+        window.requestAnimationFrame(Fx.animate);
+      });
+
+      // Resize: Update Dimensions
+      $(window).resize(function() {
+
+        window.requestAnimationFrame(Fx.resize);
+      });
+    }
+  }
+};
+
+
 // Gallery Slider
 // --------------------------------------------------------------------------
 var Gallery = {
@@ -453,80 +528,6 @@ var Contact = {
         $(this).val('Message');
       }
     });
-  }
-};
-
-
-// Application Visuals
-// --------------------------------------------------------------------------
-var Fx = {
-
-  enabled: true,
-  site: $('.site'),
-  footer: $('footer'),
-  header: $('header'),
-  header_height: 0,
-
-
-  init: function() {
-
-    // Update Dimensions
-    this.update();
-
-    // Setup Interactions
-    this.interact();
-  },
-
-  // Load Content
-  load: function() {
-
-    setTimeout(function() {
-      Fx.site.css('visibility', 'visible');
-      Fx.footer.css('visibility', 'visible');
-      window.scrollTo(0, 0);
-    }, 0);
-  },
-
-  // Update Dimensions
-  update: function() {
-
-    this.header_height = $('header').outerHeight();
-  },
-
-  // Animate Content
-  animate: function() {
-
-    if(Fx.header_height - window.scrollY > $('body').scrollTop()) {
-      Fx.header.css('height', Fx.header_height - window.scrollY + 'px');
-    }
-  },
-
-  // Reset & Update Dimensions
-  resize: function() {
-
-    window.scrollTo(0, 0);
-    Fx.header.css('height', 'auto');
-    Fx.update();
-  },
-
-  // Setup Interactions
-  interact: function() {
-
-    // Mobile: Disable Parallax
-    if(!Modernizr.touch) {
-
-      // Scroll: Animate Content
-      $(window).scroll(function() {
-
-        window.requestAnimationFrame(Fx.animate);
-      });
-
-      // Resize: Update Dimensions
-      $(window).resize(function() {
-
-        window.requestAnimationFrame(Fx.resize);
-      });
-    }
   }
 };
 
