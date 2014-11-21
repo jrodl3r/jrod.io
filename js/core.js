@@ -1,626 +1,631 @@
 //
-// Application Logic
+// Core Application Logic
 //
 // ==========================================================================
 //debug = true;
 
 
-// Visual Effects
+// Base Application Object
 // --------------------------------------------------------------------------
-var Fx = {
+var App = {
 
-  enabled: true,
-  site: $('.site'),
-  footer: $('footer'),
-  header: $('header'),
-  header_height: 0,
+  // Visual Effects
+  // ------------------------------------------------------------------------
+  Fx: {
+
+    enabled: true,
+    site: $('.site'),
+    footer: $('footer'),
+    header: $('header'),
+    header_height: 0,
 
 
-  init: function() {
+    init: function() {
+
+      // Update Dimensions
+      this.update();
+
+      // Setup Interactions
+      this.interact();
+    },
+
+    // Load Content
+    load: function() {
+
+      setTimeout(function() {
+        App.Fx.site.css('visibility', 'visible');
+        App.Fx.footer.css('visibility', 'visible');
+        //window.scrollTo(0, 0);
+      }, 0);
+    },
 
     // Update Dimensions
-    this.update();
+    update: function() {
 
-    // Setup Interactions
-    this.interact();
-  },
-
-  // Load Content
-  load: function() {
-
-    setTimeout(function() {
-      Fx.site.css('visibility', 'visible');
-      Fx.footer.css('visibility', 'visible');
-      window.scrollTo(0, 0);
-    }, 0);
-  },
-
-  // Update Dimensions
-  update: function() {
-
-    this.header_height = $('header').outerHeight();
-  },
-
-  // Animate Content
-  animate: function() {
-
-    if(Fx.header_height - window.scrollY > $('body').scrollTop()) {
-      Fx.header.css('height', Fx.header_height - window.scrollY + 'px');
-    }
-  },
-
-  // Reset & Update Dimensions
-  resize: function() {
-
-    window.scrollTo(0, 0);
-    Fx.header.css('height', 'auto');
-    Fx.update();
-  },
-
-  // Setup Interactions
-  interact: function() {
-
-    // Mobile: Disable Parallax
-    if(!Modernizr.touch) {
-
-      // Scroll: Animate Content
-      $(window).scroll(function() {
-
-        window.requestAnimationFrame(Fx.animate);
-      });
-
-      // Resize: Update Dimensions
-      $(window).resize(function() {
-
-        window.requestAnimationFrame(Fx.resize);
-      });
-    }
-  }
-};
-
-
-// Gallery Slider
-// --------------------------------------------------------------------------
-var Gallery = {
-
-  container: $('.work .gallery'),
-  slider: $('.work .slider'),
-  tiles: $('.work .tile'),
-  frame_height: 0,
-
-
-  init: function() {
-
-    // Setup Pagination
-    this.Paging.init();
-
-    // Setup Interactions
-    this.interact();
-  },
-
-  // Get Gallery Container Height
-  getFrameHeight: function() {
-
-    return this.frame_height = parseInt(this.container.css('height'), 10);
-  },
-
-  // Get Tile Spacing Height
-  getTileSpacing: function() {
-
-    return this.frame_height = parseInt(this.tiles.css('margin-bottom'), 10);
-  },
-
-  // Update Slider Poisition
-  moveSlider: function(index) {
-
-    // Fade-Out Gallery & Move Slider
-    this.container.fadeOut(500, function() {
-      if(index) {
-        Gallery.slider.css('top', -1 * ((index * Gallery.getFrameHeight()) + (index * Gallery.getTileSpacing())));
-      } else {
-        Gallery.slider.css('top', 0);
-      }
-    });
-
-    // Update Paging Buttons & Fade-In Gallery
-    this.Paging.update(index);
-    this.container.fadeIn(500);
-  },
-
-  // Reset Gallery Position
-  reset: function() {
-
-    this.slider.css('top', 0);
-    this.Paging.update(0);
-  },
-
-  // Setup Interactions
-  interact: function() {
-
-    // Click|Tap: Tiles
-    this.tiles.each(function() {
-
-      //  Except 'placeholder' Tiles
-      if(!$(this).hasClass('placeholder')) {
-        $(this).on('click', function() {
-
-          // Fade-In Modal Content & Disable Mobile Zooming
-          Modal.show($(this).index());
-          Modal.disableZoom();
-        });
-      }
-    });
-  },
-
-
-  // Gallery Pagination
-  // ------------------------------------------------------------------------
-  Paging: {
-
-    buttons: $('.pagination div'),
-    num_pages: 4,
-
-
-    init: function() {
-
-      // Setup Interactions
-      this.interact();
+      this.header_height = $('header').outerHeight();
     },
 
-    // Set Active Paging Button
-    update: function(index) {
+    // Animate Content
+    animate: function() {
 
-      this.buttons.removeClass('active');
-      this.buttons.eq(index).addClass('active');
+      if(App.Fx.header_height - window.scrollY > $('body').scrollTop()) {
+        App.Fx.header.css('height', App.Fx.header_height - window.scrollY + 'px');
+      }
+    },
+
+    // Reset & Update Dimensions
+    resize: function() {
+
+      //window.scrollTo(0, 0);
+      App.Fx.header.css('height', 'auto');
+      App.Fx.update();
     },
 
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Paging Buttons
-      this.buttons.each(function() {
-        $(this).on('click', function() {
-          Gallery.moveSlider($(this).index());
+      // Mobile: Disable Parallax
+      if(!Modernizr.touch) {
+
+        // Scroll: Animate Content
+        $(window).scroll(function() {
+
+          window.requestAnimationFrame(App.Fx.animate);
         });
-      });
+
+        // Resize: Update Dimensions
+        $(window).resize(function() {
+
+          window.requestAnimationFrame(App.Fx.resize);
+        });
+      }
     }
-  }
-};
-
-
-// Project Modals
-// --------------------------------------------------------------------------
-var Modal = {
-
-  container: $('.modal'),
-  close: $('.modal .close'),
-  samples: $('.modal .sample img'),
-  previews_loaded: false,
-
-  init: function() {
-
-    // Setup Preview Stage
-    this.Stage.init();
-
-    // Setup Interactions
-    this.interact();
-  },
-
-  // Fade-In Modal Window
-  show: function(index) {
-
-    if(!this.previews_loaded) {
-      this.loadPreviews();
-    }
-    this.disableScrolling();
-    this.container.eq(index).fadeIn(700);
-  },
-
-  // Fade-Out Modal Window
-  hide: function(modal) {
-
-    this.enableScrolling();
-    modal.fadeOut(700);
-  },
-
-  // Lazy-Load Modal Samples
-  loadPreviews: function() {
-
-    this.samples.each(function() {
-      $(this).attr('src', $(this).attr('data-src'));
-    });
-    this.previews_loaded = true;
-  },
-
-  // Content Zooming On
-  enableZoom: function() {
-
-    $('head meta[name=viewport]').remove();
-    $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1" />');
-  },
-
-  // Content Zooming Off
-  disableZoom: function() {
-
-    $('head meta[name=viewport]').remove();
-    $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />');
-  },
-
-  // Content Scrolling On
-  enableScrolling: function() {
-
-    $('body').removeClass('noscroll');
-  },
-
-  // Content Scrolling Off
-  disableScrolling: function() {
-
-    $('body').addClass('noscroll');
-  },
-
-  // Setup Interactions
-  interact: function() {
-
-    // Click|Tap: Close Buttons
-    this.close.on('click', function() {
-      Modal.hide($(this).parent());
-      Modal.enableZoom();
-    });
-
-    // Click|Tap: Samples
-    this.samples.on('click', function() {
-      Modal.Stage.show($(this).attr('src'));
-    });
   },
 
 
-  // Sample Preview Stage
+  // Gallery Slider
   // ------------------------------------------------------------------------
-  Stage: {
+  Gallery: {
 
-    container: $('.stage'),
-    preview: $('.stage img'),
-    close: $('.stage .close'),
+    container: $('.work .gallery'),
+    slider: $('.work .slider'),
+    tiles: $('.work .tile'),
+    frame_height: 0,
 
 
     init: function() {
+
+      // Setup Pagination
+      this.Paging.init();
 
       // Setup Interactions
       this.interact();
     },
 
-    // Fade-In Stage & Update Image
-    show: function(source) {
+    // Get Gallery Container Height
+    getFrameHeight: function() {
 
-      this.preview.attr('src', source.replace('-small', ''));
-      this.container.fadeIn(700);
+      return this.frame_height = parseInt(this.container.css('height'), 10);
     },
 
-    // Fade-Out Stage & Remove Image
-    hide: function() {
+    // Get Tile Spacing Height
+    getTileSpacing: function() {
 
-      this.container.fadeOut(700);
-      this.preview.attr('src', '');
+      return this.frame_height = parseInt(this.tiles.css('margin-bottom'), 10);
+    },
+
+    // Update Slider Poisition
+    moveSlider: function(index) {
+
+      // Fade-Out Gallery & Move Slider
+      this.container.fadeOut(500, function() {
+        if(index) {
+          App.Gallery.slider.css('top', -1 * ((index * App.Gallery.getFrameHeight()) + (index * App.Gallery.getTileSpacing())));
+        } else {
+          App.Gallery.slider.css('top', 0);
+        }
+      });
+
+      // Update Paging Buttons & Fade-In Gallery
+      this.Paging.update(index);
+      this.container.fadeIn(500);
+    },
+
+    // Reset Gallery Position
+    reset: function() {
+
+      this.slider.css('top', 0);
+      this.Paging.update(0);
     },
 
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Stage
-      this.container.on('click', function() {
-        Modal.Stage.hide();
-      });
+      // Click|Tap: Tiles
+      this.tiles.each(function() {
 
-      // Click|Tap: Stage Preview
-      this.preview.on('click', function() {
-        Modal.Stage.hide();
+        //  Except 'placeholder' Tiles
+        if(!$(this).hasClass('placeholder')) {
+          $(this).on('click', function() {
+
+            // Fade-In Modal Content & Disable Mobile Zooming
+            App.Modal.show($(this).index());
+            App.Modal.disableZoom();
+          });
+        }
       });
+    },
+
+
+    // Gallery Pagination
+    // ----------------------------------------------------------------------
+    Paging: {
+
+      buttons: $('.pagination div'),
+      num_pages: 4,
+
+
+      init: function() {
+
+        // Setup Interactions
+        this.interact();
+      },
+
+      // Set Active Paging Button
+      update: function(index) {
+
+        this.buttons.removeClass('active');
+        this.buttons.eq(index).addClass('active');
+      },
+
+      // Setup Interactions
+      interact: function() {
+
+        // Click|Tap: Paging Buttons
+        this.buttons.each(function() {
+          $(this).on('click', function() {
+            App.Gallery.moveSlider($(this).index());
+          });
+        });
+      }
+    }
+  },
+
+
+  // Project Modals
+  // ------------------------------------------------------------------------
+  Modal: {
+
+    container: $('.modal'),
+    close: $('.modal .close'),
+    samples: $('.modal .sample img'),
+    previews_loaded: false,
+
+    init: function() {
+
+      // Setup Preview Stage
+      this.Stage.init();
+
+      // Setup Interactions
+      this.interact();
+    },
+
+    // Fade-In Modal Window
+    show: function(index) {
+
+      if(!this.previews_loaded) {
+        this.loadPreviews();
+      }
+      this.disableScrolling();
+      this.container.eq(index).fadeIn(700);
+    },
+
+    // Fade-Out Modal Window
+    hide: function(modal) {
+
+      this.enableScrolling();
+      modal.fadeOut(700);
+    },
+
+    // Lazy-Load Modal Samples
+    loadPreviews: function() {
+
+      this.samples.each(function() {
+        $(this).attr('src', $(this).attr('data-src'));
+      });
+      this.previews_loaded = true;
+    },
+
+    // Content Zooming On
+    enableZoom: function() {
+
+      $('head meta[name=viewport]').remove();
+      $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1" />');
+    },
+
+    // Content Zooming Off
+    disableZoom: function() {
+
+      $('head meta[name=viewport]').remove();
+      $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />');
+    },
+
+    // Content Scrolling On
+    enableScrolling: function() {
+
+      $('body').removeClass('noscroll');
+    },
+
+    // Content Scrolling Off
+    disableScrolling: function() {
+
+      $('body').addClass('noscroll');
+    },
+
+    // Setup Interactions
+    interact: function() {
 
       // Click|Tap: Close Buttons
       this.close.on('click', function() {
-        Modal.Stage.hide();
+        App.Modal.hide($(this).parent());
+        App.Modal.enableZoom();
       });
-    }
-  }
-};
+
+      // Click|Tap: Samples
+      this.samples.on('click', function() {
+        App.Modal.Stage.show($(this).attr('src'));
+      });
+    },
 
 
-// Contact Form
-// --------------------------------------------------------------------------
-var Contact = {
+    // Sample Preview Stage
+    // ----------------------------------------------------------------------
+    Stage: {
 
-  ajax_form: $('#contact'),
-  name_input: $('input.name'),
-  email_input: $('input.email'),
-  message_input: $('textarea.message'),
-  submit_button: $('button[type=submit]'),
-  notify_box: $('.notify'),
-  notify_message: $('.notify .inner'),
-  form_data: {},
+      container: $('.stage'),
+      preview: $('.stage img'),
+      close: $('.stage .close'),
 
 
-  init: function() {
+      init: function() {
 
-    // Setup Interactions
-    this.interact();
+        // Setup Interactions
+        this.interact();
+      },
 
-    // Validation & Submission
-    this.process();
-  },
+      // Fade-In Stage & Update Image
+      show: function(source) {
 
-  // Validate Input
-  validate: function() {
+        this.preview.attr('src', source.replace('-small', ''));
+        this.container.fadeIn(700);
+      },
 
-    var status = true;
+      // Fade-Out Stage & Remove Image
+      hide: function() {
 
-    // Verify Name
-    if(this.name_input.val() === 'Name' || this.name_input.val() === '') {
-      this.notify('Forget to add your name?', 'bad');
-      this.name_input.focus();
-      status = false;
-    }
+        this.container.fadeOut(700);
+        this.preview.attr('src', '');
+      },
 
-    // Verify Email
-    else if(this.email_input.val() === 'Email' || this.email_input.val() === '') {
-      this.notify('Forget to add your email?', 'bad');
-      this.email_input.focus();
-      status = false;
-    }
+      // Setup Interactions
+      interact: function() {
 
-    else if(/^.+@.+\..+$/.test(this.email_input.val()) === false) {
-      this.notify('Did you mistype your email?', 'bad');
-      this.email_input.focus();
-      status = false;
-    }
+        // Click|Tap: Stage
+        this.container.on('click', function() {
+          App.Modal.Stage.hide();
+        });
 
-    // Verify Message
-    else if(this.message_input.val() === 'Message' || this.message_input.val() === '') {
-      this.notify('Forget to add your message?', 'bad');
-      this.message_input.focus();
-      status = false;
-    }
+        // Click|Tap: Stage Preview
+        this.preview.on('click', function() {
+          App.Modal.Stage.hide();
+        });
 
-    return status;
-  },
-
-  // Submit User Message
-  process: function() {
-
-    // Submit User Message
-    $(this.ajax_form).submit(function(event) {
-
-      // Stop Default Behavior
-      event.preventDefault();
-
-      // Validate Input
-      if(Contact.validate()) {
-
-        // Disable While Submitting
-        Contact.disable();
-
-        // Update Submit Button Label
-        Contact.updateButton(true);
-
-        // Serialize Input
-        Contact.form_data = $(Contact.ajax_form).serialize();
-
-        // Create Request
-        $.ajax({
-          type: 'POST',
-          url: $(Contact.ajax_form).attr('action'),
-          data: Contact.form_data
-
-        // Message Sent
-        }).done(function(response) {
-
-          Contact.notify(response, 'good');
-          Contact.updateButton();
-          Contact.reset();
-
-        // Failed
-        }).fail(function(data) {
-
-          if (data.responseText !== '') {
-            Contact.notify(data.responseText, 'bad');
-          } else {
-            Contact.notify('Oops! An error occured and your message could not be sent.', 'bad');
-          }
-          Contact.updateButton();
+        // Click|Tap: Close Buttons
+        this.close.on('click', function() {
+          App.Modal.Stage.hide();
         });
       }
-    });
+    }
   },
 
-  // Notify User
-  notify: function(message, status) {
 
-    // Temporarily Disable
-    this.disable();
+  // Contact Form
+  // ------------------------------------------------------------------------
+  Contact: {
 
-    // Set Notification Color
-    if (status === 'good') {
-      this.notify_box.addClass('good');
-    } else if (status === 'bad') {
-      this.notify_box.addClass('bad');
-    }
+    ajax_form: $('#contact'),
+    name_input: $('input.name'),
+    email_input: $('input.email'),
+    message_input: $('textarea.message'),
+    submit_button: $('button[type=submit]'),
+    notify_box: $('.notify'),
+    notify_message: $('.notify .inner'),
+    form_data: {},
 
-    // Inject Message & Fade-In
-    this.notify_message.html(message);
-    this.notify_box.fadeIn(700);
 
-    // Fade-Out & Re-enable After 3sec
-    setTimeout(function() {
-      Contact.notify_box.fadeOut(700, function(){
-        Contact.notify_box.removeClass('good bad');
-        Contact.enable();
+    init: function() {
+
+      // Setup Interactions
+      this.interact();
+
+      // Validation & Submission
+      this.process();
+    },
+
+    // Validate Input
+    validate: function() {
+
+      var status = true;
+
+      // Verify Name
+      if(this.name_input.val() === 'Name' || this.name_input.val() === '') {
+        this.notify('Forget to add your name?', 'bad');
+        this.name_input.focus();
+        status = false;
+      }
+
+      // Verify Email
+      else if(this.email_input.val() === 'Email' || this.email_input.val() === '') {
+        this.notify('Forget to add your email?', 'bad');
+        this.email_input.focus();
+        status = false;
+      }
+
+      // Validate Email
+      else if(/^.+@.+\..+$/.test(this.email_input.val()) === false) {
+        this.notify('Did you mistype your email?', 'bad');
+        this.email_input.focus();
+        status = false;
+      }
+
+      // Verify Message
+      else if(this.message_input.val() === 'Message' || this.message_input.val() === '') {
+        this.notify('Forget to add your message?', 'bad');
+        this.message_input.focus();
+        status = false;
+      }
+
+      return status;
+    },
+
+    // Submit User Message
+    process: function() {
+
+      // Submit User Message
+      $(this.ajax_form).submit(function(event) {
+
+        // Stop Default Behavior
+        event.preventDefault();
+
+        // Validate Input
+        if(App.Contact.validate()) {
+
+          // Disable While Submitting
+          App.Contact.disable();
+
+          // Update Submit Button Label
+          App.Contact.updateButton(true);
+
+          // Serialize Input
+          App.Contact.form_data = $(App.Contact.ajax_form).serialize();
+
+          // Create Request
+          $.ajax({
+            type: 'POST',
+            url: $(App.Contact.ajax_form).attr('action'),
+            data: App.Contact.form_data
+
+          // Message Sent
+          }).done(function(response) {
+
+            App.Contact.notify(response, 'good');
+            App.Contact.updateButton();
+            App.Contact.reset();
+
+          // Failed
+          }).fail(function(data) {
+
+            if (data.responseText !== '') {
+              App.Contact.notify(data.responseText, 'bad');
+            } else {
+              App.Contact.notify('Oops! An error occured and your message could not be sent.', 'bad');
+            }
+            App.Contact.updateButton();
+          });
+        }
       });
-    }, 3000);
-  },
+    },
 
-  // Enable Submit Button
-  enable: function() {
+    // Notify User
+    notify: function(message, status) {
 
-    this.submit_button.removeAttr('disabled');
-  },
+      // Temporarily Disable
+      this.disable();
 
-  // Disable Submit Button
-  disable: function() {
+      // Set Notification Color
+      if (status === 'good') {
+        this.notify_box.addClass('good');
+      } else if (status === 'bad') {
+        this.notify_box.addClass('bad');
+      }
 
-    this.submit_button.attr('disabled', 'disabled');
-  },
+      // Inject Message & Fade-In
+      this.notify_message.html(message);
+      this.notify_box.fadeIn(700);
 
-  // Clear User Input & Reset Default Labels
-  reset: function() {
+      // Fade-Out & Re-enable After 3sec
+      setTimeout(function() {
+        App.Contact.notify_box.fadeOut(700, function(){
+          App.Contact.notify_box.removeClass('good bad');
+          App.Contact.enable();
+        });
+      }, 3000);
+    },
 
-    Contact.name_input.val('Name');
-    Contact.email_input.val('Email');
-    Contact.message_input.val('Message');
-  },
+    // Enable Submit Button
+    enable: function() {
 
-  // Update Submit Button Label
-  updateButton: function(status) {
+      this.submit_button.removeAttr('disabled');
+    },
 
-    if(status === true) {
-      this.submit_button.html('Sending...');
-    } else {
-      this.submit_button.html('Send');
+    // Disable Submit Button
+    disable: function() {
+
+      this.submit_button.attr('disabled', 'disabled');
+    },
+
+    // Clear User Input & Reset Default Labels
+    reset: function() {
+
+      App.Contact.name_input.val('Name');
+      App.Contact.email_input.val('Email');
+      App.Contact.message_input.val('Message');
+    },
+
+    // Update Submit Button Label
+    updateButton: function(status) {
+
+      if(status === true) {
+        this.submit_button.html('Sending...');
+      } else {
+        this.submit_button.html('Send');
+      }
+    },
+
+    // Setup Interactions
+    interact: function() {
+
+      // Focus|Blur: Name Field
+      this.name_input.on('focus', function() {
+        if($(this).val() === 'Name') {
+          $(this).val('');
+        }
+      });
+
+      this.name_input.on('blur', function() {
+        if(!$(this).val().trim()) {
+          $(this).val('Name');
+        }
+      });
+
+      // Focus|Blur: Email Field
+      this.email_input.on('focus', function() {
+        if($(this).val() === 'Email') {
+          $(this).val('');
+        }
+      });
+
+      this.email_input.on('blur', function() {
+        if(!$(this).val().trim()) {
+          $(this).val('Email');
+        }
+      });
+
+      // Focus|Blur: Message Field
+      this.message_input.on('focus', function() {
+        if($(this).val() === 'Message') {
+          $(this).val('');
+        }
+      });
+
+      this.message_input.on('blur', function() {
+        if(!$(this).val().trim()) {
+          $(this).val('Message');
+        }
+      });
     }
   },
 
-  // Setup Interactions
-  interact: function() {
 
-    // Focus|Blur: Name Field
-    this.name_input.on('focus', function() {
-      if($(this).val() === 'Name') {
-        $(this).val('');
+  // Browser-Specific Adjustments
+  // ------------------------------------------------------------------------
+  Browsers: {
+
+    init: function() {
+
+      // Show IE Warning
+      if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.match(/iemobile/i)) {
+        $('.site').html('<p style="padding-top: 40px; text-align: center;">The IE version of my site is currently under development.<br>Please use any Webkit browser for the best experience while viewing my site. Thx!</p>');
+        $('footer').css('display', 'none');
       }
-    });
-
-    this.name_input.on('blur', function() {
-      if(!$(this).val().trim()) {
-        $(this).val('Name');
-      }
-    });
-
-    // Focus|Blur: Email Field
-    this.email_input.on('focus', function() {
-      if($(this).val() === 'Email') {
-        $(this).val('');
-      }
-    });
-
-    this.email_input.on('blur', function() {
-      if(!$(this).val().trim()) {
-        $(this).val('Email');
-      }
-    });
-
-    // Focus|Blur: Message Field
-    this.message_input.on('focus', function() {
-      if($(this).val() === 'Message') {
-        $(this).val('');
-      }
-    });
-
-    this.message_input.on('blur', function() {
-      if(!$(this).val().trim()) {
-        $(this).val('Message');
-      }
-    });
-  }
-};
-
-
-// Browser-Specific Adjustments
-// --------------------------------------------------------------------------
-var Browsers = {
-
-  init: function() {
-
-    // Show IE Warning
-    if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.match(/iemobile/i)) {
-      $('.site').html('<p style="padding-top: 40px; text-align: center;">The IE version of my site is currently under development.<br>Please use any Webkit browser for the best experience while viewing my site. Thx!</p>');
-      $('footer').css('display', 'none');
     }
-  }
-};
+  },
 
 
-// JS-Breakpoints
-// --------------------------------------------------------------------------
-var Breakpoint = {
+  // JS-Breakpoints
+  // ------------------------------------------------------------------------
+  Breakpoint: {
 
+    init: function() {
 
-  init: function() {
+      // Portrait (360px)
+      App.Breakpoints.on({
+        name: "bp-portrait",
+        matched: function() {
+          App.Gallery.reset();
+        },
+        exit: function() {
+          App.Gallery.reset();
+        }
+      });
 
-    // Portrait (360px)
-    Breakpoints.on({
-      name: "bp-portrait",
-      matched: function() {
-        Gallery.reset();
-      },
-      exit: function() {
-        Gallery.reset();
-      }
-    });
+      // Landscape (560px)
+      App.Breakpoints.on({
+        name: "bp-landscape",
+        matched: function() {
+          App.Gallery.reset();
+        },
+        exit: function() {
+          App.Gallery.reset();
+        }
+      });
 
-    // Landscape (560px)
-    Breakpoints.on({
-      name: "bp-landscape",
-      matched: function() {
-        Gallery.reset();
-      },
-      exit: function() {
-        Gallery.reset();
-      }
-    });
+      // Tablet (600px)
+      App.Breakpoints.on({
+        name: "bp-tablet",
+        matched: function() {
+          App.Gallery.reset();
+          App.Gallery.Paging.num_pages = 1;
+        },
+        exit: function() {
+          App.Gallery.reset();
+          App.Gallery.Paging.num_pages = 4;
+        }
+      });
 
-    // Tablet (600px)
-    Breakpoints.on({
-      name: "bp-tablet",
-      matched: function() {
-        Gallery.reset();
-        Gallery.Paging.num_pages = 1;
-      },
-      exit: function() {
-        Gallery.reset();
-        Gallery.Paging.num_pages = 4;
-      }
-    });
+      // Medium (780px)
+      App.Breakpoints.on({
+        name: "bp-medium",
+        matched: function() {
+          App.Gallery.reset();
+        },
+        exit: function() {
+          App.Gallery.reset();
+        }
+      });
 
-    // Medium (780px)
-    Breakpoints.on({
-      name: "bp-medium",
-      matched: function() {
-        Gallery.reset();
-      },
-      exit: function() {
-        Gallery.reset();
-      }
-    });
+      // Default (960px)
+      App.Breakpoints.on({
+        name: "bp-default",
+        matched: function() {
+          App.Gallery.reset();
+        },
+        exit: function() {
+          App.Gallery.reset();
+        }
+      });
 
-    // Default (960px)
-    Breakpoints.on({
-      name: "bp-default",
-      matched: function() {
-        Gallery.reset();
-      },
-      exit: function() {
-        Gallery.reset();
-      }
-    });
+      // Large (1020px)
+      App.Breakpoints.on({
+        name: "bp-large",
+        matched: function() {
+          App.Gallery.reset();
+        },
+        exit: function() {
 
-    // Large (1020px)
-    Breakpoints.on({
-      name: "bp-large",
-      matched: function() {
-        Gallery.reset();
-      },
-      exit: function() {
-
-      }
-    });
+        }
+      });
+    }
   }
 };
 
@@ -630,15 +635,15 @@ var Breakpoint = {
 
 $(document).ready(function() {
 
-  Fx.init();
+  App.Fx.init();
 });
 
 $(window).load(function() {
 
-  Fx.load();
-  Gallery.init();
-  Modal.init();
-  Contact.init();
-  Breakpoint.init();
-  Browsers.init();
+  App.Fx.load();
+  App.Gallery.init();
+  App.Modal.init();
+  App.Contact.init();
+  App.Breakpoint.init();
+  App.Browsers.init();
 });
