@@ -11,8 +11,6 @@
 
 'hide gallery during reset (on size/orientation-change)'
 
-'cleanup tile logo responsiveness'
-
 'add next/prev buttons to preview stage (starting on tablet breakpoint)'
 
 'add next/prev swipes to preview stage (portrait + landscape breakpoints)'
@@ -22,6 +20,9 @@
 'optimize preview images for smaller screens'
 
 
+
+'cleanup tile logo sizes + responsiveness'
+'add all objects to global App object'
 'lazy-load work sample preview images'
 "change submit button to 'Sending...' during submission"
 'disable submit button during form notification or submission'

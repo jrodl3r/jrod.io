@@ -10,7 +10,6 @@
   margin-left: span(1 of 18) + gutter(1 of 18);
   margin-bottom: 16px;
   overflow: hidden;
-  // background: rgba(#F0E, 0.05);
 
   @include breakpoint($bp-landscape) {
     @include full;
@@ -68,54 +67,126 @@
       background-size: 96px;
       background-image: url('../img/projects/target/logo-gray.svg'),
                         url('../img/projects/target/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 90px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 96px;
+      }
     }
 
     &.ge {
       background-size: 104px;
       background-image: url('../img/projects/ge/logo-gray.svg'),
                         url('../img/projects/ge/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 98px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 104px;
+      }
     }
 
     &.tsi {
       background-size: 106px;
       background-image: url('../img/projects/360i/logo-gray.svg'),
                         url('../img/projects/360i/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 100px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 106px;
+      }
     }
 
     &.crown {
       background-size: 116px;
       background-image: url('../img/projects/crown/logo-gray.svg'),
                         url('../img/projects/crown/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 110px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 116px;
+      }
     }
 
     &.kraft {
       background-size: 160px;
       background-image: url('../img/projects/kraft/logo-gray.svg'),
                         url('../img/projects/kraft/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 153px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 160px;
+      }
     }
 
     &.oscarmayer {
-      background-size: 120px;
+      background-size: 118px;
       background-image: url('../img/projects/oscarmayer/logo-gray.svg'),
                         url('../img/projects/oscarmayer/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 112px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 118px;
+      }
     }
 
     &.yourcare {
       background-size: 198px;
       background-image: url('../img/projects/yourcare/logo-gray.svg'),
                         url('../img/projects/yourcare/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 182px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 198px;
+      }
     }
 
     &.adultswim {
       background-size: 196px;
       background-image: url('../img/projects/adultswim/logo-gray.svg'),
                         url('../img/projects/adultswim/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 180px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 196px;
+      }
     }
 
     &.nylearns {
-      background-size: 206px;
+      background-size: 203px;
       background-image: url('../img/projects/nylearns/logo-gray.svg'),
                         url('../img/projects/nylearns/logo.svg');
+
+      @include breakpoint($bp-medium) {
+        background-size: 194px;
+      }
+
+      @include breakpoint($bp-default) {
+        background-size: 203px;
+      }
     }
 
     &.placeholder {
