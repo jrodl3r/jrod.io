@@ -1,26 +1,30 @@
 
-'add header intro animation sequence (VelocityJS)'
-
-'add RWDPerf to build process + documentation'
-
 'add warning: this site performs better in webkit browsers'
 
-'enhance typography and font styles'
-
-'add gallery paging memory (window resize/orientation change)'
-
-'hide gallery during reset (on size/orientation-change)'
-
-'add next/prev buttons to preview stage (starting on tablet breakpoint)'
-
-'add next/prev swipes to preview stage (portrait + landscape breakpoints)'
+'add header intro animation sequence (VelocityJS)'
 
 'add swipe gestures to gallery'
 
+'enhance typography and font styles'
+
+'add RWDPerf to build process + documentation'
+
 'optimize preview images for smaller screens'
 
+'fix gallery flicker during reset (on resize/orientation change)'
+
+'add next/prev functionality to preview stage (buttons + swipes)'
+
+'fix pagination active state issue (occurs on orientation change)'
+
+'address choppiness in FF on retina displays'
+
+'create svg icons sprite'
+
+'setup css-only parallax scroll on header/content using fixed positioning (see: footer)'
 
 
+'optimize all svg graphics w/ SVGO'
 'cleanup tile logo sizes + responsiveness'
 'add all objects to global App object'
 'lazy-load work sample preview images'
