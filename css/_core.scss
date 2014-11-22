@@ -26,6 +26,7 @@ $bp-portrait                    :     360px;
 $bp-landscape                   :     560px;
 $bp-tablet                      :     600px;
 $bp-medium                      :     780px;
+$bp-golden                      :     870px;
 $bp-optimal                     :     900px;
 $bp-default                     :     960px;
 $bp-large                       :     1020px;
@@ -102,7 +103,6 @@ p {
 .site {
   position: relative;
   z-index: 10;
-  visibility: hidden;
   margin-bottom: 200px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -114,7 +114,7 @@ p {
     clear: both;
     padding-bottom: 140px;
     background: #FFF;
-    box-shadow: 0 0 20px rgba(#000, 1);
+    //box-shadow: 0 0 20px rgba(#000, 1);
     transform: translate3d(0,0,0);
     -moz-transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
@@ -163,11 +163,7 @@ p {
     display: none;
     padding: 5px 10px;
 
-    @include breakpoint($bp-landscape) {
-      &.landscape { display: inline; }
-    }
     @include breakpoint($bp-tablet) {
-      &.landscape { display: none; }
       &.tablet { display: inline; }
     }
     @include breakpoint($bp-medium) {

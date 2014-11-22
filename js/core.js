@@ -11,7 +11,7 @@ var App = {
 
   // Visual Effects
   // ------------------------------------------------------------------------
-  Fx: {
+  /* Fx: {
 
     enabled: true,
     site: $('.site'),
@@ -20,7 +20,7 @@ var App = {
     header_height: 0,
 
 
-    init: function() {
+    init: function() { // DISABLED
 
       // Update Dimensions
       this.update();
@@ -30,12 +30,12 @@ var App = {
     },
 
     // Load Content
-    load: function() {
+    load: function() { // DISABLED
 
       setTimeout(function() {
         App.Fx.site.css('visibility', 'visible');
         App.Fx.footer.css('visibility', 'visible');
-        //window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
       }, 0);
     },
 
@@ -48,6 +48,8 @@ var App = {
     // Animate Content
     animate: function() {
 
+      // var yPos = App.Fx.header_height - window.scrollY;
+
       if(App.Fx.header_height - window.scrollY > $('body').scrollTop()) {
         App.Fx.header.css('height', App.Fx.header_height - window.scrollY + 'px');
       }
@@ -56,7 +58,7 @@ var App = {
     // Reset & Update Dimensions
     resize: function() {
 
-      //window.scrollTo(0, 0);
+      window.scrollTo(0, 0);
       App.Fx.header.css('height', 'auto');
       App.Fx.update();
     },
@@ -64,7 +66,7 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Mobile: Disable Parallax
+      // Disable Parallax on Touch-Devices
       if(!Modernizr.touch) {
 
         // Scroll: Animate Content
@@ -80,7 +82,7 @@ var App = {
         });
       }
     }
-  },
+  }, */
 
 
   // Gallery Slider
@@ -559,7 +561,7 @@ var App = {
     init: function() {
 
       // Portrait (360px)
-      App.Breakpoints.on({
+      Breakpoints.on({
         name: "bp-portrait",
         matched: function() {
           App.Gallery.reset();
@@ -570,7 +572,7 @@ var App = {
       });
 
       // Landscape (560px)
-      App.Breakpoints.on({
+      Breakpoints.on({
         name: "bp-landscape",
         matched: function() {
           App.Gallery.reset();
@@ -581,7 +583,7 @@ var App = {
       });
 
       // Tablet (600px)
-      App.Breakpoints.on({
+      Breakpoints.on({
         name: "bp-tablet",
         matched: function() {
           App.Gallery.reset();
@@ -594,7 +596,7 @@ var App = {
       });
 
       // Medium (780px)
-      App.Breakpoints.on({
+      Breakpoints.on({
         name: "bp-medium",
         matched: function() {
           App.Gallery.reset();
@@ -605,7 +607,7 @@ var App = {
       });
 
       // Default (960px)
-      App.Breakpoints.on({
+      Breakpoints.on({
         name: "bp-default",
         matched: function() {
           App.Gallery.reset();
@@ -616,7 +618,7 @@ var App = {
       });
 
       // Large (1020px)
-      App.Breakpoints.on({
+      Breakpoints.on({
         name: "bp-large",
         matched: function() {
           App.Gallery.reset();
@@ -635,15 +637,13 @@ var App = {
 
 $(document).ready(function() {
 
-  App.Fx.init();
-});
-
-$(window).load(function() {
-
-  App.Fx.load();
+  //App.Fx.init();
+  //App.Fx.load();
   App.Gallery.init();
   App.Modal.init();
   App.Contact.init();
   App.Breakpoint.init();
   App.Browsers.init();
 });
+
+// $(window).load(function() {});

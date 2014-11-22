@@ -17,13 +17,12 @@
 
 'fix pagination active state issue (occurs on orientation change)'
 
-'address choppiness in FF on retina displays'
-
 'create svg icons sprite'
 
 'setup css-only parallax scroll on header/content using fixed positioning (see: footer)'
 
 
+'adjust header layout to accomodate copy updates & disable parallax scroll functionality'
 'optimize all svg graphics w/ SVGO'
 'cleanup tile logo sizes + responsiveness'
 'add all objects to global App object'
