@@ -26,8 +26,8 @@ var App = {
       // Setup Interactions
       this.interact();
 
-      // Initial Animation
-      this.load();
+      // Load Animation
+      this.loadAnim();
     },
 
     // Update Dimensions
@@ -36,21 +36,22 @@ var App = {
       this.header_height = $('header').outerHeight();
     },
 
-    // Initial Animation (Fade-In Header)
-    load: function() {
+    // Load Animation
+    loadAnim: function() {
 
-      if(App.Fx.enabled) {
+      // Fade-In Header
+      if(!Modernizr.touch && App.Fx.enabled) {
         this.header.animate({opacity: 1.0}, 700);
       } else {
         this.header.css('opacity', 1);
       }
     },
 
-    // Animate Content
-    animate: function() {
+    // Scroll Animation
+    scrollAnim: function() {
 
       if(window.scrollY < App.Fx.header_height && App.Fx.enabled) {
-        App.Fx.header.css('transform', 'translateY(' + (window.scrollY/2) + 'px)');
+        App.Fx.header.css('transform', 'translate3d(0px, ' + (window.scrollY/2) + 'px, 0px)');
       }
     },
 
@@ -73,16 +74,10 @@ var App = {
       if(!Modernizr.touch) {
 
         // Scroll: Animate Content
-        $(window).scroll(function() {
-
-          window.requestAnimationFrame(App.Fx.animate);
-        });
+        $(window).scroll(function() { window.requestAnimationFrame(App.Fx.scrollAnim); });
 
         // Resize: Update Dimensions
-        $(window).resize(function() {
-
-          window.requestAnimationFrame(App.Fx.update);
-        });
+        $(window).resize(function() { App.Fx.update(); });
       }
     }
   },
