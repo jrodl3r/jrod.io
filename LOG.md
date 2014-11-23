@@ -16,6 +16,8 @@
 
 'add header intro animation sequence (VelocityJS)'
 
+'setup blog area/items layout on across all breakpoints'
+
 'add remaining project copy blurbs'
 
 
