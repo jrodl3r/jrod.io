@@ -1,8 +1,8 @@
+//debug = true;
 //
 // Core Application Logic
 //
 // ==========================================================================
-//debug = true;
 
 
 // Base Application Object
@@ -11,32 +11,23 @@ var App = {
 
   // Visual Effects
   // ------------------------------------------------------------------------
-  /* Fx: {
+  Fx: {
 
     enabled: true,
-    site: $('.site'),
-    footer: $('footer'),
     header: $('header'),
     header_height: 0,
 
 
-    init: function() { // DISABLED
+    init: function() {
 
       // Update Dimensions
       this.update();
 
       // Setup Interactions
       this.interact();
-    },
 
-    // Load Content
-    load: function() { // DISABLED
-
-      setTimeout(function() {
-        App.Fx.site.css('visibility', 'visible');
-        App.Fx.footer.css('visibility', 'visible');
-        window.scrollTo(0, 0);
-      }, 0);
+      // Initial Animation
+      this.load();
     },
 
     // Update Dimensions
@@ -45,22 +36,34 @@ var App = {
       this.header_height = $('header').outerHeight();
     },
 
-    // Animate Content
-    animate: function() {
+    // Initial Animation (Fade-In Header)
+    load: function() {
 
-      // var yPos = App.Fx.header_height - window.scrollY;
-
-      if(App.Fx.header_height - window.scrollY > $('body').scrollTop()) {
-        App.Fx.header.css('height', App.Fx.header_height - window.scrollY + 'px');
+      if(App.Fx.enabled) {
+        this.header.animate({opacity: 1.0}, 700);
+      } else {
+        this.header.css('opacity', 1);
       }
     },
 
-    // Reset & Update Dimensions
-    resize: function() {
+    // Animate Content
+    animate: function() {
 
-      window.scrollTo(0, 0);
-      App.Fx.header.css('height', 'auto');
-      App.Fx.update();
+      if(window.scrollY < App.Fx.header_height && App.Fx.enabled) {
+        App.Fx.header.css('transform', 'translateY(' + (window.scrollY/2) + 'px)');
+      }
+    },
+
+    // Enable Animations
+    enable: function() {
+
+      this.enabled = true;
+    },
+
+    // Disable Animations
+    disable: function() {
+
+      this.enabled = false;
     },
 
     // Setup Interactions
@@ -78,11 +81,11 @@ var App = {
         // Resize: Update Dimensions
         $(window).resize(function() {
 
-          window.requestAnimationFrame(App.Fx.resize);
+          window.requestAnimationFrame(App.Fx.update);
         });
       }
     }
-  }, */
+  },
 
 
   // Gallery Slider
@@ -565,6 +568,7 @@ var App = {
         name: "bp-portrait",
         matched: function() {
           App.Gallery.reset();
+          App.Fx.disable();
         },
         exit: function() {
           App.Gallery.reset();
@@ -576,6 +580,7 @@ var App = {
         name: "bp-landscape",
         matched: function() {
           App.Gallery.reset();
+          App.Fx.disable();
         },
         exit: function() {
           App.Gallery.reset();
@@ -588,10 +593,12 @@ var App = {
         matched: function() {
           App.Gallery.reset();
           App.Gallery.Paging.num_pages = 1;
+          App.Fx.disable();
         },
         exit: function() {
           App.Gallery.reset();
           App.Gallery.Paging.num_pages = 4;
+          App.Fx.disable();
         }
       });
 
@@ -600,9 +607,11 @@ var App = {
         name: "bp-medium",
         matched: function() {
           App.Gallery.reset();
+          App.Fx.enable();
         },
         exit: function() {
           App.Gallery.reset();
+          App.Fx.disable();
         }
       });
 
@@ -611,6 +620,7 @@ var App = {
         name: "bp-default",
         matched: function() {
           App.Gallery.reset();
+          App.Fx.enable();
         },
         exit: function() {
           App.Gallery.reset();
@@ -622,10 +632,9 @@ var App = {
         name: "bp-large",
         matched: function() {
           App.Gallery.reset();
+          App.Fx.enable();
         },
-        exit: function() {
-
-        }
+        exit: function() {}
       });
     }
   }
@@ -637,13 +646,12 @@ var App = {
 
 $(document).ready(function() {
 
-  //App.Fx.init();
-  //App.Fx.load();
+  App.Breakpoint.init();
+  App.Fx.init();
   App.Gallery.init();
   App.Modal.init();
   App.Contact.init();
-  App.Breakpoint.init();
   App.Browsers.init();
 });
 
-// $(window).load(function() {});
+//$(window).load(function() {});

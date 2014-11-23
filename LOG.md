@@ -1,7 +1,6 @@
 
-'add warning: this site performs better in webkit browsers'
 
-'add header intro animation sequence (VelocityJS)'
+'create svg icons sprite'
 
 'add swipe gestures to gallery'
 
@@ -13,15 +12,14 @@
 
 'fix gallery flicker during reset (on resize/orientation change)'
 
-'add next/prev functionality to preview stage (buttons + swipes)'
+'add next/prev functionality to preview stage (buttons/swipes)'
 
-'fix pagination active state issue (occurs on orientation change)'
+'add header intro animation sequence (VelocityJS)'
 
-'create svg icons sprite'
-
-'setup css-only parallax scroll on header/content using fixed positioning (see: footer)'
+'add remaining project copy blurbs'
 
 
+'fix parallax scroll choppiness issue w/ hardware-accelerated css transform'
 'adjust header layout to accomodate copy updates & disable parallax scroll functionality'
 'optimize all svg graphics w/ SVGO'
 'cleanup tile logo sizes + responsiveness'
