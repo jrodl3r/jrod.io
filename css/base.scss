@@ -32,13 +32,12 @@
 /* Styles */
 // @import 'fonts';
 @import 'core';
+@import 'grid';
 @import 'nav';
 @import 'vision';
 @import 'gallery';
-// @import 'blog';
 @import 'connect';
 @import 'modal';
-@import 'grid';
 
 /* H5BP-Media */
 @include h5bp-media;

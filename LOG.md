@@ -21,6 +21,7 @@
 'add remaining project copy blurbs'
 
 
+'return blog markup to index & merge blog styles into connect.scss'
 'fix parallax scroll choppiness issue w/ hardware-accelerated css transform'
 'adjust header layout to accomodate copy updates & disable parallax scroll functionality'
 'optimize all svg graphics w/ SVGO'
