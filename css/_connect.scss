@@ -214,7 +214,11 @@
         color: $link-color;
         text-decoration: none;
         text-indent: 34%;
-        //@include transition(all ease .5s);
+        transition: color .6s ease;
+
+        svg path {
+          transition: fill .6s ease;
+        }
 
         &.twitter:hover {
           color: #00ACED;
@@ -242,8 +246,8 @@
         }
 
         &.email:hover {
-          color: #999;
-          svg path { fill: #999; }
+          color: $header-alt;
+          svg path { fill: $header-alt; }
         }
 
         @include breakpoint($bp-landscape) {
