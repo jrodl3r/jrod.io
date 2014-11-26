@@ -246,8 +246,8 @@
         }
 
         &.email:hover {
-          color: $header-alt;
-          svg path { fill: $header-alt; }
+          color: lighten($header-alt, 30%);
+          svg path { fill: lighten($header-alt, 30%); }
         }
 
         @include breakpoint($bp-landscape) {

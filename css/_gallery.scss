@@ -53,6 +53,9 @@
     background-position: center center, -99em;
     background-repeat: no-repeat;
     border-radius: $radius;
+    transition-property: background-color, color;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     &:hover {
@@ -61,9 +64,6 @@
       box-shadow: inset 0px 0 30px rgba(#000, 0.1);
       border: inset 1px rgba(#000, 0.05);
       cursor: pointer;
-      transition-property: background-color, color;
-      transition-duration: .5s;
-      transition-timing-function: ease-out;
     }
 
     &.target {
