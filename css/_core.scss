@@ -8,11 +8,12 @@
 // --------------------------------------------------------------------------
 
 $font                           :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
-$font-color                     :     #999999;
+$font-color                     :     #999;
 $link-color                     :     #B3B3B3;
-$title-color                    :     #777777;
-$header-primary                 :     #0072FF;
-$header-alt                     :     #4E18A6;
+$link-hover-color               :     #888;
+$title-color                    :     #777;
+$hilite-color-primary           :     #0072FF;
+$hilite-color-alt               :     #4E18A6;
 $radius                         :     6px;
 
 
@@ -47,6 +48,7 @@ h2, h3 {
   font-size: 32px;
   text-align: center;
   color: $title-color;
+  cursor: default;
 
   @include breakpoint($bp-landscape) {
     text-align: left;
@@ -58,6 +60,15 @@ h2, h3 {
 
   @include breakpoint($bp-medium) {
     text-align: left;
+  }
+
+  a {
+    color: $title-color;
+    text-decoration: none;
+
+    /* &:hover {
+      text-shadow: 1px 1px 1px rgba(#000, 0.2);
+    } */
   }
 }
 
@@ -85,6 +96,15 @@ p {
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+}
+
+a {
+  color: $link-color;
+  transition: color .6s ease;
+
+  &:hover {
+    color: $link-hover-color;
   }
 }
 

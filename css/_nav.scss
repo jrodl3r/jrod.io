@@ -20,18 +20,18 @@ header {
     height: 100%;
 
     &.gradient {
-      background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 70%);
+      background: linear-gradient(to bottom, rgba($hilite-color-primary, 1) 0%, rgba($hilite-color-alt, 1) 70%);
 
       @include breakpoint($bp-landscape) {
-        background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 85%);
+        background: linear-gradient(to bottom, rgba($hilite-color-primary, 1) 0%, rgba($hilite-color-alt, 1) 85%);
       }
 
       @include breakpoint($bp-tablet) {
-        background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 70%);
+        background: linear-gradient(to bottom, rgba($hilite-color-primary, 1) 0%, rgba($hilite-color-alt, 1) 70%);
       }
 
       @include breakpoint($bp-large) {
-        background: linear-gradient(to bottom, rgba($header-primary, 1) 0%, rgba($header-alt, 1) 75%);
+        background: linear-gradient(to bottom, rgba($hilite-color-primary, 1) 0%, rgba($hilite-color-alt, 1) 75%);
       }
     }
 
@@ -278,7 +278,7 @@ footer {
     height: 100%;
 
     &.gradient {
-      background: linear-gradient(to bottom, rgba($header-alt, 1) 25%, rgba($header-primary, 1) 60%);
+      background: linear-gradient(to bottom, rgba($hilite-color-alt, 1) 25%, rgba($hilite-color-primary, 1) 60%);
     }
 
     &.pattern {

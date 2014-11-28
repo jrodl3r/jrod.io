@@ -1,6 +1,5 @@
 
-
-'create svg icons sprite'
+'setup unit tests for contact form'
 
 'add swipe gestures to gallery'
 
@@ -19,6 +18,11 @@
 'setup blog area/items layout on across all breakpoints'
 
 'add remaining project copy blurbs'
+
+
+<!-- This gets us down to 8 total requests in production -->
+'concat vendor script in distribution build (x3)'
+'base64 scss svg includes (x18+1)'
 
 
 'return blog markup to index & merge blog styles into connect.scss'

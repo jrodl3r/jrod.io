@@ -211,10 +211,8 @@
         height: 24px;
         line-height: 24px;
         font-size: 16px;
-        color: $link-color;
         text-decoration: none;
         text-indent: 34%;
-        transition: color .6s ease;
 
         svg path {
           transition: fill .6s ease;
@@ -241,13 +239,13 @@
         }
 
         &.gchat:hover {
-          color: #78A6FB;
-          svg path { fill: #78A6FB; }
+          color: darken(#78A6FB, 10%);
+          svg path { fill: darken(#78A6FB, 10%); }
         }
 
         &.email:hover {
-          color: lighten($header-alt, 30%);
-          svg path { fill: lighten($header-alt, 30%); }
+          color: lighten($hilite-color-alt, 25%);
+          svg path { fill: lighten($hilite-color-alt, 25%); }
         }
 
         @include breakpoint($bp-landscape) {
@@ -291,12 +289,11 @@
 
 .blog {
 
-  a {
+  a:not(.heading) {
     float: left;
     height: 46px;
     width: 100%;
     margin-bottom: 20px;
-    color: $link-color;
     font-size: 18px;
     line-height: 46px;
     text-decoration: none;
@@ -310,6 +307,11 @@
 
     &:last-of-type {
       margin-bottom: 0;
+    }
+
+    &:hover .date {
+      transition: background .6s ease;
+      background: $link-hover-color;
     }
 
     .date {
