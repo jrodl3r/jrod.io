@@ -66,9 +66,11 @@ h2, h3 {
     color: $title-color;
     text-decoration: none;
 
-    /* &:hover {
-      text-shadow: 1px 1px 1px rgba(#000, 0.2);
-    } */
+    &:hover {
+      color: $hilite-color-primary;
+      //text-shadow: 1px 1px 1px rgba(#000, 0.2);
+      //border-bottom: 1px dotted $link-color;
+    }
   }
 }
 
