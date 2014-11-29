@@ -1,4 +1,6 @@
 
+'setup gzip compression on server'
+
 'setup unit tests for contact form'
 
 'add swipe gestures to gallery'
@@ -17,14 +19,10 @@
 
 'setup blog area/items layout on across all breakpoints'
 
-'add remaining project copy blurbs'
-
-
-<!-- This gets us down to 8 total requests in production -->
 'concat vendor script in distribution build (x3)'
-'base64 scss svg includes (x18+1)'
 
-
+"add data-uri's for tile logo svg's"
+'add remaining project copy blurbs'
 'return blog markup to index & merge blog styles into connect.scss'
 'fix parallax scroll choppiness issue w/ hardware-accelerated css transform'
 'adjust header layout to accomodate copy updates & disable parallax scroll functionality'
