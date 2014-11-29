@@ -78,7 +78,6 @@
 
     @include breakpoint($bp-landscape) {
       max-height: 216px;
-      margin-bottom: 10%;
     }
 
     @include breakpoint($bp-tablet) {
