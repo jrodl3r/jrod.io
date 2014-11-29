@@ -19,9 +19,11 @@
 
 'setup blog area/items layout on across all breakpoints'
 
+
 'concat vendor script in distribution build (x3)'
 
-"add data-uri's for tile logo svg's"
+
+"add custom sass inline-svg-image() and setup data-uri's for tile logo svg's"
 'add remaining project copy blurbs'
 'return blog markup to index & merge blog styles into connect.scss'
 'fix parallax scroll choppiness issue w/ hardware-accelerated css transform'
