@@ -25,9 +25,9 @@
 
 'fix fade-in bug: content appears while header is still fading-in'
 
-'fix header-splash svg gradient rendering issue (going all black on chrome resize + safari load)'
 
 
+'fix header svg filter rendering bug: appears black on chrome resize + safari load'
 'fix header resize bug: header translate position not reseting when scrolling back to top'
 'configure Google Analytics script'
 'disable breakpoint debug HUD'
