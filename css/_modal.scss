@@ -19,30 +19,6 @@
   background: #FFF;
   -webkit-user-select: none;
 
-  .close {
-    position: fixed;
-    top: 16px;
-    right: 18px;
-    width: 28px;
-    height: 28px;
-    text-indent: -9999em;
-    background: url(../img/modal-close-button.svg) center center no-repeat;
-    opacity: .25;
-    cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-
-    @include breakpoint($bp-default) {
-      top: 24px;
-      right: 26px;
-    }
-
-    &:hover {
-      opacity: .6;
-    }
-  }
-
   p {
     width: 80%;
     max-width: 800px;
@@ -234,6 +210,32 @@
   }
 }
 
+.modal .close,
+.stage .close {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  width: 28px;
+  height: 28px;
+  text-indent: -9999em;
+  background: url(../img/modal-close-button.svg) center center no-repeat;
+  opacity: .25;
+  cursor: pointer;
+  transition: opacity .6s ease;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+
+  @include breakpoint($bp-default) {
+    top: 24px;
+    right: 26px;
+  }
+
+  &:hover {
+    opacity: .6;
+  }
+}
+
 .stage {
   display: none;
   position: fixed;
@@ -248,32 +250,11 @@
   background: #FEFEFE url(../img/loading.gif) center 36% no-repeat;
 
   .close {
-    position: fixed;
     z-index: 300;
-    top: 16px;
-    right: 18px;
-    width: 28px;
     display: none;
-    height: 28px;
-    text-indent: -9999em;
-    background: url(../img/modal-close-button.svg) center center no-repeat;
-    opacity: .25;
-    cursor: pointer;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
 
     @include breakpoint($bp-tablet) {
       display: block;
-    }
-
-    @include breakpoint($bp-default) {
-      top: 24px;
-      right: 26px;
-    }
-
-    &:hover {
-      opacity: .6;
     }
   }
 
