@@ -26,7 +26,7 @@
 'fix fade-in bug: content appears while header is still fading-in'
 
 
-
+'fix bg-pattern gap bug: pattern becomes unaligned on large screens during resize'
 'fix header svg filter rendering bug: appears black on chrome resize + safari load'
 'fix header resize bug: header translate position not reseting when scrolling back to top'
 'configure Google Analytics script'
