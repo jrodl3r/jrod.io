@@ -36,6 +36,12 @@ var App = {
       this.header_height = $('header').outerHeight();
     },
 
+    // Reset Positions
+    reset: function() {
+
+      this.header.css('transform', 'translate3d(0px, 0px, 0px)');
+    },
+
     // Load Animation
     loadAnim: function() {
 
@@ -64,6 +70,7 @@ var App = {
     // Disable Animations
     disable: function() {
 
+      this.reset();
       this.enabled = false;
     },
 
