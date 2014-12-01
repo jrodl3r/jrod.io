@@ -1,10 +1,6 @@
 
 'setup gzip compression on server'
 
-'setup layout rendering in latest IE'
-
-'fix safari header-splash svg gradient rendering issue'
-
 'setup unit tests for contact form'
 
 'enhance typography and font styles'
@@ -24,6 +20,10 @@
 'add header intro animation sequence (VelocityJS)'
 
 'setup blog area/items layout on across all breakpoints'
+
+'setup layout rendering in latest IE'
+
+'fix header-splash svg gradient rendering issue (going all black on chrome resize + safari load)'
 
 
 
