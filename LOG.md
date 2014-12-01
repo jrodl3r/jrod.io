@@ -3,15 +3,15 @@
 
 'setup unit tests for contact form'
 
-'enhance typography and font styles'
-
-'improve font-size and line-height consistency/responsiveness'
-
 'add RWDPerf to build process + documentation'
 
 'optimize preview images for smaller screens'
 
 'add swipe gestures to gallery'
+
+'enhance typography and font styles'
+
+'improve font-size and line-height consistency/responsiveness'
 
 'fix gallery flicker during reset (on resize/orientation change)'
 
@@ -19,9 +19,9 @@
 
 'add header intro animation sequence (VelocityJS)'
 
-'setup blog area/items layout on across all breakpoints'
+'setup blog area/items layout across all breakpoints'
 
-'setup layout rendering in latest IE'
+'attempt to address IE layout & rendering issues'
 
 'make fade-in more consistent: content appears while header is still fading-in'
 'fix bg-pattern gap bug: pattern becomes unaligned on large screens during resize'

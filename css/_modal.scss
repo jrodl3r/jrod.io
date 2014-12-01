@@ -218,7 +218,7 @@
   width: 28px;
   height: 28px;
   text-indent: -9999em;
-  background: url(../img/modal-close-button.svg) center center no-repeat;
+  background: inline-svg-image('../img/modal-close-button.svg') center center no-repeat;
   opacity: .25;
   cursor: pointer;
   transition: opacity .6s ease;
