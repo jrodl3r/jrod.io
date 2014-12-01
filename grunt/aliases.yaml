@@ -12,6 +12,7 @@ dev:
 dist:
   - 'sass:dist'
   - 'uglify'
+  - 'concat:dist'
   - 'targethtml:dist'
   - 'notify:dist'
 
