@@ -1,9 +1,11 @@
 
 'setup gzip compression on server'
 
-'setup unit tests for contact form'
+'setup layout rendering in latest IE'
 
-'add swipe gestures to gallery'
+'fix safari header-splash svg gradient rendering issue'
+
+'setup unit tests for contact form'
 
 'enhance typography and font styles'
 
@@ -12,6 +14,8 @@
 'add RWDPerf to build process + documentation'
 
 'optimize preview images for smaller screens'
+
+'add swipe gestures to gallery'
 
 'fix gallery flicker during reset (on resize/orientation change)'
 
@@ -22,6 +26,8 @@
 'setup blog area/items layout on across all breakpoints'
 
 
+
+'configure Google Analytics script'
 'disable breakpoint debug HUD'
 'concat vendor script in distribution build'
 "add custom sass inline-svg-image() and setup data-uri's for tile logo svg's"
