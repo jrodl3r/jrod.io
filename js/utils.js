@@ -2,6 +2,7 @@
 // Utilities & Helpers
 //
 // ==========================================================================
+'use strict';
 
 
 // Debug Logger
@@ -10,6 +11,7 @@
 var debug = false;
 
 function log(s) {
+
   if(debug) {
     console.log(s);
   }
@@ -20,7 +22,6 @@ function log(s) {
 // --------------------------------------------------------------------------
 
 window.Breakpoints = (function (window, document) {
-  'use strict';
 
   var B = {},
   resizingTimeout = 200,

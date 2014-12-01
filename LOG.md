@@ -22,8 +22,9 @@
 'setup blog area/items layout on across all breakpoints'
 
 
-'concat vendor script in distribution build (x3)'
+'disable breakpoint debug HUD'
 
+'concat vendor script in distribution build'
 "add custom sass inline-svg-image() and setup data-uri's for tile logo svg's"
 'add remaining project copy blurbs'
 'return blog markup to index & merge blog styles into connect.scss'

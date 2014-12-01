@@ -23,6 +23,7 @@ module.exports = {
       "jQuery": false,
       "Modernizr": false,
       "console": false,
+      "window": true,
       "debug": true,
       "log": true,
       "Breakpoints": true
