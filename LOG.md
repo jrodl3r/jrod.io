@@ -7,6 +7,8 @@
 
 'enhance typography and font styles'
 
+'improve font-size and line-height consistency/responsiveness'
+
 'add RWDPerf to build process + documentation'
 
 'optimize preview images for smaller screens'
@@ -21,7 +23,6 @@
 
 
 'concat vendor script in distribution build (x3)'
-
 
 "add custom sass inline-svg-image() and setup data-uri's for tile logo svg's"
 'add remaining project copy blurbs'
