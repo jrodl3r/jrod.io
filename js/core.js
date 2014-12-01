@@ -47,9 +47,9 @@ var App = {
 
       // Fade-In Header
       if(!Modernizr.touch && App.Fx.enabled) {
-        this.header.animate({opacity: 1.0}, 700);
+        $('body').animate({opacity: 1.0}, 700);
       } else {
-        this.header.css('opacity', 1);
+        $('body').css('opacity', 1);
       }
     },
 
