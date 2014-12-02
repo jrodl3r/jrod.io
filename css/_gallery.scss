@@ -68,8 +68,8 @@
 
     &.target {
       background-size: 96px;
-      background-image: inline-svg-image('../img/projects/target/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/target/logo.min.svg');
+      background-image: inline-image('../img/projects/target/logo-gray.min.svg'),
+                        inline-image('../img/projects/target/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 90px;
@@ -82,8 +82,8 @@
 
     &.ge {
       background-size: 104px;
-      background-image: inline-svg-image('../img/projects/ge/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/ge/logo.min.svg');
+      background-image: inline-image('../img/projects/ge/logo-gray.min.svg'),
+                        inline-image('../img/projects/ge/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 98px;
@@ -96,8 +96,8 @@
 
     &.tsi {
       background-size: 106px;
-      background-image: inline-svg-image('../img/projects/360i/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/360i/logo.min.svg');
+      background-image: inline-image('../img/projects/360i/logo-gray.min.svg'),
+                        inline-image('../img/projects/360i/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 100px;
@@ -110,8 +110,8 @@
 
     &.crown {
       background-size: 116px;
-      background-image: inline-svg-image('../img/projects/crown/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/crown/logo.min.svg');
+      background-image: inline-image('../img/projects/crown/logo-gray.min.svg'),
+                        inline-image('../img/projects/crown/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 110px;
@@ -124,8 +124,8 @@
 
     &.kraft {
       background-size: 160px;
-      background-image: inline-svg-image('../img/projects/kraft/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/kraft/logo.min.svg');
+      background-image: inline-image('../img/projects/kraft/logo-gray.min.svg'),
+                        inline-image('../img/projects/kraft/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 153px;
@@ -138,8 +138,8 @@
 
     &.oscarmayer {
       background-size: 118px;
-      background-image: inline-svg-image('../img/projects/oscarmayer/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/oscarmayer/logo.min.svg');
+      background-image: inline-image('../img/projects/oscarmayer/logo-gray.min.svg'),
+                        inline-image('../img/projects/oscarmayer/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 112px;
@@ -152,8 +152,8 @@
 
     &.yourcare {
       background-size: 198px;
-      background-image: inline-svg-image('../img/projects/yourcare/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/yourcare/logo.min.svg');
+      background-image: inline-image('../img/projects/yourcare/logo-gray.min.svg'),
+                        inline-image('../img/projects/yourcare/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 182px;
@@ -166,8 +166,8 @@
 
     &.adultswim {
       background-size: 196px;
-      background-image: inline-svg-image('../img/projects/adultswim/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/adultswim/logo.min.svg');
+      background-image: inline-image('../img/projects/adultswim/logo-gray.min.svg'),
+                        inline-image('../img/projects/adultswim/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 180px;
@@ -180,8 +180,8 @@
 
     &.nylearns {
       background-size: 203px;
-      background-image: inline-svg-image('../img/projects/nylearns/logo-gray.min.svg'),
-                        inline-svg-image('../img/projects/nylearns/logo.min.svg');
+      background-image: inline-image('../img/projects/nylearns/logo-gray.min.svg'),
+                        inline-image('../img/projects/nylearns/logo.min.svg');
 
       @include breakpoint($bp-medium) {
         background-size: 194px;
