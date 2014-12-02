@@ -544,21 +544,6 @@ var App = {
   },
 
 
-  // Browser-Specific Adjustments
-  // ------------------------------------------------------------------------
-  Browsers: {
-
-    init: function() {
-
-      // Show IE Warning
-      if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0 || navigator.userAgent.match(/iemobile/i)) {
-        $('.site').html('<p style="padding-top: 40px; text-align: center;">The IE version of my site is currently under development.<br>Please use any Webkit browser for the best experience while viewing my site. Thx!</p>');
-        $('footer').css('display', 'none');
-      }
-    }
-  },
-
-
   // JS-Breakpoints
   // ------------------------------------------------------------------------
   Breakpoint: {
@@ -653,7 +638,4 @@ $(document).ready(function() {
   App.Gallery.init();
   App.Modal.init();
   App.Contact.init();
-  App.Browsers.init();
 });
-
-//$(window).load(function() {});

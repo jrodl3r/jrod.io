@@ -24,11 +24,10 @@
 
 'setup /resume layout + conver copy to MD + save/print menu'
 
-'attempt to address IE layout & rendering issues'
-
-'update meta tags (check SEO/Google details)'
+'fix IE layout & rendering issues'
 
 
+'update meta tags'
 'make fade-in more consistent: content appears while header is still fading-in'
 'fix bg-pattern gap bug: pattern becomes unaligned on large screens during resize'
 'fix header svg filter rendering bug: appears black on chrome resize + safari load'
