@@ -1,7 +1,7 @@
 
 'setup gzip compression on server'
 
-'setup unit tests for contact form'
+'setup contact form unit tests'
 
 'add RWDPerf to build process + documentation'
 
@@ -13,7 +13,7 @@
 
 'improve font-size and line-height consistency/responsiveness'
 
-'fix gallery flicker during reset (on resize/orientation change)'
+'address gallery flicker during reset (on resize/orientation change)'
 
 'add next/prev functionality to preview stage (buttons/swipes)'
 
@@ -21,12 +21,12 @@
 
 'setup blog area/items layout across all breakpoints'
 
-
 'setup /resume layout + conver copy to MD + save/print menu'
 
-'fix IE layout & rendering issues'
 
 
+'add IE disclaimer'
+'add additional background-size parameter to address IE11 tile logo sizing issue'
 'update meta tags'
 'make fade-in more consistent: content appears while header is still fading-in'
 'fix bg-pattern gap bug: pattern becomes unaligned on large screens during resize'
