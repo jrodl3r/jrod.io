@@ -12,6 +12,5 @@ Thumbs.db
 /*.php
 /node_modules
 .sass-cache
-/css/base.css*
-/css/dist.css*
+/css/*.css*
 /js/dist.min.js
