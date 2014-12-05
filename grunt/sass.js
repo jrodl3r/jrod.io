@@ -25,5 +25,15 @@ module.exports = {
     files: {
       'css/dist.css': 'css/base.scss'
     }
+  },
+  resume: {
+    options: {
+      style: 'expanded',
+      require: ['susy', 'breakpoint'],
+      compass: true
+    },
+    files: {
+      'css/resume.css': 'css/resume.scss'
+    }
   }
 };
