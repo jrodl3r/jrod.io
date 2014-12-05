@@ -23,3 +23,7 @@ css:
 js:
   - 'jshint'
   - 'notify:js'
+
+resume:
+  - 'sass:resume'
+  - 'notify:sass'

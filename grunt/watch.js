@@ -6,7 +6,7 @@
 
 module.exports = {
   sass: {
-    files: 'css/**/*.scss',
+    files: ['css/**/*.scss', '!css/resume.scss'],
     tasks: ['sass:dev']
   },
   js: {
