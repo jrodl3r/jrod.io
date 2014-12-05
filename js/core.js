@@ -97,7 +97,6 @@ var App = {
     container: $('.work .gallery'),
     slider: $('.work .slider'),
     tiles: $('.work .tile'),
-    frame_height: 0,
 
 
     init: function() {
@@ -112,13 +111,13 @@ var App = {
     // Get Gallery Container Height
     getFrameHeight: function() {
 
-      return this.frame_height = parseInt(this.container.css('height'), 10);
+      return parseInt(this.container.css('height'), 10);
     },
 
     // Get Tile Spacing Height
     getTileSpacing: function() {
 
-      return this.frame_height = parseInt(this.tiles.css('margin-bottom'), 10);
+      return parseInt(this.tiles.css('margin-bottom'), 10);
     },
 
     // Update Slider Poisition
