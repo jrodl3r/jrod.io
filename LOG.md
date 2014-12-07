@@ -7,11 +7,9 @@
 
 'optimize preview images for smaller screens'
 
+'rebuild gallery + modal display logic (see css-3d-transitions, box-shadow effects)'
+
 'add swipe gestures to gallery'
-
-'enhance typography and font styles'
-
-'improve font-size and line-height consistency/responsiveness'
 
 'address gallery flicker during reset (on resize/orientation change)'
 
@@ -22,6 +20,10 @@
 'setup blog area/items layout across all breakpoints'
 
 'setup /resume layout + conver copy to MD + save/print menu'
+
+'improve font-size and line-height consistency/responsiveness'
+
+'enhance typography and font styles'
 
 
 

@@ -8,13 +8,15 @@ My portfolio website for sharing past projects, personal insights, righteous epi
 
 _"The trick is not to try and learn everything about something, but a little bit about everything..."_
 
+_"The goal of this project is to create a stunning, flexible, lightning-fast experience..."_
+
 
 ##Features
 
-I want the site to encompass traditional user interface components, with experimental twists and advanced features, elements, and visual surprises.
+I want the site to encompass traditional interface elements with subtle experimental twists, advanced features and visual surprises.
 
 - Responsive Layout
-- Subtle Parallax Scroll Effects
+- Minimal Parallax Effects
 - Mobile Swipe Gestures
 - Header Intro
     - Dynamic Animation Fx (different styles + cycles on each visit)
@@ -65,4 +67,3 @@ The mobile team at _HUGE Inc_ was building an app for _Adult Swim_ and had to te
 
 ######NYLearns
 Passionate about creating tools that enhance education, I worked with _3rd Learning_ as a Senior UI engineer. In collaboration with educators, I built software to support classroom teachers.
-
