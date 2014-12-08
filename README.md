@@ -7,20 +7,13 @@ My (responsive) portfolio website.
     $ grunt dev
     $ phpserver
 
-### Devices
-- Retina + Standard Displays
-- iPhone 4/5
-- iPad 2
-- Nexus 5/7
-
-### Browsers
-- Safari + Chrome + Firefox (All platforms)
-- IE (Almost there, but not yet.)
-
 ### Branches
 - **Skeleton:** Visualized responsive layout
-- **Init-Content:** Inject placeholder content
+- **Init-Content:** Placeholder content
 - **Init-Header:** Setup responsive header
-- **Init-Body:** Setup responsive content layout
+- **Init-Body:** Setup responsive layout
 - **Dev:** Core functionality + ongoing development
 - **Master:** Current production release
+
+### License
+MIT
