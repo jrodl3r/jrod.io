@@ -15,6 +15,8 @@ $header-primary     :   #0072FF;
 $header-alt         :   #4E18A6;
 
 $title-color        :   #444;
+$subtitle-color     :   #333;
+$summary-color      :   #888;
 
 $title-font         :   "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
 $content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans-serif;
@@ -30,9 +32,11 @@ $content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans
 
 body {
   min-width: 865px;
+  color: #111;
   font-family: $title-font;
   line-height: 1.5;
-  color: #111;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .left {
@@ -62,11 +66,11 @@ header {
     padding: $default-gutters;
     font-size: 26px;
     font-weight: 200;
-    letter-spacing: -1px;
 
     div {
       width: 50%;
       height: 100%;
+      letter-spacing: -1px;
 
       &.left {
         text-transform: uppercase;
@@ -140,10 +144,11 @@ header {
       border-bottom-width: 2px;
       border-bottom-style: solid;
       border-bottom-color: $title-color;
-      -webkit-border-image: -webkit-linear-gradient(left, darken($header-primary, 12%), darken($header-alt, 12%)) 0 0 100% 0;
-      background: -webkit-linear-gradient(0deg, darken($header-primary, 12%), darken($header-alt, 12%));
+      -webkit-border-image: -webkit-linear-gradient(left, darken($header-primary, 14%), darken($header-alt, 13%)) 0 0 100% 0;
+      background: -webkit-linear-gradient(0deg, darken($header-primary, 14%), darken($header-alt, 13%));
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent;
+      //-webkit-box-shadow: 0 7px 8px -6px rgba(#000, 0.4);
     }
 
     .inner {
@@ -151,12 +156,98 @@ header {
       width: 77%;
       margin-left: 3%;
 
-      p {
+      .left, .right {
+        float: left;
+        width: 48%;
+        text-align: left;
+      }
+
+      .right {
+        margin-left: 4%;
+      }
+
+      h3 {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        padding-bottom: 2px;
+        color: $subtitle-color;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-width: 0;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+        border-bottom-color: $subtitle-color;
+        -webkit-border-image: -webkit-linear-gradient(left, darken($header-alt, 13%), #555) 0 0 100% 0;
+        background: -webkit-linear-gradient(0deg, darken($header-alt, 13%), #555);
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+      }
+
+      p, ul {
         font-family: $content-font;
         font-size: 15px;
         font-weight: 300;
         text-align: justify;
         line-height: 26px;
+      }
+
+      ul {
+        margin-left: 30px;
+        font-size: 14px;
+
+        li {
+          list-style-type: circle;
+        }
+      }
+    }
+
+    &.experience, &.education {
+
+      h3 {
+        float: left;
+        width: 100%;
+
+        span > span {
+          text-transform: lowercase;
+        }
+
+        .right {
+          text-align: right;
+        }
+      }
+
+      h4, h5 {
+        font-family: $content-font;
+        font-size: 15px;
+      }
+
+      h5 {
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        font-style: italic;
+        color: $summary-color;
+      }
+
+      ul {
+        margin-bottom: $default-gaps / 2;
+        font-size: 13px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.education {
+
+      h4 {
+        font-weight: 300;
+
+        &:first-of-type {
+          margin-bottom: $default-gaps / 2;
+        }
       }
     }
   }
