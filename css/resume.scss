@@ -1,7 +1,26 @@
+//
+// Resume Styles ~ Jrod.io
+//
+// ==========================================================================
 
-$header-primary                 :     #0072FF;
-$header-alt                     :     #4E18A6;
 
+// Defaults
+// --------------------------------------------------------------------------
+
+$default-width      :   860px;
+$default-gutter     :   0 50px;
+
+$header-primary     :   #0072FF;
+$header-alt         :   #4E18A6;
+
+$title-color        :   #444;
+
+$title-font         :   "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
+$content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans-serif;
+
+
+// Layout
+// --------------------------------------------------------------------------
 
 * {
   margin: 0;
@@ -9,9 +28,8 @@ $header-alt                     :     #4E18A6;
 }
 
 body {
-  min-width: 320px;
-  //font: lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
-  font-family: "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
+  min-width: 865px;
+  font-family: $title-font;
   line-height: 1.5;
   color: #111;
 }
@@ -25,21 +43,22 @@ body {
 }
 
 
+// Header
+// --------------------------------------------------------------------------
 
 header {
   position: relative;
   width: 100%;
   height: 120px;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
   padding-top: 30px;
   box-shadow: 10px 0 20px rgba(0,0,0,0.5);
 
   .inner {
-    display: block;
-    max-width: 720px;
+    max-width: $default-width;
     height: 55px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: $default-gutter;
     font-size: 26px;
     font-weight: 200;
     letter-spacing: -1px;
@@ -51,10 +70,10 @@ header {
       &.right {
         text-align: right;
       }
-    }
 
-    span {
-      font-weight: 600;
+      span {
+        font-weight: 600;
+      }
     }
   }
 
@@ -87,5 +106,45 @@ header {
       overflow: visible;
     }
   }
+}
 
+
+// Content
+// --------------------------------------------------------------------------
+
+.content {
+  max-width: $default-width;
+  margin: 0 auto;
+  padding: $default-gutter;
+
+  .section {
+    float: left;
+    width: 100%;
+
+    h2 {
+      float: left;
+      width: 20%;
+      margin-top: 5px;
+      padding-bottom: 2px;
+      color: $title-color;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border-bottom: 2px solid $title-color;
+    }
+
+    .inner {
+      float: left;
+      width: 77%;
+      margin-left: 3%;
+
+      p {
+        font-family: $content-font;
+        font-size: 15px;
+        font-weight: 300;
+        text-align: justify;
+        line-height: 26px;
+      }
+    }
+  }
 }
