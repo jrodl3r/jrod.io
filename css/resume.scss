@@ -1,0 +1,91 @@
+
+$header-primary                 :     #0072FF;
+$header-alt                     :     #4E18A6;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-width: 320px;
+  //font: lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
+  font-family: "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  color: #111;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+
+
+header {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 70px;
+  padding-top: 30px;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+
+  .inner {
+    display: block;
+    max-width: 720px;
+    height: 55px;
+    margin: 0 auto;
+    padding: 0 30px;
+    font-size: 26px;
+    font-weight: 200;
+    letter-spacing: -1px;
+
+    div {
+      width: 50%;
+      height: 100%;
+
+      &.right {
+        text-align: right;
+      }
+    }
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .fx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    text-align: center;
+    overflow: visible;
+
+    &.gradient {
+      background: linear-gradient(to bottom, rgba($header-primary, 1) 15%, rgba($header-alt, 1) 55%);
+    }
+
+    &.pattern {
+      background: url(../img/bg-pattern.png) top left repeat;
+      background-size: 32px;
+      opacity: 0.5;
+    }
+
+    &.vignette {
+      background: radial-gradient(ellipse at center, transparent 0%, black 100%);
+    }
+
+    svg {
+      width: 120px;
+      position: relative;
+      top: -5px;
+      overflow: visible;
+    }
+  }
+
+}

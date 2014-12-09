@@ -1,6 +1,8 @@
 
 'setup gzip compression on server'
 
+'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
+
 'setup contact form unit tests'
 
 'add RWDPerf to build process + documentation'
