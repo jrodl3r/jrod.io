@@ -8,7 +8,8 @@
 // --------------------------------------------------------------------------
 
 $default-width      :   860px;
-$default-gutter     :   0 50px;
+$default-gutters    :   0 50px;
+$default-gaps       :   90px;
 
 $header-primary     :   #0072FF;
 $header-alt         :   #4E18A6;
@@ -50,7 +51,7 @@ header {
   position: relative;
   width: 100%;
   height: 120px;
-  margin-bottom: 90px;
+  margin-bottom: $default-gaps;
   padding-top: 30px;
   box-shadow: 10px 0 20px rgba(0,0,0,0.5);
 
@@ -58,7 +59,7 @@ header {
     max-width: $default-width;
     height: 55px;
     margin: 0 auto;
-    padding: $default-gutter;
+    padding: $default-gutters;
     font-size: 26px;
     font-weight: 200;
     letter-spacing: -1px;
@@ -66,6 +67,10 @@ header {
     div {
       width: 50%;
       height: 100%;
+
+      &.left {
+        text-transform: uppercase;
+      }
 
       &.right {
         text-align: right;
@@ -100,9 +105,9 @@ header {
     }
 
     svg {
-      width: 120px;
+      width: 124px;
       position: relative;
-      top: -5px;
+      top: -6px;
       overflow: visible;
     }
   }
@@ -115,11 +120,12 @@ header {
 .content {
   max-width: $default-width;
   margin: 0 auto;
-  padding: $default-gutter;
+  padding: $default-gutters;
 
   .section {
     float: left;
     width: 100%;
+    margin-bottom: $default-gaps;
 
     h2 {
       float: left;
@@ -127,10 +133,17 @@ header {
       margin-top: 5px;
       padding-bottom: 2px;
       color: $title-color;
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
-      border-bottom: 2px solid $title-color;
+      border-width: 0;
+      border-bottom-width: 2px;
+      border-bottom-style: solid;
+      border-bottom-color: $title-color;
+      -webkit-border-image: -webkit-linear-gradient(left, darken($header-primary, 12%), darken($header-alt, 12%)) 0 0 100% 0;
+      background: -webkit-linear-gradient(0deg, darken($header-primary, 12%), darken($header-alt, 12%));
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent;
     }
 
     .inner {
