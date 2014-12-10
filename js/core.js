@@ -626,13 +626,13 @@ var App = {
   },
 
 
-  // Browser-Specific Adjustments (That'd be you, IE!)
+  // Browser-Specific Adjustments
   // ------------------------------------------------------------------------
   Browsers: {
 
     init: function() {
 
-      // Show IE Disclaimer
+      // Show Coming Soon Messgage
       if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
 
         $('.site').css('display', 'none');

@@ -36,31 +36,23 @@ header {
 
     &.pattern {
       background: url(../img/bg-pattern.png) top left repeat;
-      background-size: 11%;
+      background-size: 36px;
       opacity: 0.6;
 
       @include breakpoint($bp-landscape) {
-        background-size: 8%;
+        background-size: 45px;
       }
 
       @include breakpoint($bp-tablet) {
-        background-size: 7.5%;
+        background-size: 49px;
       }
 
       @include breakpoint($bp-medium) {
-        background-size: 6%;
-      }
-
-      @include breakpoint($bp-optimal) {
-        background-size: 5%;
-      }
-
-      @include breakpoint($bp-large) {
-        background-size: 4.5%;
+        background-size: 51px;
       }
 
       @include breakpoint($bp-huge) {
-        background-size: 54px;
+        background-size: 55px;
       }
     }
 
@@ -286,31 +278,23 @@ footer {
 
     &.pattern {
       background: url(../img/bg-pattern.png) top left repeat;
-      background-size: 11%;
+      background-size: 36px;
       opacity: 0.5;
 
       @include breakpoint($bp-landscape) {
-        background-size: 8%;
+        background-size: 45px;
       }
 
       @include breakpoint($bp-tablet) {
-        background-size: 7%;
+        background-size: 49px;
       }
 
       @include breakpoint($bp-medium) {
-        background-size: 6%;
-      }
-
-      @include breakpoint($bp-optimal) {
-        background-size: 5%;
-      }
-
-      @include breakpoint($bp-large) {
-        background-size: 4.5%;
+        background-size: 51px;
       }
 
       @include breakpoint($bp-huge) {
-        background-size: 54px;
+        background-size: 55px;
       }
     }
 
