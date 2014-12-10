@@ -304,6 +304,7 @@ footer {
 // --------------------------------------------------------------------------
 
 #menu {
+  display: none;
   visibility: hidden;
   position: fixed;
   z-index: 2;
@@ -312,7 +313,7 @@ footer {
   float: left;
   width: 0;
   height: 100%;
-  background: $header-primary;
+  background: $header-primary linear-gradient(180deg, $header-primary -20%, $header-alt 75%);
   opacity: 0;
   transition: all 0.5s;
 
@@ -379,7 +380,7 @@ footer {
       a {
         float: left;
         width: 100%;
-        padding: 5%;
+        padding: 7%;
         color: #FFF;
         font-size: 36px;
         font-weight: 200;
