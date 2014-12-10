@@ -7,7 +7,7 @@
 // Defaults & Colors
 // --------------------------------------------------------------------------
 
-$font                           :     lighter 15px sans-serif-light, Helvetica, Arial, sans-serif;
+$font                           :     'aktiv-grotesk-std', sans-serif-light, Helvetica, Arial, sans-serif;
 $font-color                     :     #999;
 $link-color                     :     #B3B3B3;
 $link-hover-color               :     #888;
@@ -39,17 +39,19 @@ $bp-cinema                      :     1320px;
 // --------------------------------------------------------------------------
 
 body {
-  opacity: 0;
+  //opacity: 0;
+  font-family: $font;
+  font-weight: 300;
 }
 
 h2, h3, p {
   margin: 0;
-  font: $font;
 }
 
 h2, h3 {
   padding: 72px 0 32px;
   font-size: 32px;
+  font-weight: 300;
   text-align: center;
   color: $title-color;
   cursor: default;
@@ -72,15 +74,17 @@ h2, h3 {
 
     &:hover {
       color: $hilite-color-primary;
-      //text-shadow: 1px 1px 1px rgba(#000, 0.2);
-      //border-bottom: 1px dotted $link-color;
     }
   }
 }
 
 h2 {
+  @include breakpoint($bp-tablet) {
+    padding: 96px 0 38px;
+    font-size: 36px;
+  }
   @include breakpoint($bp-default) {
-    padding: 132px 0 44px;
+    padding: 122px 0 44px;
     font-size: 41px;
   }
 }
@@ -96,7 +100,6 @@ p {
   margin-bottom: 20px;
   text-align: justify;
   line-height: 23px;
-  letter-spacing: 0.035em;
   color: $font-color;
   cursor: default;
 
@@ -172,7 +175,7 @@ a {
 // Debug
 // --------------------------------------------------------------------------
 
-#debug-breakpoint {
+/*#debug-breakpoint {
   position: fixed;
   z-index: 900;
   bottom: 0;
@@ -215,4 +218,4 @@ a {
       &.cinema { display: inline; }
     }
   }
-}
+}*/

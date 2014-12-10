@@ -83,6 +83,12 @@ $susy: (
     }
   }
 
+  @include breakpoint($bp-optimal) {
+    .main > .split > div {
+      padding-bottom: 60px;
+    }
+  }
+
   @include breakpoint($bp-large) {
     > header .inner,
     > footer .inner,

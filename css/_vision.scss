@@ -7,6 +7,7 @@
   p {
     width: span(17 of 18);
     margin-left: span(.5 of 18) + gutter(1 of 18);
+    font-size: 15px;
     line-height: 26px;
 
     @include breakpoint($bp-landscape) {
@@ -15,18 +16,37 @@
     }
 
     @include breakpoint($bp-tablet) {
-      font-size: 17px;
-      line-height: 27px;
+      font-size: 19px;
+      line-height: 32px;
+
+      &:first-of-type {
+        margin-top: -15px;
+      }
+    }
+
+    @include breakpoint($bp-medium) {
+      font-size: 1.09em;
+      line-height: 1.9em;
     }
 
     @include breakpoint($bp-optimal) {
-      font-size: 18px;
-      line-height: 30px;
+      font-size: 19px;
+      line-height: 1.8em;
     }
 
     @include breakpoint($bp-default) {
-      font-size: 20px;
+      font-size: 1.2em;
       line-height: 33px;
+    }
+
+    @include breakpoint($bp-large) {
+      font-size: 20px;
+      line-height: 1.7em;
+      letter-spacing: 0.03em;
+
+      &:first-of-type {
+        margin-bottom: 25px;
+      }
     }
 
     @include breakpoint($bp-huge) {
