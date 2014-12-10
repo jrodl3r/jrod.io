@@ -635,11 +635,9 @@ var App = {
       // Show IE Disclaimer
       if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
 
-        $('body').append('<div class="ie-disclaimer"><h2>Disclaimer!</h2><p>Internet Explorer has a few issues with some advanced features.</p><p>You can read more about this in greater detail <a href="http://goo.gl/Mjd8yo">here</a>.</p><p>I highly recommend using <a href="www.google.com/chrome">Chrome</a> or <a href="http://goo.gl/9mcSW">Firefox</a> for the best experience.</p><p>If you are the brazen type and still want to continue, <a href="#0" class="close-ie-disclaimer">click here</a> to proceed.</p></div>');
-
-        $('.close-ie-disclaimer').on('click', function() {
-          $('.ie-disclaimer').hide();
-        });
+        $('.site').css('display', 'none');
+        $('footer').css('display', 'none');
+        $('body').append('<div id="comingsoon">Coming Soon...<br><br>Please Use Chrome/Firefox?</div>');
       }
     }
   }
