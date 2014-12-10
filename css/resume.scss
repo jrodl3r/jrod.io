@@ -110,7 +110,7 @@ header {
           letter-spacing: normal;
           border: 1px solid #EEE;
           border-radius: 6px;
-          transition: all 0.3s;
+          transition: box-shadow 0.3s;
 
           &:hover {
             cursor: pointer;
@@ -383,7 +383,7 @@ footer {
       a {
         float: left;
         width: 100%;
-        padding: 7%;
+        padding: 7% 0;
         color: #FFF;
         font-size: 36px;
         font-weight: 200;
