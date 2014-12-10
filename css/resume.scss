@@ -110,6 +110,7 @@ header {
           letter-spacing: normal;
           border: 1px solid #EEE;
           border-radius: 6px;
+          transition: all 0.3s;
 
           &:hover {
             cursor: pointer;
@@ -352,13 +353,15 @@ footer {
     background: inline-image('../img/modal-close-button-white.svg') center center no-repeat;
     opacity: 0;
     cursor: pointer;
-    transition: opacity 0.6s;
+    transition: opacity 0.3s;
+    transition-delay: .5s;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-backface-visibility: hidden;
     -webkit-transform: translateZ(0);
 
     &:hover {
       opacity: 1;
+      transition-delay: 0.1s;
     }
   }
 
@@ -370,7 +373,7 @@ footer {
     margin: auto;
     padding: 0;
     opacity: 0;
-    transition: opacity 0.3s 0.5s;
+    transition: opacity 0.3s;
     transition-delay: 0.5s;
 
     li {
