@@ -652,7 +652,7 @@ var App = {
 $(document).ready(function() {
 
   App.Breakpoint.init();
-  App.Fx.init();
+  //App.Fx.init();
   App.Gallery.init();
   App.Modal.init();
   App.Contact.init();
