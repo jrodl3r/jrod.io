@@ -28,6 +28,8 @@ $content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans
 * {
   margin: 0;
   padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 body {
@@ -37,6 +39,20 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+div, span, h1, h2, h3, h4, h5, p, li {
+  cursor: default;
+}
+
+#page {
+  position: relative;
+  z-index: 1;
+  float: left;
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+  overflow: hidden;
 }
 
 .left {
@@ -82,7 +98,6 @@ header {
 
         .menu {
           position: absolute;
-          z-index: 1;
           top: 0;
           right: 0;
           display: block;
@@ -285,6 +300,103 @@ footer {
 }
 
 
+// Menu
+// --------------------------------------------------------------------------
+
+#menu {
+  visibility: hidden;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  float: left;
+  width: 0;
+  height: 100%;
+  background: $header-primary;
+  opacity: 0;
+  transition: all 0.5s;
+
+  .inner {
+    position: relative;
+    max-width: $default-width;
+    height: 100%;
+    margin: 0 auto;
+    padding: $default-gutters;
+  }
+
+  &.open {
+    visibility: visible;
+    left: 0;
+    width: 100%;
+    opacity: 1;
+    transition: all 0.5s;
+
+    .close {
+      opacity: 0.5;
+    }
+
+    ul {
+      opacity: 1;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 28px;
+    right: 80px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999em;
+    background: inline-image('../img/modal-close-button-white.svg') center center no-repeat;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.6s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  ul {
+    position: relative;
+    top: 15%;
+    height: 80%;
+    width: 500px;
+    margin: auto;
+    padding: 0;
+    opacity: 0;
+    transition: opacity 0.3s 0.5s;
+    transition-delay: 0.5s;
+
+    li {
+      text-align: center;
+      list-style-type: none;
+
+      a {
+        float: left;
+        width: 100%;
+        padding: 5%;
+        color: #FFF;
+        font-size: 36px;
+        font-weight: 200;
+        text-decoration: none;
+        transition: all 0.5s;
+
+        &:hover {
+          text-shadow: 0 0 10px rgba(#FFF, 0.65);
+          opacity: 0.5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+
 // Print
 // --------------------------------------------------------------------------
 
@@ -292,7 +404,8 @@ footer {
 
   header .menu,
   header .fx,
-  footer {
+  footer,
+  #menu {
     display: none !important;
   }
 
