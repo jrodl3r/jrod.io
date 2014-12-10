@@ -197,7 +197,7 @@
         margin-bottom: 15px;
       }
 
-      @include breakpoint($bp-default) {
+      @include breakpoint($bp-optimal) {
         height: 28px;
         margin-bottom: 18px;
       }
@@ -212,6 +212,7 @@
         height: 24px;
         line-height: 24px;
         font-size: 16px;
+        font-weight: 400;
         text-decoration: none;
         text-indent: 34%;
 
@@ -257,7 +258,7 @@
           width: 50%;
         }
 
-        @include breakpoint($bp-default) {
+        @include breakpoint($bp-optimal) {
           height: 28px;
           font-size: 18px;
           line-height: 28px;
@@ -265,13 +266,13 @@
 
         svg {
           max-width: 28px;
-          margin-right: 10px;
+          margin-right: 12px;
 
           @include breakpoint($bp-landscape) {
             max-width: 24px;
           }
 
-          @include breakpoint($bp-default) {
+          @include breakpoint($bp-optimal) {
             max-width: 28px;
           }
 
