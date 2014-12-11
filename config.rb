@@ -15,18 +15,19 @@ color_output = false
 
 # Custom Sass Functionality (Inline SVG Images)
 require 'sass'
+require 'cgi'
 
 module Sass::Script::Functions
 
   def inline_svg_image(path)
     real_path = File.join(Compass.configuration.images_path, path.value)
     svg = data(real_path)
-    encoded_svg = URI::encode(svg)
-    data_url = "url('data:image/svg+xml;utf8," + encoded_svg + "')"
+    encoded_svg = CGI::escape(svg).gsub('+', '%20')
+    data_url = "url('data:image/svg+xml;charset=utf-8," + encoded_svg + "')"
     Sass::Script::String.new(data_url)
   end
 
-private
+  private
 
   def data(real_path)
     if File.readable?(real_path)
