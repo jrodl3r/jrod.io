@@ -15,13 +15,13 @@ var App = {
 
     enabled: true,
     header: $('header'),
-    header_height: 0,
+    //header_height: 0,
 
 
     init: function() {
 
       // Update Dimensions
-      this.update();
+      //this.update();
 
       // Setup Interactions
       this.interact();
@@ -31,10 +31,10 @@ var App = {
     },
 
     // Update Dimensions
-    update: function() {
+    //update: function() {
 
-      this.header_height = $('header').outerHeight();
-    },
+      //this.header_height = $('header').outerHeight();
+    //},
 
     // Reset Positions
     reset: function() {
@@ -56,7 +56,7 @@ var App = {
     // Scroll Animation
     scrollAnim: function() {
 
-      if(window.scrollY < App.Fx.header_height && App.Fx.enabled) {
+      if(window.scrollY < App.Fx.header.outerHeight() && App.Fx.enabled) {
         App.Fx.header.css('transform', 'translate3d(0px, ' + (window.scrollY/2) + 'px, 0px)');
       }
     },
@@ -84,7 +84,7 @@ var App = {
         $(window).scroll(function() { window.requestAnimationFrame(App.Fx.scrollAnim); });
 
         // Resize: Update Dimensions
-        $(window).resize(function() { App.Fx.update(); });
+        //$(window).resize(function() { App.Fx.update(); });
       }
     }
   },
@@ -650,7 +650,7 @@ var App = {
 $(document).ready(function() {
 
   App.Breakpoint.init();
-  //App.Fx.init();
+  App.Fx.init();
   App.Gallery.init();
   App.Modal.init();
   App.Contact.init();
