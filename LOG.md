@@ -1,6 +1,9 @@
 
 'setup gzip compression on server'
 
+'setup asset/resource cacheing'
+
+
 'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
 
 'setup contact form unit tests'
@@ -21,14 +24,18 @@
 
 'setup blog area/items layout across all breakpoints'
 
+
+'setup resume responsiveness'
+
+'make resume menu button more visible'
+
+'update all node/grunt/build dependencies'
+
+
+
 'setup /resume layout + conver copy to MD + save/print menu'
-
 'improve font-size and line-height consistency/responsiveness'
-
 'enhance typography and font styles'
-
-
-
 'add IE disclaimer'
 'add additional background-size parameter to address IE11 tile logo sizing issue'
 'update meta tags'

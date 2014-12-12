@@ -8,7 +8,7 @@ My portfolio website for sharing past projects, personal insights, righteous epi
 
 _"The trick is not to try and learn everything about something, but a little bit about everything..."_
 
-_"The goal of this project is to create a stunning, flexible, lightning-fast experience..."_
+_"The goal of this project is to create a stunning, flexible, lightning-fast experience…"_
 
 
 ##Features
@@ -19,8 +19,8 @@ I want the site to encompass traditional interface elements with subtle experime
 - Minimal Parallax Effects
 - Mobile Swipe Gestures
 - Header Intro
-    - Dynamic Animation Fx (different styles + cycles on each visit)
-    - Game Feature: Asteroids / Pong Feature (header content fades-out, scale-in full-frame gameplay mode)
+- Dynamic Animation Fx (different styles + cycles on each visit)
+- Game Feature: Asteroids / Pong Feature (header content fades-out, scale-in full-frame gameplay mode)
 
 
 ##Content
@@ -42,7 +42,7 @@ Believing that smarter software comes from collective effort and experience, I s
 ###Work
 
 ######Target
-As a UI/UX consultant for _Target_, I was part of a small team that launched the _1,000 Likes_ and _Microgifting_ campaigns. My responsibilities included front-end development and visual aesthetics.
+As a UI/UX consultant for _Target_, I was part of a small team that launched the _1,000 Likes_ and _Microgifting_ campaigns. My contributions included JavaScript and CSS development.
 
 ######GE
 While consulting at _HUGE Inc_ as a UI/UX engineer, I led an operation to build out a UI framework for _GE Capital_, which included a distilled set of interface templates, modules and components.
