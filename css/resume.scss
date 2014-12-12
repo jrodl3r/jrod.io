@@ -3,6 +3,7 @@
 //
 // ==========================================================================
 
+@import 'normalize';
 
 // Defaults
 // --------------------------------------------------------------------------
@@ -24,6 +25,8 @@ $content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans
 
 // Layout
 // --------------------------------------------------------------------------
+
+@include normalize;
 
 * {
   margin: 0;
@@ -316,6 +319,7 @@ footer {
   height: 100%;
   background: $header-primary linear-gradient(180deg, $header-primary -20%, $header-alt 75%);
   opacity: 0;
+  overflow: scroll;
   transition: all 0.5s;
 
   .inner {
@@ -367,7 +371,7 @@ footer {
 
   ul {
     position: relative;
-    top: 15%;
+    top: 10%;
     height: 80%;
     width: 500px;
     margin: auto;
@@ -383,7 +387,7 @@ footer {
       a {
         float: left;
         width: 100%;
-        padding: 7% 0;
+        padding: 5% 0;
         color: #FFF;
         font-size: 36px;
         font-weight: 200;
