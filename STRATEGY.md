@@ -4,7 +4,7 @@
 
 #Jrod.io
 
-My portfolio website for sharing past projects, personal insights, righteous epiphanies, nervous breakdowns and epic tales.
+My portfolio website for sharing past projects, personal insights, righteous epiphanies and epic tales.
 
 _"The trick is not to try and learn everything about something, but a little bit about everything..."_
 
@@ -61,9 +61,6 @@ With _Oscar Mayer_, I developed a site focused on a social media campaign launch
 
 ######YourCare
 An old friend/client was in the concept phase of an idea for a social healthcare app and wanted get it up and running. I styled and coded this SPA prototype using AngularJS, Sass and Grunt.
-
-######Adult Swim
-The mobile team at _HUGE Inc_ was building an app for _Adult Swim_ and had to test interaction in advance. I built this prototype in a few days using Sass & jQuery to help meet that requirement.
 
 ######NYLearns
 Passionate about creating tools that enhance education, I worked with _3rd Learning_ as a Senior UI engineer. In collaboration with educators, I built software to support classroom teachers.

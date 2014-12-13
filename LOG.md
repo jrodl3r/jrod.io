@@ -3,7 +3,7 @@
 
 - 'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
 
-- 'setup contact form unit tests'
+- 'setup contact form unit testing'
 
 - 'add RWDPerf to build process + documentation'
 
@@ -19,7 +19,7 @@
 
 - 'add header intro animation sequence (VelocityJS)'
 
-- 'setup blog area/items layout across all breakpoints'
+- 'setup blog layout across all breakpoints'
 
 
 
@@ -27,7 +27,7 @@
 
 - 'make resume menu button more visible'
 
-- 'update all node/grunt/build dependencies'
+- 'update all tools & dependencies'
 
 - 'setup gzip compression + asset/resource cacheing'
 

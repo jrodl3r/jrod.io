@@ -46,7 +46,7 @@ var App = {
     // Scroll Animation
     scrollAnim: function() {
 
-      if(window.scrollY < App.Fx.header.outerHeight() && App.Fx.enabled) {
+      if(window.scrollY < App.Fx.header.outerHeight() && App.Fx.enabled && App.Browsers.is_chrome) {
         App.Fx.header.css('transform', 'translate3d(0px, ' + (window.scrollY/2) + 'px, 0px)');
       }
     },
@@ -54,7 +54,9 @@ var App = {
     // Enable Animations
     enable: function() {
 
-      this.enabled = true;
+      //if(App.Browsers.is_chrome) {
+        this.enabled = true;
+      //}
     },
 
     // Disable Animations
@@ -610,14 +612,32 @@ var App = {
   // ------------------------------------------------------------------------
   Browsers: {
 
+    is_chrome: false,
+    is_ie: false,
+
     init: function() {
 
-      // Show Coming Soon Messgage
-      if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+      // Monitor Browsers
+      this.detect();
 
+      // Show Coming Soon Message (IE)
+      this.disableView();
+    },
+
+    // Monitor Browsers
+    detect: function() {
+
+      this.is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+      this.is_ie = navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0;
+    },
+
+    // Show Coming Soon Message (IE)
+    disableView: function() {
+
+      if (this.is_ie) {
         $('.site').css('display', 'none');
         $('footer').css('display', 'none');
-        $('body').append('<div id="comingsoon">Coming Soon...<br><br>Please Use Chrome/Firefox?</div>');
+        $('body').append('<div id="comingsoon">Coming Soon...<br><br>Please Use Chrome/Firefox/Safari</div>');
       }
     }
   }
