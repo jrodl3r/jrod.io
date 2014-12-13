@@ -1,4 +1,4 @@
-//debug = true;
+debug = true;
 //
 // Core Application Logic
 //
@@ -155,7 +155,6 @@ var App = {
     Paging: {
 
       buttons: $('.pagination div'),
-      num_pages: 4,
 
 
       init: function() {
@@ -540,11 +539,7 @@ var App = {
       Breakpoints.on({
         name: "bp-portrait",
         matched: function() {
-          App.Gallery.reset();
           App.Fx.disable();
-        },
-        exit: function() {
-          App.Gallery.reset();
         }
       });
 
@@ -565,12 +560,10 @@ var App = {
         name: "bp-tablet",
         matched: function() {
           App.Gallery.reset();
-          App.Gallery.Paging.num_pages = 1;
           App.Fx.disable();
         },
         exit: function() {
           App.Gallery.reset();
-          App.Gallery.Paging.num_pages = 4;
           App.Fx.disable();
         }
       });
