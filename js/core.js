@@ -15,13 +15,9 @@ var App = {
 
     enabled: true,
     header: $('header'),
-    //header_height: 0,
 
 
     init: function() {
-
-      // Update Dimensions
-      //this.update();
 
       // Setup Interactions
       this.interact();
@@ -29,12 +25,6 @@ var App = {
       // Load Animation
       this.loadAnim();
     },
-
-    // Update Dimensions
-    //update: function() {
-
-      //this.header_height = $('header').outerHeight();
-    //},
 
     // Reset Positions
     reset: function() {
@@ -82,9 +72,6 @@ var App = {
 
         // Scroll: Animate Content
         $(window).scroll(function() { window.requestAnimationFrame(App.Fx.scrollAnim); });
-
-        // Resize: Update Dimensions
-        //$(window).resize(function() { App.Fx.update(); });
       }
     }
   },
