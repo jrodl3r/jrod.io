@@ -29,7 +29,7 @@ var App = {
     // Reset Positions
     reset: function() {
 
-      this.header.css('transform', 'translate3d(0px, 0px, 0px)');
+      this.header.css('transform', 'translate3d(0,0,0)');
     },
 
     // Load Animation
