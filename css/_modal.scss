@@ -80,6 +80,7 @@
 
     img {
       width: 100%;
+      height: auto;
       vertical-align: top;
       cursor: pointer;
       -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -271,6 +272,7 @@
     position: relative;
     top: 5%;
     width: 85%;
+    height: auto;
     max-width: 800px;
     margin-bottom: 15%;
     opacity: 1;
