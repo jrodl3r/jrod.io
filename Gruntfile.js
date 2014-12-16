@@ -20,7 +20,8 @@ module.exports = function(grunt) {
         options: {
           style: 'compressed',
           require: ['susy', 'breakpoint'],
-          compass: true
+          compass: true,
+          sourcemap: 'none'
         },
         files: {
           'css/dist.css': 'css/base.scss'
