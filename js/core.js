@@ -1,12 +1,8 @@
-//debug = true;
 //
-// Core Application Logic
+// Global App Object
 //
 // ==========================================================================
 
-
-// Base Application Object
-// --------------------------------------------------------------------------
 var App = {
 
   // Visual Effects
@@ -54,9 +50,7 @@ var App = {
     // Enable Animations
     enable: function() {
 
-      //if(App.Browsers.is_chrome) {
-        this.enabled = true;
-      //}
+      this.enabled = true;
     },
 
     // Disable Animations
@@ -388,16 +382,12 @@ var App = {
       // Submit User Message
       $(this.ajax_form).submit(function(event) {
 
-        // Stop Default Behavior
         event.preventDefault();
 
         // Validate Input
         if(App.Contact.validate()) {
 
-          // Disable While Submitting
           App.Contact.disable();
-
-          // Update Submit Button Label
           App.Contact.updateButton(true);
 
           // Serialize Input
@@ -634,7 +624,7 @@ var App = {
     // Show Coming Soon Message (IE)
     disableView: function() {
 
-      if (this.is_ie) {
+      if(this.is_ie) {
         $('.site').css('display', 'none');
         $('footer').css('display', 'none');
         $('body').append('<div id="comingsoon">Coming Soon...<br><br>Please Use Chrome/Firefox/Safari</div>');

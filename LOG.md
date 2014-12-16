@@ -31,7 +31,10 @@
 
 - 'setup gzip compression + asset/resource cacheing'
 
+- 'address sass compile speed'
 
+
+- 'cleanup script comments, debug code, crunch modernizr (only need touch-detection)'
 - 'update build tools & dependencies, condense grunt flow (remove load-grunt-config)'
 - 'setup /resume layout + conver copy to MD + save/print menu'
 - 'improve font-size and line-height consistency/responsiveness'
