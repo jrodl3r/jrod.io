@@ -3,13 +3,10 @@
 //
 // ==========================================================================
 
-// Setup Image-Replacement Element
+
+// Image-Replacement
 // --------------------------------------------------------------------------
-// @param $pos    position  [float|absolute|relative]
-// @param $dir    direction [left|right|none]
-// @param $height   optional
-// @param $width    optional
-// --------------------------------------------------------------------------
+
 @mixin ir-block($pos, $dir, $height: 0, $width: 0) {
   @extend .ir;
   @if $pos == float { float: $dir; }
@@ -18,8 +15,10 @@
   @if $width != 0 { width: $width; }
 }
 
-// Setup JS-Breakpoints
+
+// JS-Breakpoints
 // --------------------------------------------------------------------------
+
 @mixin defineBreakpoint($name) {
   // store active breakpoint name in ::pseudo content
   &:after {

@@ -1,5 +1,5 @@
 
-
+- "replace ruby dep's (compass/susy/breakpoint) & upgrade to grunt-sass for faster sass compile (node)"
 
 - 'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
 
@@ -32,6 +32,8 @@
 - 'setup gzip compression + asset/resource cacheing'
 
 - 'address sass compile speed'
+
+
 
 
 - 'cleanup base.scss + boilerplate styles, remove unused assets'
