@@ -268,10 +268,12 @@
     height: 17px;
     width: 17px;
     margin-right: 14px;
+    vertical-align: top;
     text-indent: -999em;
     border-radius: 50%;
     background: #CCC;
     transition: all .3s;
+    cursor: pointer;
 
     @include breakpoint($bp-tablet) {
       &:nth-child(3), &:nth-child(4), &:nth-child(5) {
