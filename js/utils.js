@@ -6,7 +6,6 @@
 
 // Debug Output
 // --------------------------------------------------------------------------
-
 var debug = false;
 
 function log(s) {
@@ -19,7 +18,6 @@ function log(s) {
 
 // JS-Breakpoints
 // --------------------------------------------------------------------------
-
 window.Breakpoints = (function (window, document) {
 
   var B = {},
