@@ -32,7 +32,7 @@
 - 'setup gzip compression + asset/resource cacheing'
 
 
-
+- 'update build tools & dependencies, condense grunt flow (remove load-grunt-config)'
 - 'setup /resume layout + conver copy to MD + save/print menu'
 - 'improve font-size and line-height consistency/responsiveness'
 - 'enhance typography and font styles'
