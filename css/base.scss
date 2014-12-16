@@ -1,36 +1,23 @@
 //
-// Base Stylesheet Assembler
+// Compile CSS
 //
 // ==========================================================================
 
-// Import CSS Libraries
+
+// Dependencies
 // --------------------------------------------------------------------------
 
-@import 'compass/layout';
 @import 'compass/utilities';
-@import 'compass/css3';
 @import 'normalize';
 @import 'h5bp';
 @import 'susy';
 @import 'breakpoint';
 
-// Build Core Stylesheet
+
+// Core
 // --------------------------------------------------------------------------
 
-/* Normalize */
-@include normalize;
-
-/* H5BP-Defaults */
-@include h5bp-default;
-
-/* H5BP-Helpers */
-@include h5bp-helpers;
-
-/* Mixins */
 @import 'mixins';
-
-/* Styles */
-// @import 'fonts';
 @import 'core';
 @import 'grid';
 @import 'nav';
@@ -38,6 +25,3 @@
 @import 'gallery';
 @import 'connect';
 @import 'modal';
-
-/* H5BP-Media */
-@include h5bp-media;

@@ -34,6 +34,7 @@
 - 'address sass compile speed'
 
 
+- 'cleanup base.scss + boilerplate styles, remove unused assets'
 - 'cleanup script comments, debug code, crunch modernizr (only need touch-detection)'
 - 'update build tools & dependencies, condense grunt flow (remove load-grunt-config)'
 - 'setup /resume layout + conver copy to MD + save/print menu'
