@@ -3,7 +3,11 @@
 //
 // ==========================================================================
 
+// Libraries
+// --------------------------------------------------------------------------
+
 @import 'normalize';
+
 
 // Defaults
 // --------------------------------------------------------------------------
@@ -15,18 +19,17 @@ $default-gaps       :   90px;
 $header-primary     :   #0072FF;
 $header-alt         :   #4E18A6;
 
+$default-color      :   #111;
 $title-color        :   #444;
 $subtitle-color     :   #333;
 $summary-color      :   #888;
 
-$title-font         :   "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
+$default-font       :   "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
 $content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans-serif;
 
 
 // Layout
 // --------------------------------------------------------------------------
-
-@include normalize;
 
 * {
   margin: 0;
@@ -37,8 +40,8 @@ $content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans
 
 body {
   min-width: 1020px;
-  color: #111;
-  font-family: $title-font;
+  color: $default-color;
+  font-family: $default-font;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -104,20 +107,17 @@ header {
           top: 0;
           right: 0;
           display: block;
-          width: 60px;
+          width: 30px;
           height: auto;
-          color: #666;
-          padding: 2px 10px;
-          font-size: 18px;
+          padding: 2px;
+          font-size: 22px;
           text-align: center;
           letter-spacing: normal;
-          border: 1px solid #EEE;
-          border-radius: 6px;
-          transition: box-shadow 0.3s;
+          transition: color 0.3s;
 
           &:hover {
+            color: #BBB;
             cursor: pointer;
-            box-shadow: inset 0 0 10px rgba(#CCC, 0.5);
           }
         }
       }
@@ -133,17 +133,14 @@ header {
     overflow: visible;
 
     &.gradient {
-      background: linear-gradient(to bottom, rgba($header-primary, 1) 15%, rgba($header-alt, 1) 55%);
+      background: radial-gradient(ellipse at center, transparent 0%, black 100%),
+                  linear-gradient(to bottom, rgba($header-primary, 1) 15%, rgba($header-alt, 1) 55%);
     }
 
     &.pattern {
       background: url(../img/bg-pattern.png) top left repeat;
-      background-size: 32px;
+      background-size: 33px;
       opacity: 0.5;
-    }
-
-    &.vignette {
-      background: radial-gradient(ellipse at center, transparent 0%, black 100%);
     }
 
     svg {

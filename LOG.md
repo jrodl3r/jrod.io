@@ -1,17 +1,17 @@
 
-- "replace ruby dep's (compass/susy/breakpoint) & upgrade to grunt-sass for faster sass compile (node)"
+- "replace ruby dep's (compass/susy/breakpoint) & upgrade to grunt-sass for faster (node) build"
 
 - 'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
 
-- 'setup contact form unit testing'
-
 - 'add RWDPerf to build process + documentation'
+
+- 'setup contact form unit testing'
 
 - 'optimize preview images for smaller screens'
 
-- 'rebuild gallery + modal display logic (see css-3d-transitions, box-shadow effects)'
-
 - 'add swipe gestures to gallery'
+
+- 'rebuild gallery + modal display logic (see css-3d-transitions, box-shadow effects)'
 
 - 'address gallery flicker during reset (on resize/orientation change)'
 
@@ -21,21 +21,11 @@
 
 - 'setup blog layout across all breakpoints'
 
-
-
 - 'setup resume responsiveness'
 
+
 - 'make resume menu button more visible'
-
-- 'update all tools & dependencies'
-
 - 'setup gzip compression + asset/resource cacheing'
-
-- 'address sass compile speed'
-
-
-
-
 - 'cleanup base.scss + boilerplate styles, remove unused assets'
 - 'cleanup script comments, debug code, crunch modernizr (only need touch-detection)'
 - 'update build tools & dependencies, condense grunt flow (remove load-grunt-config)'
