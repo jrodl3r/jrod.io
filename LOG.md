@@ -21,9 +21,7 @@
 
 - 'setup blog layout across all breakpoints'
 
-- 'setup resume responsiveness'
-
-
+- 'cleanup resume menu responsiveness'
 - 'make resume menu button more visible'
 - 'setup gzip compression + asset/resource cacheing'
 - 'cleanup base.scss + boilerplate styles, remove unused assets'

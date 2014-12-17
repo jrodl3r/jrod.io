@@ -3,10 +3,11 @@
 //
 // ==========================================================================
 
-// Libraries
+// Normalize
 // --------------------------------------------------------------------------
 
 @import 'normalize';
+@import 'breakpoint';
 
 
 // Defaults
@@ -16,16 +17,18 @@ $default-width      :   920px;
 $default-gutters    :   0 50px;
 $default-gaps       :   90px;
 
-$header-primary     :   #0072FF;
-$header-alt         :   #4E18A6;
-
 $default-color      :   #111;
 $title-color        :   #444;
 $subtitle-color     :   #333;
 $summary-color      :   #888;
 
-$default-font       :   "aktiv-grotesk-std", sans-serif-light, Helvetica, Arial, sans-serif;
-$content-font       :   "proxima-nova", sans-serif-light, Helvetica, Arial, sans-serif;
+$hilite-primary     :   #0072FF;
+$hilite-alt         :   #4E18A6;
+
+$default-font       :   'aktiv-grotesk-std', sans-serif-light, Helvetica, Arial, sans-serif;
+$content-font       :   'proxima-nova', sans-serif-light, Helvetica, Arial, sans-serif;
+
+$bp-landscape       :   orientation landscape;
 
 
 // Layout
@@ -134,7 +137,7 @@ header {
 
     &.gradient {
       background: radial-gradient(ellipse at center, transparent 0%, black 100%),
-                  linear-gradient(to bottom, rgba($header-primary, 1) 15%, rgba($header-alt, 1) 55%);
+                  linear-gradient(to bottom, rgba($hilite-primary, 1) 15%, rgba($hilite-alt, 1) 55%);
     }
 
     &.pattern {
@@ -179,10 +182,10 @@ header {
       font-size: 13px;
       font-weight: 600;
       text-transform: uppercase;
-      background: -webkit-linear-gradient(0deg, darken($header-primary, 14%), darken($header-alt, 13%));
+      background: -webkit-linear-gradient(0deg, darken($hilite-primary, 14%), darken($hilite-alt, 13%));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      -webkit-border-image: -webkit-linear-gradient(left, darken($header-primary, 14%), darken($header-alt, 13%)) 0 0 100% 0;
+      -webkit-border-image: -webkit-linear-gradient(left, darken($hilite-primary, 14%), darken($hilite-alt, 13%)) 0 0 100% 0;
       border-width: 0;
       border-bottom-width: 2px;
       border-bottom-style: solid;
@@ -212,10 +215,10 @@ header {
         font-size: 13px;
         font-weight: 600;
         text-transform: uppercase;
-        background: -webkit-linear-gradient(0deg, darken($header-alt, 13%), #555);
+        background: -webkit-linear-gradient(0deg, darken($hilite-alt, 13%), #555);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        -webkit-border-image: -webkit-linear-gradient(left, darken($header-alt, 13%), #555) 0 0 100% 0;
+        -webkit-border-image: -webkit-linear-gradient(left, darken($hilite-alt, 13%), #555) 0 0 100% 0;
         border-width: 0;
         border-bottom-width: 2px;
         border-bottom-style: solid;
@@ -305,27 +308,18 @@ footer {
 // --------------------------------------------------------------------------
 
 #menu {
-  display: none;
+  display: block;
   visibility: hidden;
   position: fixed;
   z-index: 2;
   top: 0;
   left: 50%;
-  float: left;
   width: 0;
   height: 100%;
-  background: $header-primary linear-gradient(180deg, $header-primary -20%, $header-alt 75%);
+  background: $hilite-primary linear-gradient(180deg, $hilite-primary -20%, $hilite-alt 75%);
   opacity: 0;
-  overflow: scroll;
+  overflow: hidden;
   transition: all 0.5s;
-
-  .inner {
-    position: relative;
-    max-width: $default-width;
-    height: 100%;
-    margin: 0 auto;
-    padding: $default-gutters;
-  }
 
   &.open {
     visibility: visible;
@@ -334,67 +328,88 @@ footer {
     opacity: 1;
     transition: all 0.5s;
 
-    .close {
-      opacity: 0.5;
-    }
-
-    ul {
+    .inner {
       opacity: 1;
     }
   }
 
-  .close {
-    position: absolute;
-    top: 28px;
-    right: 80px;
-    display: block;
-    width: 40px;
-    height: 40px;
-    text-indent: -9999em;
-    background: inline-svg-image('../img/modal-close-button-white.svg') center center no-repeat;
-    opacity: 0;
-    cursor: pointer;
-    transition: opacity 0.3s;
-    transition-delay: .5s;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-
-    &:hover {
-      opacity: 1;
-      transition-delay: 0.1s;
-    }
-  }
-
-  ul {
+  .inner {
     position: relative;
-    top: 10%;
-    height: 80%;
-    width: 500px;
-    margin: auto;
-    padding: 0;
+    max-width: $default-width;
+    height: 100%;
+    margin: 0 auto;
+    padding: $default-gutters;
     opacity: 0;
     transition: opacity 0.3s;
     transition-delay: 0.5s;
 
-    li {
+    .close {
+      position: fixed;
+      top: 3%;
+      right: 9%;
+      display: block;
+      width: 40px;
+      height: 40px;
+      color: #FFF;
+      font-size: 4em;
       text-align: center;
-      list-style-type: none;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: all 0.3s;
 
-      a {
-        float: left;
-        width: 100%;
-        padding: 5% 0;
-        color: #FFF;
-        font-size: 36px;
-        font-weight: 200;
-        text-decoration: none;
-        transition: all 0.5s;
+      &:hover {
+        opacity: 1;
+      }
 
-        &:hover {
-          text-shadow: 0 0 10px rgba(#FFF, 0.65);
-          opacity: 0.5;
-          cursor: pointer;
+      @include breakpoint($bp-landscape) {
+        top: 4%;
+        right: 5%;
+        font-size: 3em;
+      }
+    }
+
+    ul {
+      position: relative;
+      top: 15%;
+      height: 85%;
+      width: 80%;
+      margin: auto;
+      padding: 0;
+
+      @include breakpoint($bp-landscape) {
+        top: 14%;
+      }
+
+      li {
+        height: 20%;
+        text-align: center;
+        list-style-type: none;
+
+        @include breakpoint($bp-landscape) {
+          height: 23%;
+        }
+
+        a {
+          display: inline-block;
+          width: 100%;
+          padding: 5% 0;
+          color: #FFF;
+          font-size: 5em;
+          font-weight: 200;
+          text-decoration: none;
+          transition: all 0.3s;
+
+          &:hover {
+            text-shadow: 0 0 10px rgba(#FFF, 0.65);
+            opacity: 0.5;
+            cursor: pointer;
+          }
+
+          @include breakpoint($bp-landscape) {
+            padding: 0;
+            font-size: 3em;
+
+          }
         }
       }
     }

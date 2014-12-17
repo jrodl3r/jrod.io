@@ -173,20 +173,12 @@
     </div>
     <div id="menu">
       <div class="inner">
-        <div class="close">Close</div>
+        <div class="close">&#10005;</div>
         <ul>
-          <li>
-            <a href="/resume/John%20Rodler.pdf">Download</a>
-          </li>
-          <li>
-            <a href="javascript:window.print();">Print</a>
-          </li>
-          <li>
-            <a href="/">Portfolio</a>
-          </li>
-          <li>
-            <a href="http://jrodl3r.github.io">Blog</a>
-          </li>
+          <li><a href="/resume/John%20Rodler.pdf">Download</a></li>
+          <li><a href="javascript:window.print();">Print</a></li>
+          <li><a href="/">Portfolio</a></li>
+          <li><a href="http://jrodl3r.github.io">Blog</a></li>
         </ul>
       </div>
     </div>
@@ -201,16 +193,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-
-        $('.menu').on('click', function() {
-            $('#menu').addClass('open');
-        });
-
-        $('.close').on('click', function() {
-          $('#menu').removeClass('open');
-        });
-
-        $('#menu').css('display', 'block');
+        $('.menu').on('click', function() { $('#menu').addClass('open'); });
+        $('.close').on('click', function() { $('#menu').removeClass('open'); });
       });
     </script>
   </body>
