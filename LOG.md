@@ -3,23 +3,22 @@
 
 - 'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
 
+- 'add header intro animation sequence (VelocityJS)'
+
+- 'rebuild gallery + modal display logic (see css-3d-transitions)'
+
+- 'address gallery flicker during reset (on resize/orientation change)'
+
+- 'setup project/sample infinity carousel (L/R keys/clicks/swipes)'
+
 - 'add RWDPerf to build process + documentation'
 
 - 'setup contact form unit testing'
 
 - 'optimize preview images for smaller screens'
 
-- 'add swipe gestures to gallery'
-
-- 'rebuild gallery + modal display logic (see css-3d-transitions, box-shadow effects)'
-
-- 'address gallery flicker during reset (on resize/orientation change)'
-
-- 'add next/prev functionality to preview stage (buttons/swipes)'
-
-- 'add header intro animation sequence (VelocityJS)'
-
 - 'setup blog layout across all breakpoints'
+
 
 - 'cleanup resume menu responsiveness'
 - 'make resume menu button more visible'
