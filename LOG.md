@@ -1,7 +1,7 @@
 
-- "replace ruby dep's (compass/susy/breakpoint) & upgrade to grunt-sass for faster (node) build"
+- 'upgrade to grunt-sass for faster node compile (compass/susy/breakpoint)'
 
-- 'update event handlers to use ES6 => arrow functions (simplify by using lexical this binding!)'
+- 'swap jQuery functionality for standard JS'
 
 - 'add header intro animation sequence (VelocityJS)'
 
