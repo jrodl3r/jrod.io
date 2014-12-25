@@ -1,5 +1,5 @@
 
-- 'upgrade to grunt-sass for faster node compile (compass/susy/breakpoint)'
+- 'upgrade to grunt-sass for faster node compile (roadblocks: compass/susy/breakpoint)'
 
 - 'swap jQuery functionality for standard JS'
 
