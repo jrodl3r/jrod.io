@@ -19,6 +19,12 @@
 
 - 'setup blog layout across all breakpoints'
 
+- 'refactor methods to limit lower scope + global lookups (localize multi-instances)'
+
+- "refactor consecutively defined handlers w/ event-maps'
+
+- 'optimize/minimize sass selectors'
+
 
 - 'cleanup resume menu responsiveness'
 - 'make resume menu button more visible'

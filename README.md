@@ -3,7 +3,7 @@ My (responsive) portfolio website.
 **Cheers** :beers:
 
 ### Setup
-    $ npm install --save-dev
+    $ npm install
     $ grunt dev
     $ phpserver
 
