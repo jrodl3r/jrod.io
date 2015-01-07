@@ -1,31 +1,24 @@
-
+### LATER
 - 'upgrade to grunt-sass for faster node compile (roadblocks: compass/susy/breakpoint)'
-
 - 'swap jQuery functionality for standard JS'
-
 - 'add header intro animation sequence (VelocityJS)'
-
 - 'rebuild gallery + modal display logic (see css-3d-transitions)'
-
 - 'address gallery flicker during reset (on resize/orientation change)'
-
 - 'setup project/sample infinity carousel (L/R keys/clicks/swipes)'
-
 - 'add RWDPerf to build process + documentation'
-
 - 'setup contact form unit testing'
 
+
+### NOW
 - 'optimize preview images for smaller screens'
-
 - 'setup blog layout across all breakpoints'
-
 - 'refactor methods to limit lower scope + global lookups (localize multi-instances)'
-
 - "refactor consecutively defined handlers w/ event-maps'
-
 - 'optimize/minimize sass selectors'
+- 'fix github social link hover bug'
 
 
+### READY
 - 'cleanup resume menu responsiveness'
 - 'make resume menu button more visible'
 - 'setup gzip compression + asset/resource cacheing'
