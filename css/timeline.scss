@@ -189,6 +189,7 @@ header {
       position: relative;
       white-space: nowrap;
       @include text-shadow(0 0 10px rgba(255, 255, 255, .5));
+      @include transition(.75s);
 
       &:hover {
         .bubble-default {
@@ -203,11 +204,12 @@ header {
         .bubble-adult {
           background-color: lighten($hilite-alt, 30%);
         }
-        .data {
+        .date {
           color: #222;
+          //color: #AAA;
         }
         .label {
-          color: #333;
+          color: #111;
         }
       }
 
@@ -215,6 +217,7 @@ header {
         color: #555;
         font-size: 13px;
         font-weight: 600;
+        @include transition(.75s);
       }
 
       .label {
@@ -224,6 +227,7 @@ header {
         font-size: 14px;
         line-height: 21px;
         white-space: nowrap;
+        @include transition(.75s);
       }
 
       .bubble {
