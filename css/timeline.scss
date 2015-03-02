@@ -20,16 +20,14 @@ $summary-color      :   #888;
 
 $hilite-primary     :   #0072FF;
 $hilite-alt         :   #4E18A6;
-$hilite-lightblue   :   #0FB;
+$hilite-lightblue   :   #00FFBB;
 $hilite-aqua        :   #51D9B7;
 $hilite-lime        :   #B6EB1B;
-$hilite-gray        :   #666;
 $hilite-bright      :   #B500FF;
+$hilite-gray        :   #666666;
 
 $default-font       :   'aktiv-grotesk-std', sans-serif-light, Helvetica, Arial, sans-serif;
 $content-font       :   'proxima-nova', sans-serif-light, Helvetica, Arial, sans-serif;
-
-$bp-landscape       :   orientation landscape;
 
 
 // Layout
@@ -165,6 +163,10 @@ header {
       font-weight: 300;
       border-left: 1px dashed rgba(50, 50, 50, 0.1);
       height: 100%;
+
+      &:first-of-type {
+        border-left: none;
+      }
     }
   }
 
