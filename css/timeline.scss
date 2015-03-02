@@ -217,7 +217,7 @@ header {
         color: #555;
         font-size: 13px;
         font-weight: 600;
-        @include transition(.75s);
+        @include transition(.25s .15s);
       }
 
       .label {
@@ -227,7 +227,7 @@ header {
         font-size: 14px;
         line-height: 21px;
         white-space: nowrap;
-        @include transition(.75s);
+        @include transition(.25s .15s);
       }
 
       .bubble {
@@ -239,7 +239,7 @@ header {
         top: 7px;
         border-radius: 4px;
         margin: 0 10px 0 0;
-        @include transition(.75s);
+        @include transition(.4s);
       }
     }
   }
