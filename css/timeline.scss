@@ -1,0 +1,240 @@
+//
+// Timeline Styles ~ Jrod.io
+//
+// ==========================================================================
+
+// Utilities
+// --------------------------------------------------------------------------
+
+@import 'compass';
+@import 'normalize';
+
+
+// Defaults
+// --------------------------------------------------------------------------
+
+$default-color      :   #111;
+$title-color        :   #444;
+$subtitle-color     :   #333;
+$summary-color      :   #888;
+
+$hilite-primary     :   #0072FF;
+$hilite-alt         :   #4E18A6;
+$hilite-lightblue   :   #0FB;
+$hilite-aqua        :   #51D9B7;
+$hilite-lime        :   #B6EB1B;
+$hilite-gray        :   #666;
+$hilite-bright      :   #B500FF;
+
+$default-font       :   'aktiv-grotesk-std', sans-serif-light, Helvetica, Arial, sans-serif;
+$content-font       :   'proxima-nova', sans-serif-light, Helvetica, Arial, sans-serif;
+
+$bp-landscape       :   orientation landscape;
+
+
+// Layout
+// --------------------------------------------------------------------------
+
+* {
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  @include user-select(none);
+  @include box-sizing(border-box);
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  min-width: 320px;
+  color: $default-color;
+  font-family: $default-font;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#page {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: scroll;
+  border-top: 1px solid #E7E7E7;
+  border-bottom: 10px solid #FFF;
+  @include box-shadow(0 10px 35px rgba(#000, .05));
+}
+
+h1 {
+  margin-top: 0;
+  color: #AAA;
+  font-family: $content-font;
+  font-weight: normal;
+  text-align: center;
+}
+
+
+// Header
+// --------------------------------------------------------------------------
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 80px;
+  padding-top: 30px;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+
+  .fx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 65px;
+    text-align: center;
+    overflow: visible;
+
+    &.gradient {
+      background: radial-gradient(ellipse at center, transparent 0%, black 100%),
+                  linear-gradient(to bottom, rgba($hilite-primary, 1) 15%, rgba($hilite-alt, 1) 55%);
+    }
+
+    &.pattern {
+      background: url(../img/bg-pattern.png) top left repeat;
+      background-size: 33px;
+      opacity: 0.5;
+    }
+
+    svg {
+      width: 124px;
+      position: relative;
+      top: -6px;
+      overflow: visible;
+    }
+  }
+}
+
+
+// Timsheet
+// --------------------------------------------------------------------------
+
+.timesheet {
+  position: relative;
+  width: 2250px;
+  min-width: 100%;
+  padding-bottom: 20px;
+  border-top: 10px solid #F7F7F7;
+  @include background-image(linear-gradient(#F7F7F7, #FFF));
+
+  .bubble-begin, .bubble-default {
+    background-color: #838383;
+  }
+  .bubble-childhood {
+    @include background-image(linear-gradient(to right, rgba($hilite-aqua, 1), rgba($hilite-lime, .6)));
+  }
+  .bubble-teens {
+    @include background-image(linear-gradient(to right, rgba($hilite-primary, .8), rgba($hilite-lightblue, .5)));
+  }
+  .bubble-adult {
+      @include background-image(linear-gradient(to right, rgba($hilite-alt, .8), rgba($hilite-bright, .5)));
+  }
+
+  .scale {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+
+    section {
+      float: left;
+      width: 59px;
+      text-align: center;
+      color: rgba(50, 50, 50, 0.8);
+      font-family: $content-font;
+      font-size: 13px;
+      line-height: 24px;
+      font-weight: 300;
+      border-left: 1px dashed rgba(50, 50, 50, 0.1);
+      height: 100%;
+    }
+  }
+
+  .data {
+    margin: 28px 0 0 0;
+    padding: 0;
+    text-align: left;
+    list-style-type: none;
+    color: rgba(250, 250, 250, 0.8);
+    font-family: $content-font;
+    font-size: 14px;
+    overflow: hidden;
+
+    li {
+      margin: 0;
+      line-height: 22px;
+      height: 30px;
+      display: block;
+      clear: both;
+      position: relative;
+      white-space: nowrap;
+      @include text-shadow(0 0 10px rgba(255, 255, 255, .5));
+
+      &:hover {
+        .bubble-default {
+          background-color: $hilite-gray;
+        }
+        .bubble-childhood {
+          background-color: darken($hilite-aqua, 20%);
+        }
+        .bubble-teens {
+          background-color: $hilite-primary;
+        }
+        .bubble-adult {
+          background-color: lighten($hilite-alt, 30%);
+        }
+        .data {
+          color: #222;
+        }
+        .label {
+          color: #333;
+        }
+      }
+
+      .date {
+        color: #555;
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .label {
+        padding-left: 5px;
+        color: #666;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 21px;
+        white-space: nowrap;
+      }
+
+      .bubble {
+        width: 24px;
+        height: 8px;
+        display: block;
+        float: left;
+        position: relative;
+        top: 7px;
+        border-radius: 4px;
+        margin: 0 10px 0 0;
+        @include transition(.75s);
+      }
+    }
+  }
+}

@@ -27,14 +27,15 @@ module.exports = function(grunt) {
           'css/dist.css': 'css/base.scss'
         }
       },
-      resume: {
+      etc: {
         options: {
           style: 'expanded',
           require: ['susy', 'breakpoint'],
           compass: true
         },
         files: {
-          'css/resume.css': 'css/resume.scss'
+          'css/resume.css': 'css/resume.scss',
+          'css/timeline.css': 'css/timeline.scss'
         }
       }
     },
@@ -105,8 +106,12 @@ module.exports = function(grunt) {
 
     watch: {
       sass: {
-        files: ['css/**/*.scss', '!css/resume.scss'],
+        files: ['css/**/*.scss', '!css/resume.scss', '!css/timeline.scss'],
         tasks: ['sass:dev']
+      },
+      etc: {
+        files: ['css/resume.scss', 'css/timeline.scss'],
+        tasks: ['sass:etc']
       },
       js: {
         files: '<%= jshint.files %>',
@@ -139,7 +144,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['sass:dev', 'jshint', 'targethtml:dev']);
   grunt.registerTask('dev', ['sass:dev', 'jshint', 'targethtml:dev', 'watch']);
   grunt.registerTask('dist', ['sass:dist', 'jshint', 'uglify', 'targethtml:dist']);
-  grunt.registerTask('resume', ['sass:resume']);
+  grunt.registerTask('etc', ['sass:etc', 'watch:etc']);
 
 
   // Show Timer
