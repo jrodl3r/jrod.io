@@ -10,6 +10,8 @@
 
 
 ### NOW
+- 'swap fade-in page load effect w/ svg draw'
+- 'add menu (copy resume logic + layout) for resume, timeline, etc.'
 - 'optimize preview images for smaller screens'
 - 'setup blog layout across all breakpoints'
 - 'refactor methods to limit lower scope + global lookups (localize multi-instances)'
