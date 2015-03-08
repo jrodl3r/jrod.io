@@ -188,7 +188,7 @@ var App = {
     show: function(index) {
 
       if(!this.previews_loaded) {
-        this.loadPreviews();
+        this.loadPreviews(index);
       }
       this.disableScrolling();
       this.container.eq(index).fadeIn(700);
@@ -202,9 +202,15 @@ var App = {
     },
 
     // Lazy-Load Modal Samples
-    loadPreviews: function() {
+    loadPreviews: function(active) {
 
-      this.samples.each(function() {
+      // Load Active Samples
+      this.container.eq(active).find('.sample img').each(function() {
+        $(this).attr('src', $(this).attr('data-src'));
+      });
+
+      // Preemptively Load Inactive Samples
+      this.container.not(':eq(' + active + ')').find('.sample img').each(function() {
         $(this).attr('src', $(this).attr('data-src'));
       });
       this.previews_loaded = true;
