@@ -5,7 +5,7 @@
 
 var App = {
 
-  // Visual Effects (DISABLED)
+  // Visual Effects
   // ------------------------------------------------------------------------
   Fx: {
 
@@ -126,6 +126,15 @@ var App = {
       this.tiles.not('.placeholder').on('mouseover', function() {
         App.Modal.loadSamples($(this).index());
       });
+
+      // Scroll: Lazy-Load All Modal Samples
+      if(Modernizr.touch) {
+        $(window).scroll(function() {
+          if(!App.Modal.loaded && window.scrollY > App.Fx.header.outerHeight()) {
+            App.Modal.loadSamples('all');
+          }
+        });
+      }
     },
 
 
@@ -170,7 +179,9 @@ var App = {
     container: $('.modal'),
     close: $('.modal .close'),
     samples: $('.modal .sample img'),
-    status: [0, 0, 0, 0, 0, 0, 0],
+    status: [0, 0, 0, 0, 0, 0, 0, 0],
+    loaded: false,
+
 
     init: function() {
 
@@ -199,13 +210,22 @@ var App = {
     },
 
     // Lazy-Load Modal Samples
-    loadSamples: function(active) {
+    loadSamples: function(index) {
 
-      if (!this.status[active]) {
-        this.container.eq(active).find('.sample img').each(function() {
+      // Load All Samples (Mobile|Scroll)
+      if (index === 'all') {
+        this.samples.each(function() {
           $(this).attr('src', $(this).attr('data-src'));
         });
-        this.status[active] = true;
+        this.status = [1, 1, 1, 1, 1, 1, 1, 1];
+        this.loaded = true;
+
+      // Individually Load Samples (Desktop|Hover)
+      } else if (!this.status[index]) {
+        this.container.eq(index).find('.sample img').each(function() {
+          $(this).attr('src', $(this).attr('data-src'));
+        });
+        this.status[index] = true;
       }
     },
 
@@ -249,6 +269,7 @@ var App = {
       preview: $('.stage img'),
       cache: [],
       count: 0,
+      status: [0, 0, 0, 0, 0, 0, 0, 0],
       source: [
         ['img/projects/target/samples/sample-01.jpg',
          'img/projects/target/samples/sample-02.jpg',
@@ -273,7 +294,6 @@ var App = {
          'img/projects/nylearns/samples/sample-02.jpg',
          'img/projects/nylearns/samples/sample-03.jpg']
       ],
-      status: [0, 0, 0, 0, 0, 0, 0],
 
 
       init: function() {

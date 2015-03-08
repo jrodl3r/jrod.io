@@ -15,7 +15,7 @@
   padding-bottom: 5%;
   overflow-y: auto;
   text-align: center;
-  background: #F8F8F8;
+  background: #FAFAFA;
   opacity: 0;
   @include user-select(none);
   @include transition(opacity .4s);
@@ -68,6 +68,7 @@
     overflow: hidden;
     vertical-align: top;
     background: #FFF;
+    box-shadow: 0 1px 3px rgba(#000, .05);
 
     @include breakpoint($bp-landscape) {
       max-height: 216px;
@@ -293,6 +294,7 @@
     margin-bottom: 15%;
     opacity: 1;
     cursor: pointer;
+    box-shadow: 0 2px 10px rgba(#000, .1);
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     @include breakpoint($bp-tablet) {

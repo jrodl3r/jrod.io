@@ -10,6 +10,7 @@
 
 
 ### NOW
+- 'update scrollTop after leaving stage preview'
 - 'add menu (copy resume logic + layout) for resume, timeline, etc.'
 - 'optimize preview images for smaller screens'
 - 'setup blog layout across all breakpoints'
