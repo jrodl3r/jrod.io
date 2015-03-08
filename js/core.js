@@ -185,14 +185,17 @@ var App = {
     show: function(index) {
 
       this.disableScrolling();
-      this.container.eq(index).fadeIn(700);
+      this.container.eq(index).addClass('active open');
     },
 
     // Fade-Out Modal Window
     hide: function(modal) {
 
       this.enableScrolling();
-      modal.fadeOut(700);
+      modal.removeClass('active');
+      setTimeout(function() {
+        modal.removeClass('open');
+      }, 400);
     },
 
     // Lazy-Load Modal Samples
@@ -267,14 +270,18 @@ var App = {
       show: function(source) {
 
         this.preview.attr('src', source.replace('-small', ''));
-        this.container.fadeIn(700);
+        this.container.addClass('active open');
+
       },
 
       // Fade-Out Stage & Remove Image
       hide: function() {
 
-        this.container.fadeOut(700);
-        this.preview.attr('src', '');
+        this.container.removeClass('active');
+        setTimeout(function() {
+          App.Modal.Stage.container.removeClass('open');
+          App.Modal.Stage.preview.attr('src', '');
+        }, 400);
       },
 
       // Setup Interactions

@@ -256,7 +256,7 @@
   margin-left: span(1 of 18) + gutter(1 of 18);
   text-align: center;
   cursor: default;
-  -webkit-user-select: none;
+  @include user-select(none);
 
   @include breakpoint($bp-large) {
     display: none;
