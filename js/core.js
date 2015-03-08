@@ -116,10 +116,9 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Open Modal & Disable Mobile Zooming
+      // Click|Tap: Open Modal
       this.tiles.not('.placeholder').on('click', function() {
         App.Modal.show($(this).index());
-        App.Modal.disableZoom();
       });
 
       // Hover: Lazy-Load Modal Samples
@@ -189,12 +188,12 @@ var App = {
     },
 
     // Fade-Out Modal Window
-    hide: function(modal) {
+    hide: function() {
 
-      this.enableScrolling();
-      modal.removeClass('active');
+      $('.modal.active').removeClass('active');
       setTimeout(function() {
-        modal.removeClass('open');
+        $('.modal.open').removeClass('open');
+        App.Modal.enableScrolling();
       }, 400);
     },
 
@@ -207,20 +206,6 @@ var App = {
         });
         this.samples_loaded[active] = 1;
       }
-    },
-
-    // Content Zooming On
-    enableZoom: function() {
-
-      $('head meta[name=viewport]').remove();
-      $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1" />');
-    },
-
-    // Content Zooming Off
-    disableZoom: function() {
-
-      $('head meta[name=viewport]').remove();
-      $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />');
     },
 
     // Content Scrolling On
@@ -238,14 +223,17 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Close Buttons
-      this.close.on('click', function() {
-        App.Modal.hide($(this).parent());
-        App.Modal.enableZoom();
+      // Click|Tap: Modal + Close Buttons
+      this.container.add(this.close).on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        App.Modal.hide();
       });
 
       // Click|Tap: Samples
-      this.samples.on('click', function() {
+      this.samples.on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         App.Modal.Stage.show($(this).attr('src'));
       });
     },
@@ -287,18 +275,8 @@ var App = {
       // Setup Interactions
       interact: function() {
 
-        // Click|Tap: Stage
-        this.container.on('click', function() {
-          App.Modal.Stage.hide();
-        });
-
-        // Click|Tap: Stage Preview
-        this.preview.on('click', function() {
-          App.Modal.Stage.hide();
-        });
-
-        // Click|Tap: Close Buttons
-        this.close.on('click', function() {
+        // Click|Tap: Stage + Preview + Close Buttons
+        this.container.add(this.preview).add(this.close).on('click', function() {
           App.Modal.Stage.hide();
         });
       }
