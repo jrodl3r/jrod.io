@@ -194,7 +194,7 @@ var App = {
       setTimeout(function() {
         $('.modal.open').removeClass('open');
         App.Modal.enableScrolling();
-      }, 400);
+      }, 600);
     },
 
     // Lazy-Load Modal Samples
@@ -268,8 +268,8 @@ var App = {
         this.container.removeClass('active');
         setTimeout(function() {
           App.Modal.Stage.container.removeClass('open');
-          App.Modal.Stage.preview.attr('src', '');
-        }, 400);
+          App.Modal.Stage.preview.attr('src', 'img/blank.gif');
+        }, 600);
       },
 
       // Setup Interactions

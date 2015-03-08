@@ -15,10 +15,10 @@
   padding-bottom: 5%;
   overflow-y: auto;
   text-align: center;
-  background: #FFF;
+  background: #F8F8F8;
   opacity: 0;
   @include user-select(none);
-  @include transition(opacity .4s);
+  @include transition(opacity .6s);
 
   &.active {
     opacity: 1;
@@ -67,8 +67,7 @@
     margin-right: 2%;
     overflow: hidden;
     vertical-align: top;
-    background: #FEFEFE;
-    box-shadow: 0 0 5px rgba(#000, 0.1);
+    background: #FFF;
 
     @include breakpoint($bp-landscape) {
       max-height: 216px;
@@ -86,20 +85,16 @@
       margin-right: 0;
     }
 
-    &:hover {
-      box-shadow: 0 0 7px rgba(#000, 0.15);
-    }
-
     img {
       width: 100%;
       height: auto;
       vertical-align: top;
       cursor: pointer;
       -webkit-tap-highlight-color: rgba(0,0,0,0);
+      @include transition(.3s);
 
       &:hover {
-        opacity: 0.8;
-        cursor: pointer;
+        opacity: 0.7;
       }
     }
   }
@@ -269,9 +264,9 @@
   max-height: none;
   overflow-y: auto;
   text-align: center;
-  background: #FEFEFE url(../img/loading.gif) center 36% no-repeat;
+  background: #F8F8F8 url(../img/loading.gif) center 36% no-repeat;
   opacity: 0;
-  @include transition(opacity .4s);
+  @include transition(opacity .6s);
 
   &.active {
     opacity: 1;
@@ -298,7 +293,6 @@
     margin-bottom: 15%;
     opacity: 1;
     cursor: pointer;
-    box-shadow: 1px 1px 10px rgba(#000, 0.1);
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 
     @include breakpoint($bp-tablet) {
