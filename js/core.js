@@ -17,26 +17,12 @@ var App = {
 
       // Setup Interactions
       this.interact();
-
-      // Load Animation
-      this.loadAnim();
     },
 
     // Reset Positions
     reset: function() {
 
       this.header.css('transform', 'translate3d(0,0,0)');
-    },
-
-    // Load Animation
-    loadAnim: function() {
-
-      // Fade-In Header
-      if(!Modernizr.touch && App.Fx.enabled) {
-        $('body').animate({opacity: 1.0}, 700);
-      } else {
-        $('body').css('opacity', 1);
-      }
     },
 
     // Scroll Animation
