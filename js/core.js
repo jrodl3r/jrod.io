@@ -5,7 +5,7 @@
 
 var App = {
 
-  // Visual Effects
+  // Visual Effects (DISABLED)
   // ------------------------------------------------------------------------
   Fx: {
 
@@ -26,11 +26,10 @@ var App = {
     },
 
     // Scroll Animation
-    // TODO: Move `App.Browsers.is_chrome` down to interact()
     scrollAnim: function() {
 
-      if(window.scrollY < App.Fx.header.outerHeight() && App.Fx.enabled && App.Browsers.is_chrome) {
-        App.Fx.header.css('transform', 'translate3d(0px, ' + (window.scrollY/2) + 'px, 0px)');
+      if(window.scrollY < App.Fx.header.outerHeight() && App.Fx.enabled) {
+        App.Fx.header.css('transform', 'translate3d(0,' + (window.scrollY/2) + 'px,0)');
       }
     },
 
@@ -50,8 +49,8 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Disable Parallax on Touch-Devices
-      if(!Modernizr.touch) {
+      // Disable Parallax (unless Desktop Chrome Browser)
+      if(!Modernizr.touch && App.Fx.enabled && App.Browsers.is_chrome) {
 
         // Scroll: Animate Content
         $(window).scroll(function() { window.requestAnimationFrame(App.Fx.scrollAnim); });
@@ -508,7 +507,7 @@ var App = {
       Breakpoints.on({
         name: "bp-portrait",
         matched: function() {
-          App.Fx.disable();
+          //App.Fx.disable();
         }
       });
 
@@ -517,7 +516,7 @@ var App = {
         name: "bp-landscape",
         matched: function() {
           App.Gallery.reset();
-          App.Fx.disable();
+          //App.Fx.disable();
         },
         exit: function() {
           App.Gallery.reset();
@@ -529,11 +528,11 @@ var App = {
         name: "bp-tablet",
         matched: function() {
           App.Gallery.reset();
-          App.Fx.disable();
+          //App.Fx.disable();
         },
         exit: function() {
           App.Gallery.reset();
-          App.Fx.disable();
+          //App.Fx.disable();
         }
       });
 
@@ -542,11 +541,11 @@ var App = {
         name: "bp-medium",
         matched: function() {
           App.Gallery.reset();
-          App.Fx.enable();
+          //App.Fx.enable();
         },
         exit: function() {
           App.Gallery.reset();
-          App.Fx.disable();
+          //App.Fx.disable();
         }
       });
 
@@ -555,7 +554,7 @@ var App = {
         name: "bp-default",
         matched: function() {
           App.Gallery.reset();
-          App.Fx.enable();
+          //App.Fx.enable();
         },
         exit: function() {
           App.Gallery.reset();
@@ -567,7 +566,7 @@ var App = {
         name: "bp-large",
         matched: function() {
           App.Gallery.reset();
-          App.Fx.enable();
+          //App.Fx.enable();
         },
         exit: function() {}
       });
@@ -617,9 +616,9 @@ var App = {
 $(document).ready(function() {
 
   App.Breakpoint.init();
-  App.Fx.init();
+  App.Browsers.init();
+  //App.Fx.init();
   App.Gallery.init();
   App.Modal.init();
   App.Contact.init();
-  App.Browsers.init();
 });
