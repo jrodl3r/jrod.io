@@ -316,6 +316,7 @@ var App = {
         this.container.removeClass('active');
         setTimeout(function() {
           App.Modal.Stage.container.removeClass('open');
+          App.Modal.Stage.container.scrollTop(0);
           App.Modal.Stage.preview.attr('src', 'img/blank.gif');
         }, 400);
       },
