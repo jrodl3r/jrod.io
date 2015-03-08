@@ -26,6 +26,7 @@ var App = {
     },
 
     // Scroll Animation
+    // TODO: Move `App.Browsers.is_chrome` down to interact()
     scrollAnim: function() {
 
       if(window.scrollY < App.Fx.header.outerHeight() && App.Fx.enabled && App.Browsers.is_chrome) {
@@ -116,18 +117,15 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Tiles
-      this.tiles.each(function() {
+      // Click|Tap: Open Modal & Disable Mobile Zooming
+      this.tiles.not('.placeholder').on('click', function() {
+        App.Modal.show($(this).index());
+        App.Modal.disableZoom();
+      });
 
-        //  Except 'placeholder' Tiles
-        if(!$(this).hasClass('placeholder')) {
-          $(this).on('click', function() {
-
-            // Fade-In Modal Content & Disable Mobile Zooming
-            App.Modal.show($(this).index());
-            App.Modal.disableZoom();
-          });
-        }
+      // Hover: Lazy-Load Modal Samples
+      this.tiles.not('.placeholder').on('mouseover', function() {
+        App.Modal.loadPreviews($(this).index());
       });
     },
 
@@ -173,7 +171,7 @@ var App = {
     container: $('.modal'),
     close: $('.modal .close'),
     samples: $('.modal .sample img'),
-    previews_loaded: false,
+    samples_loaded: [0, 0, 0, 0, 0, 0, 0],
 
     init: function() {
 
@@ -187,9 +185,6 @@ var App = {
     // Fade-In Modal Window
     show: function(index) {
 
-      if(!this.previews_loaded) {
-        this.loadPreviews(index);
-      }
       this.disableScrolling();
       this.container.eq(index).fadeIn(700);
     },
@@ -204,16 +199,12 @@ var App = {
     // Lazy-Load Modal Samples
     loadPreviews: function(active) {
 
-      // Load Active Samples
-      this.container.eq(active).find('.sample img').each(function() {
-        $(this).attr('src', $(this).attr('data-src'));
-      });
-
-      // Preemptively Load Inactive Samples
-      this.container.not(':eq(' + active + ')').find('.sample img').each(function() {
-        $(this).attr('src', $(this).attr('data-src'));
-      });
-      this.previews_loaded = true;
+      if (!this.samples_loaded[active]) {
+        this.container.eq(active).find('.sample img').each(function() {
+          $(this).attr('src', $(this).attr('data-src'));
+        });
+        this.samples_loaded[active] = 1;
+      }
     },
 
     // Content Zooming On

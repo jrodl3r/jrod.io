@@ -10,7 +10,6 @@
 
 
 ### NOW
-- 'swap fade-in page load effect w/ svg draw'
 - 'add menu (copy resume logic + layout) for resume, timeline, etc.'
 - 'optimize preview images for smaller screens'
 - 'setup blog layout across all breakpoints'
@@ -21,6 +20,7 @@
 
 
 ### READY
+- 'remove fade-in page load effect'
 - 'cleanup resume menu responsiveness'
 - 'make resume menu button more visible'
 - 'setup gzip compression + asset/resource cacheing'
