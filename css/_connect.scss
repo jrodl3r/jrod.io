@@ -26,6 +26,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
+    @include input-placeholder {
+      color: #FFF;
+    }
+
     &:hover, &:active {
       background: #DDD;
     }

@@ -338,28 +338,28 @@ var App = {
       var status = true;
 
       // Verify Name
-      if(this.name_input.val() === 'Name' || this.name_input.val() === '') {
+      if(!this.name_input.val().trim()) {
         this.notify('Forget to add your name?', 'bad');
         this.name_input.focus();
         status = false;
       }
 
       // Verify Email
-      else if(this.email_input.val() === 'Email' || this.email_input.val() === '') {
+      else if(!this.email_input.val().trim()) {
         this.notify('Forget to add your email?', 'bad');
         this.email_input.focus();
         status = false;
       }
 
       // Validate Email
-      else if(/^.+@.+\..+$/.test(this.email_input.val()) === false) {
+      else if(!/^.+@.+\..+$/.test(this.email_input.val())) {
         this.notify('Did you mistype your email?', 'bad');
         this.email_input.focus();
         status = false;
       }
 
       // Verify Message
-      else if(this.message_input.val() === 'Message' || this.message_input.val() === '') {
+      else if(!this.message_input.val().trim()) {
         this.notify('Forget to add your message?', 'bad');
         this.message_input.focus();
         status = false;
@@ -453,9 +453,9 @@ var App = {
     // Clear User Input & Reset Default Labels
     reset: function() {
 
-      App.Contact.name_input.val('Name');
-      App.Contact.email_input.val('Email');
-      App.Contact.message_input.val('Message');
+      App.Contact.name_input.val('').attr('placeholder', 'Name');
+      App.Contact.email_input.val('').attr('placeholder', 'Email');
+      App.Contact.message_input.val('').attr('placeholder', 'Message');
     },
 
     // Update Submit Button Label
@@ -473,40 +473,34 @@ var App = {
 
       // Focus|Blur: Name Field
       this.name_input.on('focus', function() {
-        if($(this).val() === 'Name') {
-          $(this).val('');
-        }
+        $(this).attr('placeholder', '');
       });
 
       this.name_input.on('blur', function() {
         if(!$(this).val().trim()) {
-          $(this).val('Name');
+          $(this).attr('placeholder', 'Name');
         }
       });
 
       // Focus|Blur: Email Field
       this.email_input.on('focus', function() {
-        if($(this).val() === 'Email') {
-          $(this).val('');
-        }
+        $(this).attr('placeholder', '');
       });
 
       this.email_input.on('blur', function() {
         if(!$(this).val().trim()) {
-          $(this).val('Email');
+          $(this).attr('placeholder', 'Email');
         }
       });
 
       // Focus|Blur: Message Field
       this.message_input.on('focus', function() {
-        if($(this).val() === 'Message') {
-          $(this).val('');
-        }
+        $(this).attr('placeholder', '');
       });
 
       this.message_input.on('blur', function() {
         if(!$(this).val().trim()) {
-          $(this).val('Message');
+          $(this).attr('placeholder', 'Message');
         }
       });
     }
