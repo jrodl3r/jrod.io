@@ -116,14 +116,15 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Open Modal
+      // Click|Tap: Open Modal & Lazy-Load Stage Samples
       this.tiles.not('.placeholder').on('click', function() {
         App.Modal.show($(this).index());
+        App.Modal.Stage.loadPreviews($(this).index());
       });
 
       // Hover: Lazy-Load Modal Samples
       this.tiles.not('.placeholder').on('mouseover', function() {
-        App.Modal.loadPreviews($(this).index());
+        App.Modal.loadSamples($(this).index());
       });
     },
 
@@ -169,7 +170,7 @@ var App = {
     container: $('.modal'),
     close: $('.modal .close'),
     samples: $('.modal .sample img'),
-    samples_loaded: [0, 0, 0, 0, 0, 0, 0],
+    status: [0, 0, 0, 0, 0, 0, 0],
 
     init: function() {
 
@@ -194,17 +195,17 @@ var App = {
       setTimeout(function() {
         $('.modal.open').removeClass('open');
         App.Modal.enableScrolling();
-      }, 600);
+      }, 400);
     },
 
     // Lazy-Load Modal Samples
-    loadPreviews: function(active) {
+    loadSamples: function(active) {
 
-      if (!this.samples_loaded[active]) {
+      if (!this.status[active]) {
         this.container.eq(active).find('.sample img').each(function() {
           $(this).attr('src', $(this).attr('data-src'));
         });
-        this.samples_loaded[active] = 1;
+        this.status[active] = true;
       }
     },
 
@@ -244,8 +245,35 @@ var App = {
     Stage: {
 
       container: $('.stage'),
-      preview: $('.stage img'),
       close: $('.stage .close'),
+      preview: $('.stage img'),
+      cache: [],
+      count: 0,
+      source: [
+        ['img/projects/target/samples/sample-01.jpg',
+         'img/projects/target/samples/sample-02.jpg',
+         'img/projects/target/samples/sample-03.jpg'],
+        ['img/projects/ge/samples/sample-01.jpg',
+         'img/projects/ge/samples/sample-02.jpg',
+         'img/projects/ge/samples/sample-03.jpg'],
+        ['img/projects/360i/samples/sample-01.jpg',
+         'img/projects/360i/samples/sample-02.jpg',
+         'img/projects/360i/samples/sample-03.jpg'],
+        ['img/projects/crown/samples/sample-01.jpg',
+         'img/projects/crown/samples/sample-02.jpg'],
+        ['img/projects/kraft/samples/sample-01.jpg',
+         'img/projects/kraft/samples/sample-02.jpg',
+         'img/projects/kraft/samples/sample-03.jpg'],
+        ['img/projects/oscarmayer/samples/sample-01.jpg',
+         'img/projects/oscarmayer/samples/sample-02.jpg'],
+        ['img/projects/yourcare/samples/sample-01.jpg',
+         'img/projects/yourcare/samples/sample-02.jpg',
+         'img/projects/yourcare/samples/sample-03.jpg'],
+        ['img/projects/nylearns/samples/sample-01.jpg',
+         'img/projects/nylearns/samples/sample-02.jpg',
+         'img/projects/nylearns/samples/sample-03.jpg']
+      ],
+      status: [0, 0, 0, 0, 0, 0, 0],
 
 
       init: function() {
@@ -269,7 +297,20 @@ var App = {
         setTimeout(function() {
           App.Modal.Stage.container.removeClass('open');
           App.Modal.Stage.preview.attr('src', 'img/blank.gif');
-        }, 600);
+        }, 400);
+      },
+
+      // Lazy-Load Stage Previews
+      loadPreviews: function(active) {
+
+        if (!this.status[active]) {
+          for (var i = 0; i < this.source[active].length; i++) {
+            this.cache[i + this.count] = new Image();
+            this.cache[i + this.count].src = this.source[active][i];
+          }
+          this.count = this.cache.length;
+          this.status[active] = true;
+        }
       },
 
       // Setup Interactions

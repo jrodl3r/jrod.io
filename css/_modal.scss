@@ -18,7 +18,7 @@
   background: #F8F8F8;
   opacity: 0;
   @include user-select(none);
-  @include transition(opacity .6s);
+  @include transition(opacity .4s);
 
   &.active {
     opacity: 1;
@@ -266,7 +266,7 @@
   text-align: center;
   background: #F8F8F8 url(../img/loading.gif) center 36% no-repeat;
   opacity: 0;
-  @include transition(opacity .6s);
+  @include transition(opacity .4s);
 
   &.active {
     opacity: 1;
