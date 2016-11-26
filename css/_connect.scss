@@ -255,6 +255,11 @@
           svg path { fill: lighten($hilite-color-alt, 25%); }
         }
 
+        &.resume:hover {
+          color: darken(#78A6FB, 10%);
+          svg path { fill: darken(#78A6FB, 10%); }
+        }
+
         @include breakpoint($bp-landscape) {
           text-indent: 30px;
         }
