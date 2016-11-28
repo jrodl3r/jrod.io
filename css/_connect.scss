@@ -245,7 +245,7 @@
           svg path { fill: #007BB6; }
         }
 
-        &.gchat:hover {
+        &.gchat:hover, &.resume:hover {
           color: darken(#78A6FB, 10%);
           svg path { fill: darken(#78A6FB, 10%); }
         }
@@ -253,11 +253,6 @@
         &.email:hover {
           color: lighten($hilite-color-alt, 25%);
           svg path { fill: lighten($hilite-color-alt, 25%); }
-        }
-
-        &.resume:hover {
-          color: darken(#78A6FB, 10%);
-          svg path { fill: darken(#78A6FB, 10%); }
         }
 
         @include breakpoint($bp-landscape) {
