@@ -7,16 +7,17 @@
     "url": "git://github.com/jrodl3r/jrod.io.git"
   },
   "scripts": {
-    "postinstall": "grunt dist"
+    "postinstall": "grunt dist",
+    "start": "node server.js"
   },
   "dependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-sass": "^0.8.1",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-targethtml": "^0.2.6",
-    "time-grunt": "^1.0.0"
+    "grunt": "0.4.5",
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-jshint": "0.10.0",
+    "grunt-contrib-sass": "0.8.1",
+    "grunt-contrib-uglify": "0.6.0",
+    "grunt-contrib-watch": "0.6.1",
+    "grunt-targethtml": "0.2.6",
+    "time-grunt": "1.4.0"
   }
 }

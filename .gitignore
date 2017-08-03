@@ -14,3 +14,4 @@ Thumbs.db
 .sass-cache
 /css/*.css*
 /js/dist.min.js
+package-lock.json
