@@ -7,8 +7,7 @@
     "url": "git://github.com/jrodl3r/jrod.io.git"
   },
   "scripts": {
-    "postinstall": "grunt dist",
-    "start": "node server.js"
+    "start": "grunt dist"
   },
   "dependencies": {
     "grunt": "0.4.5",
