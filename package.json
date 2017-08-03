@@ -6,10 +6,7 @@
     "type": "git",
     "url": "git://github.com/jrodl3r/jrod.io.git"
   },
-  "scripts": {
-    "start": "grunt dist"
-  },
-  "dependencies": {
+  "devDependencies": {
     "grunt": "0.4.5",
     "grunt-contrib-concat": "0.5.1",
     "grunt-contrib-jshint": "0.10.0",
