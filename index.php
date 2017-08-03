@@ -1,0 +1,263 @@
+<?php header('Content-Type: text/html; charset=utf-8'); ?>
+<!doctype html>
+<html class="no-js" lang="en-us">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>John Rodler &#61; UI Engineer</title>
+    <meta name="description" content="Portfolio, projects and more by John Rodler. John is a User Interface Engineer who loves building apps, websites and other technology stuff.">
+    <meta name="author" content="John Rodler">
+    <meta name="twitter:site" content="@JRodl3r">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
+
+    <link rel="stylesheet" href="css/dist.css">
+    <script src="//use.typekit.net/hsl1yur.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+    <div class="site">
+      <header>
+        <div class="pattern"></div>
+        <div class="inner">
+          <div class="content">
+            <?php include 'img/header-splash-nofx.min.svg'; ?>
+            <?php include 'img/header-logo-nofx.min.svg'; ?>
+            <p>I’m a creative web developer who loves building beautiful websites and customizing user interfaces.</p>
+            <p>Check out my latest projects, or get in touch with me below.</p>
+          </div>
+        </div>
+      </header>
+      <div class="main">
+        <div class="vision">
+          <div class="inner">
+            <div class="content">
+              <h2>Vision</h2>
+              <p>When I was seven, my father brought home our first x86 computer and it changed my life forever. From then on software and human interfaces have persistently fascinated and inspired me.</p>
+              <p>Believing that smarter software comes from collective effort and experience, I support and embrace the open source community and standardized web movement. With that same ethos, I actively participate in and contribute to the social web.</p>
+            </div>
+          </div>
+        </div>
+        <div class="work">
+          <div class="inner">
+            <div class="content">
+              <h2>Work</h2>
+              <div class="gallery">
+                <div class="slider">
+                  <div class="tile target"></div>
+                  <div class="tile ge"></div>
+                  <div class="tile tsi"></div>
+                  <div class="tile crown"></div>
+                  <div class="tile kraft"></div>
+                  <div class="tile oscarmayer"></div>
+                  <div class="tile yourcare"></div>
+                  <div class="tile nylearns"></div>
+                  <div class="tile placeholder"></div>
+                  <div class="tile placeholder"></div>
+                  <div class="tile placeholder"></div>
+                  <div class="tile placeholder"></div>
+                </div>
+              </div>
+              <div class="pagination">
+                <div class="active"><span>1</span></div>
+                <div><span></span>2</div>
+                <div><span></span>3</div>
+                <div><span></span>4</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split">
+          <div class="social">
+            <div class="inner">
+              <div class="content">
+                <h2>Links</h2>
+                <ul>
+                  <li>
+                    <a class="github" target="_blank" href="http://github.com/jrodl3r">
+                      <?php include 'img/social-icons/github.min.svg'; ?> Github</a>
+                  </li>
+                  <li>
+                    <a class="linkedin" target="_blank" href="http://linkedin.com/in/jrodler">
+                      <?php include 'img/social-icons/linkedin.min.svg'; ?> LinkedIn</a>
+                  </li>
+                  <li>
+                    <a class="pinterest" target="_blank" href="http://pinterest.com/jrodl3r">
+                      <?php include 'img/social-icons/pinterest.min.svg'; ?> Pinterest</a>
+                  </li>
+                  <li>
+                    <a class="twitter" target="_blank" href="http://twitter.com/jrodl3r">
+                      <?php include 'img/social-icons/twitter.min.svg'; ?> Twitter</a>
+                  </li>
+                  <li>
+                    <a class="email" href="mailto:&#106;&#111;&#104;&#110;&#064;&#106;&#114;&#111;&#100;&#046;&#105;&#111;">
+                      <?php include 'img/social-icons/email.min.svg'; ?> Email</a>
+                  </li>
+                  <li>
+                    <a class="resume" target="_blank" href="/resume">
+                      <?php include 'img/social-icons/doc.min.svg'; ?> Resume</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="contact">
+            <div class="inner">
+              <div class="content">
+                <h2>Contact</h2>
+                <form id="contact" method="post" action="php/mailer.php" novalidate>
+                  <input type="text" class="name" name="name" placeholder="Name" maxlength="36">
+                  <input type="email" class="email" name="email" placeholder="Email" maxlength="120">
+                  <textarea class="message" name="message" placeholder="Message" maxlength="160"></textarea>
+                  <button type="submit">Send</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="pattern"></div>
+      <div class="inner">
+        <?php include 'img/footer-logo-nofx.min.svg'; ?>
+      </div>
+    </footer>
+
+    <div class="modal target">
+      <div class="close">Close</div>
+      <?php include 'img/projects/target/logo.min.svg'; ?>
+      <p>As a UI/UX consultant for <em>Target</em>, I was part of a small team that launched the <em>1,000 Likes</em> and <em>Microgifting</em> campaigns. My contributions included JavaScript and CSS development.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/target/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/target/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/target/samples/sample-03-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal ge">
+      <div class="close">Close</div>
+      <?php include 'img/projects/ge/logo.min.svg'; ?>
+      <p>While consulting at <em>HUGE Inc</em> as a UI/UX engineer, I led an operation to build out a UI framework for <em>GE Capital</em>, which included a distilled set of interface templates, modules and components.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/ge/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/ge/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/ge/samples/sample-03-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal tsi">
+      <div class="close">Close</div>
+      <?php include 'img/projects/360i/logo.min.svg'; ?>
+      <p>Working with <em>360i</em> as a UI/UX engineer, I collaborated with several high-end brands on cutting-edge web, mobile and social media applications, as well as their internal rebranding efforts.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/360i/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/360i/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/360i/samples/sample-03-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal crown">
+      <div class="close">Close</div>
+      <?php include 'img/projects/crown/logo.min.svg'; ?>
+      <p>The <em>Crown Cork</em> website was one of my first professional projects as a developer with <em>Door 3</em>. I translated design comps into stylesheets and coded functionality in JavaScript &amp; PHP.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/crown/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/crown/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal kraft">
+      <div class="close">Close</div>
+      <?php include 'img/projects/kraft/logo.min.svg'; ?>
+      <p>I worked with the <em>Kraft</em> team as a UI/UX consultant to build the front-end of several household-brand feature sites. My primary focus was layout design with an emphasis on speed and usability.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/kraft/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/kraft/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/kraft/samples/sample-03-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal oscarmayer">
+      <div class="close">Close</div>
+      <?php include 'img/projects/oscarmayer/logo.min.svg'; ?>
+      <p>With <em>Oscar Mayer</em>, I developed a site focused on a social media campaign launched in 2010. We leveraged several CSS3 &amp; HTML5 features that helped create a bold and responsive interface.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/oscarmayer/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/oscarmayer/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal yourcare">
+      <div class="close">Close</div>
+      <?php include 'img/projects/yourcare/logo.min.svg'; ?>
+      <p>An old friend/client was in the concept phase of an idea for a social healthcare app and wanted get it up and running. I styled and coded this SPA prototype using AngularJS, Sass and Grunt.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/yourcare/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/yourcare/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/yourcare/samples/sample-03-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="modal nylearns">
+      <div class="close">Close</div>
+      <?php include 'img/projects/nylearns/logo.min.svg'; ?>
+      <p>Passionate about creating tools that enhance education, I worked with <em>3rd Learning</em> as a Senior UI engineer. In collaboration with educators, I built software to support classroom teachers.</p>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/nylearns/samples/sample-01-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/nylearns/samples/sample-02-small.jpg" height="1" width="1" alt="">
+      </div>
+      <div class="sample">
+        <img src="img/blank.gif" data-src="img/projects/nylearns/samples/sample-03-small.jpg" height="1" width="1" alt="">
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="close">Close</div>
+      <img src="img/blank.gif" height="1" width="1" alt="">
+    </div>
+
+    <div class="notify">
+      <div class="inner">{Message}</div>
+    </div>
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="js/dist.min.js"></script>
+    <script>
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-57236811-1','auto');ga('send','pageview');
+    </script>
+  </body>
+</html>
