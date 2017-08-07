@@ -1,3 +1,7 @@
+## REDIRECT WWW TO NON-WWW ##
+RewriteCond %{HTTP_HOST} ^www\.jrod\.io [NC]
+RewriteRule (.*) http://jrod.io/$1 [R=301,L]
+
 ## COMPRESSION ##
 <ifmodule mod_deflate.c>
 AddOutputFilterByType DEFLATE text/plain
