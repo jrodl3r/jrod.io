@@ -64,7 +64,8 @@ module.exports = function(grunt) {
           "debug": true,
           "log": true,
           "Breakpoints": true
-        }
+        },
+        reporterOutput: ''
       },
       files: ['Gruntfile.js', 'js/*.js', '!js/dist*.js']
     },
