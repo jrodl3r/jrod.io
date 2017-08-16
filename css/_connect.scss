@@ -225,9 +225,14 @@
           transition: fill .6s ease;
         }
 
-        &.twitter:hover {
-          color: #00ACED;
-          svg path { fill: #00ACED; }
+        // &.twitter:hover {
+        //   color: #00ACED;
+        //   svg path { fill: #00ACED; }
+        // }
+
+        &.timeline:hover {
+          color: #10E2D2;
+          svg path { fill: #10E2D2; }
         }
 
         &.github:hover {

@@ -1711,11 +1711,11 @@ footer .inner svg.footer-logo .logo-j-path, footer .inner svg.footer-logo .logo-
 .social ul li a svg path {
   transition: fill .6s ease;
 }
-.social ul li a.twitter:hover {
-  color: #00ACED;
+.social ul li a.timeline:hover {
+  color: #10E2D2;
 }
-.social ul li a.twitter:hover svg path {
-  fill: #00ACED;
+.social ul li a.timeline:hover svg path {
+  fill: #10E2D2;
 }
 .social ul li a.github:hover {
   color: #000;
