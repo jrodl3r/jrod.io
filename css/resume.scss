@@ -102,28 +102,6 @@ header {
       span {
         font-weight: 600;
       }
-
-      &.right {
-
-        .menu {
-          position: absolute;
-          top: 0;
-          right: 0;
-          display: block;
-          width: 30px;
-          height: auto;
-          padding: 2px;
-          font-size: 22px;
-          text-align: center;
-          letter-spacing: normal;
-          transition: color 0.3s;
-
-          &:hover {
-            color: #BBB;
-            cursor: pointer;
-          }
-        }
-      }
     }
   }
 
@@ -208,6 +186,37 @@ header {
       100% {
         transform: scale(0) rotate(360deg);
         opacity: 0;
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    height: 55px;
+    width: 100%;
+    list-style: none;
+
+    li {
+      display: inline-flex;
+
+      a {
+        height: 28px;
+        margin: 0 0 0 45px;
+        line-height: 38px;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: .3px;
+        text-decoration: none;
+        border-bottom: 1px solid #CCC;
+        transition: .4s all ease-in-out;
+        color: #AAA;
+
+        &:hover {
+          color: rgb(85, 26, 139);
+          border-bottom: 1px solid rgb(85, 26, 139);
+        }
       }
     }
   }
@@ -359,118 +368,4 @@ footer {
   float: left;
   width: 100%;
   height: 100px;
-}
-
-
-// Menu
-// --------------------------------------------------------------------------
-
-#menu {
-  display: block;
-  visibility: hidden;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 50%;
-  width: 0;
-  height: 100%;
-  background: $hilite-primary linear-gradient(180deg, $hilite-primary -20%, $hilite-alt 75%);
-  opacity: 0;
-  overflow: hidden;
-  transition: all 0.5s;
-
-  &.open {
-    visibility: visible;
-    left: 0;
-    width: 100%;
-    opacity: 1;
-    transition: all 0.5s;
-
-    .inner {
-      opacity: 1;
-    }
-  }
-
-  .inner {
-    position: relative;
-    max-width: $default-width;
-    height: 100%;
-    margin: 0 auto;
-    padding: $default-gutters;
-    opacity: 0;
-    transition: opacity 0.3s;
-    transition-delay: 0.5s;
-
-    .close {
-      position: fixed;
-      top: 3%;
-      right: 9%;
-      display: block;
-      width: 40px;
-      height: 40px;
-      color: #FFF;
-      font-size: 4em;
-      text-align: center;
-      opacity: 0.5;
-      cursor: pointer;
-      transition: all 0.3s;
-      -webkit-tap-highlight-color: rgba(0,0,0,0);
-
-      &:hover {
-        opacity: 1;
-      }
-
-      @include breakpoint($bp-landscape) {
-        top: 4%;
-        right: 5%;
-        font-size: 3em;
-      }
-    }
-
-    ul {
-      position: relative;
-      top: 15%;
-      height: 85%;
-      width: 80%;
-      margin: auto;
-      padding: 0;
-
-      @include breakpoint($bp-landscape) {
-        top: 14%;
-      }
-
-      li {
-        height: 20%;
-        text-align: center;
-        list-style-type: none;
-
-        @include breakpoint($bp-landscape) {
-          height: 23%;
-        }
-
-        a {
-          display: inline-block;
-          width: 100%;
-          padding: 5% 0;
-          color: #FFF;
-          font-size: 5em;
-          font-weight: 200;
-          text-decoration: none;
-          transition: all 0.3s;
-
-          &:hover {
-            text-shadow: 0 0 10px rgba(#FFF, 0.65);
-            opacity: 0.5;
-            cursor: pointer;
-          }
-
-          @include breakpoint($bp-landscape) {
-            padding: 0;
-            font-size: 3em;
-
-          }
-        }
-      }
-    }
-  }
 }
