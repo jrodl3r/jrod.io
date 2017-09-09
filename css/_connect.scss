@@ -280,10 +280,12 @@
 
           @include breakpoint($bp-landscape) {
             max-width: 24px;
+            margin-top: -2px;
           }
 
           @include breakpoint($bp-optimal) {
             max-width: 28px;
+            margin-top: -3px;
           }
 
           path {
