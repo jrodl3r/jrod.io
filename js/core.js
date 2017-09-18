@@ -292,7 +292,10 @@ var App = {
          'img/projects/yourcare/samples/sample-03.jpg'],
         ['img/projects/nylearns/samples/sample-01.jpg',
          'img/projects/nylearns/samples/sample-02.jpg',
-         'img/projects/nylearns/samples/sample-03.jpg']
+         'img/projects/nylearns/samples/sample-03.jpg'],
+        ['img/projects/gi/samples/sample-01.jpg',
+         'img/projects/gi/samples/sample-02.jpg',
+         'img/projects/gi/samples/sample-03.jpg']
       ],
 
 
