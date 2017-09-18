@@ -244,8 +244,8 @@ var App = {
     // Setup Interactions
     interact: function() {
 
-      // Click|Tap: Modal + Close Buttons
-      this.container.add(this.close).on('click', function(e) {
+      // Click|Tap: Close Button
+      this.close.on('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         App.Modal.hide();
