@@ -3,15 +3,14 @@
 <html class="no-js" lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>John Rodler - Resume</title>
-    <meta name="description" content="Resume of John Rodler. John is a User Interface Engineer who loves building apps, websites and other technology stuff.">
+    <title>John Rodler &#9702; Resume</title>
+    <meta name="description" content="John Rodler &#9702; Full Stack Developer + User Interface & Experience Engineer">
     <meta name="author" content="John Rodler">
     <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://jrod.io/resume">
+    <link rel="stylesheet" href="/css/resume.css">
 
     <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
-
-    <link rel="stylesheet" href="/css/resume.css">
   </head>
   <body>
     <div id="page">

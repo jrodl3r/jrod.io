@@ -4,15 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>John Rodler - Timeline</title>
-    <meta name="description" content="Timeline of John Rodler. John is a User Interface Engineer who loves building apps, websites and other technology stuff.">
+    <title>John Rodler &#9702; Timeline</title>
+    <meta name="description" content="John Rodler &#9702; Full Stack Developer + User Interface & Experience Engineer">
     <meta name="author" content="John Rodler">
-    <meta name="twitter:site" content="@JRodl3r">
     <meta name="viewport" content="width=device-width">
+    <link rel="canonical" href="http://jrod.io/timeline">
+    <link rel="stylesheet" href="/css/timeline.css">
 
     <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
-
-    <link rel="stylesheet" href="/css/timeline.css">
   </head>
   <body>
     <div id="page">
