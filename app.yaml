@@ -5,8 +5,8 @@ handlers:
 - url: /
   script: index.php
 
-- url: /mailer/(.+\.php)
-  script: mailer/\1
+- url: /php/(.+\.php)
+  script: php/\1
 
 - url: /resume
   script: resume/index.php
