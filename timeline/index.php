@@ -13,8 +13,6 @@
     <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
 
     <link rel="stylesheet" href="/css/timeline.css">
-    <script src="//use.typekit.net/hsl1yur.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
     <div id="page">
