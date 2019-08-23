@@ -1,4 +1,5 @@
 <?php
+  use google\appengine\api\mail\Message;
 
   // Only process POST reqeusts
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,12 +19,6 @@
       exit;
     }
 
-    // Set the recipient
-    $recipient = "john@jrod.io";
-
-    // Set the subject
-    $subject = "New website message from $name";
-
     // Build the email content
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n\n";
@@ -33,15 +28,16 @@
     $email_headers = "From: $name <$email>";
 
     // Send the email
-    if (mail($recipient, $subject, $email_content, $email_headers)) {
-
-      // Set a 200 (okay) response code
+    try {
+      $message = new Message();
+      $message->setSender("admin@jrod.io");
+      $message->addTo("john@jrod.io");
+      $message->setSubject("New website message from $name");
+      $message->setTextBody($message);
+      $message->send();
       http_response_code(200);
       echo "Thank You!<br>Your message was delivered.";
-
-    } else {
-
-      // Set a 500 (internal server error) response code
+    } catch (InvalidArgumentException $e) {
       http_response_code(500);
       echo "Oops! Something went wrong on my end.<br>Your message wasn't delivered.";
     }

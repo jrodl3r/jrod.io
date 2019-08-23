@@ -1,0 +1,26 @@
+runtime: php55
+api_version: 1
+
+handlers:
+- url: /
+  script: index.php
+
+- url: /mailer/(.+\.php)
+  script: mailer/\1
+
+- url: /resume
+  script: resume/index.php
+
+- url: /timeline
+  script: timeline/index.php
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /(.+\.(gif|png|jpg|ico|pdf))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|ico|pdf)$
+  application_readable: true
