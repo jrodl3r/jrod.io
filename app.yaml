@@ -2,6 +2,12 @@ runtime: php55
 api_version: 1
 
 handlers:
+
+- url: /(.+\.(gif|png|jpg|ico|svg|pdf))$
+  static_files: \1
+  upload: .+\.(gif|png|jpg|ico|svg|pdf)$
+  application_readable: true
+
 - url: /
   script: index.php
 
@@ -25,11 +31,6 @@ handlers:
 
 - url: /js
   static_dir: js
-
-- url: /(.+\.(gif|png|jpg|ico|svg|pdf))$
-  static_files: \1
-  upload: .+\.(gif|png|jpg|ico|svg|pdf)$
-  application_readable: true
 
 - url: /robots.txt
   static_files: robots.txt
