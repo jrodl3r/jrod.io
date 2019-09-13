@@ -211,6 +211,14 @@
         margin-bottom: 6px;
       }
 
+      &.hide-mobile {
+        display: none;
+
+        @media (min-width: $bp-large) {
+          display: block;
+        }
+      }
+
       a {
         display: inline-block;
         width: 100%;

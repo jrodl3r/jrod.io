@@ -29,6 +29,7 @@ $default-font       :   'aktiv-grotesk-std', sans-serif-light, Helvetica, Arial,
 $content-font       :   'proxima-nova', sans-serif-light, Helvetica, Arial, sans-serif;
 
 $bp-landscape       :   orientation landscape;
+$bp-desktop         :   680px;
 
 
 // Layout
@@ -42,12 +43,16 @@ $bp-landscape       :   orientation landscape;
 }
 
 body {
-  min-width: 1020px;
+  min-width: 320px;
   color: $default-color;
   font-family: $default-font;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  @media (min-width: $bp-desktop) {
+    min-width: 100%;
+  }
 }
 
 div, span, h1, h2, h3, h4, h5, p, li {
@@ -79,10 +84,20 @@ div, span, h1, h2, h3, h4, h5, p, li {
 header {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 135px;
   margin-bottom: $default-gaps;
   padding-top: 30px;
   box-shadow: 10px 0 20px rgba(0,0,0,0.5);
+
+  @media (min-width: $bp-desktop) {
+    height: 120px;
+
+    .left {
+      width: 50% !important;
+      text-align: initial !important;
+    }
+    .right { display: block !important; }
+  }
 
   .inner {
     max-width: $default-width;
@@ -103,6 +118,13 @@ header {
         font-weight: 600;
       }
     }
+
+    .left {
+      width: 100%;
+      text-align: center;
+    }
+
+    .right { display: none; }
   }
 
   .fx {
@@ -210,13 +232,15 @@ header {
         letter-spacing: .3px;
         text-decoration: none;
         border-bottom: 1px solid #CCC;
-        transition: .4s all ease-in-out;
         color: #777;
 
         &:hover {
           color: rgb(85, 26, 139);
           border-bottom: 1px solid rgb(85, 26, 139);
+          transition: .4s all ease-in-out;
         }
+
+        span { display: none; }
       }
     }
   }
@@ -229,7 +253,13 @@ header {
 .content {
   max-width: $default-width;
   margin: 0 auto;
-  padding: $default-gutters;
+  padding: 0 30px;
+  
+  @media (min-width: $bp-desktop) {
+    padding: $default-gutters;
+  }
+
+  h1, h2.xp-cont { display: none; }
 
   .section {
     float: left;
@@ -254,9 +284,7 @@ header {
       -webkit-text-fill-color: transparent;
       -webkit-border-image: -webkit-linear-gradient(left, darken($hilite-primary, 14%), darken($hilite-alt, 13%)) 0 0 100% 0;
       border-width: 0;
-      border-bottom-width: 2px;
-      border-bottom-style: solid;
-      border-bottom-color: $title-color;
+      border-bottom: 2px solid $title-color;
     }
 
     .inner {
@@ -287,9 +315,7 @@ header {
         -webkit-text-fill-color: transparent;
         -webkit-border-image: -webkit-linear-gradient(left, darken($hilite-alt, 13%), #555) 0 0 100% 0;
         border-width: 0;
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        border-bottom-color: $subtitle-color;
+        border-bottom: 2px solid $subtitle-color;
       }
 
       p, ul {
@@ -310,40 +336,178 @@ header {
       }
     }
 
+    &.summary {
+      h2 { display: none; }
+      h3 span { display: none; }
+
+      .inner {
+        margin: 0;
+        width: 100%;
+      }
+
+      @media (min-width: 500px) {
+        h3 span { display: inline; }
+      }
+
+      @media (min-width: $bp-desktop) {
+        h2 { display: block; }
+      
+        .inner {
+          width: 77%;
+          margin-left: 3%;
+        }
+      }
+    }
+
+    &.skills {
+      h2 { display: none; }
+      ul {
+        margin-left: 20px;
+        text-align: left;
+
+        li span { display: none; }
+      }
+
+      .inner {
+        width: 100%;
+        margin-left: 0;
+      }
+      .left { width: 100%; }
+      .right {
+        width: 100%;
+        margin: 40px 0 0;
+      }
+
+      @media (min-width: 420px) {
+        ul li span { display: inline; }
+      }
+
+      @media (min-width: 650px) {
+        ul li span { display: none; }
+        .left { width: 48%; }
+        .right {
+          width: 48%;
+          margin: 0 0 0 4%;
+        }
+      }
+
+      @media (min-width: 800px) {
+        .left { width: 45%; }
+        .right { width: 51%; }
+        ul li span { display: inline; }
+      }
+
+      @media (min-width: 980px) {
+        h2 { display: block; }
+        .inner {
+          width: 77%;
+          margin-left: 3%;
+        }
+      }
+    }
+
     &.experience, &.education {
+      h2 {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .inner {
+        margin: 0;
+        width: 100%;
+      }
 
       h3 {
         float: left;
         width: 100%;
 
-        span > span {
+        &.title-only { margin-top: 35px; }
+
+        span.lowercase {
           text-transform: lowercase;
         }
 
+        .hide-mobile {
+          display: none;
+
+          @media (min-width: 420px) {
+            display: inline;
+          }
+        }
+
+        .show-mobile {
+          display: inline;
+
+          @media (min-width: 420px) {
+            display: none;
+          }
+        }
+
+        .location { font-size: 10px; }
+
+        .left {
+          width: 100%;
+
+          @media (min-width: 600px) {
+            width: 48%;
+          }
+        }
+
         .right {
-          text-align: right;
+          width: 100%;
+          margin: 3px 0 5px 0;
+          text-align: left;
+          font-size: 10px;
+          
+
+          @media (min-width: 600px) {
+            width: 48%;
+            margin: 0 0 0 4%;
+            font-size: 13px;
+            text-align: right;
+          }
         }
       }
 
       h4, h5 {
         font-family: $content-font;
-        font-size: 15px;
+        font-size: 12px;
+
+        @media (min-width: 768px) {
+          font-size: 15px;
+        }        
       }
 
       h5 {
         margin-bottom: 10px;
-        font-size: 14px;
+        font-size: 11px;
         font-weight: 300;
         font-style: italic;
         color: $summary-color;
+
+        @media (min-width: 768px) {
+          font-size: 14px;
+        }
       }
 
       ul {
         margin-bottom: $default-gaps / 2;
-        font-size: 14px;
+        margin-left: 20px;
+        text-align: left;
+        font-size: 13px;
+        line-height: 20px;
 
-        &:last-of-type {
-          margin-bottom: 0;
+        @media (min-width: 768px) {
+          font-size: 14px;
+          line-height: 26px;
+        }
+      }
+
+      @media (min-width: 768px) {
+        h2 { width: 20%; }
+        .inner {
+          width: 77%;
+          margin-left: 3%;
         }
       }
     }
@@ -367,5 +531,121 @@ header {
 footer {
   float: left;
   width: 100%;
-  height: 100px;
+  min-height: 100px;
+
+  .inner {
+    display: none;
+    height: 55px;
+    max-width: 860px;
+    margin: 180px auto 0;
+    padding: 12px 0 50px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    border-top: 2px solid #000;
+
+    @media (min-width: 680px) {
+      max-width: 920px;
+    }
+  }
+}
+
+
+
+
+// Print
+// ---------
+body.print {
+  width: 920px;
+
+  ul.menu { display: none; }
+  header div.fx { display: none; }
+
+  header {
+    height: 55px;
+    margin-bottom: 50px;
+    padding-top: 0;
+    box-shadow: none;
+
+    .inner {
+      padding: 0 30px;
+
+      @media (min-width: 680px) {
+        padding: 0 50px;
+      }
+
+      .right, .left {
+        text-align: left;
+        border-bottom: 3px solid #000;
+      }
+    }
+  }
+
+  .content {
+    .section.experience {
+      position: relative;
+
+      h2.xp-cont {
+        position: absolute;
+        top: 559px;
+        display: block;
+      }
+    }
+    .section h2 {
+      display: block;
+      width: 18%;
+    }
+    .section .inner .right { font-size: 13px; }
+    .section.summary,
+    .section.skills,
+    .section.experience,
+    .section.education { margin-bottom: 50px; }
+    .section.summary .inner,
+    .section.skills .inner,
+    .section.experience .inner,
+    .section.education .inner {
+      margin: 0 0 0 3%;
+      width: 79%;
+
+      ul {
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+    .section.skills .left { width: 44%; }
+    .section.skills .right {
+      width: 52%;
+      margin: 0 0 0 4%;
+    }
+    .section.experience,
+    .section.education {
+      h4 { font-size: 15px; }
+      h5 { font-size: 14px; }
+      .left { width: 48%; }
+      .right {
+        width: 48%;
+        margin: 0 0 0 4%;
+        text-align: right;
+      }
+    }
+  }
+
+  h2, h3 {
+    color: #000 !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    -webkit-border-image: none !important;
+  }
+
+  footer {
+    min-height: 80px;
+  
+    .inner {
+      display: block;
+      height: auto;
+      margin-top: 70px;
+      padding-bottom: 0;
+    }
+  }
 }

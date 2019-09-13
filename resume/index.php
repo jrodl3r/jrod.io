@@ -12,6 +12,7 @@
 
     <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
   </head>
+  <!-- <body class="print"> -->
   <body>
     <div id="page">
       <header>
@@ -20,7 +21,7 @@
           <div class="right">
             <ul class="menu">
               <li><a class="download-link" href="/resume/John%20Rodler.pdf">Download</a></li>
-              <li><a class="portfolio-link" href="/">Portfolio</a></li>
+              <li><a class="portfolio-link" href="/"><span>John Rodler's </span>Portfolio</a></li>
             </ul>
           </div>
         </div>
@@ -40,11 +41,12 @@
         </div>
       </header>
       <div class="content">
+        <h1>John Rodler - Full Stack Developer + User Interface & Experience Engineer</h1>
         <div class="section summary">
           <h2>Summary</h2>
           <div class="inner">
-            <h3>UI/UX Engineer</h3>
-            <p>Successful track record in helping a diverse set of technology firms place an enhanced focus on the performance, usability and aesthetics of applications. Extensive hands-on experience designing and developing clean, innovative and reliable user interfaces formed around code standards and creative design. Keen ability to rapidly identify and maneuver within advanced development environments while producing cutting edge software.</p>
+            <h3>Full Stack Dev<span>eloper</span> + UI / UX Engineer</h3>
+            <p>Successful track record in helping a diverse set of technology firms place an enhanced focus on the performance, usability and aesthetics of applications. Extensive hands-on experience building and launching clean, innovative and reliable applications formed around code standards and creative design. Keen ability to rapidly identify and maneuver within complex environments while producing cutting edge software.</p>
           </div>
         </div>
         <div class="section skills">
@@ -53,138 +55,122 @@
             <div class="left">
               <h3>Skills</h3>
               <ul>
+                <li>Full-Stack JavaScript Development</li>
+                <li>Dev-Ops &amp; Build Management</li>
+                <li>Cloud &amp; Serverless Architecture</li>
+                <li>E2E Testing &amp; Deployment Management</li>
+                <li>Project &amp; Source Control Management</li>
                 <li>HTML Standards &amp; Web Semantics</li>
                 <li>CSS &amp; Responsive Web Design</li>
-                <li>JavaScript Development</li>
-                <li>Front-End Build Operations</li>
-                <li>Server-Side Development</li>
-                <li>Version Control Management</li>
-                <li>Graphic &amp; Interface Design</li>
-                <li>CMS &amp; eCommerce Architecture</li>
-                <li>Cross Platform &amp; Mobile Deployment</li>
+                <li>Cross Platform &amp; Mobile Development</li>
                 <li>SEO Strategy &amp; Web Accessibility</li>
+                <li>CMS &amp; eCommerce Architecture</li>
               </ul>
             </div>
             <div class="right">
               <h3>Tools</h3>
               <ul>
-                <li>Sublime Text &nbsp;/&nbsp; Atom &nbsp;/&nbsp; VS &nbsp;/&nbsp; iTerm</li>
-                <li>Sass &nbsp;/&nbsp; Less &nbsp;/&nbsp; Compass &nbsp;/&nbsp; Modernizr</li>
-                <li>React &nbsp;/&nbsp; Angular &nbsp;/&nbsp; jQuery</li>
-                <li>Webpack &nbsp;/&nbsp; Gulp &nbsp;/&nbsp; Grunt</li>
-                <li>Node &nbsp;/&nbsp; PHP &nbsp;/&nbsp; ASP.net</li>
-                <li>Git &nbsp;/&nbsp; NPM &nbsp;/&nbsp; TFVC &nbsp;/&nbsp; SVN</li>
-                <li>Photoshop &nbsp;/&nbsp; Illustrator</li>
+                <li>Angular &nbsp;/&nbsp; React &nbsp;/&nbsp; Node &nbsp;/&nbsp; Mongo<span> &nbsp;/&nbsp; TypeScript</span></li>
+                <li>Webpack &nbsp;/&nbsp; Grunt &nbsp;/&nbsp; Sass<span> &nbsp;/&nbsp; Karma</span> &nbsp;/&nbsp; Jest</li>
+                <li>Firebase &nbsp;/&nbsp; Google Cloud &nbsp;/&nbsp; AWS</li>
+                <li>Codeship &nbsp;/&nbsp; CircleCI &nbsp;/&nbsp; Cypress</li>
+                <li>Git &nbsp;/&nbsp; Npm &nbsp;/&nbsp; Vim &nbsp;/&nbsp;<span> Hyper &nbsp;/&nbsp;</span> VS Code</li>
               </ul>
             </div>
           </div>
         </div>
         <div class="section experience">
           <h2>Experience</h2>
+          <h2 class="xp-cont">Experience (cont.)</h2>
           <div class="inner">
             <h3 class="jrod">
-              <span class="left">Ridgewood Associates &nbsp;|&nbsp; Las Vegas, NV</span>
-              <span class="right">Apr 2014 - Present</span>
+              <span class="left"><span>Ridgewood Inc &nbsp;|&nbsp; Las Vegas, NV</span></span>
+              <span class="right"><span>Apr 2014 - Present</span></span>
             </h3>
-            <h4>Independent Developer &amp; Business Owner</h4>
-            <h5>Software Development &amp; Consulting Services</h5>
+            <h4>Full-Stack Developer &amp; Business Owner</h4>
+            <h5>Software Consulting Services</h5>
             <ul>
-              <li>Focused on launching micro-apps and services built on React, Node, Express &amp; MongoDB.</li>
-              <li>Developed asset pipelines and front-end build systems using Webpack, Gulp and Grunt.</li>
-              <li>Worked with teammates remotely on React and Angular based projects in Node &amp; PHP environments.</li>
-              <li>Created interactive CLI utilities that automated data-mining, asset-scraping and DB population.</li>
+              <li>Launched apps and services built with Angular, React, Node, Express &amp; MongoDB.</li>
+              <li>Automated asset pipelines and front-end build systems using Webpack, Gulp and Grunt.</li>
+              <li>Built command-line utilities to facilitate data-mining, asset-scraping and database procedures.</li>
+              <li>Worked remotely with teammates on React and Angular-based projects in Node &amp; PHP environments.</li>
+              <li>Created ng-fire-universal to simplify initializing serverless PWA's on Firebase &amp; Google Cloud.</li>
+            </ul>
+            <h3 class="lsvt">
+              <span class="left"><span>Lightspeed VT &nbsp;|&nbsp; Las Vegas, NV</span></span>
+              <span class="right"><span>Oct 2017 - Aug 2019</span></span>
+            </h3>
+            <h4>Senior Front-End & Full-Stack Developer</h4>
+            <h5>Streaming Video &amp; Virtual Training Software</h5>
+            <ul>
+              <li>Refocused product suite to encompass a rich, responsive and mobile-friendly user experience.</li>
+              <li>Launched StyleGuide to provide users and developers with an interactive product and component library.</li>
+              <li>Revamped release management process to automate Karma + E2E testing operations using Codeship.</li>
+              <li>Translated legacy ColdFusion interfaces to REST / API-driven, service-based Angular applications.</li>
+              <li>Handled auxiliary initiatives ranging from ad-hoc prototypes and marketing microsites to managing custom asset libraries and internationalization.</li>
             </ul>
             <h3 class="trdl">
-              <span class="left">3rd Learning &nbsp;|&nbsp; Buffalo, NY</span>
-              <span class="right">Feb 2012 - Mar 2014</span>
+              <span class="left"><span>3rd Learning &nbsp;|&nbsp; Buffalo, NY</span></span>
+              <span class="right"><span>Feb 2012 - Mar 2014</span></span>
             </h3>
-            <h4>Senior UI/UX Engineer</h4>
+            <h4>Senior UI / UX Engineer</h4>
             <h5>Educational &amp; Curriculum-Mapping Software</h5>
             <ul>
               <li>Collaborated with educators to build web applications that helped support classroom teachers.</li>
-              <li>Implemented and maintained front-end build operations by leveraging tools like Grunt, Sass and QUnit.</li>
-              <li>Developed internal utilities that automated scheduling, reporting and other resource management activities.</li>
-              <li>Conducted workflow and usability studies to guide product adaptation and feature enhancements.</li>
+              <li>Automated front-end build operations by leveraging tools like Grunt, Gulp, Sass and QUnit.</li>
+              <li>Organized and conducted A/B testing, workflow and usability studies to help guide product evolution.</li>
             </ul>
             <h3 class="huge">
-              <span class="left">HUGE &nbsp;|&nbsp; Brooklyn, NY</span>
-              <span class="right">May 2011 - Oct 2011<span>
+              <span class="left"><span>HUGE &nbsp;|&nbsp; Brooklyn, NY</span></span>
+              <span class="right"><span>May 2011 - Oct 2011</span></span>
             </h3>
-            <h4>UI/UX Consultant</h4>
-            <h5>Digital Services &amp; Commercial Applications</h5>
-            <ul>
-              <li>Translated design comps into module and interface templates, interactive style guides and pattern libraries.</li>
-              <li>Developed prototypes of native applications using Sass and jQuery to enable advanced interaction testing.</li>
-              <li>Contributed to ongoing projects with remote team members using Git workflow and version control.</li>
-              <li>Fulfilled new feature requests by performing targeted JavaScript and CSS enhancements.</li>
-            </ul>
-            <h3 class="thrs">
-              <span class="left">360<span>i</span> &nbsp;|&nbsp; New York, NY</span>
-              <span class="right">May 2010 - Jan 2011</span>
+            <h4>UI / UX Consultant</h4>
+            <h5>Digital Marketing Services &amp; Commercial Applications</h5>
+            <h3 class="thrs title-only">
+              <span class="left"><span>360<span class="lowercase">i</span> &nbsp;|&nbsp; New York, NY</span></span>
+              <span class="right"><span>May 2010 - Jan 2011</span></span>
             </h3>
-            <h4>UI/UX Consultant</h4>
+            <h4>UI / UX Consultant</h4>
             <h5>eCommerce &amp; Social Media Applications</h5>
-            <ul>
-              <li>Worked with high-end brands on cutting edge web, mobile and social media applications.</li>
-              <li>Developed responsive websites with Mobile First and Progressive Enhancement style approach.</li>
-              <li>Addressed cross-browser development issues using Modernizr feature detection and JavaScript polyfills.</li>
-              <li>Created prototypes to convey advanced interface concepts and user interactions to stakeholders.</li>
-            </ul>
-            <h3 class="rcts">
-              <span class="left">RedCats &nbsp;|&nbsp; New York, NY</span>
-              <span class="right">Jun 2008 - May 2010</span>
+            <h3 class="rcts title-only">
+              <span class="left"><span>RedCats &nbsp;|&nbsp; New York, NY</span></span>
+              <span class="right"><span>Jun 2008 - May 2010</span></span>
             </h3>
             <h4>Senior UI Engineer</h4>
             <h5>eCommerce &amp; Content Management Systems</h5>
-            <ul>
-              <li>Collaborated with international teams to simplify purchasing operations and enhance product usability.</li>
-              <li>Championed front-end build operations that automated client-side asset optimization procedures.</li>
-              <li>Experimented regularly with new feature concepts, prototypes, case studies and user scenarios.</li>
-              <li>Produced documentation that helped our team to normalize coding standards and styling guidelines.</li>
-            </ul>
-            <h3 class="mwiz">
-              <span class="left">Media Whiz &nbsp;|&nbsp; New York, NY</span>
-              <span class="right">Jan 2007 - Apr 2008</span>
+            <h3 class="mwiz title-only">
+              <span class="left"><span>Media Whiz &nbsp;|&nbsp; New York, NY</span></span>
+              <span class="right"><span>Jan 2007 - Apr 2008</span></span>
             </h3>
             <h4>Web Developer &amp; Creative Designer</h4>
             <h5>eCommerce &amp; Marketing Applications</h5>
-            <ul>
-              <li>Developed rich, dynamic, and reliable client-side solutions using HTML, CSS and JavaScript.</li>
-              <li>Built server-side modules using PHP and Smarty to automate business and reporting processes.</li>
-              <li>Revamped websites by targeting bottlenecks and leveraging front-end libraries like MooTools and jQuery.</li>
-              <li>Designed logos, interface templates and style guides with Photoshop and Illustrator.</li>
-            </ul>
-            <h3 class="drtr">
-              <span class="left">Door 3 &nbsp;|&nbsp; New York, NY</span>
-              <span class="right">Jun 2005 - Nov 2006</span>
+            <h3 class="drtr title-only">
+              <span class="left"><span>Door 3 &nbsp;|&nbsp; New York, NY</span></span>
+              <span class="right"><span>Jun 2005 - Nov 2006</span></span>
             </h3>
             <h4>Web Developer &amp; Creative Designer</h4>
             <h5>Corporate &amp; Financial Management Applications</h5>
-            <ul>
-              <li>Developed websites and internal applications using HTML, CSS and JavaScript.</li>
-              <li>Performed updates and optimizations on PHP and ASP.net back-end functionality.</li>
-              <li>Designed site layouts, product features and workflows with Photoshop, Illustrator and Visio.</li>
-              <li>Worked on-site with clients to build new features and enhance existing components.</li>
-            </ul>
           </div>
         </div>
         <div class="section education">
           <h2>Education</h2>
           <div class="inner">
             <h3>
-              <span class="left">Full Sail University &nbsp;|&nbsp; Orlando, FL</span>
-              <span class="right">Aug 2002 - Feb 2004</span>
+              <span class="left"><span>Full Sail University &nbsp;|&nbsp; Orlando, FL</span></span>
+              <span class="right"><span>Aug 2002 - Feb 2004</span></span>
             </h3>
-            <h4>Associate of Computer Science</h4>
+            <h4>Associate of Computer Science in Game Design &amp; Development</h4>
             <h3>
-              <span class="left">Amherst Central High School &nbsp;|&nbsp; Buffalo, NY</span>
-              <span class="right">Sep 1998 - May 2001</span>
+              <span class="left"><span>Amherst Central HS &nbsp;|&nbsp; Amherst, NY</span></span>
+              <span class="right"><span>Sep 1998 - May 2001</span></span>
             </h3>
             <h4>AP Computer Science</h4>
           </div>
         </div>
       </div>
-      <footer></footer>
+      <footer>
+        <div class="inner">Please visit my portfolio &#8226; Jrod.io &#8226; References Available upon request</div>
+      </footer>
     </div>
   </body>
 </html>

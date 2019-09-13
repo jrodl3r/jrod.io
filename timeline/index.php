@@ -48,23 +48,19 @@
     <script type="text/javascript" src="/js/vendor/timesheet.js"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function(e) {
-        new Timesheet('timesheet', 1992, 2017, [
-          ['1992', '1996', 'First Computer (Compaq x86)', 'childhood'],
-          ['1993', '2000', 'First Memory Upgrade Sparks Custom Computers Hobby', 'childhood'],
-          ['1994', '1999', 'Avid PC Gamer (Doom, Wolfenstein, Duke Nukem, Unreal, Myst)', 'childhood'],
-          ['1997', '2001', 'Started Coding in High School (AP Computer Science Program)', 'teens'],
-          ['2001', 'Gap Year', 'teens'],
-          // ['2001', 'Explored, Traveled &amp; Lived in Canada w/ Friends', 'teens'],
-          ['2002', '2004', 'Finished College in Florida (Associate of Computer Science)', 'teens'],
-          ['2003', '2005', 'Launched First Company (Custom Console Systems - MODorDie.com)', 'adult'],
-          ['2005', 'Moved to New York City to Become a Software Developer', 'adult'],
+        new Timesheet('timesheet', 1990, 2030, [
+          ['1990', '1997', 'First Computer (Compaq x86) » Avid PC Gamer & Computer Hobbyist', 'childhood'],
+          ['1997', '2001', 'High School » AP Computer Science Program » Pascal, Basic + C Languages', 'teens'],
+          ['2002', '2004', 'College » Associate of Computer Science in Game Design & Development', 'teens'],
+          ['2003', '2005', 'Launched First Company » Custom Consoles & Gaming Systems', 'adult'],
           ['06/2005', '11/2006', 'Web Developer &amp; Creative Designer at Door 3', 'adult'],
           ['01/2007', '04/2008', 'Web Developer &amp; Creative Designer at Media Whiz', 'adult'],
           ['06/2008', '05/2010', 'Senior UI Engineer at RedCats USA', 'adult'],
           ['05/2010', '01/2011', 'UI/UX Consultant at 360i', 'adult'],
           ['05/2011', '10/2011', 'UI/UX Consultant at HUGE', 'adult'],
           ['02/2012', '03/2014', 'Senior UI Engineer at 3rd Learning', 'adult'],
-          ['04/2014', '2017', 'Launched Ridgewood Associates (Independent Developer)', 'adult']
+          ['04/2014', '2020', 'Launched Ridgewood Inc - Private Consulting Firm', 'adult'],
+          ['10/2017', '08/2019', 'Senior Frontend Engineer at LightspeedVT', 'adult'],
         ]);
       });
     </script>
