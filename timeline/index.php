@@ -8,7 +8,7 @@
     <meta name="description" content="John Rodler &#9702; Full Stack Developer + User Interface & Experience Engineer">
     <meta name="author" content="John Rodler">
     <meta name="viewport" content="width=device-width">
-    <link rel="canonical" href="http://jrod.io/timeline">
+    <link rel="canonical" href="http://jrod.io">
     <link rel="stylesheet" href="/css/timeline.css">
 
     <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
