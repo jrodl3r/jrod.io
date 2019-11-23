@@ -251,3 +251,29 @@
     }
   } */
 }
+
+.articles { text-align: center; }
+.articles a {
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+.articles span {
+  display: none;
+  color: $link-color;
+  margin-right: 20px;
+  margin-left: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+@include breakpoint($bp-landscape) {
+  .articles { text-align: left; }
+}
+
+@include breakpoint($bp-tablet) {
+  .articles a { font-size: 1.5rem; }
+}
+
+@include breakpoint($bp-default) {
+  .articles span { display: inline; }
+}
