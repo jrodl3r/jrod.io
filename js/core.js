@@ -387,44 +387,48 @@ var App = {
     // Validate Input
     validate: function() {
 
-      var status = true;
+      // var status = true;
 
-      // Verify Name
-      if(!this.name_input.val().trim()) {
-        this.notify('Forget to add your name?', 'bad');
-        this.name_input.focus();
-        status = false;
-      }
+      // // Verify Name
+      // if(!this.name_input.val().trim()) {
+      //   this.notify('Forget to add your name?', 'bad');
+      //   this.name_input.focus();
+      //   status = false;
+      // }
 
-      // Verify Email
-      else if(!this.email_input.val().trim()) {
-        this.notify('Forget to add your email?', 'bad');
-        this.email_input.focus();
-        status = false;
-      }
+      // // Verify Email
+      // else if(!this.email_input.val().trim()) {
+      //   this.notify('Forget to add your email?', 'bad');
+      //   this.email_input.focus();
+      //   status = false;
+      // }
 
-      // Validate Email
-      else if(!/^.+@.+\..+$/.test(this.email_input.val())) {
-        this.notify('Did you mistype your email?', 'bad');
-        this.email_input.focus();
-        status = false;
-      }
+      // // Validate Email
+      // else if(!/^.+@.+\..+$/.test(this.email_input.val())) {
+      //   this.notify('Did you mistype your email?', 'bad');
+      //   this.email_input.focus();
+      //   status = false;
+      // }
 
-      // Verify Message
-      else if(!this.message_input.val().trim()) {
-        this.notify('Forget to add your message?', 'bad');
-        this.message_input.focus();
-        status = false;
-      }
+      // // Verify Message
+      // else if(!this.message_input.val().trim()) {
+      //   this.notify('Forget to add your message?', 'bad');
+      //   this.message_input.focus();
+      //   status = false;
+      // }
 
-      // Verify Captcha
-      else if(this.captcha_total != App.Contact.captcha_input.val()) {
-        this.notify('You got this 👍', 'bad');
-        this.captcha_input.focus();
-        status = false;
-      }
+      // // Verify Captcha
+      // else if(this.captcha_total != App.Contact.captcha_input.val()) {
+      //   this.notify('You got this 👍', 'bad');
+      //   this.captcha_input.focus();
+      //   status = false;
+      // }
 
-      return status;
+      // return status;
+
+      this.notify('Contact Form Disabled', 'bad');
+
+      return false;
     },
 
     // Submit User Message
