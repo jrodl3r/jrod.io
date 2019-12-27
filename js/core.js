@@ -356,6 +356,8 @@ var App = {
     ajax_form: $('#contact'),
     name_input: $('input.name'),
     email_input: $('input.email'),
+    captcha_input: $('input.captcha'),
+    captcha_total: 0,
     message_input: $('textarea.message'),
     submit_button: $('button[type=submit]'),
     notify_box: $('.notify'),
@@ -370,6 +372,16 @@ var App = {
 
       // Validation & Submission
       this.process();
+
+      // Setup Captcha
+      this.captcha();
+    },
+
+    captcha: function() {
+      var cap1 = Math.ceil(Math.random() * 4);
+      var cap2 = Math.ceil(Math.random() * 4);
+      this.captcha_total = cap1 + cap2;
+      this.captcha_input.attr('placeholder', cap1 + ' + ' + cap2);
     },
 
     // Validate Input
@@ -402,6 +414,13 @@ var App = {
       else if(!this.message_input.val().trim()) {
         this.notify('Forget to add your message?', 'bad');
         this.message_input.focus();
+        status = false;
+      }
+
+      // Verify Captcha
+      else if(this.captcha_total != App.Contact.captcha_input.val()) {
+        this.notify('You got this 👍', 'bad');
+        this.captcha_input.focus();
         status = false;
       }
 
