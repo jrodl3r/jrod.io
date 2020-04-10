@@ -1,4 +1,4 @@
-<?php
+<?php /*
   use google\appengine\api\mail\Message;
 
   // Only process POST reqeusts
@@ -45,5 +45,5 @@
     http_response_code(403);
     echo "Nice try, but I don't think so tough guy =P";
   }
-
+*/
 ?>
