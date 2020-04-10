@@ -7,7 +7,7 @@
 // --------------------------------------------------------------------------
 
 @import 'normalize';
-@import 'breakpoint';
+// @import 'breakpoint';
 
 
 // Defaults
@@ -254,7 +254,7 @@ header {
   max-width: $default-width;
   margin: 0 auto;
   padding: 0 30px;
-  
+
   @media (min-width: $bp-desktop) {
     padding: $default-gutters;
   }
@@ -351,7 +351,7 @@ header {
 
       @media (min-width: $bp-desktop) {
         h2 { display: block; }
-      
+
         .inner {
           width: 77%;
           margin-left: 3%;
@@ -458,7 +458,7 @@ header {
           margin: 3px 0 5px 0;
           text-align: left;
           font-size: 10px;
-          
+
 
           @media (min-width: 600px) {
             width: 48%;
@@ -475,7 +475,7 @@ header {
 
         @media (min-width: 768px) {
           font-size: 15px;
-        }        
+        }
       }
 
       h5 {
@@ -552,12 +552,13 @@ footer {
 }
 
 
-
-
 // Print
 // ---------
-body.print {
-  width: 920px;
+
+@media print {
+  body {
+    min-width: 960px !important;
+  }
 
   ul.menu { display: none; }
   header div.fx { display: none; }
@@ -582,55 +583,6 @@ body.print {
     }
   }
 
-  .content {
-    .section.experience {
-      position: relative;
-
-      h2.xp-cont {
-        position: absolute;
-        top: 559px;
-        display: block;
-      }
-    }
-    .section h2 {
-      display: block;
-      width: 18%;
-    }
-    .section .inner .right { font-size: 13px; }
-    .section.summary,
-    .section.skills,
-    .section.experience,
-    .section.education { margin-bottom: 50px; }
-    .section.summary .inner,
-    .section.skills .inner,
-    .section.experience .inner,
-    .section.education .inner {
-      margin: 0 0 0 3%;
-      width: 79%;
-
-      ul {
-        font-size: 14px;
-        line-height: 25px;
-      }
-    }
-    .section.skills .left { width: 44%; }
-    .section.skills .right {
-      width: 52%;
-      margin: 0 0 0 4%;
-    }
-    .section.experience,
-    .section.education {
-      h4 { font-size: 15px; }
-      h5 { font-size: 14px; }
-      .left { width: 48%; }
-      .right {
-        width: 48%;
-        margin: 0 0 0 4%;
-        text-align: right;
-      }
-    }
-  }
-
   h2, h3 {
     color: #000 !important;
     background: none !important;
@@ -638,14 +590,70 @@ body.print {
     -webkit-border-image: none !important;
   }
 
-  footer {
-    min-height: 80px;
-  
+  .section.summary {
+    h3 span { display: inline !important; }
+    h2 { display: block !important; }
+
     .inner {
-      display: block;
-      height: auto;
-      margin-top: 70px;
-      padding-bottom: 0;
+      width: 77% !important;
+      margin-left: 3% !important;
     }
+  }
+
+  .section.skills {
+    h2 { display: block !important; }
+    .left { width: 48% !important; }
+    .right {
+      width: 48% !important;
+      margin: 0 0 0 4% !important;
+    }
+    .inner {
+      width: 77% !important;
+      margin-left: 3% !important;
+    }
+  }
+
+  .section.experience, .section.education {
+    position: relative;
+
+    h2.xp-cont {
+      position: absolute !important;
+      top: 518px !important;
+      display: block !important;
+    }
+    h2 { width: 20% !important; }
+    h3 {
+      display: flex;
+      flex-direction: row;
+      height: 20px;
+    }
+    h3 .left {
+      width: 500px;
+      font-size: 13px !important;
+    }
+    h3 .right {
+      margin-top: 0 !important;
+      width: 200px !important;
+      text-align: right !important;
+      font-size: 13px !important;
+    }
+    h4.top { display: inline-block;  }
+    h4 { font-size: 15px !important; }
+    h5 { font-size: 14px !important; }
+    .inner {
+      width: 77% !important;
+      margin-left: 3% !important;
+    }
+  }
+
+  .section .inner ul {
+    font-size: 14px !important;
+    line-height: 25px !important;
+  }
+
+  footer .inner {
+    display: block !important;
+    margin: 100px auto 0 !important;
+    padding-bottom: 0 !important;
   }
 }

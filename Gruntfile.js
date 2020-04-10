@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       dev: {
         options: {
           style: 'expanded',
-          require: ['susy', 'breakpoint'],
+          // require: ['susy', 'breakpoint'],
           compass: true
         },
         files: {
@@ -30,8 +30,8 @@ module.exports = function(grunt) {
       etc: {
         options: {
           style: 'expanded',
-          require: ['susy', 'breakpoint'],
-          compass: true
+          // require: ['susy', 'breakpoint'],
+          // compass: true
         },
         files: {
           'css/resume.css': 'css/resume.scss',

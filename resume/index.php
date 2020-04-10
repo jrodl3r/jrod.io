@@ -12,7 +12,6 @@
 
     <!-- Hey stranger! This site is 100% open-sourced right here: https://github.com/jrodl3r/jrod.io -->
   </head>
-  <!-- <body class="print"> -->
   <body>
     <div id="page">
       <header>
@@ -113,7 +112,7 @@
               <span class="left"><span>3rd Learning &nbsp;|&nbsp; Buffalo, NY</span></span>
               <span class="right"><span>Feb 2012 - Mar 2014</span></span>
             </h3>
-            <h4>Senior UI / UX Engineer</h4>
+            <h4 class="top">Senior UI / UX Engineer</h4>
             <h5>Educational &amp; Curriculum-Mapping Software</h5>
             <ul>
               <li>Collaborated with educators to build web applications that helped support classroom teachers.</li>
