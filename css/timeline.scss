@@ -37,8 +37,8 @@ $content-font       :   Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
   cursor: default;
-  // @include user-select(none);
-  // @include box-sizing(border-box);
+  user-select: none;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -69,7 +69,7 @@ body {
   overflow-x: scroll;
   border-top: 1px solid #E7E7E7;
   border-bottom: 10px solid #FFF;
-  // @include box-shadow(0 10px 35px rgba(#000, .05));
+  box-shadow: 0 10px 35px rgba(#000, .05);
 }
 
 h1 {
@@ -187,20 +187,20 @@ header {
   min-width: 100%;
   padding-bottom: 50px;
   border-top: 15px solid #F7F7F7;
-  // @include background-image(linear-gradient(#F7F7F7, #FFF));
+  background-image: linear-gradient(to bottom, #F7F7F7, #FFF);
 
   .bubble-begin, .bubble-default {
     background-color: #838383;
   }
-  // .bubble-childhood {
-  //   @include background-image(linear-gradient(to right, rgba($hilite-aqua, 1), rgba($hilite-lime, .6)));
-  // }
-  // .bubble-teens {
-  //   @include background-image(linear-gradient(to right, rgba($hilite-primary, .8), rgba($hilite-lightblue, .5)));
-  // }
-  // .bubble-adult {
-  //     @include background-image(linear-gradient(to right, rgba($hilite-alt, .8), rgba($hilite-bright, .5)));
-  // }
+  .bubble-childhood {
+    background-image: linear-gradient(to right, rgba($hilite-aqua, 1), rgba($hilite-lime, .6));
+  }
+  .bubble-teens {
+    background-image: linear-gradient(to right, rgba($hilite-primary, .8), rgba($hilite-lightblue, .5));
+  }
+  .bubble-adult {
+      background-image: linear-gradient(to right, rgba($hilite-alt, .8), rgba($hilite-bright, .5));
+  }
 
   .scale {
     height: 100%;
@@ -246,21 +246,21 @@ header {
       clear: both;
       position: relative;
       white-space: nowrap;
-      // @include text-shadow(0 0 10px rgba(255, 255, 255, .5));
-      // @include transition(.75s);
+      text-shadow: 0 0 10px rgba(255, 255, 255, .5);
+      transition: .75s;
 
       &:hover {
         .bubble-default {
           background-color: $hilite-gray;
         }
         .bubble-childhood {
-          // background-color: darken($hilite-aqua, 20%);
+          background-color: $hilite-aqua;
         }
         .bubble-teens {
           background-color: $hilite-primary;
         }
         .bubble-adult {
-          // background-color: lighten($hilite-alt, 30%);
+          background-color: $hilite-alt;
         }
         .date {
           color: #222;
@@ -275,7 +275,7 @@ header {
         color: #555;
         font-size: 13px;
         font-weight: 600;
-        // @include transition(.25s .15s);
+        transition: .25s .15s;
       }
 
       .label {
@@ -285,7 +285,7 @@ header {
         font-size: 14px;
         line-height: 21px;
         white-space: nowrap;
-        // @include transition(.25s .15s);
+        transition: .25s .15s;
       }
 
       .bubble {
@@ -297,7 +297,7 @@ header {
         top: 7px;
         border-radius: 4px;
         margin: 0 10px 0 0;
-        // @include transition(.4s);
+        transition: .4s;
       }
     }
   }
