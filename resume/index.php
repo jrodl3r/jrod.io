@@ -84,17 +84,17 @@
           <h2 class="xp-cont">Experience (cont.)</h2>
           <div class="inner">
             <h3 class="jrod">
-              <span class="left"><span>Ridgewood Inc &nbsp;|&nbsp; Las Vegas, NV</span></span>
+              <span class="left"><span>JROD INC &nbsp;|&nbsp; Las Vegas, NV</span></span>
               <span class="right"><span>Apr 2014 - Present</span></span>
             </h3>
-            <h4>Full-Stack Developer &amp; Business Owner</h4>
+            <h4>Full-Stack Developer</h4>
             <h5>Software Consulting Services</h5>
             <ul>
               <li>Launched apps and services built with Angular, React, Node, Express &amp; MongoDB.</li>
               <li>Automated asset pipelines and front-end build systems using Webpack, Gulp and Grunt.</li>
               <li>Built command-line utilities to facilitate data-mining, asset-scraping and database procedures.</li>
               <li>Worked remotely with teammates on React and Angular-based projects in Node &amp; PHP environments.</li>
-              <li>Created ng-fire-universal to simplify initializing serverless PWA's on Firebase &amp; Google Cloud.</li>
+              <li>Created ng-fire-universal to simplify building Serverless PWA's on Firebase &amp; Google Cloud.</li>
             </ul>
             <h3 class="lsvt">
               <span class="left"><span>Lightspeed VT &nbsp;|&nbsp; Las Vegas, NV</span></span>
