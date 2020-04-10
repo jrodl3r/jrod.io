@@ -48,8 +48,8 @@
     <script type="text/javascript" src="/js/vendor/timesheet.js"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', function(e) {
-        new Timesheet('timesheet', 1990, 2030, [
-          ['1990', '1997', 'First Computer (Compaq x86) » Avid PC Gamer & Computer Hobbyist', 'childhood'],
+        new Timesheet('timesheet', 1997, 2030, [
+          // ['1990', '1997', 'First Computer (Compaq x86) » Avid PC Gamer & Computer Hobbyist', 'childhood'],
           ['1997', '2001', 'High School » AP Computer Science Program » Pascal, Basic + C Languages', 'teens'],
           ['2002', '2004', 'College » Associate of Computer Science in Game Design & Development', 'teens'],
           ['2003', '2005', 'Launched First Company » Custom Consoles & Gaming Systems', 'adult'],
@@ -59,7 +59,7 @@
           ['05/2010', '01/2011', 'UI/UX Consultant at 360i', 'adult'],
           ['05/2011', '10/2011', 'UI/UX Consultant at HUGE', 'adult'],
           ['02/2012', '03/2014', 'Senior UI Engineer at 3rd Learning', 'adult'],
-          ['04/2014', '2020', 'Launched Ridgewood Inc - Private Consulting Firm', 'adult'],
+          ['04/2014', '2020', 'Launched JROD INC - Software Consulting Firm', 'adult'],
           ['10/2017', '08/2019', 'Senior Frontend Engineer at LightspeedVT', 'adult'],
         ]);
       });
