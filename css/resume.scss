@@ -616,9 +616,11 @@ footer {
   .section.experience, .section.education {
     position: relative;
 
+    .jrod { margin-top: 40px; }
+
     h2.xp-cont {
       position: absolute !important;
-      top: 518px !important;
+      top: 517px !important;
       display: block !important;
     }
     h2 { width: 20% !important; }
@@ -626,6 +628,7 @@ footer {
       display: flex;
       flex-direction: row;
       height: 20px;
+      margin-bottom: 5px !important;
     }
     h3 .left {
       width: 500px;
@@ -653,7 +656,7 @@ footer {
 
   footer .inner {
     display: block !important;
-    margin: 100px auto 0 !important;
+    margin: 88px auto 0 !important;
     padding-bottom: 0 !important;
   }
 }

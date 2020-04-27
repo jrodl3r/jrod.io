@@ -59,8 +59,9 @@
           ['05/2010', '01/2011', 'UI/UX Consultant at 360i', 'adult'],
           ['05/2011', '10/2011', 'UI/UX Consultant at HUGE', 'adult'],
           ['02/2012', '03/2014', 'Senior UI Engineer at 3rd Learning', 'adult'],
-          ['04/2014', '2020', 'Launched JROD INC - Software Consulting Firm', 'adult'],
+          ['04/2014', '2020', 'Launched Private Company - JROD INC', 'adult'],
           ['10/2017', '08/2019', 'Senior Frontend Engineer at LightspeedVT', 'adult'],
+          ['08/2019', '2020', 'Full Stack Engineer at Christian.com', 'adult']
         ]);
       });
     </script>

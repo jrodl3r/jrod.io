@@ -82,24 +82,23 @@
           <h2>Experience</h2>
           <h2 class="xp-cont">Experience (cont.)</h2>
           <div class="inner">
-            <h3 class="jrod">
-              <span class="left"><span>JROD INC &nbsp;|&nbsp; Las Vegas, NV</span></span>
-              <span class="right"><span>Apr 2014 - Present</span></span>
+            <h3 class="chrx">
+              <span class="left"><span>Christian.com &nbsp;|&nbsp; Las Vegas, NV</span></span>
+              <span class="right"><span>Aug 2019 - Present</span></span>
             </h3>
-            <h4>Full-Stack Developer</h4>
-            <h5>Software Consulting Services</h5>
+            <h4>Full Stack Engineer</h4>
+            <h5>eCommerce &amp; Lifestyle Applications</h5>
             <ul>
-              <li>Launched apps and services built with Angular, React, Node, Express &amp; MongoDB.</li>
-              <li>Automated asset pipelines and front-end build systems using Webpack, Gulp and Grunt.</li>
-              <li>Built command-line utilities to facilitate data-mining, asset-scraping and database procedures.</li>
-              <li>Worked remotely with teammates on React and Angular-based projects in Node &amp; PHP environments.</li>
-              <li>Created ng-fire-universal to simplify building Serverless PWA's on Firebase &amp; Google Cloud.</li>
+              <li>Collaborated with remote and overseas developers to enhance and maintain online dating systems.</li>
+              <li>Built custom dashboards and automated reporting systems using AWS Lambda and DynamoDB.</li>
+              <li>Designed and created responsive websites and microsites for marketing and social media campaigns.</li>
+              <li>Performed A/B testing routines to target most optimal interfaces and feature sets.</li>
             </ul>
             <h3 class="lsvt">
               <span class="left"><span>Lightspeed VT &nbsp;|&nbsp; Las Vegas, NV</span></span>
               <span class="right"><span>Oct 2017 - Aug 2019</span></span>
             </h3>
-            <h4>Senior Front-End & Full-Stack Developer</h4>
+            <h4>Senior Frontend Developer</h4>
             <h5>Streaming Video &amp; Virtual Training Software</h5>
             <ul>
               <li>Refocused product suite to encompass a rich, responsive and mobile-friendly user experience.</li>
@@ -108,6 +107,21 @@
               <li>Translated legacy ColdFusion interfaces to REST / API-driven, service-based Angular applications.</li>
               <li>Handled auxiliary initiatives ranging from ad-hoc prototypes and marketing microsites to managing custom asset libraries and internationalization.</li>
             </ul>
+            <div class="jrod">
+              <h3>
+                <span class="left"><span>JROD INC &nbsp;|&nbsp; Las Vegas, NV</span></span>
+                <span class="right"><span>Apr 2014 - Present</span></span>
+              </h3>
+              <h4>Full Stack Engineer</h4>
+              <h5>Software Consulting Services</h5>
+              <ul>
+                <li>Launched apps and services built with Angular, React, Node, Express &amp; MongoDB.</li>
+                <li>Automated asset pipelines and front-end build systems using Webpack, Gulp and Grunt.</li>
+                <li>Built command-line utilities to facilitate data-mining, asset-scraping and database procedures.</li>
+                <li>Worked remotely with teammates on React and Angular-based projects in Node &amp; PHP environments.</li>
+                <li>Created ng-fire-universal to simplify building Serverless PWA's on Firebase &amp; Google Cloud.</li>
+              </ul>
+            </div>
             <h3 class="trdl">
               <span class="left"><span>3rd Learning &nbsp;|&nbsp; Buffalo, NY</span></span>
               <span class="right"><span>Feb 2012 - Mar 2014</span></span>
@@ -124,31 +138,31 @@
               <span class="right"><span>May 2011 - Oct 2011</span></span>
             </h3>
             <h4>UI / UX Consultant</h4>
-            <h5>Digital Marketing Services &amp; Commercial Applications</h5>
+            <!-- <h5>Digital Marketing Services &amp; Commercial Applications</h5> -->
             <h3 class="thrs title-only">
               <span class="left"><span>360<span class="lowercase">i</span> &nbsp;|&nbsp; New York, NY</span></span>
               <span class="right"><span>May 2010 - Jan 2011</span></span>
             </h3>
             <h4>UI / UX Consultant</h4>
-            <h5>eCommerce &amp; Social Media Applications</h5>
+            <!-- <h5>eCommerce &amp; Social Media Applications</h5> -->
             <h3 class="rcts title-only">
               <span class="left"><span>RedCats &nbsp;|&nbsp; New York, NY</span></span>
               <span class="right"><span>Jun 2008 - May 2010</span></span>
             </h3>
             <h4>Senior UI Engineer</h4>
-            <h5>eCommerce &amp; Content Management Systems</h5>
+            <!-- <h5>eCommerce &amp; Content Management Systems</h5> -->
             <h3 class="mwiz title-only">
               <span class="left"><span>Media Whiz &nbsp;|&nbsp; New York, NY</span></span>
               <span class="right"><span>Jan 2007 - Apr 2008</span></span>
             </h3>
             <h4>Web Developer &amp; Creative Designer</h4>
-            <h5>eCommerce &amp; Marketing Applications</h5>
+            <!-- <h5>eCommerce &amp; Marketing Applications</h5> -->
             <h3 class="drtr title-only">
               <span class="left"><span>Door 3 &nbsp;|&nbsp; New York, NY</span></span>
               <span class="right"><span>Jun 2005 - Nov 2006</span></span>
             </h3>
             <h4>Web Developer &amp; Creative Designer</h4>
-            <h5>Corporate &amp; Financial Management Applications</h5>
+            <!-- <h5>Corporate &amp; Financial Management Applications</h5> -->
           </div>
         </div>
         <div class="section education">
