@@ -1,11 +1,13 @@
 {
   "name": "jrod-v4",
-  "version": "0.0.0",
+  "version": "4.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "start:dev": "ng serve --host 0.0.0.0 --port 4100 --disable-host-check",
+    "start:prod": "ng serve --host 0.0.0.0 --port 4300 --disable-host-check --configuration production",
+    "build": "ng build --configuration production",
+    "release": "npm run build && gcloud app deploy --project=jrod-new",
     "test": "ng test"
   },
   "private": true,
