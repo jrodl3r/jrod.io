@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/jrod-v4",
+            "outputPath": "dist/jrod-v4/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,7 +28,6 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/robots.txt",
               "src/assets"
             ],
             "styles": [
@@ -97,7 +96,6 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/robots.txt",
               "src/assets"
             ],
             "styles": [
@@ -105,6 +103,65 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/jrod-v4/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "jrod-v4:build:development",
+              "serverTarget": "jrod-v4:server:development"
+            },
+            "production": {
+              "browserTarget": "jrod-v4:build:production",
+              "serverTarget": "jrod-v4:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "jrod-v4:build:production",
+              "serverTarget": "jrod-v4:server:production"
+            },
+            "development": {
+              "browserTarget": "jrod-v4:build:development",
+              "serverTarget": "jrod-v4:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
