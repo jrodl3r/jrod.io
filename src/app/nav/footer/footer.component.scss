@@ -1,0 +1,56 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/anim.scss';
+
+footer {
+  z-index: -1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  width: 100%;
+  background-color: #000;
+  background: linear-gradient(-45deg, $orange-color, $pink-color, $blue-color, $purple-color);
+	background-size: 400% 400%;
+  opacity: 0;
+	animation:
+    fade-in ease-in .5s .1s 1 forwards,
+    splash-gradient ease 10s infinite;
+}
+
+.overlay, .vignette {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: $trx-default;
+}
+
+.overlay {
+  background: url(/assets/img/header/header-bg.png) center center repeat;
+  background-size: 42px;
+  opacity: .6;
+}
+
+.vignette {
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, #000 80%);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  svg {
+    width: 160px;
+    margin-top: -5px;
+    opacity: 0;
+    animation:
+      logo-fade-in ease-in .65s .25s 1 forwards,
+      logo-pulse ease-in-out 30s 5s infinite;
+
+    @media (min-width: $tablet-md-screen) {
+      width: 180px;
+    }
+  }
+}

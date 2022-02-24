@@ -1,7 +1,14 @@
-<h1>Jrod.io (v4.0.0)</h1>
-<nav>
-  <ul>
-    <li><a [routerLink]="'/resume'">Resume</a></li>
-    <li><a [routerLink]="'/timeline'">Timeline</a></li>
-  </ul>
-</nav>
+<div class="root">
+  <app-header id="top"></app-header>
+  <div class="content">
+    <div class="scroll-arrow" (click)="ui.scrollToElement('vision')">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>
+    </div>
+    <home-vision id="vision"></home-vision>
+    <home-work id="work"></home-work>
+    <home-articles id="articles"></home-articles>
+    <home-links id="links"></home-links>
+    <home-contact id="contact"></home-contact>
+  </div>
+  <app-footer></app-footer>
+</div>

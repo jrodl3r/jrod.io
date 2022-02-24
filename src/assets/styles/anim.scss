@@ -1,0 +1,60 @@
+$trx-default: all .25s ease-in-out;
+$logo-opacity: .6;
+$logo-pulse: .9;
+$scroll-arrow-top: -30px;
+
+
+@keyframes fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes splash-gradient {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+// @keyframes splash-flicker {
+// 	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: .6; }
+// 	20%, 24%, 55% { opacity: .5; }
+// }
+
+@keyframes logo-pulse {
+	0% { opacity: $logo-opacity; }
+	10% { opacity: $logo-pulse; }
+	20% { opacity: $logo-opacity; }
+	30% { opacity: $logo-pulse; }
+	40% { opacity: $logo-opacity; }
+	50% { opacity: $logo-pulse; }
+	60% { opacity: $logo-opacity; }
+	70% { opacity: $logo-pulse; }
+	80% { opacity: $logo-opacity; }
+	90% { opacity: $logo-pulse; }
+	100% { opacity: $logo-opacity; }
+}
+
+@keyframes logo-fade-in {
+	0% { opacity: 0; }
+	100% { opacity: $logo-opacity; }
+}
+
+@keyframes logo-slide-up {
+	0% { top: 200px; }
+	100% { top: 0; }
+}
+
+@keyframes scroll-arrow-bounce {
+	0% { top: $scroll-arrow-top; }
+	45% { top: $scroll-arrow-top; }
+	50% { top: $scroll-arrow-top - 5px; }
+	55% { top: $scroll-arrow-top; }
+	60% { top: $scroll-arrow-top - 5px; }
+	65% { top: $scroll-arrow-top; }
+	100% { top: $scroll-arrow-top; }
+}
+
+@keyframes scroll-arrow-fade-in {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}

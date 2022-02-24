@@ -1,0 +1,48 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/anim.scss';
+
+.content {
+  position: relative;
+  background: #FFF;
+  box-shadow: inset 0px 10px 15px -10px rgba(0,0,0, .4);
+
+  & > * {
+    opacity: 0;
+    animation: fade-in ease-in .5s .5s 1 forwards;
+  }
+
+  #vision { border-top: 1px solid #DDD; }
+
+  #contact {
+    padding-bottom: 40px;
+    border-bottom: 1px solid #DDD;
+    box-shadow: inset 0px -10px 15px -10px rgba(0,0,0, .4);
+  }
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: $scroll-arrow-top;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer;
+  animation:
+    scroll-arrow-fade-in ease-in .5s .65s 1 forwards,
+    scroll-arrow-bounce ease-in-out 4s 2s infinite !important;
+
+  svg {
+    width: 14px;
+    path { fill: rgba(255,255,255, .25); }
+
+    @media (min-width: $mobile-md-screen) {
+      width: 17px;
+    }
+  }
+
+  @media (min-width: $tablet-lg-screen) {
+    display: none;
+  }
+
+}

@@ -2,16 +2,30 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ArticlesComponent } from './home/articles/articles.component';
+import { ContactComponent } from './home/contact/contact.component';
+import { FooterComponent } from './nav/footer/footer.component';
+import { HeaderComponent } from './nav/header/header.component';
+import { HeaderSmallComponent } from './nav/header-small/header-small.component';
 import { HomeComponent } from './home/home.component';
+import { LinksComponent } from './home/links/links.component';
 import { ResumeComponent } from './resume/resume.component';
-import { TimelineComponent } from './timeline/timeline.component';
+import { VisionComponent } from './home/vision/vision.component';
+import { WorkComponent } from './home/work/work.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ArticlesComponent,
+    FooterComponent,
+    HeaderComponent,
+    HeaderSmallComponent,
     HomeComponent,
+    ContactComponent,
+    LinksComponent,
     ResumeComponent,
-    TimelineComponent
+    VisionComponent,
+    WorkComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
