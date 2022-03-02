@@ -8,7 +8,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Build
 
-Run `ng build` to build the project for production. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project for production. The compiled files will be stored in `dist/jrod-v4/browser`.
+
+## Build (SSR)
+
+Run `ng build:ssr` to build the server files necessary for server-side rendering. The compiled files will be stored in `dist/jrod-v4/server`.
 
 ## Run (Development)
 
@@ -18,13 +22,13 @@ Run `npm run start:dev` for a local development server and navigate to `http://l
 
 Run `npm run start:prod` for a local production server and navigate to `http://localhost:4300/`. The app will automatically reload if you make changes to any of the source files.
 
-## Production (Google Cloud Platform)
+## Run (Production w/ SSR)
 
-Before deployment you must login to Google Cloud by running `gcloud auth login`.
+Run `npm run start:ssr` for a local production server with server-side rendering and navigate to `http://localhost:4200/`. The app will automatically reload if you make changes to any of the source files.
 
 ## Deploy (Production)
 
-Run `npm run release` to deploy to the live production server.
+Run `npm run release` to deploy to the live production server. Before deployment you must login to Google Cloud by running `gcloud auth login`.
 
 ## Code Generation
 
