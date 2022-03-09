@@ -1,0 +1,77 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/animation.scss';
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: #777;
+    transition: color $trx-default;
+
+    &:hover {
+      color: #222;
+
+      svg path { fill: #222; }
+    }
+
+    &.linkedin:hover {
+      color: #007BB6;
+
+      svg path { fill: #007BB6; }
+    }
+
+    &.resume:hover {
+      color: $blue-color;
+
+      svg path { fill: $blue-color; }
+    }
+
+    &.email:hover {
+      color: $magenta-color;
+
+      svg path { fill: $magenta-color; }
+    }
+  }
+
+  svg {
+    max-width: 34px;
+    height: 34px;
+    margin-right: 16px;
+
+    path {
+      transition: $trx-default;
+      fill: #777;
+    }
+  }
+
+  span {
+    min-width: 90px;
+    font-size: 20px;
+  }
+
+  @media (min-width: $tablet-md-screen) {
+    a {
+      padding-left: 0;
+      // padding-bottom: 22px;
+      justify-content: initial;
+    }
+
+    // svg {
+    //   max-width: 36px;
+    //   height: 36px;
+    //   margin-right: 18px;
+    // }
+
+    // span { font-size: 22px; }
+  }
+}

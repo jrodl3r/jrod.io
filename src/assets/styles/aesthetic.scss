@@ -23,7 +23,7 @@ h2 {
   }
 }
 
-p {
+p, ul {
   color: #777;
   font-size: 14px;
   font-weight: 300;
@@ -53,4 +53,11 @@ p {
     font-size: 18px;
     line-height: 34px;
   }
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+
+  &:visited { color: #222; }
 }
