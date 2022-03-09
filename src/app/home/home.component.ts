@@ -7,9 +7,12 @@ import { UiService } from '../_services/ui.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  isLoaded: Boolean = false;
 
   constructor(public ui: UiService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    setTimeout(() => { this.isLoaded = true; }, 1400);
+  }
 
 }

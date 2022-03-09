@@ -1,5 +1,5 @@
 @import 'src/assets/styles/vars.scss';
-@import 'src/assets/styles/anim.scss';
+@import 'src/assets/styles/animation.scss';
 
 footer {
   z-index: -1;
@@ -15,42 +15,44 @@ footer {
 	animation:
     fade-in ease-in .5s .1s 1 forwards,
     splash-gradient ease 10s infinite;
-}
 
-.overlay, .vignette {
-  z-index: -1;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: $trx-default;
-}
+  .overlay, .vignette {
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: $trx-default;
+  }
 
-.overlay {
-  background: url(/assets/img/header/header-bg.png) center center repeat;
-  background-size: 42px;
-  opacity: .6;
-}
+  .overlay {
+    background: url(/assets/img/header/header-bg.png) center center repeat;
+    background-size: 42px;
+    opacity: .6;
+  }
 
-.vignette {
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, #000 80%);
-}
+  .vignette {
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, #000 80%);
+  }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-
-  svg {
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     width: 160px;
-    margin-top: -5px;
-    opacity: 0;
-    animation:
-      logo-fade-in ease-in .65s .25s 1 forwards,
-      logo-pulse ease-in-out 30s 5s infinite;
+    margin: -5px auto 0;
+    transition: $trx-default;
 
     @media (min-width: $tablet-md-screen) {
       width: 180px;
+    }
+
+    svg {
+      width: 100%;
+      opacity: 0;
+      animation:
+        logo-fade-in ease-in .65s .25s 1 forwards,
+        logo-pulse ease-in-out 30s 5s infinite;
     }
   }
 }

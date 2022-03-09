@@ -7,18 +7,23 @@ body {
 }
 
 h2 {
-  margin: 50px 0 40px;
   font-size: 36px;
   font-weight: 300;
   text-align: center;
   background: -webkit-linear-gradient(#AAA, #000);
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  @media (min-width: $tablet-md-screen) {
+    text-align: left;
+  }
+
+  @media (min-width: $tablet-lg-screen) {
+    font-size: 42px;
+  }
 }
 
 p {
-  width: 85%;
-  margin: 0 auto 20px;
   color: #777;
   font-size: 14px;
   font-weight: 300;
@@ -30,8 +35,22 @@ p {
     line-height: 28px;
   }
 
-  @media (min-width: $mobile-lg-screen) {
-    font-size: 17px;
+  @media (min-width: $tablet-sm-screen) {
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  @media (min-width: $content-max-width-sm) {
+    font-size: 14px;
+  }
+
+  @media (min-width: $tablet-md-screen) {
+    font-size: 16px;
     line-height: 30px;
+  }
+
+  @media (min-width: $tablet-lg-screen) {
+    font-size: 18px;
+    line-height: 34px;
   }
 }

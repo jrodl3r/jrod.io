@@ -1,39 +1,78 @@
 @import 'src/assets/styles/vars.scss';
-@import 'src/assets/styles/anim.scss';
+@import 'src/assets/styles/animation.scss';
 
 .content {
   position: relative;
   background: #FFF;
-  box-shadow: inset 0px 10px 15px -10px rgba(0,0,0, .4);
+  border-top: 1px solid #FCFCFC;
+  border-bottom: 1px solid #FCFCFC;
+  box-shadow:
+    inset 0px 10px 15px -10px rgba(0,0,0, .2),
+    inset 0px -10px 15px -10px rgba(0,0,0, .2);
 
-  & > * {
+  & > .inner {
+    width: 86%;
+    margin: 0 auto;
     opacity: 0;
     animation: fade-in ease-in .5s .5s 1 forwards;
-  }
 
-  #vision { border-top: 1px solid #DDD; }
+    .split {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
 
-  #contact {
-    padding-bottom: 40px;
-    border-bottom: 1px solid #DDD;
-    box-shadow: inset 0px -10px 15px -10px rgba(0,0,0, .4);
+    @media (min-width: $tablet-sm-screen) {
+      max-width: $content-max-width-sm - 70px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      max-width: $content-max-width-md - 70px;
+
+      .split {
+        flex-direction: row;
+        margin-bottom: 80px;
+
+        #links, #contact {
+          width: 100%;
+          margin-left: 20px;
+        }
+
+        #links {
+          margin-right: 20px;
+          margin-left: 0;
+        }
+      }
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      max-width: $content-max-width-lg - 70px;
+    }
+
+    @media (min-width: $tablet-lg-screen) {
+      padding-top: 20px;
+      .split { margin-bottom: 100px; }
+    }
   }
 }
 
 .scroll-arrow {
   position: absolute;
   top: $scroll-arrow-top;
+  left: 50%;
   display: flex;
   justify-content: center;
-  width: 100%;
+  transform: translateX(-50%);
   opacity: 0;
   cursor: pointer;
   animation:
-    scroll-arrow-fade-in ease-in .5s .65s 1 forwards,
+    scroll-arrow-pulse ease-in 12s .65s infinite,
     scroll-arrow-bounce ease-in-out 4s 2s infinite !important;
 
   svg {
     width: 14px;
+
     path { fill: rgba(255,255,255, .25); }
 
     @media (min-width: $mobile-md-screen) {
@@ -44,5 +83,4 @@
   @media (min-width: $tablet-lg-screen) {
     display: none;
   }
-
 }

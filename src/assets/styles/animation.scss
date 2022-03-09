@@ -15,11 +15,6 @@ $scroll-arrow-top: -30px;
 	100% { background-position: 0% 50%; }
 }
 
-// @keyframes splash-flicker {
-// 	0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: .6; }
-// 	20%, 24%, 55% { opacity: .5; }
-// }
-
 @keyframes logo-pulse {
 	0% { opacity: $logo-opacity; }
 	10% { opacity: $logo-pulse; }
@@ -44,6 +39,11 @@ $scroll-arrow-top: -30px;
 	100% { top: 0; }
 }
 
+@keyframes logo-slide-up-landscape {
+	0% { top: 100px; }
+	100% { top: -72px; }
+}
+
 @keyframes scroll-arrow-bounce {
 	0% { top: $scroll-arrow-top; }
 	45% { top: $scroll-arrow-top; }
@@ -54,7 +54,10 @@ $scroll-arrow-top: -30px;
 	100% { top: $scroll-arrow-top; }
 }
 
-@keyframes scroll-arrow-fade-in {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
+@keyframes scroll-arrow-pulse {
+	0% { opacity: .5; }
+	25% { opacity: 1; }
+	50% { opacity: .5; }
+	75% { opacity: 1; }
+	100% { opacity: .5; }
 }

@@ -1,5 +1,5 @@
 @import 'src/assets/styles/vars.scss';
-@import 'src/assets/styles/anim.scss';
+@import 'src/assets/styles/animation.scss';
 
 header {
   z-index: -1;
@@ -11,7 +11,7 @@ header {
   opacity: 0;
 	animation:
     fade-in ease-in .5s .1s 1 forwards,
-    splash-gradient ease 10s infinite;
+    splash-gradient ease-in-out 10s infinite;
 
   .overlay, .vignette {
     z-index: -1;
@@ -24,19 +24,22 @@ header {
   .overlay {
     background: url(/assets/img/header/header-bg.png) center center repeat;
     background-size: 42px;
-    opacity: .6;
-    // animation: splash-flicker 3s ease infinite;
+    opacity: .65;
 
     @media (min-width: $mobile-md-screen) {
       background-size: 48px;
     }
 
+    @media (min-width: $tablet-sm-screen) {
+      background-size: 42px;
+    }
+
     @media (min-width: $tablet-md-screen) {
-      background-size: 54px;
+      background-size: 48px;
     }
 
     @media (min-width: $tablet-lg-screen) {
-      background-size: 56px;
+      background-size: 52px;
     }
   }
 
@@ -61,7 +64,22 @@ header {
     align-items: center;
     height: 100%;
     width: 100%;
+    max-width: $content-max-width-sm;
+    margin: 0 auto;
     padding-bottom: 20px;
+
+    @media (min-width: $tablet-sm-screen) {
+      align-items: flex-start;
+      padding-bottom: 0;
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      max-width: 94%;
+    }
+
+    @media (min-width: $tablet-lg-screen) {
+      max-width: $content-max-width-lg;
+    }
   }
 
   .splash-logo {
@@ -74,19 +92,55 @@ header {
 
     .splash-logo-svg {
       position: absolute;
-      bottom: -200px;
       width: 85%;
       opacity: 0;
       animation:
         logo-fade-in ease-in .65s .25s 1 forwards,
-        logo-slide-up ease-in .75s 0s 1 forwards,
-        logo-pulse ease-in-out 30s 5s infinite;
+        logo-slide-up ease-in .7s 0s 1 forwards,
+        logo-pulse ease-in-out 30s .9s infinite;
+
+      ::ng-deep .loaded & {
+        top: 0 !important;
+        opacity: $logo-opacity;
+        animation: logo-pulse ease-in-out 30s .9s infinite !important;
+
+        @media (min-width: $tablet-sm-screen) {
+          top: -72px !important;
+          animation: logo-pulse ease-in-out 30s .9s infinite !important;
+        }
+      }
     }
 
     .splash-logo-svg-placeholder {
       z-index: 1;
       width: 85%;
       opacity: 0;
+    }
+
+    @media (min-width: $tablet-sm-screen) {
+      position: absolute;
+      right: 30px;
+      width: 45%;
+
+      .splash-logo-svg {
+        top: 0;
+        width: 100%;
+        animation:
+          logo-fade-in ease-in .65s .25s 1 forwards,
+          logo-slide-up-landscape ease-in .7s 0s 1 forwards,
+          logo-pulse ease-in-out 30s .9s infinite;
+      }
+
+      .splash-logo-svg-placeholder { display: none; }
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      width: 49%;
+      top: 190px;
+    }
+
+    @media (min-width: $tablet-lg-screen) {
+      max-width: 460px;
     }
   }
 
@@ -101,14 +155,10 @@ header {
     margin-top: 30px;
     margin-bottom: 40px;
     opacity: 0;
-    transition: $trx-default;
     animation: fade-in ease-in .65s .5s 1 forwards;
   }
 
   .splash-title {
-    @media (min-width: $mobile-md-screen) {
-      margin-bottom: 50px;
-    }
 
     .splash-title-svg {
       width: 80%;
@@ -116,27 +166,84 @@ header {
 
       .title-path { opacity: .45; }
     }
+
+    @media (min-width: $mobile-md-screen) {
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: $tablet-sm-screen) {
+      width: 46%;
+      margin-top: 4%;
+      margin-bottom: 0;
+      margin-left: 30px;
+
+      .splash-title-svg {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      max-width: 420px;
+      margin-top: 5%;
+    }
   }
 
   .splash-text {
     width: 85%;
-    max-width: 360px;
+    max-width: 240px;
     margin-bottom: 0;
     animation: fade-in ease-in .65s .5s 1 forwards;
 
+    p {
+      position: relative;
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #AAA;
+      text-shadow: 0 0 5px #000;
+      text-align: center;
+
+      &:before {
+        content: attr(data-text);
+        position: absolute;
+        display: block;
+        height: 100%;
+      }
+    }
+
     @media (min-width: $mobile-md-screen) {
+      max-width: 270px;
       margin-top: 40px;
       margin-bottom: 10px;
     }
 
-    p {
-      width: 100%;
-      margin-top: 0;
-      margin-bottom: 20px;
-      color: #999;
-      text-shadow: 0 0 5px #000;
-      text-align: center;
+    @media (min-width: $mobile-lg-screen) {
+      max-width: 280px;
+    }
+
+    @media (min-width: $tablet-sm-screen) {
+      width: 38%;
+      margin-top: 5%;
+      margin-bottom: 4%;
+      margin-left: 38px;
+
+      p {
+        margin-bottom: 8%;
+        text-align: justify;
+      }
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      width: 37%;
+      max-width: 300px;
+      margin-top: 6%;
+      margin-bottom: 6%;
+      margin-left: 42px;
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      max-width: 360px;
     }
   }
-
 }
