@@ -13,6 +13,7 @@ h2 {
   background: -webkit-linear-gradient(#AAA, #000);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  user-select: none;
 
   @media (min-width: $tablet-md-screen) {
     text-align: left;
@@ -24,11 +25,12 @@ h2 {
 }
 
 p, ul {
-  color: #777;
+  color: #000;
   font-size: 14px;
   font-weight: 300;
-  line-height: 24px;
+  line-height: 25px;
   text-align: justify;
+  user-select: none;
 
   @media (min-width: $mobile-md-screen) {
     font-size: 16px;

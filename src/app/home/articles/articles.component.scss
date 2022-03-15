@@ -1,0 +1,77 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/animation.scss';
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+
+  li {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+
+    &:last-of-type { margin-bottom: 0; }
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 18px;
+      transition: color $trx-default;
+
+      &:hover {
+        color: #777;
+
+        .date { background: linear-gradient(0deg, #DDD 0%, #CCC 100%); }
+        .inner { background: #FFF linear-gradient(0deg, #FFF 0%, #EEE 100%); }
+      }
+
+      @media (min-width: $tablet-md-screen) {
+        font-size: 20px;
+      }
+    }
+
+    .date {
+      display: flex;
+      min-height: 40px;
+      min-width: 40px;
+      max-width: 40px;
+      margin-top: 6px;
+      margin-right: 16px;
+      margin-bottom: auto;
+      padding-bottom: 5px;
+      background: linear-gradient(0deg, #EEE 0%, #BBB 100%);
+      border-radius: 6px;
+      transition: $trx-default;
+
+      .inner {
+        display: flex;
+        flex-direction: column;
+        height: 38px;
+        width: 38px;
+        margin-top: 1px;
+        margin-left: 1px;
+        padding-bottom: 2px;
+        color: #000;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+        background: #FFF linear-gradient(0deg, #FFF 0%, #F6F6F6 100%);
+        border-radius: 6px;
+        transition: $trx-default;
+      }
+    }
+
+    .month { text-transform: uppercase; }
+
+    .day {
+      font-size: 11px;
+      line-height: 12px;
+    }
+  }
+}
