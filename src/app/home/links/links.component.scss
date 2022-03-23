@@ -4,7 +4,7 @@
 ul {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: -10px 0 0;
   padding: 0;
   list-style: none;
 
@@ -13,31 +13,27 @@ ul {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 54px;
     padding-left: 20px;
-    padding-bottom: 20px;
     transition: color $trx-default;
 
     &:hover {
       color: #777;
-
       svg path { fill: #777; }
     }
 
     &.linkedin:hover {
       color: #007BB6;
-
       svg path { fill: #007BB6; }
     }
 
     &.resume:hover {
       color: $blue-color;
-
       svg path { fill: $blue-color; }
     }
 
     &.email:hover {
       color: $magenta-color;
-
       svg path { fill: $magenta-color; }
     }
   }
@@ -63,13 +59,5 @@ ul {
       padding-left: 0;
       justify-content: initial;
     }
-
-    // svg {
-    //   max-width: 36px;
-    //   height: 36px;
-    //   margin-right: 18px;
-    // }
-
-    // span { font-size: 22px; }
   }
 }

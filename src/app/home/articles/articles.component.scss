@@ -4,7 +4,7 @@
 ul {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: -10px 0 0;
   padding: 0;
   list-style: none;
   text-align: left;
@@ -26,8 +26,9 @@ ul {
       &:hover {
         color: #777;
 
-        .date { background: linear-gradient(0deg, #DDD 0%, #CCC 100%); }
-        .inner { background: #FFF linear-gradient(0deg, #FFF 0%, #EEE 100%); }
+        .inner { opacity: .9; }
+        // .date { background: #FFF linear-gradient(0deg, #DDD 0%, #CCC 100%); }
+        // .inner { background: #FFF linear-gradient(0deg, #FFF 0%, #F1F1F1 100%); }
       }
 
       @media (min-width: $tablet-md-screen) {
@@ -44,7 +45,7 @@ ul {
       margin-right: 16px;
       margin-bottom: auto;
       padding-bottom: 5px;
-      background: linear-gradient(0deg, #EEE 0%, #BBB 100%);
+      background: #FFF linear-gradient(0deg, #EEE 0%, #BBB 100%);
       border-radius: 6px;
       transition: $trx-default;
 
@@ -61,7 +62,7 @@ ul {
         font-weight: 400;
         line-height: 24px;
         text-align: center;
-        background: #FFF linear-gradient(0deg, #FFF 0%, #F6F6F6 100%);
+        background: #FFF linear-gradient(0deg, #FFF 0%, #FAFAFA 100%);
         border-radius: 6px;
         transition: $trx-default;
       }
@@ -71,6 +72,7 @@ ul {
 
     .day {
       font-size: 11px;
+      font-weight: 300;
       line-height: 12px;
     }
   }
