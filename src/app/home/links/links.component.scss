@@ -1,5 +1,4 @@
 @import 'src/assets/styles/vars.scss';
-@import 'src/assets/styles/animation.scss';
 
 ul {
   display: flex;
@@ -15,7 +14,6 @@ ul {
     align-items: center;
     height: 54px;
     padding-left: 20px;
-    transition: color $trx-default;
 
     &:hover {
       color: #777;
@@ -43,10 +41,7 @@ ul {
     height: 34px;
     margin-right: 16px;
 
-    path {
-      transition: $trx-default;
-      fill: #000;
-    }
+    path { fill: #000; }
   }
 
   span {

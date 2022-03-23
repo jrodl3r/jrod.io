@@ -40,7 +40,6 @@ input, textarea {
   border: 0;
   border-radius: 6px;
   background: linear-gradient(0deg, #FFF 0%, #FAFAFA 100%);
-  transition: $trx-default;
   caret-color: #CCC;
   outline: none;
 
@@ -53,8 +52,12 @@ input, textarea {
   &:hover, &:focus, &:active { background: linear-gradient(0deg, #FFF 0%, #F8F8F8 100%); }
 
   &.ng-valid { border-left: 5px solid $green-color; }
-
   &.ng-invalid:not(.ng-untouched, .ng-pristine) { border-left: 5px solid $red-color; }
+
+  &.ng-valid, &.ng-invalid:not(.ng-untouched, .ng-pristine) {
+    margin-left: -1px;
+    transition: $trx-default;
+  }
 }
 
 textarea {
@@ -70,12 +73,15 @@ textarea {
   align-items: center;
   width: 100%;
 
+  .notify { padding-top: 16px; }
+
   @media (min-width: $tablet-md-screen) {
     flex-direction: row;
 
     .notify {
       margin-right: 0;
       margin-left: auto;
+      padding-top: 0;
     }
   }
 }
@@ -87,7 +93,6 @@ button {
   font-weight: bold;
   border: 0;
   border-radius: 6px;
-  transition: $trx-default;
   user-select: none;
 
   &:disabled { background: #EEE; }
@@ -113,7 +118,6 @@ button {
 .alert {
   height: auto;
   padding: 8px 12px;
-  margin-top: 16px;
   color: #E38F8D;
   font-size: 13px;
   font-weight: bold;
@@ -196,13 +200,13 @@ button {
 
   input {
     height: 30px;
-    width: 38px;
     width: 40px;
     padding: 0 0 0 12px;
     background: linear-gradient(0deg, #FFF 0%, #FAFAFA 100%);
     box-sizing: border-box;
 
     &:hover, &:focus, &:active { background: linear-gradient(0deg, #FFF 0%, #F8F8F8 100%); }
+    &.ng-valid { width: 42px; }
   }
 
   .captcha-label {
@@ -211,9 +215,4 @@ button {
     font-size: 14px;
     font-weight: 500;
   }
-}
-
-.load-icons {
-  position: absolute;
-  color: #FFF;
 }
