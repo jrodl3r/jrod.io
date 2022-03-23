@@ -34,6 +34,10 @@ Run `npm run release` to deploy to the live production server. Before deployment
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Contact Service (SMTP)
+
+The contact feature utilizes [EmailJS](https://www.emailjs.com) to handle outgoing emails.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

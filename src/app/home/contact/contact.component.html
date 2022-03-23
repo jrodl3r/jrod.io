@@ -1,2 +1,103 @@
 <h2>Contact</h2>
-<div class="content-block"><span>...</span></div>
+<div>
+  <form (ngSubmit)="submit($event, contactForm)" #contactForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input required
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Name"
+        maxlength="30"
+        [(ngModel)]="model.name"
+        (keydown)="clear()"
+        #name="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input required
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        [pattern]="emailRx"
+        placeholder="Email"
+        minlength="6"
+        maxlength="50"
+        [(ngModel)]="model.email"
+        (keydown)="clear()"
+        #email="ngModel">
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea required
+        type="text"
+        class="form-control"
+        id="message"
+        name="message"
+        placeholder="Message"
+        minlength="20"
+        maxlength="200"
+        [(ngModel)]="model.message"
+        (keydown)="clear()"
+        #message="ngModel"></textarea>
+    </div>
+    <div class="form-bottom">
+      <button
+        type="submit"
+        [class.inactive]="isSending"
+        [disabled]="!contactForm.form.valid || !isHuman">
+        <span *ngIf="!isSending">Send</span>
+        <mat-icon *ngIf="isSending">sync</mat-icon>
+      </button>
+      <div class="notify">
+        <div
+          class="alert warn"
+          [class.inactive]="name.valid || name.pristine || name.untouched">
+          Name is required
+        </div>
+        <div
+          class="alert warn"
+          [class.inactive]="name.dirty && name.invalid || email.valid || email.pristine || email.untouched">
+          Email is required
+        </div>
+        <div
+          class="alert warn"
+          [class.inactive]="name.dirty && name.invalid || email.dirty && email.invalid || message.valid || message.pristine || message.untouched">
+          Message is required
+        </div>
+        <div
+          class="alert success" *ngIf="isSent && name.untouched && email.untouched && message.untouched">
+          Your message was sent <mat-icon>thumb_up</mat-icon>
+        </div>
+        <div
+          class="alert error" *ngIf="isError && !isSending">
+          <mat-icon>warning_amber</mat-icon> There was an error » Please try again
+        </div>
+        <div
+          class="captcha"
+          [class.active]="name.valid && email.valid && message.valid"
+          [class.inactive]="isHuman"
+          [class.hidden]="isSending || isError">
+          <div class="captcha-label">What is {{ captchaNums[0] }} + {{ captchaNums[1] }}?</div>
+          <div class="captcha-group">
+            <input required
+              type="text"
+              id="captcha"
+              name="captcha"
+              minlength="1"
+              maxlength="1"
+              class="form-control"
+              [class.ng-valid]="isHuman"
+              [disabled]="isHuman"
+              [(ngModel)]="model.captcha"
+              (keyup)="verify($event)"
+              #captcha="ngModel">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <mat-icon class="load-icons">minimize</mat-icon>
+</div>

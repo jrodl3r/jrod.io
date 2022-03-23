@@ -1,0 +1,219 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/animation.scss';
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $tablet-md-screen) {
+    align-items: flex-start;
+  }
+}
+
+.form-group {
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  margin-bottom: 16px;
+  background: linear-gradient(0deg, #EEE 0%, #BBB 100%);
+  border-radius: 6px;
+  transition: $trx-default;
+
+  &:hover { background: linear-gradient(0deg, #EEE 0%, #AAA 100%); }
+
+  @media (min-width: $tablet-md-screen) {
+    max-width: initial;
+  }
+}
+
+label { display: none; }
+
+input, textarea {
+  flex: 1;
+  width: 100%;
+  height: 32px;
+  margin: 1px;
+  padding-top: 3px;
+  padding-left: 10px;
+  border: 0;
+  border-radius: 6px;
+  background: linear-gradient(0deg, #FFF 0%, #FAFAFA 100%);
+  transition: $trx-default;
+  caret-color: #CCC;
+  outline: none;
+
+  &::placeholder {
+    color: #CCC;
+    font-size: 16px;
+    user-select: none;
+  }
+
+  &:hover, &:focus, &:active { background: linear-gradient(0deg, #FFF 0%, #F8F8F8 100%); }
+
+  &.ng-valid { border-left: 5px solid $green-color; }
+
+  &.ng-invalid:not(.ng-untouched, .ng-pristine) { border-left: 5px solid $red-color; }
+}
+
+textarea {
+  height: 86px;
+  padding-top: 8px;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  resize: none;
+}
+
+.form-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  @media (min-width: $tablet-md-screen) {
+    flex-direction: row;
+
+    .notify {
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+button {
+  height: 34px;
+  width: 120px;
+  font-size: 14px;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+  transition: $trx-default;
+  user-select: none;
+
+  &:disabled { background: #EEE; }
+  &.inactive { pointer-events: none; }
+
+  &:not(:disabled) {
+    background: $green-color;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: inset 0 10px 5px 0px rgb(255 255 255 / 40%);
+      text-shadow: 1px 1px 1px rgb(255 255 255 / 60%);
+    }
+  }
+
+  mat-icon {
+    margin-top: 4px;
+    color: #000;
+    animation: loading-spinner 1s infinite linear;
+  }
+}
+
+.alert {
+  height: auto;
+  padding: 8px 12px;
+  margin-top: 16px;
+  color: #E38F8D;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  background: #FDF0F0;
+  border-radius: 6px;
+  user-select: none;
+  transition: opacity $trx-default;
+  opacity: 1;
+  overflow: hidden;
+
+  &.inactive {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+  }
+
+  @media (min-width: $tablet-md-screen) {
+    margin-top: 0;
+    margin-left: 10px;
+    font-size: 11px;
+  }
+}
+
+.success, .error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-icon {
+    height: 21px;
+    margin-top: -1px;
+    margin-left: -6px;
+    margin-bottom: -1px;
+    margin-right: 4px;
+    font-size: 21px;
+  }
+}
+
+.success {
+  color: #1AD3A3;
+  background: #E2FFF8;
+
+  mat-icon {
+    margin-top: -3px;
+    margin-left: 4px;
+    margin-right: -6px;
+    margin-bottom: 0;
+  }
+}
+
+.captcha {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: opacity $trx-default;
+
+  @media (min-width: $tablet-md-screen) {
+    justify-content: flex-end;
+  }
+
+  &.active { display: flex; }
+  &.hidden { display: none; }
+
+  &.inactive {
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  .captcha-group {
+    height: 32px;
+    width: 40px;
+    padding-right: 2px;
+    background: linear-gradient(0deg, #EEE 0%, #BBB 100%);
+    border-radius: 6px;
+
+    &:hover { background: linear-gradient(0deg, #EEE 0%, #AAA 100%); }
+  }
+
+  input {
+    height: 30px;
+    width: 38px;
+    width: 40px;
+    padding: 0 0 0 12px;
+    background: linear-gradient(0deg, #FFF 0%, #FAFAFA 100%);
+    box-sizing: border-box;
+
+    &:hover, &:focus, &:active { background: linear-gradient(0deg, #FFF 0%, #F8F8F8 100%); }
+  }
+
+  .captcha-label {
+    padding-right: 10px;
+    color: #555;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.load-icons {
+  position: absolute;
+  color: #FFF;
+}
