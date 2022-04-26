@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'home-vision',
   templateUrl: './vision.component.html',
   styleUrls: ['./vision.component.scss']
 })
-export class VisionComponent implements OnInit {
+export class VisionComponent {
 
   constructor() { }
-
-  ngOnInit(): void { }
 
 }

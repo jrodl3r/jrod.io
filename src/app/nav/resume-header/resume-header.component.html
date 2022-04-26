@@ -1,0 +1,35 @@
+<header>
+  <div class="inner">
+    <h1>
+      <div class="name">
+        John <span>Rodler</span>
+      </div>
+      <div
+        class="menu-trigger"
+        (click)="ui.toggleMenu($event)">
+        <mat-icon>menu</mat-icon>
+      </div>
+      <div class="menu">
+        <ul>
+          <li (click)="resume.download()">
+            <mat-icon>download</mat-icon>
+            <span class="label">Download</span>
+          </li>
+          <li class="mobile-print" (click)="resume.download()">
+            <mat-icon>print</mat-icon>
+            <span class="label">Print</span>
+          </li>
+          <li class="desktop-print" (click)="resume.print()">
+            <mat-icon>print</mat-icon>
+            <span class="label">Print</span>
+          </li>
+          <li (click)="resume.exit()">
+            <mat-icon>portrait</mat-icon>
+            <span class="label">Portfolio</span>
+          </li>
+        </ul>
+      </div>
+    </h1>
+  </div>
+  <app-ribbon></app-ribbon>
+</header>

@@ -1,0 +1,126 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/animation.scss';
+
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .inner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  @media print {
+    display: block;
+    flex-direction: unset;
+    width: auto;
+    max-width: 890px;
+    padding: 26px 44px 0;
+    margin: 0 auto;
+  }
+}
+
+h1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 92px;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  color: #777;
+  font-size: 26px;
+  font-family: sans-serif-light, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  user-select: none;
+
+  .name {
+    color: #000;
+    margin-right: auto;
+    margin-left: 22px;
+    text-decoration: none;
+
+    span { font-weight: 600; }
+  }
+
+  .menu-trigger {
+    height: 30px;
+    margin-right: 28px;
+    margin-left: auto;
+    color: #000;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &:hover { color: #999; }
+    mat-icon { font-size: 30px; }
+  }
+
+  .menu {
+    display: none;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin-right: 30px !important;
+      transition: $trx-default;
+
+      li {
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        color: #000;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+        &:hover {
+          color: #999;
+          cursor: pointer;
+        }
+
+        mat-icon { margin-right: 10px; }
+
+        .label {
+          font-size: 14px;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+
+        &.mobile-print { display: flex; }
+        &.desktop-print { display: none; }
+
+        @media (min-width: $tablet-lg-screen) {
+          &.mobile-print { display: none; }
+          &.desktop-print { display: flex; }
+        }
+      }
+    }
+  }
+
+  @media (min-width: $tablet-sm-screen) {
+    .name { margin-left: 56px; }
+    .menu-trigger { margin-right: 58px; }
+  }
+
+  @media (min-width: $resume-sm-screen) {
+    .name { margin-left: 44px; }
+    .menu-trigger { margin-right: 46px; }
+  }
+
+  @media (min-width: $resume-lg-screen) {
+    height: 84px;
+    margin-top: 16px;
+    font-size: 28px;
+
+    .menu-trigger { display: none; }
+    .menu { display: flex; }
+  }
+
+  @media print {
+    .name { margin-left: 0; }
+    .menu, .menu-trigger { display: none; }
+  }
+}
