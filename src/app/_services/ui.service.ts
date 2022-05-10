@@ -4,8 +4,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UiService {
+  isMenuActive: Boolean = false;
 
-  constructor() { }
+  closeMenu() {
+    this.isMenuActive = false;
+  }
+
+  toggleMenu(e: Event) {
+    e.stopPropagation();
+    this.isMenuActive = !this.isMenuActive;
+  }
 
   scrollToElement(id: string) {
     const el = document.getElementById(id);

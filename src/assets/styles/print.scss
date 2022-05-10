@@ -1,0 +1,7 @@
+@media print {
+  @page {
+    size: 25cm 35.7cm;
+    margin: 5mm 5mm 0;
+  }
+  body { -webkit-print-color-adjust: exact !important; }
+}

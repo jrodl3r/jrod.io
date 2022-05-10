@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderSmallComponent } from './header-small.component';
+import { ResumeMenuComponent } from './resume-menu.component';
 
-describe('HeaderSmallComponent', () => {
-  let component: HeaderSmallComponent;
-  let fixture: ComponentFixture<HeaderSmallComponent>;
+describe('ResumeMenuComponent', () => {
+  let component: ResumeMenuComponent;
+  let fixture: ComponentFixture<ResumeMenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderSmallComponent ]
+      declarations: [ ResumeMenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderSmallComponent);
+    fixture = TestBed.createComponent(ResumeMenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

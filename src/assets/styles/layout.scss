@@ -24,6 +24,21 @@ body {
   padding: 0;
 }
 
+h2 {
+  margin: 60px 0 40px;
+
+  @media (min-width: $tablet-md-screen) {
+    margin-top: 65px;
+  }
+}
+
+p {
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+
+/* TEMP */
 .content-block {
   display: flex;
   justify-content: center;
@@ -41,16 +56,4 @@ body {
     line-height: 0;
   }
 }
-
-h2 {
-  margin: 60px 0 40px;
-
-  @media (min-width: $tablet-md-screen) {
-    margin-top: 65px;
-  }
-}
-
-p {
-  width: 100%;
-  margin: 0 0 20px;
-}
+/* END TEMP */

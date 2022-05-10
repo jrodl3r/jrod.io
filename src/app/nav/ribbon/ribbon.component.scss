@@ -1,0 +1,55 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/animation.scss';
+
+.ribbon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 68px;
+  background: linear-gradient(-45deg, $orange-color, $pink-color, $blue-color, $purple-color);
+	background-size: 400% 400%;
+  opacity: 1;
+	animation:
+    splash-gradient ease 10s infinite;
+
+  .overlay, .vignette {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: $trx-default;
+  }
+
+  .overlay {
+    background: url(/assets/img/header/header-bg.png) center center repeat;
+    background-size: 36px;
+    opacity: .6;
+  }
+
+  .vignette { background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, #000 80%); }
+
+  .logo {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 134px;
+    margin: -3px auto 0;
+    transition: $trx-default;
+
+    svg {
+      width: 100%;
+      overflow: visible;
+    }
+  }
+
+  @media print {
+    height: 0;
+    margin: -22px auto 0;
+    border-top: 2px solid #000;
+
+    .overlay, .vignette, .logo { display: none; }
+  }
+}

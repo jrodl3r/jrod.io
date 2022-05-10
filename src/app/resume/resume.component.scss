@@ -1,0 +1,324 @@
+@import 'src/assets/styles/vars.scss';
+
+.content {
+  display: flex;
+  position: relative;
+  background: #FFF;
+  border-top: 1px solid #FCFCFC;
+  border-bottom: 1px solid #FCFCFC;
+  box-shadow:
+    inset 0px 10px 15px -10px rgba(0,0,0, .2),
+    inset 0px -10px 15px -10px rgba(0,0,0, .2);
+
+  &.hide { display: none; }
+
+  .inner {
+    max-width: 890px;
+    margin: 0 auto;
+    padding: 24px;
+
+    @media (min-width: $tablet-sm-screen) {
+      padding: 26px 56px 0;
+    }
+
+    @media (min-width: $resume-sm-screen) {
+      padding: 26px 44px 0;
+    }
+  }
+
+  @media print {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+
+  .panel { width: 100%; }
+
+  .panel.split {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .left, .right { width: 100%; }
+  }
+
+  @media print, (min-width: $resume-sm-screen) {
+    .panel.split {
+      flex-direction: row;
+
+      .left {
+        width: 90%;
+        margin-right: 26px;
+      }
+    }
+  }
+
+  @media print, (min-width: $resume-lg-screen) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &.experience {
+    position: relative;
+
+    .panel > div:nth-of-type(2) {
+      @media print { padding-top: 100px; }
+    }
+  }
+}
+
+h2, h3 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 26px;
+  margin-bottom: 16px;
+  user-select: none;
+
+  .label {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    .right {
+      margin: 6px 0;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    @media print {
+      .title, .left, .right {
+        background: none !important;
+        -webkit-text-fill-color: unset !important;
+        -webkit-background-clip: unset !important;
+      }
+    }
+  }
+
+  .accent {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: 3px;
+    background: #222;
+
+    @media print { background: #000 !important; }
+  }
+
+  @media print, (min-width: $resume-lg-screen) {
+    margin-top: 48px;
+
+    .label {
+      flex-direction: row;
+      align-items: center;
+      font-size: 16px;
+
+      .title, .left, .right {
+        background: -webkit-linear-gradient(left, $purple-color 50%, #222);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+
+      .left {
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .right {
+        margin: 0 0 0 auto;
+        font-size: 15px;
+        font-weight: 600;
+        background: none;
+        -webkit-text-fill-color: #000;
+      }
+    }
+
+    .accent { background: -webkit-linear-gradient(left, $purple-color 30%, #222); }
+  }
+}
+
+.summary h2, .skills h2 {
+  display: none;
+
+  @media print, (min-width: $resume-lg-screen) {
+    display: flex;
+  }
+}
+
+@media (min-width: $resume-sm-screen) {
+  .section .panel.split .right .title {
+    background: none;
+    -webkit-text-fill-color: #222;
+  }
+
+  .section .panel.split .right .accent {
+    background: #222;
+  }
+}
+
+.panel h3 {
+  margin-bottom: 8px;
+
+  .label span.divider {
+    padding: 0 4px;
+    color: #AAA;
+  }
+}
+
+h2 {
+  margin-top: 48px;
+  margin-bottom: 0;
+
+  &.title { display: none; }
+
+  &.cont-label {
+    position: absolute;
+    top: 626px;
+    left: 0;
+  }
+
+  .label {
+    font-size: 17px;
+
+    .title {
+      background: -webkit-linear-gradient(left, #222 10%, $purple-color 50%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+  }
+
+  .accent {
+    margin-bottom: 16px;
+    background: -webkit-linear-gradient(left, #222 10%, $purple-color);
+  }
+
+  @media print, (min-width: $resume-lg-screen) {
+    width: 140px;
+    min-width: 140px;
+    margin-top: 48px;
+    margin-right: 26px;
+
+    .label {
+      font-size: 16px;
+    }
+  }
+}
+
+h3, p, ul {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+h3.bump {
+  margin-top: 36px;
+
+  @media print { margin-top: 26px; }
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #222;
+  font-size: 15px;
+  user-select: none;
+
+  @media (min-width: $resume-lg-screen) {
+    font-size: 16px;
+  }
+}
+
+h5 {
+  margin-top: 6px;
+  margin-bottom: 16px;
+  color: #777;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: italic;
+  user-select: none;
+
+  @media (min-width: $resume-lg-screen) {
+    font-size: 14px;
+  }
+}
+
+p, ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0 0 16px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 28px;
+  user-select: none;
+
+  @media (min-width: $resume-lg-screen) {
+    font-size: 15px;
+    line-height: 30px;
+  }
+}
+
+p {
+  padding-bottom: 0;
+  text-align: justify;
+}
+
+ul {
+  margin-left: 16px;
+  padding-left: 0;
+  list-style: circle;
+
+  &.tools span {
+    padding: 0 2px;
+    color: #AAA;
+  }
+
+  @media (min-width: $resume-lg-screen) {
+    padding-bottom: 0;
+  }
+}
+
+.skills .right ul { padding-bottom: 0; }
+
+footer {
+  margin: 60px 0 20px;
+  padding-top: 10px;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  border-top: 2px solid #222;
+  user-select: none;
+
+  span { display: none; }
+
+  a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  @media (min-width: $resume-lg-screen) {
+    margin: 80px 0 40px;
+
+    span { display: inline; }
+  }
+
+  @media print {
+    margin-top: 460px;
+    margin-bottom: 0;
+  }
+}
+
+.print-show { display: none !important; }
+.print-hide { display: inline !important; }
+
+@media print {
+  .print-show { display: inline !important; }
+  .print-hide { display: none !important; }
+}

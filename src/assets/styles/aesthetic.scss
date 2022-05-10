@@ -1,65 +1,65 @@
-@import 'src/assets/styles/vars.scss';
-
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   background: #000;
   -webkit-text-size-adjust: 100%;
 }
 
-h2 {
-  font-size: 36px;
-  font-weight: 300;
-  text-align: center;
-  background: -webkit-linear-gradient(#AAA, #000);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  user-select: none;
+.home, .header-menu {
+  h2 {
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    background: -webkit-linear-gradient(#AAA, #000);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    user-select: none;
 
-  @media (min-width: $tablet-md-screen) {
-    text-align: left;
+    @media (min-width: $tablet-md-screen) {
+      text-align: left;
+    }
+
+    @media (min-width: $tablet-lg-screen) {
+      font-size: 42px;
+    }
   }
 
-  @media (min-width: $tablet-lg-screen) {
-    font-size: 42px;
-  }
-}
-
-p, ul {
-  color: #000;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 25px;
-  text-align: justify;
-  user-select: none;
-
-  @media (min-width: $mobile-md-screen) {
-    font-size: 16px;
-    line-height: 28px;
-  }
-
-  @media (min-width: $tablet-sm-screen) {
-    font-size: 13px;
-    line-height: 26px;
-  }
-
-  @media (min-width: $content-max-width-sm) {
+  p, ul {
+    color: #000;
     font-size: 14px;
+    font-weight: 300;
+    line-height: 25px;
+    text-align: justify;
+    user-select: none;
+
+    @media (min-width: $mobile-md-screen) {
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    @media (min-width: $tablet-sm-screen) {
+      font-size: 13px;
+      line-height: 26px;
+    }
+
+    @media (min-width: $content-max-width-sm) {
+      font-size: 14px;
+    }
+
+    @media (min-width: $tablet-md-screen) {
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    @media (min-width: $tablet-lg-screen) {
+      font-size: 18px;
+      line-height: 34px;
+    }
   }
 
-  @media (min-width: $tablet-md-screen) {
-    font-size: 16px;
-    line-height: 30px;
+  a {
+    color: #222;
+    text-decoration: none;
+
+    &:visited { color: #222; }
   }
-
-  @media (min-width: $tablet-lg-screen) {
-    font-size: 18px;
-    line-height: 34px;
-  }
-}
-
-a {
-  color: #222;
-  text-decoration: none;
-
-  &:visited { color: #222; }
 }

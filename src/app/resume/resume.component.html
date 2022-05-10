@@ -1,6 +1,202 @@
-<h1>Jrod.io • Resume</h1>
-<nav>
-  <ul>
-    <li><a routerLink="/">Home</a></li>
-  </ul>
-</nav>
+<div class="root resume">
+  <app-resume-menu></app-resume-menu>
+  <div class="content" [class.hide]="ui.isMenuActive">
+    <app-resume-header></app-resume-header>
+    <div class="inner">
+      <h2 class="title">John Rodler » Full Stack Engineer</h2>
+      <div class="section summary">
+        <h2>
+          <span class="label">
+            <span class="title">Summary</span>
+          </span>
+          <span class="accent"></span>
+        </h2>
+        <div class="panel">
+          <h3>
+            <span class="label">
+              <span class="title">Full Stack Engineer</span>
+            </span>
+            <span class="accent"></span>
+          </h3>
+          <p>Successful track record in helping a diverse set of technology firms increase the performance, usability and aesthetics of applications. Extensive hands-on experience building and launching clean, innovative and reliable products formed around code standards and creative design. Keen ability to rapidly identify and maneuver within complex environments while producing cutting-edge software.</p>
+        </div>
+      </div>
+      <div class="section skills">
+        <h2>
+          <span class="label">
+            <span class="title">Proficiencies</span>
+          </span>
+          <span class="accent"></span>
+        </h2>
+        <div class="panel split">
+          <div class="left">
+            <h3>
+              <span class="label">
+                <span class="title">Skills</span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <ul>
+              <li>Full Stack JavaScript Development</li>
+              <li>Cloud & Serverless Architecture</li>
+              <li>Dev Ops & Build Management</li>
+              <li>Cryptocurrency Exchange Development</li>
+              <li>E2E Testing & Deployment Management</li>
+              <li>Project & Source Control Management</li>
+              <li>HTML Standards & Web Semantics</li>
+              <li>CSS & Responsive Web Design</li>
+              <li>Cross Platform & Mobile Development</li>
+              <li>SEO Strategy & Web Accessibility</li>
+              <li>CMS & eCommerce Architecture</li>
+            </ul>
+          </div>
+          <div class="right">
+            <h3>
+              <span class="label">
+                <span class="title">Tools</span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <ul class="tools">
+              <li>Angular <span>/</span> React <span>/</span> Node <span>/</span> Mongo <span>/</span> TypeScript</li>
+              <li>Firebase <span>/</span> Google Cloud <span>/</span> AWS <span>/</span> ElasticSearch</li>
+              <li>Webpack <span>/</span> Grunt <span>/</span> Sass <span>/</span> Karma <span>/</span> Jest</li>
+              <li>Web3 <span>/</span> Moralis <span>/</span> Blockchain</li>
+              <li>Codeship <span>/</span> CircleCI <span>/</span> Cypress</li>
+              <li>Git <span>/</span> Npm <span>/</span> Vim <span>/</span> Hyper <span>/</span> VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section experience">
+        <h2>
+          <span class="label">
+            <span class="title">Experience</span>
+          </span>
+          <span class="accent"></span>
+        </h2>
+        <h2 class="cont-label print-show">
+          <span class="label">
+            <span class="title">Experience</span>
+          </span>
+          <span class="accent"></span>
+        </h2>
+        <div class="panel">
+          <div>
+            <h3>
+              <span class="label">
+                <span class="left"><span>Sensei Labs <span class="divider">|</span> Las Vegas, NV</span></span>
+                <span class="right"><span>Jan 2021 - Present</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4>Full Stack Engineer</h4>
+            <h5>Digital Asset Management</h5>
+            <ul>
+              <li>Founded and launched Cryptocurrency Exchange aimed at demystifying digital currency investing for all.</li>
+              <li>Provided users the ability to connect and analyze their digital wallets using Moralis and Web3 technology.</li>
+              <li>Built indexing routines for myriad API endpoints using Cloud Functions and Firebase Realtime Database.</li>
+              <li>Implemented serverless, fuzzy search components using MeiliSearch on Google Cloud Platform.</li>
+            </ul>
+            <h3>
+              <span class="label">
+                <span class="left"><span>Lightspeed VT <span class="divider">|</span> Las Vegas, NV</span></span>
+                <span class="right"><span>Oct 2017 - Dec 2020</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4>Senior Frontend Developer</h4>
+            <h5>eCommerce & Virtual Training Software</h5>
+            <ul>
+              <li>Refocused product suite to encompass a rich, responsive and mobile-friendly user experience.</li>
+              <li>Launched StyleGuide to provide users and developers with an interactive product and component library.</li>
+              <li>Revamped release management process to automate Karma + E2E testing operations using Codeship.</li>
+              <li>Converted legacy ColdFusion interfaces to REST / API-driven, service-based Angular applications.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>
+              <span class="label">
+                <span class="left"><span>JROD INC <span class="divider">|</span> Las Vegas, NV</span></span>
+                <span class="right"><span>Apr 2014 - Present</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4>Full Stack Engineer</h4>
+            <h5>Software Consulting Services</h5>
+            <ul>
+              <li>Launched apps and services built with Angular, React, Node, Express, MongoDB & PHP.</li>
+              <li>Automated asset pipelines and front-end build systems using Webpack, Gulp and Grunt.</li>
+              <li>Built command-line utilities to perform data-mining, asset-scraping and database procedures.</li>
+              <li>Created ng-fire-universal to help simplify launching Serverless PWA's on Firebase & Google Cloud.</li>
+            </ul>
+            <h3>
+              <span class="label">
+                <span class="left"><span>3rd Learning <span class="divider">|</span> Buffalo, NY</span></span>
+                <span class="right"><span>Feb 2012 - Mar 2014</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4 class="top">Senior UI / UX Engineer</h4>
+            <h3 class="bump">
+              <span class="label">
+                <span class="left"><span>HUGE <span class="divider">|</span> Brooklyn, NY</span></span>
+                <span class="right"><span>May 2011 - Jan 2012</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4>UI / UX Consultant</h4>
+            <h3 class="bump">
+              <span class="label">
+                <span class="left"><span>RedCats <span class="divider">|</span> New York, NY</span></span>
+                <span class="right"><span>Jun 2008 - Jan 2011</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4>Senior UI Engineer</h4>
+            <h3 class="bump">
+              <span class="label">
+                <span class="left"><span>Door 3 <span class="divider">|</span> New York, NY</span></span>
+                <span class="right"><span>Jun 2005 - Apr 2008</span></span>
+              </span>
+              <span class="accent"></span>
+            </h3>
+            <h4>Web Developer & Creative Designer</h4>
+          </div>
+        </div>
+      </div>
+      <div class="section education">
+        <h2>
+          <span class="label">
+            <span class="title">Education</span>
+          </span>
+          <span class="accent"></span>
+        </h2>
+        <div class="panel">
+          <h3>
+            <span class="label">
+              <span class="left"><span>Full Sail University &nbsp;|&nbsp; Orlando, FL</span></span>
+              <span class="right"><span>Aug 2002 - Feb 2004</span></span>
+            </span>
+            <span class="accent"></span>
+          </h3>
+          <h4>Associate of Computer Science in Game Design & Development</h4>
+          <h3 class="bump">
+            <span class="label">
+              <span class="left"><span>Amherst Central HS &nbsp;|&nbsp; Amherst, NY</span></span>
+              <span class="right"><span>Sep 1998 - May 2001</span></span>
+            </span>
+            <span class="accent"></span>
+          </h3>
+          <h4>AP Computer Science</h4>
+        </div>
+      </div>
+      <footer>
+        <div class="panel">
+          <span class="print-show">Please Visit My Portfolio &#8226; Jrod.io &#8226; References Available Upon Request</span>
+          <span class="print-hide">Thank You For Visiting &#8226; Jrod.io &#8226; References Available Upon Request</span>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>

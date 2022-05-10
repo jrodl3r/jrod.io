@@ -1,0 +1,25 @@
+<div
+  class="resume-menu"
+  [class.active]="ui.isMenuActive">
+  <mat-icon
+    class="close"
+    (click)="ui.closeMenu()">close</mat-icon>
+  <ul>
+    <li (click)="resume.download()">
+      <mat-icon>download</mat-icon>
+      <span class="label">Download</span>
+    </li>
+    <li class="mobile-print" (click)="resume.download()">
+      <mat-icon>print</mat-icon>
+      <span class="label">Print</span>
+    </li>
+    <li class="desktop-print" (click)="resume.print()">
+      <mat-icon>print</mat-icon>
+      <span class="label">Print</span>
+    </li>
+    <li (click)="resume.exit()">
+      <mat-icon>portrait</mat-icon>
+      <span class="label">Portfolio</span>
+    </li>
+  </ul>
+</div>

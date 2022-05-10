@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from '../_services/ui.service';
 
 @Component({
   selector: 'app-resume',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit {
+  isLoaded: Boolean = false;
 
-  constructor() { }
+  constructor(public ui: UiService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    setTimeout(() => { this.isLoaded = true; }, 1400);
+  }
 
 }
