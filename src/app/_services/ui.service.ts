@@ -4,11 +4,41 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UiService {
+  workPage: number = 0;
+  workPageMax: number = 0;
+  isAnim: Boolean = false;
   isMenuActive: Boolean = false;
+  isSwipeEnabled: Boolean = true;
 
-  closeMenu() {
-    this.isMenuActive = false;
+  updatePage(page: number) {
+    if (this.workPage !== page) {
+      this.isAnim = true;
+      setTimeout(() => { this.workPage = page; }, 300);
+      setTimeout(() => { this.isAnim = false; }, 600);
+    }
   }
+
+  updatePageMax(max: number) { this.workPageMax = max; }
+
+  resetPage() { this.workPage = 0; }
+
+  swipePageLeft() {
+    if (this.isSwipeEnabled && this.workPage !== this.workPageMax) {
+      this.updatePage(this.workPage + 1);
+    }
+  }
+
+  swipePageRight() {
+    if (this.isSwipeEnabled && this.workPage !== 0) {
+      this.updatePage(this.workPage - 1);
+    }
+  }
+
+  enableSwipe() { this.isSwipeEnabled = true; }
+
+  disableSwipe() { this.isSwipeEnabled = false; }
+
+  closeMenu() { this.isMenuActive = false; }
 
   toggleMenu(e: Event) {
     e.stopPropagation();

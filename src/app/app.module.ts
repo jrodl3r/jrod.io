@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HammerModule } from '@angular/platform-browser';
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +20,17 @@ import { VisionComponent } from './home/vision/vision.component';
 import { WorkComponent } from './home/work/work.component';
 import { ResumeHeaderComponent } from './nav/resume-header/resume-header.component';
 import { ResumeMenuComponent } from './nav/resume-menu/resume-menu.component';
+
+declare var Hammer: any;
+
+export class MyHammerConfig extends HammerGestureConfig {
+  buildHammer(element: HTMLElement) {
+    let mc = new Hammer(element, {
+      touchAction: 'pan-y'
+    });
+    return mc;
+  }
+}
 
 @NgModule({
   declarations: [
@@ -40,10 +53,13 @@ import { ResumeMenuComponent } from './nav/resume-menu/resume-menu.component';
     AppRoutingModule,
     CommonModule,
     FormsModule,
+    HammerModule,
     LayoutModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

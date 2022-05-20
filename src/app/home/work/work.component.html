@@ -1,2 +1,83 @@
 <h2>Work</h2>
-<div class="content-block"><span>...</span></div>
+<div
+  class="stage"
+  (swipeleft)="ui.swipePageLeft()"
+  (swiperight)="ui.swipePageRight()">
+  <ul
+    [class.fade]="ui.isAnim"
+    [class.pos0]="ui.workPage === 0"
+    [class.pos1]="ui.workPage === 1"
+    [class.pos2]="ui.workPage === 2"
+    [class.pos3]="ui.workPage === 3"
+    [class.pos4]="ui.workPage === 4"
+    [class.pos5]="ui.workPage === 5">
+    <li>
+      PROJECT 01
+    </li>
+    <li>
+      PROJECT 02
+    </li>
+    <li>
+      PROJECT 03
+    </li>
+    <li>
+      PROJECT 04
+    </li>
+    <li>
+      PROJECT 05
+    </li>
+    <li>
+      PROJECT 06
+    </li>
+    <li>
+      PROJECT 07
+    </li>
+    <li>
+      PROJECT 08
+    </li>
+    <li>
+      PROJECT 09
+    </li>
+    <li>
+      PROJECT 10
+    </li>
+    <li>
+      PROJECT 11
+    </li>
+    <li>&nbsp;</li>
+  </ul>
+</div>
+<ul class="pager">
+  <li
+    class="marker"
+    [class.pos0]="ui.workPage === 0"
+    [class.pos1]="ui.workPage === 1"
+    [class.pos2]="ui.workPage === 2"
+    [class.pos3]="ui.workPage === 3"
+    [class.pos4]="ui.workPage === 4"
+    [class.pos5]="ui.workPage === 5"></li>
+  <li
+    class="pos0"
+    [class.active]="ui.workPage === 0"
+    (click)="ui.updatePage(0)"></li>
+  <li
+    class="pos1"
+    [class.active]="ui.workPage === 1"
+    (click)="ui.updatePage(1)"></li>
+  <li
+    class="pos2"
+    [class.active]="ui.workPage === 2"
+    (click)="ui.updatePage(2)"></li>
+  <li
+    class="pos3"
+    [class.active]="ui.workPage === 3"
+    (click)="ui.updatePage(3)"></li>
+  <li
+    class="pos4"
+    [class.active]="ui.workPage === 4"
+    (click)="ui.updatePage(4)"></li>
+  <li
+    class="pos5"
+    [class.active]="ui.workPage === 5"
+    (click)="ui.updatePage(5)"></li>
+</ul>

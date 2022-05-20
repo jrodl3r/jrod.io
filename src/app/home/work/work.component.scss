@@ -1,0 +1,154 @@
+@import 'src/assets/styles/vars.scss';
+@import 'src/assets/styles/animation.scss';
+
+.stage {
+  position: relative;
+  display: flex;
+  height: 336px;
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: $tablet-sm-screen) {
+    height: 160px;
+  }
+
+  @media (min-width: $carousel-md-screen) {
+    height: 336px;
+  }
+
+  @media (min-width: $tablet-lg-screen) {
+    height: 688px;
+  }
+
+  ul {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &.fade { animation: fade-out-in .5s .15s linear forwards; }
+    &.pos0 { top: 0; }
+    &.pos1 { top: -336px; }
+    &.pos2 { top: -672px; }
+    &.pos3 { top: -1008px; }
+    &.pos4 { top: -1344px; }
+    &.pos5 { top: -1680px; }
+
+    @media (min-width: $tablet-sm-screen) {
+      &.pos1 { top: -160px; }
+      &.pos2 { top: -320px; }
+      &.pos3 { top: -480px; }
+      &.pos4 { top: -640px; }
+      &.pos5 { top: -800px; }
+    }
+
+    @media (min-width: $carousel-md-screen) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+
+      &.pos1 { top: -352px; }
+    }
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 160px;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 16px;
+      border-radius: 16px;
+
+      color: #DDD;
+      font-size: 22px;
+      font-weight: bold;
+      background: #F1F1F1;
+
+      &:nth-child(even) { margin-bottom: 0; }
+
+      @media (min-width: $tablet-sm-screen) {
+        display: inline-flex;
+        width: calc(50% - 8px);
+        max-width: initial;
+        margin: 0;
+
+        &:nth-child(even) { margin-left: 16px; }
+      }
+
+      @media (min-width: $carousel-md-screen) {
+        width: calc(33% - 10px);
+
+        &:nth-child(even) { margin-left: 0; }
+      }
+    }
+  }
+}
+
+.pager {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 24px;
+  width: 180px;
+  margin: 16px auto 0;
+  padding: 0;
+  background: #EEE;
+  border-radius: 12px;
+  list-style: none;
+
+  @media (min-width: $tablet-sm-screen) {
+    margin-top: 24px;
+  }
+
+  @media (min-width: $carousel-md-screen) {
+    width: 80px;
+  }
+
+  @media (min-width: $tablet-lg-screen) {
+    display: none;
+  }
+
+  li {
+    height: 100%;
+    width: calc(100% / 6);
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    &.active { cursor: default; }
+
+    &.marker {
+      position: absolute;
+      display: flex;
+      top: 5px;
+      height: 14px;
+      width: calc(100% / 6) - 2;
+      background: #FFF;
+      border-radius: 7px;
+      box-shadow: 0 0 1px rgba(0,0,0, .35);
+      transition: left .3s ease-in-out;
+      cursor: default;
+
+      &.pos0 { left: 5px; }
+      &.pos1 { left: 30px; }
+      &.pos2 { left: 60px; }
+      &.pos3 { left: 90px; }
+      &.pos4 { left: 120px; }
+      &.pos5 { left: 148px; }
+
+      @media (min-width: $carousel-md-screen) {
+        width: 32px;
+
+        &.pos1 { left: 42px; }
+      }
+    }
+
+    @media (min-width: $carousel-md-screen) {
+      &.pos2, &.pos3, &.pos4, &.pos5 { display: none; }
+    }
+  }
+}
