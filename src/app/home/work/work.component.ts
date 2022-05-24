@@ -8,7 +8,6 @@ import { UiService } from 'src/app/_services/ui.service';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
-  activePage = 0;
 
   constructor(
     public breakpoint: BreakpointObserver,

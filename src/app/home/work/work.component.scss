@@ -60,28 +60,98 @@
       width: 100%;
       max-width: 400px;
       margin: 0 auto 16px;
-      border-radius: 16px;
-
-      color: #DDD;
-      font-size: 22px;
-      font-weight: bold;
-      background: #F1F1F1;
+      background: #FFF linear-gradient(0deg, #EEE 0%, #BBB 100%);
+      border-radius: 6px;
 
       &:nth-child(even) { margin-bottom: 0; }
 
+      &.placeholder {
+        background: #FAFAFA linear-gradient(135deg, #FAFAFA 0%, #F8F8F8 100%);
+
+        &:hover {
+          background: #FAFAFA linear-gradient(135deg, #FAFAFA 0%, #F8F8F8 100%);
+          cursor: default;
+        }
+      }
+
+      &:hover {
+        background: #FFF linear-gradient(0deg, #DDD 0%, #AAA 100%);
+        cursor: pointer;
+
+        .inner { background: #FFF linear-gradient(0deg, #FFF 0%, #F7F7F7 100%); }
+        svg { opacity: .85; }
+      }
+
+      .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: calc(100% - 2px);
+        width: calc(100% - 1px);
+        margin: 1px;
+        background: #FFF linear-gradient(0deg, #FFF 0%, #FAFAFA 100%);
+        border-radius: 6px;
+      }
+
+      svg { transition: opacity .15s; }
+      &.target svg { height: 135px; }
+      &.ge svg, &.ts svg, &.om svg { height: 120px; }
+      &.crown svg { height: 110px; }
+      &.kraft svg { height: 80px; }
+      &.aswim svg { width: 210px; }
+      &.yc svg, &.nyl svg { width: 220px; }
+      &.gi svg { width: 230px; }
+      &.sensei svg { width: 200px; }
+
       @media (min-width: $tablet-sm-screen) {
         display: inline-flex;
+        float: left;
         width: calc(50% - 8px);
         max-width: initial;
         margin: 0;
 
         &:nth-child(even) { margin-left: 16px; }
+        &.target svg { height: 125px; }
+        &.ge svg, &.ts svg, &.crown svg, &.om svg { height: 100px; }
+        &.kraft svg { height: 70px; }
+        &.aswim svg, &.sensei svg { width: 180px; }
+        &.yc svg, &.nyl svg { width: 190px; }
+        &.gi svg { width: 200px; }
+      }
+
+      @media (min-width: $tablet-md-screen) {
+        &.target svg { height: 135px; }
+        &.ge svg, &.ts svg, &.om svg { height: 120px; }
+        &.crown svg { height: 110px; }
+        &.kraft svg { height: 80px; }
+        &.aswim svg { width: 210px; }
+        &.yc svg, &.nyl svg { width: 220px; }
+        &.gi svg { width: 230px; }
+        &.sensei svg { width: 200px; }
       }
 
       @media (min-width: $carousel-md-screen) {
         width: calc(33% - 10px);
 
         &:nth-child(even) { margin-left: 0; }
+        &.target svg { height: 125px; }
+        &.ge svg, &.ts svg, &.crown svg, &.om svg { height: 100px; }
+        &.kraft svg { height: 70px; }
+        &.aswim svg, &.sensei svg { width: 180px; }
+        &.yc svg, &.nyl svg { width: 190px; }
+        &.gi svg { width: 200px; }
+      }
+
+      @media (min-width: $tablet-lg-screen) {
+        &.target svg { height: 135px; }
+        &.ge svg, &.ts svg, &.om svg { height: 120px; }
+        &.crown svg { height: 110px; }
+        &.kraft svg { height: 80px; }
+        &.aswim svg { width: 210px; }
+        &.yc svg, &.nyl svg { width: 220px; }
+        &.gi svg { width: 230px; }
+        &.sensei svg { width: 200px; }
       }
     }
   }
