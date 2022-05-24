@@ -20,6 +20,11 @@ ul {
       svg path { fill: #777; }
     }
 
+    &.twitter:hover {
+      color: #3F88DE;
+      svg path { fill: #3F88DE; }
+    }
+
     &.linkedin:hover {
       color: #007BB6;
       svg path { fill: #007BB6; }
