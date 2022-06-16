@@ -4,33 +4,78 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UiService {
-  workPage: number = 0;
-  workPageMax: number = 0;
+  activeProject: number = 0;
+  activePage: number = 0;
+  activeScreenSource: string = '';
+  activeScreenAltText: string = '';
+  pageMax: number = 0;
+  projectCount: number = 11;
   isAnim: Boolean = false;
   isMenuActive: Boolean = false;
+  isModalActive: Boolean = false;
+  isScreenActive: Boolean = false;
   isSwipeEnabled: Boolean = true;
 
+  openModal(project: number) {
+    this.activeProject = project;
+    this.isModalActive = true;
+  }
+
+  closeModal() {
+    this.isScreenActive
+      ? this.isScreenActive = false
+      : this.isModalActive = false;
+  }
+
+  navModalLeft() {
+    if (this.activeProject !== 0) {
+      this.activeProject = this.activeProject - 1;
+    } else {
+      this.activeProject = this.projectCount - 1;
+    }
+  }
+
+  navModalRight() {
+    if (this.activeProject !== this.projectCount - 1) {
+      this.activeProject = this.activeProject + 1;
+    } else {
+      this.activeProject = 0;
+    }
+  }
+
+  openScreen(source: string, title: string) {
+    this.activeScreenSource = source;
+    this.activeScreenAltText = title;
+    this.isScreenActive = true;
+  }
+
+  closeScreen() {
+    this.isScreenActive = false;
+    this.activeScreenSource = '';
+    this.activeScreenAltText = '';
+  }
+
   updatePage(page: number) {
-    if (this.workPage !== page) {
+    if (this.activePage !== page) {
       this.isAnim = true;
-      setTimeout(() => { this.workPage = page; }, 300);
+      setTimeout(() => { this.activePage = page; }, 300);
       setTimeout(() => { this.isAnim = false; }, 600);
     }
   }
 
-  updatePageMax(max: number) { this.workPageMax = max; }
+  updatePageMax(max: number) { this.pageMax = max; }
 
-  resetPage() { this.workPage = 0; }
+  resetPage() { this.activePage = 0; }
 
   swipePageLeft() {
-    if (this.isSwipeEnabled && this.workPage !== this.workPageMax) {
-      this.updatePage(this.workPage + 1);
+    if (this.isSwipeEnabled && this.activePage !== this.pageMax) {
+      this.updatePage(this.activePage + 1);
     }
   }
 
   swipePageRight() {
-    if (this.isSwipeEnabled && this.workPage !== 0) {
-      this.updatePage(this.workPage - 1);
+    if (this.isSwipeEnabled && this.activePage !== 0) {
+      this.updatePage(this.activePage - 1);
     }
   }
 

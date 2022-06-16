@@ -6,6 +6,8 @@ body {
   width: 100%;
   min-width: $mobile-xs-screen;
   margin: 0;
+
+  &.modal-active { overflow: hidden; }
 }
 
 .root {
