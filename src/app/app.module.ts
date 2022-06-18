@@ -6,6 +6,7 @@ import { HammerModule } from '@angular/platform-browser';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material/icon';
+import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './home/articles/articles.component';
@@ -55,7 +56,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     FormsModule,
     HammerModule,
     LayoutModule,
-    MatIconModule
+    MatIconModule,
+    NgxGoogleAnalyticsModule.forRoot('G-B44ET3NT3G'),
+    NgxGoogleAnalyticsRouterModule
   ],
   providers: [
     { provide: HAMMER_GESTURE_CONFIG, useClass: MyHammerConfig }
