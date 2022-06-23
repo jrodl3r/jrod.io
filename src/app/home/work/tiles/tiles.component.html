@@ -1,0 +1,87 @@
+<ul
+    [class.fade]="ui.isAnim"
+    [class.pos0]="ui.activePage === 0"
+    [class.pos1]="ui.activePage === 1"
+    [class.pos2]="ui.activePage === 2"
+    [class.pos3]="ui.activePage === 3"
+    [class.pos4]="ui.activePage === 4"
+    [class.pos5]="ui.activePage === 5">
+    <li
+      class="target"
+      (click)="this.openModal(0)">
+      <div class="inner">
+        <img src="assets/img/logos/target.svg" alt="Target">
+      </div>
+    </li>
+    <li
+      class="ge"
+      (click)="this.openModal(1)">
+      <div class="inner">
+        <img src="assets/img/logos/ge.svg" alt="GE">
+      </div>
+    </li>
+    <li
+      class="ts"
+      (click)="this.openModal(2)">
+      <div class="inner">
+        <img src="assets/img/logos/360i.svg" alt="360i">
+      </div>
+    </li>
+    <li
+      class="crown"
+      (click)="this.openModal(3)">
+      <div class="inner">
+        <img src="assets/img/logos/crown.svg" alt="Crown">
+      </div>
+    </li>
+    <li
+      class="kraft"
+      (click)="this.openModal(4)">
+      <div class="inner">
+        <img src="assets/img/logos/kraft.svg" alt="Kraft">
+      </div>
+    </li>
+    <li
+      class="om"
+      (click)="this.openModal(5)">
+      <div class="inner">
+        <img src="assets/img/logos/oscarmayer.svg" alt="Oscar Mayer">
+      </div>
+    </li>
+    <li
+      class="adultswim"
+      (click)="this.openModal(6)">
+      <div class="inner">
+        <img src="assets/img/logos/adultswim.svg" alt="Adult Swim">
+      </div>
+    </li>
+    <li
+      class="yc"
+      (click)="this.openModal(7)">
+      <div class="inner">
+        <img src="assets/img/logos/yourcare.svg" alt="Your Care">
+      </div>
+    </li>
+    <li
+      class="nylearns"
+      (click)="this.openModal(8)">
+      <div class="inner">
+        <img src="assets/img/logos/nylearns.svg" alt="NY Learns">
+      </div>
+    </li>
+    <li
+      class="sensei"
+      (click)="this.openModal(9)">
+      <div class="inner">
+        <img src="assets/img/logos/sensei.svg" alt="Sensei">
+      </div>
+    </li>
+    <li
+      class="gi"
+      (click)="this.openModal(10)">
+      <div class="inner">
+        <img src="assets/img/logos/gi.svg" alt="Ghost Inspector">
+      </div>
+    </li>
+    <li class="placeholder"></li>
+  </ul>

@@ -21,6 +21,8 @@ import { VisionComponent } from './home/vision/vision.component';
 import { WorkComponent } from './home/work/work.component';
 import { ResumeHeaderComponent } from './nav/resume-header/resume-header.component';
 import { ResumeMenuComponent } from './nav/resume-menu/resume-menu.component';
+import { TilesComponent } from './home/work/tiles/tiles.component';
+import { ModalComponent } from './home/work/modal/modal.component';
 
 declare var Hammer: any;
 
@@ -47,7 +49,9 @@ export class MyHammerConfig extends HammerGestureConfig {
     ResumeHeaderComponent,
     RibbonComponent,
     VisionComponent,
-    WorkComponent
+    WorkComponent,
+    TilesComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

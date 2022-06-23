@@ -32,18 +32,4 @@ export class WorkComponent implements OnInit {
       .subscribe((state: BreakpointState) => state.matches ? this.ui.disableSwipe() : null);
   }
 
-  openModal(project: number) {
-    let body = document.getElementsByTagName('body')[0];
-    body.classList.add('modal-active');
-    this.ui.openModal(project);
-  }
-
-  closeModal() {
-    if (!this.ui.isScreenActive) {
-      let body = document.getElementsByTagName('body')[0];
-      body.classList.remove('modal-active');
-    }
-    this.ui.closeModal();
-  }
-
 }
